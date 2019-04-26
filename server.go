@@ -117,7 +117,10 @@ func HeaderProcess(headerIn [6]float64, intent string) ([7]float64, error) {
     headerOut[0] = headerIn[0]
     headerOut[1] = headerIn[1]
     headerOut[2] = headerIn[2]
-    if intent == "chipotle.bowl"{
+    if intent == "chipotle.burrito" {
+        headerOur[3] = 1100
+    }
+    if intent == "chipotle.bowl" {
         headerOut[3] = 1200 
     }
     headerOut[4] = float64(time.Now().UnixNano() / 1000000)
