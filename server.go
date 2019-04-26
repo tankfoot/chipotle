@@ -17,6 +17,7 @@ import (
     "errors"
     "io/ioutil"
     "bytes"
+    "time"
 
 	"github.com/gorilla/websocket"
     sj "github.com/bitly/go-simplejson"
@@ -47,24 +48,22 @@ type QueryInput struct {
 }
 
 //Output json struct
-type EntityOutput struct {}
-
 type DataOutput struct {
     Speech string `json:"speech"`
-    Entity EntityOutput `json:"entity"`
+    Entity map[string]interface{} `json:"entity"`
 }
 
 type Output struct {
-    Header [6]float64 `json:"header"`
+    Header [7]float64 `json:"header"`
     Data DataOutput `json:"data"`
 }
 //var addr = flag.String("addr", "localhost:8080", "http service address")
 
 var upgrader = websocket.Upgrader{} // use default options
 
-func DetectIntentText(projectID, sessionID, text, languageCode string) (string, error) {
+func DetectIntentText(projectID, sessionID, text, languageCode string) (string, string, map[string]interface{}, error) {
     if projectID == "" || sessionID == "" {
-        return "", errors.New(fmt.Sprintf("Received empty project (%s) or session (%s)", projectID, sessionID))
+        return "", "", nil, errors.New(fmt.Sprintf("Received empty project (%s) or session (%s)", projectID, sessionID))
     }
     basePath := "https://dialogflow.googleapis.com/v2/"
     sessionPath := fmt.Sprintf("projects/%s/agent/sessions/%s", projectID, sessionID)
@@ -87,14 +86,14 @@ func DetectIntentText(projectID, sessionID, text, languageCode string) (string, 
         fmt.Printf("The HTTP request failed with error %s\n", err)
     } else {
         data, _ := ioutil.ReadAll(resp.Body)
-        fmt.Printf(string(data))
         js, _ := sj.NewJson(data)
-        r := js.Get("queryResult").Get("fulfillmentText").MustString()
-        fmt.Printf("%s\n", r)
-        return r, nil
+        speechText := js.Get("queryResult").Get("fulfillmentText").MustString()
+        intentName := js.Get("queryResult").Get("intent").Get("displayName").MustString()
+        entities := js.Get("queryResult").Get("parameters").MustMap()
+        return speechText, intentName, entities, nil
     }
 
-    return "", nil
+    return "", "", nil, nil
 }
 
 func GetGcloudToken() (string, error) {
@@ -111,6 +110,19 @@ func GetGcloudToken() (string, error) {
 
     token := string(out)[:len(string(out))-1] // line ending subtract
     return token, nil
+}
+
+func HeaderProcess(headerIn [6]float64, intent string) ([7]float64, error) {
+    var headerOut [7]float64
+    headerOut[0] = headerIn[0]
+    headerOut[1] = headerIn[1]
+    headerOut[2] = headerIn[2]
+    if intent == "chipotle.bowl"{
+        headerOut[3] = 1200 
+    }
+    headerOut[4] = float64(time.Now().UnixNano() / 1000000)
+    headerOut[5] = 3
+    return headerOut, nil
 }
 
 func echo(w http.ResponseWriter, r *http.Request) {
@@ -133,11 +145,14 @@ func echo(w http.ResponseWriter, r *http.Request) {
         if err1 != nil {
             log.Fatalln("error:", err1)
         }
-        rr, _ := DetectIntentText("chipotle-aeeb4", "123", m.Data.Query, "en")
+        s, i, e, _ := DetectIntentText("chipotle-aeeb4", "123", m.Data.Query, "en")
+
         var p Output
-        p.Header = m.Header
-        p.Data.Speech = rr
+        p.Header, _ = HeaderProcess(m.Header, i)
+        p.Data.Speech = s
+        p.Data.Entity = e
         b, _ := json.Marshal(p)
+        fmt.Printf(string(b))
 		err = c.WriteMessage(mt, b)
 
 		if err != nil {
