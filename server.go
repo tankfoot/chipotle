@@ -132,7 +132,7 @@ func HeaderProcess(headerIn [6]float64, intent string, speech string) ([7]float6
             headerOut[3] = 1120
             talkback = "Any beans?"
         default:
-            talkback = "Okay"
+            talkback = speech
         }
     } else if intent == "chipotle.bowl" {
         switch speech {
@@ -146,8 +146,11 @@ func HeaderProcess(headerIn [6]float64, intent string, speech string) ([7]float6
             headerOut[3] = 1120
             talkback = "Any beans?"
         default:
-            talkback = "Okay"
+            talkback = speech
         }
+    } else if intent == "chipotle.burrito - no" {
+        headerOut[3] = 1500
+        talkback = speech
     } else {
         talkback = speech
     }
