@@ -86,7 +86,7 @@ func DetectIntentText(projectID, sessionID, text, languageCode string) (string, 
         fmt.Printf("The HTTP request failed with error %s\n", err)
     } else {
         data, _ := ioutil.ReadAll(resp.Body)
-        fmt.Println(string(data))
+        //fmt.Println(string(data))
         js, _ := sj.NewJson(data)
         speechText := js.Get("queryResult").Get("fulfillmentText").MustString()
         intentName := js.Get("queryResult").Get("intent").Get("displayName").MustString()
