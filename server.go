@@ -86,6 +86,7 @@ func DetectIntentText(projectID, sessionID, text, languageCode string) (string, 
         fmt.Printf("The HTTP request failed with error %s\n", err)
     } else {
         data, _ := ioutil.ReadAll(resp.Body)
+        fmt.Println(string(data))
         js, _ := sj.NewJson(data)
         speechText := js.Get("queryResult").Get("fulfillmentText").MustString()
         intentName := js.Get("queryResult").Get("intent").Get("displayName").MustString()
@@ -112,20 +113,48 @@ func GetGcloudToken() (string, error) {
     return token, nil
 }
 
-func HeaderProcess(headerIn [6]float64, intent string) ([7]float64, error) {
+func HeaderProcess(headerIn [6]float64, intent string, speech string) ([7]float64, string, error) {
     var headerOut [7]float64
+    var talkback string
     headerOut[0] = headerIn[0]
     headerOut[1] = headerIn[1]
     headerOut[2] = headerIn[2]
+
     if intent == "chipotle.burrito" {
-        headerOur[3] = 1100
+        switch speech {
+        case "fillings":
+            headerOut[3] = 1100
+            talkback = "which fillings do you want?"
+        case "rice":
+            headerOut[3] = 1110
+            talkback = "Any rice?"
+        case "beans":
+            headerOut[3] = 1120
+            talkback = "Any beans?"
+        default:
+            talkback = "Okay"
+        }
+    } else if intent == "chipotle.bowl" {
+        switch speech {
+        case "fillings":
+            headerOut[3] = 1100
+            talkback = "which fillings do you want?"
+        case "rice":
+            headerOut[3] = 1110
+            talkback = "Any rice?"
+        case "beans":
+            headerOut[3] = 1120
+            talkback = "Any beans?"
+        default:
+            talkback = "Okay"
+        }
+    } else {
+        talkback = speech
     }
-    if intent == "chipotle.bowl" {
-        headerOut[3] = 1200 
-    }
+
     headerOut[4] = float64(time.Now().UnixNano() / 1000000)
     headerOut[5] = 3
-    return headerOut, nil
+    return headerOut, talkback, nil
 }
 
 func echo(w http.ResponseWriter, r *http.Request) {
@@ -151,8 +180,7 @@ func echo(w http.ResponseWriter, r *http.Request) {
         s, i, e, _ := DetectIntentText("chipotle-aeeb4", "123", m.Data.Query, "en")
 
         var p Output
-        p.Header, _ = HeaderProcess(m.Header, i)
-        p.Data.Speech = s
+        p.Header, p.Data.Speech, _ = HeaderProcess(m.Header, i, s)
         p.Data.Entity = e
         b, _ := json.Marshal(p)
         fmt.Printf(string(b))
