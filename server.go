@@ -151,6 +151,12 @@ func HeaderProcess(headerIn [6]float64, intent string, speech string) ([7]float6
         case "beans":
             headerOut[3] = 1120
             talkback = "Any beans?"
+        case "toppings":
+            headerOut[3] = 1130
+            talkback = "Any toppings?"
+        case "Done":
+            headerOut[3] = 1500
+            talkback = "Okay, item add to cart"
         default:
             talkback = speech
         }
