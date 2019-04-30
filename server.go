@@ -120,7 +120,8 @@ func HeaderProcess(headerIn [6]float64, intent string, speech string) ([7]float6
     headerOut[1] = headerIn[1]
     headerOut[2] = headerIn[2]
 
-    if intent == "chipotle.burrito" {
+    switch intent {
+    case "chipotle.burrito":
         switch speech {
         case "fillings":
             headerOut[3] = 1100
@@ -134,36 +135,77 @@ func HeaderProcess(headerIn [6]float64, intent string, speech string) ([7]float6
         case "toppings":
             headerOut[3] = 1130
             talkback = "Any toppings?"
+        case "sides":
+            headerOut[3] = 1140
+            talkback = "Any sides?"
+        case "drinks":
+            headerOut[3] = 1150
+            talkback = "Any drinks?"
         case "Done":
             headerOut[3] = 1500
             talkback = "Okay, item add to cart"
         default:
             talkback = speech
         }
-    } else if intent == "chipotle.bowl" {
+    case "chipotle.bowl":
         switch speech {
         case "fillings":
-            headerOut[3] = 1100
+            headerOut[3] = 1200
             talkback = "which fillings do you want?"
         case "rice":
-            headerOut[3] = 1110
+            headerOut[3] = 1210
             talkback = "Any rice?"
         case "beans":
-            headerOut[3] = 1120
+            headerOut[3] = 1220
             talkback = "Any beans?"
         case "toppings":
-            headerOut[3] = 1130
+            headerOut[3] = 1230
             talkback = "Any toppings?"
+        case "sides":
+            headerOut[3] = 1240
+            talkback = "Any sides?"
+        case "drinks":
+            headerOut[3] = 1250
+            talkback = "Any drinks?"
         case "Done":
             headerOut[3] = 1500
             talkback = "Okay, item add to cart"
         default:
             talkback = speech
         }
-    } else if intent == "chipotle.burrito - no" {
-        headerOut[3] = 1500
+    case "chipotle.salad":
+        switch speech {
+        case "fillings":
+            headerOut[3] = 1300
+            talkback = "which fillings do you want?"
+        case "rice":
+            headerOut[3] = 1310
+            talkback = "Any rice?"
+        case "beans":
+            headerOut[3] = 1320
+            talkback = "Any beans?"
+        case "toppings":
+            headerOut[3] = 1330
+            talkback = "Any toppings?"
+        case "sides":
+            headerOut[3] = 1340
+            talkback = "Any sides?"
+        case "drinks":
+            headerOut[3] = 1350
+            talkback = "Any drinks?"
+        case "Done":
+            headerOut[3] = 1500
+            talkback = "Okay, item add to cart"
+        default:
+            talkback = speech
+        }
+    case "chipotle.cart":
+        headerOut[3] = 5000
         talkback = speech
-    } else {
+    case "chipotle.recents":
+        headerOut[3] = 2000
+        talkback = speech 
+    default:
         talkback = speech
     }
 
