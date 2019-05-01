@@ -117,8 +117,8 @@ func HeaderProcess(headerIn [6]float64, intent string, speech string, entity map
         [7]float64, string, map[string]interface{}, error) {
     var headerOut [7]float64
     var talkback string
-    var entityback map[string]interface{}
-    fmt.Println(entity)
+    entityback := make(map[string]interface{})
+
     headerOut[0] = headerIn[0]
     headerOut[1] = headerIn[1]
     headerOut[2] = headerIn[2]
@@ -128,14 +128,12 @@ func HeaderProcess(headerIn [6]float64, intent string, speech string, entity map
         switch speech {
         case "fillings":
             headerOut[3] = 1100
+            entityback["ordertype"] = "burrito" 
+            entity = entityback
             talkback = "which fillings do you want?"
         case "rice":
             headerOut[3] = 1110
-            for k, v := range entity {
-                fmt.Println(k)
-                fmt.Println(v)
-            }
-            talkback = "Any rice?"
+            talkback = "fillings added, Any rice?"
         case "beans":
             headerOut[3] = 1120
             talkback = "Any beans?"
@@ -149,15 +147,20 @@ func HeaderProcess(headerIn [6]float64, intent string, speech string, entity map
             headerOut[3] = 1150
             talkback = "Any drinks?"
         case "Done":
-            headerOut[3] = 1500
-            talkback = "Okay, item add to cart"
+            headerOut[3] = 1160
+            talkback = "Okay, Do you want to add item to cart"
         default:
             talkback = speech
         }
+    case "chipotle.burrito - yes": 
+        headerOut[3] = 1900
+        talkback = speech
     case "chipotle.bowl":
         switch speech {
         case "fillings":
             headerOut[3] = 1200
+            entityback["ordertype"] = "bowl" 
+            entity = entityback
             talkback = "which fillings do you want?"
         case "rice":
             headerOut[3] = 1210
@@ -175,7 +178,7 @@ func HeaderProcess(headerIn [6]float64, intent string, speech string, entity map
             headerOut[3] = 1250
             talkback = "Any drinks?"
         case "Done":
-            headerOut[3] = 1500
+            headerOut[3] = 1900
             talkback = "Okay, item add to cart"
         default:
             talkback = speech
@@ -184,6 +187,8 @@ func HeaderProcess(headerIn [6]float64, intent string, speech string, entity map
         switch speech {
         case "fillings":
             headerOut[3] = 1300
+            entityback["ordertype"] = "bowl" 
+            entity = entityback
             talkback = "which fillings do you want?"
         case "rice":
             headerOut[3] = 1310
@@ -201,7 +206,7 @@ func HeaderProcess(headerIn [6]float64, intent string, speech string, entity map
             headerOut[3] = 1350
             talkback = "Any drinks?"
         case "Done":
-            headerOut[3] = 1500
+            headerOut[3] = 1900
             talkback = "Okay, item add to cart"
         default:
             talkback = speech
@@ -218,7 +223,7 @@ func HeaderProcess(headerIn [6]float64, intent string, speech string, entity map
 
     headerOut[4] = float64(time.Now().UnixNano() / 1000000)
     headerOut[5] = 3
-    return headerOut, talkback, entityback, nil
+    return headerOut, talkback, entity, nil
 }
 
 func echo(w http.ResponseWriter, r *http.Request) {
@@ -234,7 +239,7 @@ func echo(w http.ResponseWriter, r *http.Request) {
 			log.Println("read:", err)
 			break
 		}
-		log.Printf("recv: %s", message)
+		log.Printf("\nrecv: %s", message)
 
         var m Message
         err1 := json.Unmarshal(message, &m)
