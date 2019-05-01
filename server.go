@@ -113,9 +113,12 @@ func GetGcloudToken() (string, error) {
     return token, nil
 }
 
-func HeaderProcess(headerIn [6]float64, intent string, speech string) ([7]float64, string, error) {
+func HeaderProcess(headerIn [6]float64, intent string, speech string, entity map[string]interface{}) (
+        [7]float64, string, map[string]interface{}, error) {
     var headerOut [7]float64
     var talkback string
+    var entityback map[string]interface{}
+    fmt.Println(entity)
     headerOut[0] = headerIn[0]
     headerOut[1] = headerIn[1]
     headerOut[2] = headerIn[2]
@@ -128,6 +131,10 @@ func HeaderProcess(headerIn [6]float64, intent string, speech string) ([7]float6
             talkback = "which fillings do you want?"
         case "rice":
             headerOut[3] = 1110
+            for k, v := range entity {
+                fmt.Println(k)
+                fmt.Println(v)
+            }
             talkback = "Any rice?"
         case "beans":
             headerOut[3] = 1120
@@ -211,7 +218,7 @@ func HeaderProcess(headerIn [6]float64, intent string, speech string) ([7]float6
 
     headerOut[4] = float64(time.Now().UnixNano() / 1000000)
     headerOut[5] = 3
-    return headerOut, talkback, nil
+    return headerOut, talkback, entityback, nil
 }
 
 func echo(w http.ResponseWriter, r *http.Request) {
@@ -237,8 +244,7 @@ func echo(w http.ResponseWriter, r *http.Request) {
         s, i, e, _ := DetectIntentText("chipotle-aeeb4", "123", m.Data.Query, "en")
 
         var p Output
-        p.Header, p.Data.Speech, _ = HeaderProcess(m.Header, i, s)
-        p.Data.Entity = e
+        p.Header, p.Data.Speech, p.Data.Entity, _ = HeaderProcess(m.Header, i, s, e)
         b, _ := json.Marshal(p)
         fmt.Printf(string(b))
 		err = c.WriteMessage(mt, b)
