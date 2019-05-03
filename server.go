@@ -209,7 +209,7 @@ func HeaderProcess(headerIn [6]float64, intent string, speech string, entity map
             headerOut[3] = 1350
             talkback = "Any drinks?"
         case "Done":
-            headerOut[3] = 1900
+            headerOut[3] = 1360
             talkback = "Okay, Do you want to add item to cart"
         default:
             talkback = speech
@@ -217,6 +217,40 @@ func HeaderProcess(headerIn [6]float64, intent string, speech string, entity map
     case "chipotle.salad - yes": 
         headerOut[3] = 1900
         talkback = speech
+    case "chipotle.tacos":
+        switch speech {
+        case "number":
+            headerOut[3] = 1300
+            entityback["ordertype"] = "tacos"
+            entity = entityback
+            talkback = "how many tacos do you want?"
+        case "tortilla":
+            headerOut[3] = 1310
+            talkback = "soft or crispy tortilla"
+        case "fillings":
+            headerOut[3] = 1300
+            talkback = "which fillings do you want?"
+        case "rice":
+            headerOut[3] = 1310
+            talkback = "Any rice?"
+        case "beans":
+            headerOut[3] = 1320
+            talkback = "Any beans?"
+        case "toppings":
+            headerOut[3] = 1330
+            talkback = "Any toppings?"
+        case "sides":
+            headerOut[3] = 1340
+            talkback = "Any sides?"
+        case "drinks":
+            headerOut[3] = 1350
+            talkback = "Any drinks?"
+        case "Done":
+            headerOut[3] = 1360
+            talkback = "Okay, Do you want to add item to cart"
+        default:
+            talkback = speech
+        }
     case "chipotle.addtobag":
         headerOut[3] = 1900
         talkback = speech
