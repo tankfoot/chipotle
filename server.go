@@ -126,9 +126,13 @@ func HeaderProcess(headerIn [6]float64, intent string, speech string, entity map
     switch intent {
     case "chipotle.burrito":
         switch speech {
+        case "address":
+            headerOut[3] = 100
+            talkback = "please select address, you can say recent, favorite, or nearby"
         case "fillings":
             headerOut[3] = 1100
-            entityback["ordertype"] = "burrito" 
+            entityback["ordertype"] = "burrito"
+            entityback["address"] = entity["address"]
             entity = entityback
             talkback = "which fillings do you want?"
         case "rice":
