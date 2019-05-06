@@ -264,6 +264,12 @@ func HeaderProcess(headerIn [6]float64, intent string, speech string, entity map
     case "chipotle.recents":
         headerOut[3] = 2000
         talkback = speech 
+    case "chipotle.recents - select.number":
+        headerOut[3] = 5000
+        talkback = speech
+    case "chipotle.confirm":
+        headerOut[3] = 6000
+        talkback = speech
     default:
         talkback = speech
     }
