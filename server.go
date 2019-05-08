@@ -321,7 +321,7 @@ func HeaderProcess(headerIn [6]float64, intent string, speech string, entity map
     case "chipotle.sides&drinks":
         switch speech {
         case "address":
-            headerOut[3] = 2000
+            headerOut[3] = 100
             talkback = "please select address, you can say recent, favorite, or nearby"
         case "sides":
             headerOut[3] = 1700
@@ -351,7 +351,18 @@ func HeaderProcess(headerIn [6]float64, intent string, speech string, entity map
         headerOut[3] = 5000
         talkback = speech
     case "chipotle.confirm":
-        headerOut[3] = 6000
+        switch speech {
+        case "time":
+            headerOut[3] = 6000
+            talkback = "please tell me the pickup time"
+        case "Done":
+            headerOut[3] = 6100
+            talkback = "Okay, Do you want to submit order?"
+        default:
+            talkback = speech
+        }
+    case "chipotle.confirm - yes":
+        headerOut[3] = 7000
         talkback = speech
     default:
         talkback = speech
