@@ -127,8 +127,11 @@ func HeaderProcess(headerIn [6]float64, intent string, speech string, entity map
     case "chipotle.burrito":
         switch speech {
         case "address":
-            headerOut[3] = 100
+            headerOut[3] = 2000
             talkback = "please select address, you can say recent, favorite, or nearby"
+            entityback["ordertype"] = "burrito"
+            entityback["address"] = entity["address"]
+            entity = entityback
         case "fillings":
             headerOut[3] = 1100
             entityback["ordertype"] = "burrito"
@@ -161,6 +164,12 @@ func HeaderProcess(headerIn [6]float64, intent string, speech string, entity map
         talkback = speech
     case "chipotle.bowl":
         switch speech {
+        case "address":
+            headerOut[3] = 2000
+            talkback = "please select address, you can say recent, favorite, or nearby"
+            entityback["ordertype"] = "bowl"
+            entityback["address"] = entity["address"]
+            entity = entityback
         case "fillings":
             headerOut[3] = 1200
             entityback["ordertype"] = "bowl" 
@@ -223,38 +232,97 @@ func HeaderProcess(headerIn [6]float64, intent string, speech string, entity map
         talkback = speech
     case "chipotle.tacos":
         switch speech {
+        case "address":
+            headerOut[3] = 2000
+            talkback = "please select address, you can say recent, favorite, or nearby"
         case "number":
-            headerOut[3] = 1300
+            headerOut[3] = 1400
             entityback["ordertype"] = "tacos"
             entity = entityback
             talkback = "how many tacos do you want?"
         case "tortilla":
-            headerOut[3] = 1310
+            headerOut[3] = 1410
             talkback = "soft or crispy tortilla"
         case "fillings":
-            headerOut[3] = 1300
+            headerOut[3] = 1400
             talkback = "which fillings do you want?"
         case "rice":
-            headerOut[3] = 1310
+            headerOut[3] = 1410
             talkback = "Any rice?"
         case "beans":
-            headerOut[3] = 1320
+            headerOut[3] = 1420
             talkback = "Any beans?"
         case "toppings":
-            headerOut[3] = 1330
+            headerOut[3] = 1430
             talkback = "Any toppings?"
         case "sides":
-            headerOut[3] = 1340
+            headerOut[3] = 1440
             talkback = "Any sides?"
         case "drinks":
-            headerOut[3] = 1350
+            headerOut[3] = 1450
             talkback = "Any drinks?"
         case "Done":
-            headerOut[3] = 1360
+            headerOut[3] = 1460
             talkback = "Okay, Do you want to add item to cart"
         default:
             talkback = speech
         }
+    case "chipotle.tacos - yes": 
+        headerOut[3] = 1900
+        talkback = speech
+    case "chipotle.kids": 
+        switch speech {
+        case "address":
+            headerOut[3] = 2000
+            talkback = "please select address, you can say recent, favorite, or nearby"
+        case "choose":
+            headerOut[3] = 2100
+            talkback = "build your own or quesadilla?"
+        default:
+            talkback = speech
+        }
+    case "chipotle.kids - buildyourown": 
+        switch speech {
+        case "tortilla":
+            headerOut[3] = 1500
+            talkback = "soft or crispy tortilla?"
+        case "fillings":
+            headerOut[3] = 1510
+            talkback = "which fillings do you want?"
+        case "beans":
+            headerOut[3] = 1520
+            talkback = "Any beans?"
+        default:
+            talkback = speech
+        }
+    case "chipotle.kids - quesadilla": 
+        switch speech {
+        case "tortilla":
+            headerOut[3] = 1600
+            talkback = "build your own or quesadilla?"
+        default:
+            talkback = speech
+        }
+    case "chipotle.sides&drinks":
+        switch speech {
+        case "address":
+            headerOut[3] = 2000
+            talkback = "please select address, you can say recent, favorite, or nearby"
+        case "sides":
+            headerOut[3] = 1700
+            talkback = "Any sides?"
+        case "drinks":
+            headerOut[3] = 1710
+            talkback = "Any drinks?"
+        case "Done":
+            headerOut[3] = 1720
+            talkback = "Okay, Do you want to add item to cart"
+        default:
+            talkback = speech
+        }
+    case "chipotle.sides&drinks - yes": 
+        headerOut[3] = 1900
+        talkback = speech
     case "chipotle.addtobag":
         headerOut[3] = 1900
         talkback = speech
@@ -262,7 +330,7 @@ func HeaderProcess(headerIn [6]float64, intent string, speech string, entity map
         headerOut[3] = 5000
         talkback = speech
     case "chipotle.recents":
-        headerOut[3] = 2000
+        headerOut[3] = 3000
         talkback = speech 
     case "chipotle.recents - select.number":
         headerOut[3] = 5000
