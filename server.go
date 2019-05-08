@@ -297,9 +297,24 @@ func HeaderProcess(headerIn [6]float64, intent string, speech string, entity map
         }
     case "chipotle.kids - quesadilla": 
         switch speech {
-        case "tortilla":
+        case "fillings":
             headerOut[3] = 1600
-            talkback = "build your own or quesadilla?"
+            talkback = "which fillings do you want?"
+        case "rice":
+            headerOut[3] = 1610
+            talkback = "Any rice?"
+        case "beans":
+            headerOut[3] = 1620
+            talkback = "Any beans?"
+        case "kidsides":
+            headerOut[3] = 1630 
+            talkback = "Any sides for kids?"
+        case "kidsdrinks":
+            headerOut[3] = 1640 
+            talkback = "Any drinks for kids?"
+        case "Done":
+            headerOut[3] = 1720
+            talkback = "Okay, Do you want to add item to cart"
         default:
             talkback = speech
         }
