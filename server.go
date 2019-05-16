@@ -8,7 +8,6 @@ package main
 
 import (
 	"flag"
-	"html/template"
 	"log"
     "fmt"
 	"net/http"
@@ -57,7 +56,7 @@ type Output struct {
     Header [7]float64 `json:"header"`
     Data DataOutput `json:"data"`
 }
-//var addr = flag.String("addr", "localhost:8080", "http service address")
+
 
 var upgrader = websocket.Upgrader{} // use default options
 
