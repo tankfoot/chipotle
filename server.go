@@ -57,6 +57,18 @@ type Output struct {
     Data DataOutput `json:"data"`
 }
 
+//const letterBytes = "abcdefghijklmnopqrstuvwxyz1234567890"
+
+// func RandStringBytes(n int) string {
+// 	b := make([]byte, n)
+// 	l := len(letterBytes)
+// 	for i := range b {
+// 		b[i] = letterBytes[rand.Intn(l)]
+// 	}
+// 	return string(b)
+// }
+
+var user = map[float64]float64{}
 
 var upgrader = websocket.Upgrader{} // use default options
 
@@ -403,15 +415,17 @@ func echo(w http.ResponseWriter, r *http.Request) {
 
         var m Message
         err1 := json.Unmarshal(message, &m)
+
         if err1 != nil {
             log.Fatalln("error:", err1)
         }
-        s, i, e, _ := DetectIntentText("chipotle-aeeb4", "123", m.Data.Query, "en")
-
+        s, i, e, _ := DetectIntentText("chipotle-flat", "123", m.Data.Query, "en")
+        user[m.Header[0]] = m.Header[2]
+        fmt.Println(user)
         var p Output
         p.Header, p.Data.Speech, p.Data.Entity, _ = HeaderProcess(m.Header, i, s, e)
         b, _ := json.Marshal(p)
-        fmt.Printf(string(b))
+        fmt.Println(string(b))
 		err = c.WriteMessage(mt, b)
 
 		if err != nil {
