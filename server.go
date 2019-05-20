@@ -68,7 +68,7 @@ type Output struct {
 // 	return string(b)
 // }
 
-var user = map[float64]float64{}
+var user = map[float64]Output{}
 
 var upgrader = websocket.Upgrader{} // use default options
 
@@ -390,6 +390,7 @@ func HeaderProcess(headerIn [6]float64, intent string, speech string, entity map
         headerOut[3] = 7000
         talkback = speech
     default:
+    	headerOut[3] = headerOut[2]
         talkback = speech
     }
 
@@ -419,19 +420,58 @@ func echo(w http.ResponseWriter, r *http.Request) {
         if err1 != nil {
             log.Fatalln("error:", err1)
         }
-        s, i, e, _ := DetectIntentText("chipotle-flat", "123", m.Data.Query, "en")
-        user[m.Header[0]] = m.Header[2]
-        fmt.Println(user)
-        var p Output
-        p.Header, p.Data.Speech, p.Data.Entity, _ = HeaderProcess(m.Header, i, s, e)
-        b, _ := json.Marshal(p)
-        fmt.Println(string(b))
-		err = c.WriteMessage(mt, b)
 
-		if err != nil {
-			log.Println("write:", err)
-			break
-		}
+        // check user status
+        if val, ok := user[m.Header[0]]; ok {
+        	var r Output
+        	r = val
+        	fmt.Println(r.Data.Speech)
+        	if m.Data.Query == "actionFalse" {
+        		r.Data.Speech = "Sorry I can't perform the action right Now."
+        	} else if m.Data.Query == "actionTrue" {
+        		fmt.Println("Task performed")
+        	} else {
+        		r.Data.Speech = "Someting is wrong."
+        	}
+        	delete(user, m.Header[0])
+        	b, _ := json.Marshal(r)
+    		err = c.WriteMessage(mt, b)
+
+			if err != nil {
+				log.Println("write:", err)
+				break
+			}
+        } else {
+        	fmt.Println(m.Data.Query)
+        	s, i, e, _ := DetectIntentText("chipotle-flat", "123", m.Data.Query, "en")
+        	var p Output
+        	p.Header, p.Data.Speech, p.Data.Entity, _ = HeaderProcess(m.Header, i, s, e)
+        	fmt.Println(p)
+        	if p.Header[2] != p.Header[3] {
+        		user[m.Header[0]] = p
+        		p.Data.Speech = "Performing task now."
+        	}
+        	b, _ := json.Marshal(p)
+    		err = c.WriteMessage(mt, b)
+
+			if err != nil {
+				log.Println("write:", err)
+				break
+			}
+        }
+        // s, i, e, _ := DetectIntentText("chipotle-flat", "123", m.Data.Query, "en")
+        // user[m.Header[0]] = m.Header[2]
+        //fmt.Println(user)
+        // var p Output
+        // p.Header, p.Data.Speech, p.Data.Entity, _ = HeaderProcess(m.Header, i, s, e)
+        // b, _ := json.Marshal(p)
+        //fmt.Println(string(b))
+		// err = c.WriteMessage(mt, b)
+
+		// if err != nil {
+		// 	log.Println("write:", err)
+		// 	break
+		// }
 	}
 }
 
