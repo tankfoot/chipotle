@@ -449,7 +449,6 @@ func echo(w http.ResponseWriter, r *http.Request) {
         		user[m.Header[0]] = p
         		p.Data.Speech = "Performing task now."
         	}
-        	fmt.Println(p)
         	b, _ := json.Marshal(p)
         	fmt.Printf(string(b))
     		err = c.WriteMessage(mt, b)
