@@ -441,7 +441,6 @@ func echo(w http.ResponseWriter, r *http.Request) {
 				break
 			}
         } else {
-        	fmt.Println(m.Data.Query)
         	s, i, e, _ := DetectIntentText("chipotle-flat", "123", m.Data.Query, "en")
         	var p Output
         	p.Header, p.Data.Speech, p.Data.Entity, _ = HeaderProcess(m.Header, i, s, e)
@@ -449,6 +448,7 @@ func echo(w http.ResponseWriter, r *http.Request) {
         		user[m.Header[0]] = p
         		p.Data.Speech = "Performing task now."
         	}
+        	fmt.Println(p)
         	b, _ := json.Marshal(p)
     		err = c.WriteMessage(mt, b)
 
