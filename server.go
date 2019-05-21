@@ -425,7 +425,6 @@ func echo(w http.ResponseWriter, r *http.Request) {
         if val, ok := user[m.Header[0]]; ok {
         	var r Output
         	r = val
-        	fmt.Println(r.Data.Speech)
         	if m.Data.Query == "actionFalse" {
         		r.Data.Speech = "Sorry I can't perform the action right Now."
         	} else if m.Data.Query == "actionTrue" {
@@ -446,7 +445,6 @@ func echo(w http.ResponseWriter, r *http.Request) {
         	s, i, e, _ := DetectIntentText("chipotle-flat", "123", m.Data.Query, "en")
         	var p Output
         	p.Header, p.Data.Speech, p.Data.Entity, _ = HeaderProcess(m.Header, i, s, e)
-        	fmt.Println(p)
         	if p.Header[2] != p.Header[3] {
         		user[m.Header[0]] = p
         		p.Data.Speech = "Performing task now."
