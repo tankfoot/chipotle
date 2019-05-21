@@ -434,6 +434,7 @@ func echo(w http.ResponseWriter, r *http.Request) {
         	}
         	delete(user, m.Header[0])
         	b, _ := json.Marshal(r)
+        	fmt.Printf(string(b))
     		err = c.WriteMessage(mt, b)
 
 			if err != nil {
@@ -450,6 +451,7 @@ func echo(w http.ResponseWriter, r *http.Request) {
         	}
         	fmt.Println(p)
         	b, _ := json.Marshal(p)
+        	fmt.Printf(string(b))
     		err = c.WriteMessage(mt, b)
 
 			if err != nil {
