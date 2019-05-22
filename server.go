@@ -10,6 +10,7 @@ import (
 	"flag"
 	"log"
     "fmt"
+    "strings"
 	"net/http"
     "encoding/json"
     "os/exec"
@@ -67,6 +68,21 @@ type Output struct {
 // 	}
 // 	return string(b)
 // }
+
+var fillings = map[string][]string{
+	"steak" : []string{"steak", "beef"},
+	"carnitas": []string{"carnitas", "pork"},
+	"chicken" : []string{"chicken"},
+	"barbacoa": []string{"barbacoa"},
+	"veggie": []string{"veggie", "vegetable"},
+	"sofritas": []string{"sofritas", "sofrito"}
+}
+
+var beans = map[string][]string{
+	"black beans": []string{"black beans", "black"},
+	"pinto beans": []string{"pinto beans", "pinto"},
+	"no beans": []string{"no beans", "no"}
+}
 
 var user = map[float64]Output{}
 
@@ -442,6 +458,14 @@ func echo(w http.ResponseWriter, r *http.Request) {
 				break
 			}
         } else {
+
+        	for k, v := range fillings {
+        		for _, item := range v {
+        			if strings.Contains(m.Data.Query, item) {
+        				fmt.Println(k)
+        			} 
+        		}
+        	}
         	s, i, e, _ := DetectIntentText("chipotle-flat", "123", m.Data.Query, "en")
         	var p Output
         	p.Header, p.Data.Speech, p.Data.Entity, _ = HeaderProcess(m.Header, i, s, e)
