@@ -26,6 +26,7 @@ import (
 //Incoming Json struct
 type Data struct {
     Query string
+    Result string
 }
 
 type Message struct {
@@ -75,13 +76,13 @@ var fillings = map[string][]string{
 	"chicken" : []string{"chicken"},
 	"barbacoa": []string{"barbacoa"},
 	"veggie": []string{"veggie", "vegetable"},
-	"sofritas": []string{"sofritas", "sofrito"}
+	"sofritas": []string{"sofritas", "sofrito"},
 }
 
 var beans = map[string][]string{
 	"black beans": []string{"black beans", "black"},
 	"pinto beans": []string{"pinto beans", "pinto"},
-	"no beans": []string{"no beans", "no"}
+	"no beans": []string{"no beans", "no"},
 }
 
 var user = map[float64]Output{}
@@ -441,12 +442,12 @@ func echo(w http.ResponseWriter, r *http.Request) {
         if val, ok := user[m.Header[0]]; ok {
         	var r Output
         	r = val
-        	if m.Data.Query == "actionFalse" {
+        	if m.Data.Result == "actionFalse" {
         		r.Data.Speech = "Sorry I can't perform the action right Now."
-        	} else if m.Data.Query == "actionTrue" {
+        	} else if m.Data.Result == "actionTrue" {
         		fmt.Println("Task performed")
         	} else {
-        		r.Data.Speech = "Someting is wrong."
+        		r.Data.Speech = "Something is wrong."
         	}
         	delete(user, m.Header[0])
         	b, _ := json.Marshal(r)
