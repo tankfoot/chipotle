@@ -448,6 +448,7 @@ func echo(w http.ResponseWriter, r *http.Request) {
         		fmt.Println("Task performed")
         	} else {
         		r.Data.Speech = "Something is wrong."
+        		r.Header[3] = 9999
         	}
         	delete(user, m.Header[0])
         	b, _ := json.Marshal(r)
@@ -473,6 +474,8 @@ func echo(w http.ResponseWriter, r *http.Request) {
         	if p.Header[2] != p.Header[3] {
         		user[m.Header[0]] = p
         		p.Data.Speech = "Performing task now."
+        	} else {
+        		p.Header[3] = 9999
         	}
         	b, _ := json.Marshal(p)
         	fmt.Printf(string(b))
