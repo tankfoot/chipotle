@@ -447,11 +447,10 @@ func echo(w http.ResponseWriter, r *http.Request) {
         	} else if m.Data.Result == "actionTrue" {
         		fmt.Println("Task performed")
         		r.Header[2] = r.Header[3]
-        		r.Header[3] = 9999
         	} else {
         		r.Data.Speech = "Something is wrong."
-        		r.Header[3] = 9999
         	}
+        	r.Header[3] = 9999
         	delete(user, m.Header[0])
         	b, _ := json.Marshal(r)
         	fmt.Printf(string(b))
