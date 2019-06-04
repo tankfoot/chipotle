@@ -94,14 +94,14 @@ var fillings = map[string][]string{
 }
 
 var beans = map[string][]string{
-	"black beans": []string{"black beans", "black"},
-	"pinto beans": []string{"pinto beans", "pinto"},
+	"black beans": []string{"black beans"},
+	"pinto beans": []string{"pinto beans"},
 	"no beans": []string{"no beans", "no"},
 }
 
 var rice = map[string][]string{
-	"brown rice" : []string{"brown rice", "brown"},
-	"white rice" : []string{"white rice", "white"},
+	"brown rice" : []string{"brown rice"},
+	"white rice" : []string{"white rice"},
 	"no rice" : []string{"no rice", "no"},
 }
 
@@ -117,6 +117,14 @@ var tops = map[string][]string{
 	"red chili": []string{"red chili"},
 	"tortilla": []string{"tortilla"},
 	"sour cream": []string{"sour cream"},
+}
+
+var sides = map[string][]string{
+	"chips": []string{"chips"},
+}
+
+var drinks = map[string][]string{
+	"bottles water": []string{"bottled water", "water"},
 }
 
 var user = map[float64]Output{}
@@ -188,38 +196,42 @@ func HeaderProcess(headerIn [6]float64, intent string, speech string, entity map
     switch intent {
     case "chipotle.burrito":
         switch speech {
-        case "address":
-            headerOut[3] = 2000
-            talkback = "please select address, you can say recent, favorite, or nearby"
-            entityback["ordertype"] = "burrito"
-            entityback["address"] = entity["address"]
-            entity = entityback
-        case "fillings":
-            headerOut[3] = 1100
-            entityback["ordertype"] = "burrito"
-            entityback["address"] = entity["address"]
-            entity = entityback
-            talkback = "which fillings do you want?"
-        case "rice":
-            headerOut[3] = 1110
-            talkback = "fillings added, Any rice?"
-        case "beans":
-            headerOut[3] = 1120
-            talkback = "Any beans?"
-        case "toppings":
-            headerOut[3] = 1130
-            talkback = "Any toppings?"
-        case "sides":
-            headerOut[3] = 1140
-            talkback = "Any sides?"
-        case "drinks":
-            headerOut[3] = 1150
-            talkback = "Any drinks?"
-        case "Done":
-            headerOut[3] = 1160
-            talkback = "Okay, Do you want to add item to cart"
+        // case "address":
+        //     headerOut[3] = 2000
+        //     talkback = "please select address, you can say recent, favorite, or nearby"
+        //     entityback["ordertype"] = "burrito"
+        //     entityback["address"] = entity["address"]
+        //     entity = entityback
+        // case "fillings":
+        //     headerOut[3] = 1100
+        //     entityback["ordertype"] = "burrito"
+        //     entityback["address"] = entity["address"]
+        //     entity = entityback
+        //     talkback = "which fillings do you want?"
+        // case "rice":
+        //     headerOut[3] = 1110
+        //     talkback = "fillings added, Any rice?"
+        // case "beans":
+        //     headerOut[3] = 1120
+        //     talkback = "Any beans?"
+        // case "toppings":
+        //     headerOut[3] = 1130
+        //     talkback = "Any toppings?"
+        // case "sides":
+        //     headerOut[3] = 1140
+        //     talkback = "Any sides?"
+        // case "drinks":
+        //     headerOut[3] = 1150
+        //     talkback = "Any drinks?"
+        // case "Done":
+        //     headerOut[3] = 1160
+        //     talkback = "Okay, Do you want to add item to cart"
         default:
-            talkback = speech
+            talkback = "please select address, you can say recent, favorite, or nearby"
+            headerOut[3] = 2000
+            entityback["ordertype"] = "burrito"
+        	entityback["address"] = entity["address"]
+            entity = entityback
         }
     case "chipotle.burrito - yes": 
         headerOut[3] = 1900
@@ -545,6 +557,136 @@ func echo(w http.ResponseWriter, r *http.Request) {
 	        		p.Header[3] = 100
 	        		p.Data.Speech = "Okay, Cancel ordering"
 	        	}
+	        case 1110:
+	        	p.Data.Speech = "Any rice?"
+	        	p.Header[3] = 1110
+	        	var s []string
+	        	for k, v := range rice {
+	        		for _, item := range v {
+	        			if strings.Contains(m.Data.Query, item) {
+	        				s = append(s, k)
+	        				entityback["rice"] = s
+	        			    p.Data.Entity = entityback
+	        			    p.Data.Speech = "Any beans?"
+	        				user[m.Header[0]] = p
+	        				p.Data.Speech = "selecting"
+	        				p.Header[3] = 1120
+	        			} 
+	        		}
+	        	}
+	        	if strings.Contains(m.Data.Query, "cancel") {
+	        		p.Header[3] = 100
+	        		p.Data.Speech = "Okay, Cancel ordering"
+	        	}
+	        case 1120:
+	        	p.Data.Speech = "Any beans?"
+	        	p.Header[3] = 1120
+	        	var s []string
+	        	for k, v := range beans {
+	        		for _, item := range v {
+	        			if strings.Contains(m.Data.Query, item) {
+	        				s = append(s, k)
+	        				entityback["beans"] = s
+	        			    p.Data.Entity = entityback
+	        			    p.Data.Speech = "Any toppings?"
+	        				user[m.Header[0]] = p
+	        				p.Data.Speech = "selecting"
+	        				p.Header[3] = 1130
+	        			} 
+	        		}
+	        	}
+	        	if strings.Contains(m.Data.Query, "cancel") {
+	        		p.Header[3] = 100
+	        		p.Data.Speech = "Okay, Cancel ordering"
+	        	}
+	        case 1130:
+	        	p.Data.Speech = "Any toppings?"
+	        	p.Header[3] = 1130
+	        	var s []string
+	        	for k, v := range tops {
+	        		for _, item := range v {
+	        			if strings.Contains(m.Data.Query, item) {
+	        				s = append(s, k)
+	        				entityback["tops"] = s
+	        			    p.Data.Entity = entityback
+	        			    p.Data.Speech = "Any sides?"
+	        				user[m.Header[0]] = p
+	        				p.Data.Speech = "selecting"
+	        				p.Header[3] = 1140
+	        			} 
+	        		}
+	        	}
+	        	if strings.Contains(m.Data.Query, "cancel") {
+	        		p.Header[3] = 100
+	        		p.Data.Speech = "Okay, Cancel ordering"
+	        	}
+	        case 1140:
+	        	p.Data.Speech = "Any sides?"
+	        	p.Header[3] = 1140
+	        	var s []string
+	        	for k, v := range sides {
+	        		for _, item := range v {
+	        			if strings.Contains(m.Data.Query, item) {
+	        				s = append(s, k)
+	        				entityback["sides"] = s
+	        			    p.Data.Entity = entityback
+	        			    p.Data.Speech = "Any drinks?"
+	        				user[m.Header[0]] = p
+	        				p.Data.Speech = "selecting"
+	        				p.Header[3] = 1140
+	        			} 
+	        		}
+	        	}
+	        	if strings.Contains(m.Data.Query, "no") {
+	        		p.Header[3] = 1150
+	        		p.Data.Speech = "Any drinks?"
+	        	}
+	        	if strings.Contains(m.Data.Query, "cancel") {
+	        		p.Header[3] = 100
+	        		p.Data.Speech = "Okay, Cancel ordering"
+	        	}
+	        case 1150:
+	        	p.Data.Speech = "Any drinks?"
+	        	p.Header[3] = 1150
+	        	var s []string
+	        	for k, v := range drinks {
+	        		for _, item := range v {
+	        			if strings.Contains(m.Data.Query, item) {
+	        				s = append(s, k)
+	        				entityback["drinks"] = s
+	        			    p.Data.Entity = entityback
+	        			    p.Data.Speech = "Do you want to add item to cart?"
+	        				user[m.Header[0]] = p
+	        				p.Data.Speech = "selecting"
+	        				p.Header[3] = 1160
+	        			} 
+	        		}
+	        	}
+	        	if strings.Contains(m.Data.Query, "no") {
+	        		p.Header[3] = 1160
+	        		p.Data.Speech = "Do you want to add item to cart?"
+	        	}
+	        	if strings.Contains(m.Data.Query, "cancel") {
+	        		p.Header[3] = 100
+	        		p.Data.Speech = "Okay, Cancel ordering"
+	        	}
+	        case 1160:
+	        	p.Data.Speech = "Do you want to add item to cart?"
+	        	p.Header[3] = 1160
+	        	if strings.Contains(m.Data.Query, "yes") {
+	        		p.Data.Speech = "Okay, item add to cart"
+	        		user[m.Header[0]] = p
+	        		p.Data.Speech = "selecting"
+	        		p.Header[3] = 1190
+	        	}
+	        	if strings.Contains(m.Data.Query, "no") {
+	        		p.Header[3] = 1160
+	        		p.Data.Speech = "Sure please tell me when you ready."
+	        	}
+	        	if strings.Contains(m.Data.Query, "cancel") {
+	        		p.Header[3] = 100
+	        		p.Data.Speech = "Okay, Cancel ordering"
+	        	}	        
         	default:
 	        	s, i, e, _ := DetectIntentText("chipotle-flat", "123", m.Data.Query, "en")
 	        	p.Header, p.Data.Speech, p.Data.Entity, _ = HeaderProcess(m.Header, i, s, e)
