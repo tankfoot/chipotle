@@ -671,7 +671,7 @@ func echo(w http.ResponseWriter, r *http.Request) {
 	        		p.Header[3] = 1190
 	        	}
 	        	if strings.Contains(m.Data.Query, "no") {
-	        		p.Header[3] = 1160
+	        		p.Header[3] = 9999
 	        		p.Data.Speech = "Sure please tell me when you ready."
 	        	}
 	        	if strings.Contains(m.Data.Query, "cancel") {
