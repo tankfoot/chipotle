@@ -624,7 +624,7 @@ func echo(w http.ResponseWriter, r *http.Request) {
 	        			    p.Data.Speech = "Any drinks?"
 	        				user[m.Header[0]] = p
 	        				p.Data.Speech = "selecting"
-	        				p.Header[3] = 1140
+	        				p.Header[3] = 1150
 	        			} 
 	        		}
 	        	}
