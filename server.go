@@ -70,6 +70,20 @@ type Output struct {
 // 	return string(b)
 // }
 
+var ordertype = map[string][]string{
+	"burrito": []string{"burrito"},
+	"burrito bowl": []string{"bowl", "burrito bowl"},
+	"tacos": []string{"tacos", "taco"},
+	"salad": []string{"salad"},
+	"kid's Meal": []string{"kid's meal ", "kid", "kids"},
+}
+
+var address = map[string][]string{
+	"recent": []string{"recent", "recently"},
+	"favorites": []string{"favorites", "favorite", "fav"},
+	"nearby": []string{"nearby", "nearest", "closest"},
+}
+
 var fillings = map[string][]string{
 	"steak" : []string{"steak", "beef"},
 	"carnitas": []string{"carnitas", "pork"},
@@ -83,6 +97,26 @@ var beans = map[string][]string{
 	"black beans": []string{"black beans", "black"},
 	"pinto beans": []string{"pinto beans", "pinto"},
 	"no beans": []string{"no beans", "no"},
+}
+
+var rice = map[string][]string{
+	"brown rice" : []string{"brown rice", "brown"},
+	"white rice" : []string{"white rice", "white"},
+	"no rice" : []string{"no rice", "no"},
+}
+
+var tops = map[string][]string{
+	"corn": []string{"corn", "corns"},
+	"queso": []string{"queso"},
+	"lettuce": []string{"lettuce"},
+	"green chili": []string{"green chili"},
+	"fajita veggie": []string{"fajita veggie", "fajita"},
+	"tomato salsa": []string{"tomato salsa", "salsa"},
+	"guacamole": []string{"guacamole", "guac"},
+	"cheese": []string{"cheese"},
+	"red chili": []string{"red chili"},
+	"tortilla": []string{"tortilla"},
+	"sour cream": []string{"sour cream"},
 }
 
 var user = map[float64]Output{}
@@ -447,6 +481,8 @@ func echo(w http.ResponseWriter, r *http.Request) {
         	} else if m.Data.Result == "actionTrue" {
         		fmt.Println("Task performed")
         		r.Header[2] = r.Header[3]
+        	} else if m.Data.Result == "pageWrong" {
+        		r.Data.Speech = "Sorry you are in the wrong page"
         	} else {
         		r.Data.Speech = "Something is wrong."
         	}
@@ -461,45 +497,60 @@ func echo(w http.ResponseWriter, r *http.Request) {
 				break
 			}
         } else {
-
-        	for k, v := range fillings {
-        		for _, item := range v {
-        			if strings.Contains(m.Data.Query, item) {
-        				fmt.Println(k)
-        			} 
-        		}
-        	}
-        	s, i, e, _ := DetectIntentText("chipotle-flat", "123", m.Data.Query, "en")
         	var p Output
-        	p.Header, p.Data.Speech, p.Data.Entity, _ = HeaderProcess(m.Header, i, s, e)
-        	if p.Header[2] != p.Header[3] {
-        		user[m.Header[0]] = p
-        		p.Data.Speech = "Performing task now."
-        	} else {
-        		p.Header[3] = 9999
+        	p.Header[0] = m.Header[0]
+        	p.Header[1] = m.Header[1]
+        	p.Header[2] = m.Header[2]
+   			p.Header[4] = float64(time.Now().UnixNano() / 1000000)
+    		p.Header[5] = 3
+        	switch m.Header[2] {
+        	case 2000:
+        		p.Data.Speech = "please select address, you can say recent, favorite, or nearby"
+        		p.Header[3] = 2000
+	        	for k, v := range address {
+	        		for _, item := range v {
+	        			if strings.Contains(m.Data.Query, item) {
+	        				entityback := make(map[string]interface{})
+	        				entityback["address"] = k
+	        				p.Data.Entity = entityback
+	        				p.Data.Speech = "Any fillings?"
+	        				user[m.Header[0]] = p
+	        				p.Data.Speech = "Performing task now"
+	        				p.Header[3] = 1100
+	        			}
+	        		}
+	        	}
+	        	if strings.Contains(m.Data.Query, "cancel") {
+	        		p.Header[3] = 100
+	        		p.Data.Speech = "Okay, Cancel ordering"
+	        	}
+	        case 1100:
+	        	for k, v := range fillings {
+	        		for _, item := range v {
+	        			if strings.Contains(m.Data.Query, item) {
+	        				fmt.Println(k)
+	        			} 
+	        		}
+	        	}
+        	default:
+	        	s, i, e, _ := DetectIntentText("chipotle-flat", "123", m.Data.Query, "en")
+	        	p.Header, p.Data.Speech, p.Data.Entity, _ = HeaderProcess(m.Header, i, s, e)
+	        	if p.Header[2] != p.Header[3] {
+	        		user[m.Header[0]] = p
+	        		p.Data.Speech = "Performing task now."
+	        	} else {
+	        		p.Header[3] = 9999
+	        	}
         	}
         	b, _ := json.Marshal(p)
-        	fmt.Printf(string(b))
-    		err = c.WriteMessage(mt, b)
+	        fmt.Printf(string(b))
+	    	err = c.WriteMessage(mt, b)
 
 			if err != nil {
 				log.Println("write:", err)
 				break
 			}
         }
-        // s, i, e, _ := DetectIntentText("chipotle-flat", "123", m.Data.Query, "en")
-        // user[m.Header[0]] = m.Header[2]
-        //fmt.Println(user)
-        // var p Output
-        // p.Header, p.Data.Speech, p.Data.Entity, _ = HeaderProcess(m.Header, i, s, e)
-        // b, _ := json.Marshal(p)
-        //fmt.Println(string(b))
-		// err = c.WriteMessage(mt, b)
-
-		// if err != nil {
-		// 	log.Println("write:", err)
-		// 	break
-		// }
 	}
 }
 
