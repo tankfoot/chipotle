@@ -186,47 +186,11 @@ func HeaderProcess(headerIn [6]float64, intent string, speech string, entity map
 
     switch intent {
     case "chipotle.burrito":
-        switch speech {
-        // case "address":
-        //     headerOut[3] = 2000
-        //     talkback = "please select address, you can say recent, favorite, or nearby"
-        //     entityback["ordertype"] = "burrito"
-        //     entityback["address"] = entity["address"]
-        //     entity = entityback
-        // case "fillings":
-        //     headerOut[3] = 1100
-        //     entityback["ordertype"] = "burrito"
-        //     entityback["address"] = entity["address"]
-        //     entity = entityback
-        //     talkback = "which fillings do you want?"
-        // case "rice":
-        //     headerOut[3] = 1110
-        //     talkback = "fillings added, Any rice?"
-        // case "beans":
-        //     headerOut[3] = 1120
-        //     talkback = "Any beans?"
-        // case "toppings":
-        //     headerOut[3] = 1130
-        //     talkback = "Any toppings?"
-        // case "sides":
-        //     headerOut[3] = 1140
-        //     talkback = "Any sides?"
-        // case "drinks":
-        //     headerOut[3] = 1150
-        //     talkback = "Any drinks?"
-        // case "Done":
-        //     headerOut[3] = 1160
-        //     talkback = "Okay, Do you want to add item to cart"
-        default:
-            talkback = "please select address, you can say recent, favorite, or nearby"
-            headerOut[3] = 2000
-            entityback["ordertype"] = "burrito"
-        	entityback["address"] = entity["address"]
-            entity = entityback
-        }
-    case "chipotle.burrito - yes": 
-        headerOut[3] = 1900
-        talkback = speech
+        talkback = "please select address, you can say recent, favorite, or nearby"
+        headerOut[3] = 2000
+        entityback["ordertype"] = "burrito"
+        entityback["address"] = entity["address"]
+        entity = entityback
     case "chipotle.bowl":
         switch speech {
         case "address":
@@ -443,6 +407,9 @@ func HeaderProcess(headerIn [6]float64, intent string, speech string, entity map
     case "chipotle.confirm - yes":
         headerOut[3] = 7000
         talkback = speech
+    case "chipotle.cancel":
+        headerOut[3] = 0
+        talkback = speech
     default:
     	headerOut[3] = headerOut[2]
         talkback = speech
@@ -524,7 +491,7 @@ func echo(w http.ResponseWriter, r *http.Request) {
 	        		}
 	        	}
 	        	if strings.Contains(m.Data.Query, "cancel") {
-	        		p.Header[3] = 100
+	        		p.Header[3] = 0
 	        		p.Data.Speech = "Okay, Cancel ordering"
 	        	}
 	        case 1100:
@@ -608,7 +575,7 @@ func echo(w http.ResponseWriter, r *http.Request) {
 	        		}
 	        	}
 	        	if strings.Contains(m.Data.Query, "cancel") {
-	        		p.Header[3] = 100
+	        		p.Header[3] = 0
 	        		p.Data.Speech = "Okay, Cancel ordering"
 	        	}
 	        case 1140:
@@ -633,7 +600,7 @@ func echo(w http.ResponseWriter, r *http.Request) {
 	        		p.Data.Speech = "Any drinks?"
 	        	}
 	        	if strings.Contains(m.Data.Query, "cancel") {
-	        		p.Header[3] = 100
+	        		p.Header[3] = 0
 	        		p.Data.Speech = "Okay, Cancel ordering"
 	        	}
 	        case 1150:
@@ -658,8 +625,8 @@ func echo(w http.ResponseWriter, r *http.Request) {
 	        		p.Data.Speech = "Do you want to add item to cart?"
 	        	}
 	        	if strings.Contains(m.Data.Query, "cancel") {
-	        		p.Header[3] = 100
-	        		p.Data.Speech = "Okay, Cancel ordering"
+	        		p.Header[3] = 0
+	        		p.Data.Speech = "Okay, Cancelled"
 	        	}
 	        case 1160:
 	        	p.Data.Speech = "Do you want to add item to cart?"
@@ -675,9 +642,9 @@ func echo(w http.ResponseWriter, r *http.Request) {
 	        		p.Data.Speech = "Sure please tell me when you ready."
 	        	}
 	        	if strings.Contains(m.Data.Query, "cancel") {
-	        		p.Header[3] = 100
-	        		p.Data.Speech = "Okay, Cancel ordering"
-	        	}	        
+	        		p.Header[3] = 0
+	        		p.Data.Speech = "Okay, Cancelled"
+	        	}        
         	default:
 	        	s, i, e, _ := DetectIntentText("chipotle-flat", "123", m.Data.Query, "en")
 	        	p.Header, p.Data.Speech, p.Data.Entity, _ = HeaderProcess(m.Header, i, s, e)
