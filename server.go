@@ -668,7 +668,7 @@ func echo(w http.ResponseWriter, r *http.Request) {
 	        		p.Data.Speech = "Okay, item add to cart"
 	        		user[m.Header[0]] = p
 	        		p.Data.Speech = "selecting"
-	        		p.Header[3] = 1190
+	        		p.Header[3] = 1900
 	        	}
 	        	if strings.Contains(m.Data.Query, "no") {
 	        		p.Header[3] = 9999
