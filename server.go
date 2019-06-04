@@ -124,7 +124,9 @@ var sides = map[string][]string{
 }
 
 var drinks = map[string][]string{
-	"bottles water": []string{"bottled water", "water"},
+	"bottled water": []string{"bottled water"},
+	"22 fl oz soda/iced tea": []string{"small soda"},
+	"32 fl oz soda/iced tea": []string{"large soda"},
 }
 
 var user = map[float64]Output{}
