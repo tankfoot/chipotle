@@ -192,39 +192,11 @@ func HeaderProcess(headerIn [6]float64, intent string, speech string, entity map
         entityback["address"] = entity["address"]
         entity = entityback
     case "chipotle.bowl":
-        switch speech {
-        case "address":
-            headerOut[3] = 2000
-            talkback = "please select address, you can say recent, favorite, or nearby"
-            entityback["ordertype"] = "bowl"
-            entityback["address"] = entity["address"]
-            entity = entityback
-        case "fillings":
-            headerOut[3] = 1200
-            entityback["ordertype"] = "bowl" 
-            entity = entityback
-            talkback = "which fillings do you want?"
-        case "rice":
-            headerOut[3] = 1210
-            talkback = "Any rice?"
-        case "beans":
-            headerOut[3] = 1220
-            talkback = "Any beans?"
-        case "toppings":
-            headerOut[3] = 1230
-            talkback = "Any toppings?"
-        case "sides":
-            headerOut[3] = 1240
-            talkback = "Any sides?"
-        case "drinks":
-            headerOut[3] = 1250
-            talkback = "Any drinks?"
-        case "Done":
-            headerOut[3] = 1260
-            talkback = "Okay, Do you want to add item to cart"
-        default:
-            talkback = speech
-        }
+        talkback = "please select address, you can say recent, favorite, or nearby"
+        headerOut[3] = 2000
+        entityback["ordertype"] = "bowl"
+        entityback["address"] = entity["address"]
+        entity = entityback
     case "chipotle.bowl - yes": 
         headerOut[3] = 1900
         talkback = speech
@@ -648,7 +620,9 @@ func echo(w http.ResponseWriter, r *http.Request) {
         	default:
 	        	s, i, e, _ := DetectIntentText("chipotle-flat", "123", m.Data.Query, "en")
 	        	p.Header, p.Data.Speech, p.Data.Entity, _ = HeaderProcess(m.Header, i, s, e)
-	        	if p.Header[2] != p.Header[3] {
+	        	if strings.Contains(p.Data.Speech, "cancel"){
+	        		p.Header[3] = 0
+	        	} else if p.Header[2] != p.Header[3] {
 	        		user[m.Header[0]] = p
 	        		p.Data.Speech = "Performing task now."
 	        	} else {
