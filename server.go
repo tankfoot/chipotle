@@ -503,19 +503,19 @@ func echo(w http.ResponseWriter, r *http.Request) {
         	p.Header[2] = m.Header[2]
    			p.Header[4] = float64(time.Now().UnixNano() / 1000000)
     		p.Header[5] = 3
+    		entityback := make(map[string]interface{})
         	switch m.Header[2] {
         	case 2000:
         		p.Data.Speech = "please select address, you can say recent, favorite, or nearby"
         		p.Header[3] = 2000
 	        	for k, v := range address {
 	        		for _, item := range v {
-	        			if strings.Contains(m.Data.Query, item) {
-	        				entityback := make(map[string]interface{})
+	        			if strings.Contains(m.Data.Query, item) {   
 	        				entityback["address"] = k
 	        				p.Data.Entity = entityback
-	        				p.Data.Speech = "Any fillings?"
+	        				p.Data.Speech = "Choose your meat or veggie"
 	        				user[m.Header[0]] = p
-	        				p.Data.Speech = "Performing task now"
+	        				p.Data.Speech = "selecting"
 	        				p.Header[3] = 1100
 	        			}
 	        		}
@@ -525,12 +525,25 @@ func echo(w http.ResponseWriter, r *http.Request) {
 	        		p.Data.Speech = "Okay, Cancel ordering"
 	        	}
 	        case 1100:
+	        	p.Data.Speech = "Choose your meat or veggie"
+	        	p.Header[3] = 1100
+	        	var s []string
 	        	for k, v := range fillings {
 	        		for _, item := range v {
 	        			if strings.Contains(m.Data.Query, item) {
-	        				fmt.Println(k)
+	        				s = append(s, k)
+	        				entityback["fillings"] = s
+	        			    p.Data.Entity = entityback
+	        			    p.Data.Speech = "Now add your rice"
+	        				user[m.Header[0]] = p
+	        				p.Data.Speech = "selecting"
+	        				p.Header[3] = 1110
 	        			} 
 	        		}
+	        	}
+	        	if strings.Contains(m.Data.Query, "cancel") {
+	        		p.Header[3] = 100
+	        		p.Data.Speech = "Okay, Cancel ordering"
 	        	}
         	default:
 	        	s, i, e, _ := DetectIntentText("chipotle-flat", "123", m.Data.Query, "en")
