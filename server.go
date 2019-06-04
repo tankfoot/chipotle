@@ -59,17 +59,6 @@ type Output struct {
     Data DataOutput `json:"data"`
 }
 
-//const letterBytes = "abcdefghijklmnopqrstuvwxyz1234567890"
-
-// func RandStringBytes(n int) string {
-// 	b := make([]byte, n)
-// 	l := len(letterBytes)
-// 	for i := range b {
-// 		b[i] = letterBytes[rand.Intn(l)]
-// 	}
-// 	return string(b)
-// }
-
 var ordertype = map[string][]string{
 	"burrito": []string{"burrito"},
 	"burrito bowl": []string{"bowl", "burrito bowl"},
@@ -521,7 +510,7 @@ func echo(w http.ResponseWriter, r *http.Request) {
         	switch m.Header[2] {
         	case 2000:
         		p.Data.Speech = "please select address, you can say recent, favorite, or nearby"
-        		p.Header[3] = 2000
+        		p.Header[3] = 9999
 	        	for k, v := range address {
 	        		for _, item := range v {
 	        			if strings.Contains(m.Data.Query, item) {   
@@ -540,7 +529,7 @@ func echo(w http.ResponseWriter, r *http.Request) {
 	        	}
 	        case 1100:
 	        	p.Data.Speech = "Choose your meat or veggie"
-	        	p.Header[3] = 1100
+	        	p.Header[3] = 9999
 	        	var s []string
 	        	for k, v := range fillings {
 	        		for _, item := range v {
@@ -561,7 +550,7 @@ func echo(w http.ResponseWriter, r *http.Request) {
 	        	}
 	        case 1110:
 	        	p.Data.Speech = "Any rice?"
-	        	p.Header[3] = 1110
+	        	p.Header[3] = 9999
 	        	var s []string
 	        	for k, v := range rice {
 	        		for _, item := range v {
@@ -582,7 +571,7 @@ func echo(w http.ResponseWriter, r *http.Request) {
 	        	}
 	        case 1120:
 	        	p.Data.Speech = "Any beans?"
-	        	p.Header[3] = 1120
+	        	p.Header[3] = 9999
 	        	var s []string
 	        	for k, v := range beans {
 	        		for _, item := range v {
@@ -603,7 +592,7 @@ func echo(w http.ResponseWriter, r *http.Request) {
 	        	}
 	        case 1130:
 	        	p.Data.Speech = "Any toppings?"
-	        	p.Header[3] = 1130
+	        	p.Header[3] = 9999
 	        	var s []string
 	        	for k, v := range tops {
 	        		for _, item := range v {
@@ -624,7 +613,7 @@ func echo(w http.ResponseWriter, r *http.Request) {
 	        	}
 	        case 1140:
 	        	p.Data.Speech = "Any sides?"
-	        	p.Header[3] = 1140
+	        	p.Header[3] = 9999
 	        	var s []string
 	        	for k, v := range sides {
 	        		for _, item := range v {
@@ -649,7 +638,7 @@ func echo(w http.ResponseWriter, r *http.Request) {
 	        	}
 	        case 1150:
 	        	p.Data.Speech = "Any drinks?"
-	        	p.Header[3] = 1150
+	        	p.Header[3] = 9999
 	        	var s []string
 	        	for k, v := range drinks {
 	        		for _, item := range v {
@@ -674,7 +663,7 @@ func echo(w http.ResponseWriter, r *http.Request) {
 	        	}
 	        case 1160:
 	        	p.Data.Speech = "Do you want to add item to cart?"
-	        	p.Header[3] = 1160
+	        	p.Header[3] = 9999
 	        	if strings.Contains(m.Data.Query, "yes") {
 	        		p.Data.Speech = "Okay, item add to cart"
 	        		user[m.Header[0]] = p
