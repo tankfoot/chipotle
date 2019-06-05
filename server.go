@@ -532,7 +532,7 @@ func echo(w http.ResponseWriter, r *http.Request) {
 	        		}
 	        	}
 	        	if strings.Contains(m.Data.Query, "no") {
-	        		p.Header[3] = 1150
+	        		p.Header[3] = 9999
 	        		p.Data.Speech = "Any drinks?"
 	        	}
 	        	if strings.Contains(m.Data.Query, "cancel") {
@@ -557,7 +557,7 @@ func echo(w http.ResponseWriter, r *http.Request) {
 	        		}
 	        	}
 	        	if strings.Contains(m.Data.Query, "no") {
-	        		p.Header[3] = 1160
+	        		p.Header[3] = 9999
 	        		p.Data.Speech = "Do you want to add item to cart?"
 	        	}
 	        	if strings.Contains(m.Data.Query, "cancel") {
