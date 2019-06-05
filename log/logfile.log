@@ -1,0 +1,7 @@
+recv: {"header": [1111, 0, 100, 1559776445, 3, 0], "data": {"query": "can I order a burrito"}}
+sent: {"header":[1111,0,100,2000,1559776454836,3,0],"data":{"speech":"Performing task now.","entity":{"ordertype":"burrito"}}}
+recv: {"header": [1111, 0, 2000, 1559776445, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,2000,9999,1559776454836,3,0],"data":{"speech":"please select address, you can say recent, favorite, or nearby","entity":{"ordertype":"burrito"}}}
+recv: {"header": [1111, 0, 2000, 1559776445, 3, 0], "data": {"query": "recent"}}
+sent: {"header":[1111,0,2000,1100,1559776847112,3,0],"data":{"speech":"selecting","entity":{"address":"recent"}}}
+read: websocket: close 1000 (normal)

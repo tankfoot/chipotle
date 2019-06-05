@@ -10,6 +10,7 @@ import (
 	"flag"
 	"log"
     "fmt"
+    "os"
     "strings"
 	"net/http"
     "encoding/json"
@@ -368,7 +369,7 @@ func echo(w http.ResponseWriter, r *http.Request) {
 			log.Println("read:", err)
 			break
 		}
-		log.Printf("\nrecv: %s", message)
+		log.Printf("recv: %s", message)
 
         var m Message
         err1 := json.Unmarshal(message, &m)
@@ -384,12 +385,11 @@ func echo(w http.ResponseWriter, r *http.Request) {
         	if m.Data.Result == "actionFalse" {
         		r.Data.Speech = "Sorry I can't perform the action right Now."
         	} else if m.Data.Result == "actionTrue" {
-        		fmt.Println("Task performed")
         		r.Header[2] = r.Header[3]
         	} else if m.Data.Result == "pageWrong" {
         		r.Data.Speech = "Sorry you are in the wrong page"
         	} else if m.Data.Result == "itemNotFound: " {
-        		r.Data.Speech = "item not added"
+        		r.Data.Speech = ""
         	} else {
         		r.Data.Speech = "Something is wrong."
         	}
@@ -397,6 +397,7 @@ func echo(w http.ResponseWriter, r *http.Request) {
         	delete(user, m.Header[0])
         	b, _ := json.Marshal(r)
         	fmt.Printf(string(b))
+        	log.Printf("sent: %s", string(b))
     		err = c.WriteMessage(mt, b)
 
 			if err != nil {
@@ -605,6 +606,7 @@ func echo(w http.ResponseWriter, r *http.Request) {
         	}
         	b, _ := json.Marshal(p)
 	        fmt.Printf(string(b))
+	        log.Printf("sent: %s", string(b))
 	    	err = c.WriteMessage(mt, b)
 
 			if err != nil {
@@ -619,6 +621,13 @@ func main() {
 	flag.Parse()
 	log.SetFlags(0)
 	http.HandleFunc("/chipotle", echo)
+	f, err := os.OpenFile("log/logfile.log", os.O_RDWR | os.O_CREATE | os.O_APPEND, 0666)
+	if err != nil {
+	    log.Fatalf("error opening file: %v", err)
+	}
+	defer f.Close()
+
+	log.SetOutput(f)
 	//log.Fatal(http.ListenAndServe(*addr, nil))
     log.Fatal(http.ListenAndServe(":8080", nil))
 }
