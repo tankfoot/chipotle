@@ -388,6 +388,8 @@ func echo(w http.ResponseWriter, r *http.Request) {
         		r.Header[2] = r.Header[3]
         	} else if m.Data.Result == "pageWrong" {
         		r.Data.Speech = "Sorry you are in the wrong page"
+        	} else if m.Data.Result == "itemNotFound: " {
+        		r.Data.Speech = "item not added"
         	} else {
         		r.Data.Speech = "Something is wrong."
         	}
@@ -518,7 +520,9 @@ func echo(w http.ResponseWriter, r *http.Request) {
 	        		t := []string{""}
 	        		entityback["tops"] = t
 	        		p.Data.Entity = entityback
-	        		p.Data.Speech = "Any drinks?"
+	        		p.Data.Speech = "Any sides?"
+	        		user[m.Header[0]] = p
+	        		p.Data.Speech = "okay no sides"
 	        	}
 	        case 1140:
 	        	p.Data.Speech = "Any sides?"
