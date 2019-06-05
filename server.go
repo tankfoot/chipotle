@@ -513,6 +513,13 @@ func echo(w http.ResponseWriter, r *http.Request) {
 	        		p.Header[3] = 0
 	        		p.Data.Speech = "Okay, Cancel ordering"
 	        	}
+	        	if strings.Contains(m.Data.Query, "no") {
+	        		p.Header[3] = 1140
+	        		t := []string{""}
+	        		entityback["tops"] = t
+	        		p.Data.Entity = entityback
+	        		p.Data.Speech = "Any drinks?"
+	        	}
 	        case 1140:
 	        	p.Data.Speech = "Any sides?"
 	        	p.Header[3] = 9999
