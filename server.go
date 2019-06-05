@@ -83,25 +83,25 @@ var fillings = map[string][]string{
 }
 
 var beans = map[string][]string{
-	"black beans": []string{"black beans"},
-	"pinto beans": []string{"pinto beans"},
+	"black beans": []string{"black"},
+	"pinto beans": []string{"pinto"},
 	"no beans": []string{"no beans", "no"},
 }
 
 var rice = map[string][]string{
-	"brown rice" : []string{"brown rice"},
-	"white rice" : []string{"white rice"},
+	"brown rice" : []string{"brown"},
+	"white rice" : []string{"white"},
 	"no rice" : []string{"no rice", "no"},
 }
 
 var tops = map[string][]string{
-	"corn": []string{"corn", "corns"},
+	"corn": []string{"corn"},
 	"queso": []string{"queso"},
 	"lettuce": []string{"lettuce"},
 	"green chili": []string{"green chili"},
-	"fajita veggie": []string{"fajita veggie", "fajita"},
-	"tomato salsa": []string{"tomato salsa", "salsa"},
-	"guacamole": []string{"guacamole", "guac"},
+	"fajita veggie": []string{"fajita"},
+	"tomato salsa": []string{"salsa"},
+	"guacamole": []string{"guac"},
 	"cheese": []string{"cheese"},
 	"red chili": []string{"red chili"},
 	"tortilla": []string{"tortilla"},
@@ -189,54 +189,17 @@ func HeaderProcess(headerIn [6]float64, intent string, speech string, entity map
         talkback = "please select address, you can say recent, favorite, or nearby"
         headerOut[3] = 2000
         entityback["ordertype"] = "burrito"
-        entityback["address"] = entity["address"]
         entity = entityback
     case "chipotle.bowl":
         talkback = "please select address, you can say recent, favorite, or nearby"
         headerOut[3] = 2000
         entityback["ordertype"] = "bowl"
-        entityback["address"] = entity["address"]
         entity = entityback
-    case "chipotle.bowl - yes": 
-        headerOut[3] = 1900
-        talkback = speech
     case "chipotle.salad":
-        switch speech {
-        case "address":
-            headerOut[3] = 2000
-            talkback = "please select address, you can say recent, favorite, or nearby"
-            entityback["ordertype"] = "bowl"
-            entityback["address"] = entity["address"]
-            entity = entityback
-        case "fillings":
-            headerOut[3] = 1300
-            entityback["ordertype"] = "salad" 
-            entity = entityback
-            talkback = "which fillings do you want?"
-        case "rice":
-            headerOut[3] = 1310
-            talkback = "Any rice?"
-        case "beans":
-            headerOut[3] = 1320
-            talkback = "Any beans?"
-        case "toppings":
-            headerOut[3] = 1330
-            talkback = "Any toppings?"
-        case "sides":
-            headerOut[3] = 1340
-            talkback = "Any sides?"
-        case "drinks":
-            headerOut[3] = 1350
-            talkback = "Any drinks?"
-        case "Done":
-            headerOut[3] = 1360
-            talkback = "Okay, Do you want to add item to cart"
-        default:
-            talkback = speech
-        }
-    case "chipotle.salad - yes": 
-        headerOut[3] = 1900
-        talkback = speech
+        talkback = "please select address, you can say recent, favorite, or nearby"
+        headerOut[3] = 2000
+        entityback["ordertype"] = "salad"
+        entity = entityback
     case "chipotle.tacos":
         switch speech {
         case "address":
@@ -449,6 +412,7 @@ func echo(w http.ResponseWriter, r *http.Request) {
         	switch m.Header[2] {
         	case 2000:
         		p.Data.Speech = "please select address, you can say recent, favorite, or nearby"
+        		fmt.Println(m)
         		p.Header[3] = 9999
 	        	for k, v := range address {
 	        		for _, item := range v {
@@ -484,7 +448,7 @@ func echo(w http.ResponseWriter, r *http.Request) {
 	        		}
 	        	}
 	        	if strings.Contains(m.Data.Query, "cancel") {
-	        		p.Header[3] = 100
+	        		p.Header[3] = 0
 	        		p.Data.Speech = "Okay, Cancel ordering"
 	        	}
 	        case 1110:
@@ -505,7 +469,7 @@ func echo(w http.ResponseWriter, r *http.Request) {
 	        		}
 	        	}
 	        	if strings.Contains(m.Data.Query, "cancel") {
-	        		p.Header[3] = 100
+	        		p.Header[3] = 0
 	        		p.Data.Speech = "Okay, Cancel ordering"
 	        	}
 	        case 1120:
