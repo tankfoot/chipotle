@@ -95,16 +95,16 @@ var rice = map[string][]string{
 }
 
 var tops = map[string][]string{
-	"corn": []string{"corn"},
+	"roasted chili-corn salsa": []string{"corn"},
 	"queso": []string{"queso"},
-	"lettuce": []string{"lettuce"},
-	"green chili": []string{"green chili"},
-	"fajita veggie": []string{"fajita"},
-	"tomato salsa": []string{"salsa"},
+	"romaine lettuce": []string{"lettuce"},
+	"tomatillo-green chili salsa": []string{"green chili"},
+	"fajita veggies": []string{"fajita"},
+	"fresh tomato salsa": []string{"salsa"},
 	"guacamole": []string{"guac"},
 	"cheese": []string{"cheese"},
-	"red chili": []string{"red chili"},
-	"tortilla": []string{"tortilla"},
+	"tomatillo-red chili salsa": []string{"red chili"},
+	"double wrap with tortilla": []string{"tortilla"},
 	"sour cream": []string{"sour cream"},
 }
 
@@ -412,7 +412,6 @@ func echo(w http.ResponseWriter, r *http.Request) {
         	switch m.Header[2] {
         	case 2000:
         		p.Data.Speech = "please select address, you can say recent, favorite, or nearby"
-        		fmt.Println(m)
         		p.Header[3] = 9999
 	        	for k, v := range address {
 	        		for _, item := range v {
