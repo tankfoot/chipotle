@@ -382,17 +382,18 @@ func echo(w http.ResponseWriter, r *http.Request) {
         if val, ok := user[m.Header[0]]; ok {
         	var r Output
         	r = val
-        	if m.Data.Result == "actionFalse" {
-        		r.Data.Speech = "Sorry I can't perform the action right Now."
-        	} else if m.Data.Result == "actionTrue" {
-        		r.Header[2] = r.Header[3]
-        	} else if m.Data.Result == "pageWrong" {
-        		r.Data.Speech = "Sorry you are in the wrong page"
-        	} else if m.Data.Result == "itemNotFound: " {
-        		r.Data.Speech = ""
-        	} else {
-        		r.Data.Speech = "Something is wrong."
-        	}
+	        switch m.Data.Result {
+	        case "actionFalse":
+	            r.Data.Speech = "Sorry I can't perform the action right Now."
+	        case "actionTrue":
+				r.Header[2] = r.Header[3]
+			case "pageWrong":
+				r.Data.Speech = "Sorry you are in the wrong page"
+	        case "itemNotFound: ":
+	            r.Data.Speech = ""
+	        default:
+	        	r.Data.Speech = "Error type not found"
+	        }
         	r.Header[3] = 9999
         	delete(user, m.Header[0])
         	b, _ := json.Marshal(r)
