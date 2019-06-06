@@ -388,7 +388,7 @@ func echo(w http.ResponseWriter, r *http.Request) {
 	        case "actionTrue":
 				r.Header[2] = r.Header[3]
 			case "pageWrong":
-				r.Data.Speech = "Sorry you are in the wrong page"
+				r.Data.Speech = fmt.Sprintf("Wrong page, go to level %d to perform action", int(r.Header[2]))
 	        case "itemNotFound: ":
 	            r.Data.Speech = ""
 	        default:
@@ -397,7 +397,7 @@ func echo(w http.ResponseWriter, r *http.Request) {
         	r.Header[3] = 9999
         	delete(user, m.Header[0])
         	b, _ := json.Marshal(r)
-        	fmt.Printf(string(b))
+        	fmt.Println(string(b))
         	log.Printf("sent: %s", string(b))
     		err = c.WriteMessage(mt, b)
 
@@ -606,7 +606,7 @@ func echo(w http.ResponseWriter, r *http.Request) {
 	        	}
         	}
         	b, _ := json.Marshal(p)
-	        fmt.Printf(string(b))
+	        fmt.Println(string(b))
 	        log.Printf("sent: %s", string(b))
 	    	err = c.WriteMessage(mt, b)
 

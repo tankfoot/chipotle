@@ -17,3 +17,25 @@ sent: {"header":[1111,0,2000,9999,1559784062760,3,0],"data":{"speech":"please se
 recv: {"header": [1111, 0, 2000, 1559784053, 3, 0], "data": {"query": "recent"}}
 sent: {"header":[1111,0,2000,1100,1559784107328,3,0],"data":{"speech":"selecting","entity":{"address":"recent"}}}
 read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 100, 1559860968, 3, 0], "data": {"query": "I want to have a burrito"}}
+sent: {"header":[1111,0,100,2000,1559860976348,3,0],"data":{"speech":"Performing task now.","entity":{"ordertype":"burrito"}}}
+recv: {"header": [1111, 0, 5000, 1559860968, 3, 0], "data": {"result": "pageWrong"}}
+sent: {"header":[1111,0,100,9999,1559860976348,3,0],"data":{"speech":"Wrong page, your current page is %!d(float64=5000)","entity":{"ordertype":"burrito"}}}
+recv: {"header": [1111, 0, 100, 1559861121, 3, 0], "data": {"query": "i want to have a burrito"}}
+sent: {"header":[1111,0,100,2000,1559861130763,3,0],"data":{"speech":"Performing task now.","entity":{"ordertype":"burrito"}}}
+recv: {"header": [1111, 0, 5000, 1559861121, 3, 0], "data": {"result": "pageWrong"}}
+sent: {"header":[1111,0,100,9999,1559861130763,3,0],"data":{"speech":"Wrong page, your current page is 5000.000000","entity":{"ordertype":"burrito"}}}
+recv: {"header": [1111, 0, 100, 1559861227, 3, 0], "data": {"query": "i want to have a burrito"}}
+sent: {"header":[1111,0,100,2000,1559861247240,3,0],"data":{"speech":"Performing task now.","entity":{"ordertype":"burrito"}}}
+recv: {"header": [1111, 0, 5000, 1559861227, 3, 0], "data": {"result": "pageWrong"}}
+sent: {"header":[1111,0,100,9999,1559861247240,3,0],"data":{"speech":"Wrong page, your current page is 5000","entity":{"ordertype":"burrito"}}}
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 5000, 1559862578, 3, 0], "data": {"query": "confirm details"}}
+sent: {"header":[1111,0,5000,6000,1559862682985,3,0],"data":{"speech":"Performing task now.","entity":{"payment":"","time":""}}}
+recv: {"header": [1111, 0, 1000, 1559862578, 3, 0], "data": {"result": "pageWrong"}}
+sent: {"header":[1111,0,5000,9999,1559862682985,3,0],"data":{"speech":"Wrong page, go to level 1000 to perform action","entity":{"payment":"","time":""}}}
+recv: {"header": [1111, 0, 5000, 1559862715, 3, 0], "data": {"query": "confirm details"}}
+sent: {"header":[1111,0,5000,6000,1559862823735,3,0],"data":{"speech":"Performing task now.","entity":{"payment":"","time":""}}}
+recv: {"header": [1111, 0, 1000, 1559862715, 3, 0], "data": {"result": "pageWrong"}}
+sent: {"header":[1111,0,5000,9999,1559862823735,3,0],"data":{"speech":"Wrong page, go to level 5000 to perform action","entity":{"payment":"","time":""}}}
+read: websocket: close 1000 (normal)
