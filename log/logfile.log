@@ -39,3 +39,156 @@ sent: {"header":[1111,0,5000,6000,1559862823735,3,0],"data":{"speech":"Performin
 recv: {"header": [1111, 0, 1000, 1559862715, 3, 0], "data": {"result": "pageWrong"}}
 sent: {"header":[1111,0,5000,9999,1559862823735,3,0],"data":{"speech":"Wrong page, go to level 5000 to perform action","entity":{"payment":"","time":""}}}
 read: websocket: close 1000 (normal)
+recv: {"header": [1111, 1, 1, 1560236391, 3, 0], "data": {"query": "hello"}}
+sent: {"header":[1111,1,1,9999,1560236399033,3,0],"data":{"speech":"Hello, this is Chipotle.","entity":{}}}
+recv: {"header": [1111, 100, 100, 1560236391, 3, 0], "data": {"query": "hello"}}
+sent: {"header":[1111,100,100,9999,1560236413544,3,0],"data":{"speech":"Hello, this is Chipotle.","entity":{}}}
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 1000, 1560236426, 3, 0], "data": {"query": "hello"}}
+sent: {"header":[1111,0,1000,9999,1560236430406,3,0],"data":{"speech":"Hello, this is Chipotle.","entity":{}}}
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 1000, 1560236440, 3, 0], "data": {"query": "can I order a burrito"}}
+sent: {"header":[1111,0,1000,2000,1560236448592,3,0],"data":{"speech":"Performing task now.","entity":{"ordertype":"burrito"}}}
+recv: {"header": [1111, 0, 2000, 1560236440, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,2000,9999,1560236448592,3,0],"data":{"speech":"please select address, you can say recent, favorite, or nearby","entity":{"ordertype":"burrito"}}}
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 1000, 1560293634, 3, 0], "data": {"query": "can I order a burrito"}}
+sent: {"header":[1111,0,1000,2000,1560293642229,3,0],"data":{"speech":"Performing task now.","entity":{"ordertype":"burrito"}}}
+recv: {"header": [1111, 0, 2000, 1560293634, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,2000,9999,1560293642229,3,0],"data":{"speech":"please select address, you can say recent, favorite, or nearby","entity":{"ordertype":"burrito"}}}
+recv: {"header": [1111, 0, 1000, 1560293634, 3, 0], "data": {"query": "recent"}}
+sent: {"header":[1111,0,1000,3000,1560293805655,3,0],"data":{"speech":"Performing task now.","entity":{}}}
+recv: {"header": [1111, 0, 1100, 1560293634, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,3000,9999,1560293805655,3,0],"data":{"speech":"Okay, here is your recent order, which one do you like to choose?","entity":{}}}
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 1100, 1560293900, 3, 0], "data": {"query": "hello"}}
+sent: {"header":[1111,0,1100,9999,1560293908894,3,0],"data":{"speech":"Choose your meat or veggie","entity":null}}
+recv: {"header": [1111, 0, 1100, 1560293900, 3, 0], "data": {"result": "hello"}}
+sent: {"header":[1111,0,1100,9999,1560294054369,3,0],"data":{"speech":"Choose your meat or veggie","entity":null}}
+recv: {"header": [1111, 0, 1100, 1560293900, 3, 0], "data": {"query": "chicken"}}
+sent: {"header":[1111,0,1100,9999,1560294085689,3,0],"data":{"speech":"Choose your meat or veggie","entity":null}}
+recv: {"header": [1111, 0, 1100, 1560293900, 3, 0], "data": {"result": "chicken"}}
+sent: {"header":[1111,0,1100,9999,1560294098154,3,0],"data":{"speech":"Choose your meat or veggie","entity":null}}
+recv: {"header": [1111, 0, 1100, 1560293900, 3, 0], "data": {"query": "chicken"}}
+sent: {"header":[1111,0,1100,9999,1560294103588,3,0],"data":{"speech":"Choose your meat or veggie","entity":null}}
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 1100, 1560294216, 3, 0], "data": {"query": "hello"}}
+sent: {"header":[1111,0,1100,9999,1560294219386,3,0],"data":{"speech":"Choose your meat or veggie","entity":null}}
+recv: {"header": [1111, 0, 1100, 1560294216, 3, 0], "data": {"result": "hello"}}
+sent: {"header":[1111,0,1100,9999,1560294229679,3,0],"data":{"speech":"Choose your meat or veggie","entity":null}}
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 1100, 1560294304, 3, 0], "data": {"query": "hello"}}
+sent: {"header":[1111,0,1100,9999,1560294307103,3,0],"data":{"speech":"Choose your meat or veggie","entity":null}}
+recv: {"header": [1111, 0, 1100, 1560294304, 3, 0], "data": {"result": "hello"}}
+sent: {"header":[1111,0,1100,9999,1560294316609,3,0],"data":{"speech":"Choose your meat or veggie","entity":null}}
+recv: {"header": [1111, 0, 1100, 1560294815, 3, 0], "data": {"query": "hello"}}
+sent: {"header":[1111,0,1100,9999,1560294818536,3,0],"data":{"speech":"Choose your meat or veggie","entity":null}}
+recv: {"header": [1111, 0, 1100, 1560294815, 3, 0], "data": {"result": "hello"}}
+sent: {"header":[1111,0,1100,9999,1560294827174,3,0],"data":{"speech":"Choose your meat or veggie","entity":null}}
+recv: {"header": [1111, 0, 1100, 1560294815, 3, 0], "data": {"query": "chicken"}}
+sent: {"header":[1111,0,1100,9999,1560294847706,3,0],"data":{"speech":"Choose your meat or veggie","entity":null}}
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 1100, 1560294898, 3, 0], "data": {"query": "hello"}}
+sent: {"header":[1111,0,1100,9999,1560294901753,3,0],"data":{"speech":"Choose your meat or veggie","entity":null}}
+recv: {"header": [1111, 0, 1100, 1560294898, 3, 0], "data": {"result": "hello"}}
+sent: {"header":[1111,0,1100,9999,1560294907725,3,0],"data":{"speech":"Choose your meat or veggie","entity":null}}
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 1100, 1560294936, 3, 0], "data": {"query": "hello"}}
+sent: {"header":[1111,0,1100,9999,1560294941712,3,0],"data":{"speech":"Choose your meat or veggie","entity":null}}
+recv: {"header": [1111, 0, 1100, 1560294936, 3, 0], "data": {"result": "hello"}}
+sent: {"header":[1111,0,1100,9999,1560294950926,3,0],"data":{"speech":"Choose your meat or veggie","entity":null}}
+recv: {"header": [1111, 0, 1100, 1560295236, 3, 0], "data": {"query": "hello"}}
+sent: {"header":[1111,0,1100,9999,1560295238435,3,0],"data":{"speech":"Choose your meat or veggie","entity":null}}
+recv: {"header": [1111, 0, 1100, 1560295236, 3, 0], "data": {"result": "hello"}}
+sent: {"header":[1111,0,1100,0,1560295244172,3,0],"data":{"speech":"","entity":null}}
+recv: {"header": [1111, 0, 1100, 1560295236, 3, 0], "data": {"query": "chicken"}}
+sent: {"header":[1111,0,1100,0,1560295995209,3,0],"data":{"speech":"selecting","entity":{"fillings":["chicken"]}}}
+recv: {"header": [1111, 0, 1100, 1560295236, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,0,9999,1560295995209,3,0],"data":{"speech":"Now add your rice and beans","entity":{"fillings":["chicken"]}}}
+read: websocket: close 1000 (normal)
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 1000, 1560296929, 3, 0], "data": {"query": "hello"}}
+sent: {"header":[1111,0,1000,9999,1560296946740,3,0],"data":{"speech":"Hello, this is Chipotle.","entity":{}}}
+recv: {"header": [1111, 0, 1100, 1560296929, 3, 0], "data": {"result": "hello"}}
+sent: {"header":[1111,0,1100,9999,1560297055703,3,0],"data":{"speech":"Choose your meat or veggie","entity":null}}
+recv: {"header": [1111, 0, 1100, 1560296929, 3, 0], "data": {"query": "chicken and steak"}}
+sent: {"header":[1111,0,1100,0,1560297078789,3,0],"data":{"speech":"selecting","entity":{"fillings":["chicken","steak"]}}}
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 100, 1560297112, 3, 0], "data": {"query": "hello"}}
+sent: {"header":[1111,0,100,9999,1560297127238,3,0],"data":{"speech":"Hello, this is Chipotle.","entity":{}}}
+recv: {"header": [1111, 0, 100, 1560297112, 3, 0], "data": {"result": "hello"}}
+sent: {"header":[1111,0,100,9999,1560297146050,3,0],"data":{"speech":"","entity":null}}
+recv: {"header": [1111, 0, 1100, 1560297112, 3, 0], "data": {"query": "chicken"}}
+sent: {"header":[1111,0,1100,9999,1560297193518,3,0],"data":{"speech":"Choose your meat or veggie","entity":null}}
+recv: {"header": [1111, 0, 1100, 1560297112, 3, 0], "data": {"result": "hello"}}
+sent: {"header":[1111,0,1100,1100,1560297203980,3,0],"data":{"speech":"","entity":null}}
+recv: {"header": [1111, 0, 1100, 1560297112, 3, 0], "data": {"query": "chicken"}}
+sent: {"header":[1111,0,1100,1100,1560297217672,3,0],"data":{"speech":"selecting","entity":{"fillings":["chicken"]}}}
+recv: {"header": [1111, 0, 1100, 1560297112, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,0,9999,1560297217672,3,0],"data":{"speech":"Now add your rice and beans","entity":{"fillings":["chicken"]}}}
+recv: {"header": [1111, 0, 1100, 1560297112, 3, 0], "data": {"query": "hello"}}
+sent: {"header":[1111,0,1100,0,1560297240982,3,0],"data":{"speech":"Now add your rice and beans","entity":null}}
+recv: {"header": [1111, 0, 1100, 1560297112, 3, 0], "data": {"result": "black beans and white rice"}}
+sent: {"header":[1111,0,1100,0,1560297252322,3,0],"data":{"speech":"Now add your rice and beans","entity":null}}
+recv: {"header": [1111, 0, 1100, 1560297112, 3, 0], "data": {"query": "hello"}}
+sent: {"header":[1111,0,1100,0,1560300764082,3,0],"data":{"speech":"Now add your rice and beans","entity":null}}
+recv: {"header": [1111, 0, 1100, 1560297112, 3, 0], "data": {"result": "hello"}}
+sent: {"header":[1111,0,1100,0,1560300774904,3,0],"data":{"speech":"Now add your rice and beans","entity":null}}
+recv: {"header": [1111, 0, 1100, 1560297112, 3, 0], "data": {"query": "black beans and white rice"}}
+sent: {"header":[1111,0,1100,1130,1560300788179,3,0],"data":{"speech":"selecting","entity":{"beans":["white rice","black beans"],"rice":["white rice"]}}}
+recv: {"header": [1111, 0, 1100, 1560370833, 3, 0], "data": {"query": "hello"}}
+sent: {"header":[1111,0,1100,9999,1560370838988,3,0],"data":{"speech":"Choose your meat or veggie","entity":null}}
+recv: {"header": [1111, 0, 1100, 1560370833, 3, 0], "data": {"result": "chicken"}}
+sent: {"header":[1111,0,1100,1100,1560370849326,3,0],"data":{"speech":"","entity":null}}
+recv: {"header": [1111, 0, 1100, 1560370833, 3, 0], "data": {"query": "chicken"}}
+sent: {"header":[1111,0,1100,1100,1560370854951,3,0],"data":{"speech":"selecting","entity":{"fillings":["chicken"]}}}
+recv: {"header": [1111, 0, 1100, 1560370833, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,1100,9999,1560370854951,3,0],"data":{"speech":"Now add your rice and beans","entity":{"fillings":["chicken"]}}}
+recv: {"header": [1111, 0, 1100, 1560370833, 3, 0], "data": {"query": "white rice and black beans"}}
+sent: {"header":[1111,0,1100,1100,1560370905735,3,0],"data":{"speech":"selecting","entity":{"beans":["black beans"],"rice":["white rice"]}}}
+recv: {"header": [1111, 0, 1100, 1560370833, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,1100,9999,1560370905735,3,0],"data":{"speech":"Do you want to add salsa? Mild, medium, or hot?","entity":{"beans":["black beans"],"rice":["white rice"]}}}
+recv: {"header": [1111, 0, 1100, 1560372556, 3, 0], "data": {"query": "hello"}}
+sent: {"header":[1111,0,1100,9999,1560372563825,3,0],"data":{"speech":"Choose your meat or veggie","entity":null}}
+recv: {"header": [1111, 0, 1100, 1560372556, 3, 0], "data": {"result": "hello"}}
+sent: {"header":[1111,0,1100,1100,1560372570811,3,0],"data":{"speech":"","entity":null}}
+recv: {"header": [1111, 0, 1100, 1560372556, 3, 0], "data": {"query": "chicken and steak"}}
+sent: {"header":[1111,0,1100,1100,1560372583648,3,0],"data":{"speech":"selecting","entity":{"fillings":["chicken","steak"]}}}
+recv: {"header": [1111, 0, 1100, 1560372556, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,1100,9999,1560372583648,3,0],"data":{"speech":"Now add your rice and beans","entity":{"fillings":["chicken","steak"]}}}
+recv: {"header": [1111, 0, 1100, 1560372556, 3, 0], "data": {"query": "white rice and no beans"}}
+sent: {"header":[1111,0,1100,1100,1560372607722,3,0],"data":{"speech":"selecting","entity":{"beans":["no beans"],"rice":["white rice"]}}}
+recv: {"header": [1111, 0, 1100, 1560372556, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,1100,9999,1560372607722,3,0],"data":{"speech":"Do you want to add salsa? Mild, medium, or hot?","entity":{"beans":["no beans"],"rice":["white rice"]}}}
+recv: {"header": [1111, 0, 1100, 1560372556, 3, 0], "data": {"query": "medium"}}
+sent: {"header":[1111,0,1100,1140,1560372625048,3,0],"data":{"speech":"selecting","entity":{"tops":["tomatillo-green chili salsa"]}}}
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 1100, 1560372783, 3, 0], "data": {"query": "hello"}}
+sent: {"header":[1111,0,1100,9999,1560372786196,3,0],"data":{"speech":"Choose your meat or veggie","entity":null}}
+recv: {"header": [1111, 0, 1100, 1560372783, 3, 0], "data": {"result": "hello"}}
+sent: {"header":[1111,0,1100,1100,1560372796803,3,0],"data":{"speech":"","entity":null}}
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 100, 1560372805, 3, 0], "data": {"query": "i want to get a burrito"}}
+sent: {"header":[1111,0,100,2000,1560372814181,3,0],"data":{"speech":"Performing task now.","entity":{"ordertype":"burrito"}}}
+recv: {"header": [1111, 0, 2000, 1560372805, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,2000,9999,1560372814181,3,0],"data":{"speech":"please select address, you can say recent, favorite, or nearby","entity":{"ordertype":"burrito"}}}
+recv: {"header": [1111, 0, 2000, 1560372805, 3, 0], "data": {"query": "recent"}}
+sent: {"header":[1111,0,2000,1100,1560372829260,3,0],"data":{"speech":"selecting","entity":{"address":"recent"}}}
+recv: {"header": [1111, 0, 1100, 1560372805, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,9999,9999,1560372829260,3,0],"data":{"speech":"Choose your meat or veggie","entity":{"address":"recent"}}}
+recv: {"header": [1111, 0, 1100, 1560372805, 3, 0], "data": {"query": "hello"}}
+sent: {"header":[1111,0,1100,9999,1560373016631,3,0],"data":{"speech":"Choose your meat or veggie","entity":null}}
+recv: {"header": [1111, 0, 1100, 1560372805, 3, 0], "data": {"result": "fhjkds"}}
+sent: {"header":[1111,0,1100,1100,1560373022538,3,0],"data":{"speech":"","entity":null}}
+recv: {"header": [1111, 0, 1100, 1560372805, 3, 0], "data": {"query": "chicken"}}
+sent: {"header":[1111,0,1100,1100,1560373027635,3,0],"data":{"speech":"selecting","entity":{"fillings":["chicken"]}}}
+recv: {"header": [1111, 0, 1100, 1560372805, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,1100,9999,1560373027635,3,0],"data":{"speech":"Now add your rice and beans","entity":{"fillings":["chicken"]}}}
+recv: {"header": [1111, 0, 1100, 1560372805, 3, 0], "data": {"query": "white rice and black beans"}}
+sent: {"header":[1111,0,1100,1100,1560373053610,3,0],"data":{"speech":"selecting","entity":{"beans":["black beans"],"rice":["white rice"]}}}
+recv: {"header": [1111, 0, 1100, 1560372805, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,1100,9999,1560373053610,3,0],"data":{"speech":"Do you want to add salsa? Mild, medium, or hot?","entity":{"beans":["black beans"],"rice":["white rice"]}}}
+recv: {"header": [1111, 0, 1100, 1560372805, 3, 0], "data": {"query": "medium"}}
+sent: {"header":[1111,0,1100,1100,1560373067403,3,0],"data":{"speech":"selecting","entity":{"tops":["tomatillo-green chili salsa"]}}}
+recv: {"header": [1111, 0, 1100, 1560372805, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,1100,9999,1560373067403,3,0],"data":{"speech":"Any sides?","entity":{"tops":["tomatillo-green chili salsa"]}}}
