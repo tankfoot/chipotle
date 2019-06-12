@@ -448,6 +448,7 @@ func echo(w http.ResponseWriter, r *http.Request) {
 	        		p.Data.Speech = "Okay, Cancel ordering"
 	        	}
 	        case 1100:
+	        	userContext[m.Header[0]] = "fillings"
 	        	var s []string
 	        	if strings.Contains(m.Data.Query, "cancel") {
 	        		p.Header[3] = 0
@@ -467,6 +468,7 @@ func echo(w http.ResponseWriter, r *http.Request) {
 		        				user[m.Header[0]] = p
 		        				userContext[m.Header[0]] = "rice and beans"
 		        				p.Data.Speech = "selecting"
+		        				p.Header[3] = 1110
 		        			} 
 		        		}
 		        	}
@@ -496,6 +498,7 @@ func echo(w http.ResponseWriter, r *http.Request) {
 		        				user[m.Header[0]] = p
 		        				userContext[m.Header[0]] = "salsa"
 		        				p.Data.Speech = "selecting"
+		        				p.Header[3] = 1120
 		        			} 
 		        		}
 		        	}
@@ -511,6 +514,7 @@ func echo(w http.ResponseWriter, r *http.Request) {
 		        				user[m.Header[0]] = p
 		        				userContext[m.Header[0]] = "fillings_first"
 		        				p.Data.Speech = "selecting"
+		        				p.Header[3] = 1130
 		        			} 
 		        		}
 		        	}
