@@ -454,7 +454,7 @@ func echo(w http.ResponseWriter, r *http.Request) {
 	        		p.Data.Speech = "Okay, Cancel ordering"
 	        		userContext[m.Header[0]] = ""
 	        	}
-	        	p.Header[3] = 1100
+	        	p.Header[3] = 9999
 	        	switch userContext[m.Header[0]] {
 	            case "fillings":
 		        	for k, v := range fillings {
@@ -511,7 +511,6 @@ func echo(w http.ResponseWriter, r *http.Request) {
 		        				user[m.Header[0]] = p
 		        				userContext[m.Header[0]] = "fillings_first"
 		        				p.Data.Speech = "selecting"
-		        				p.Header[3] = 1100
 		        			} 
 		        		}
 		        	}
