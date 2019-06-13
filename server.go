@@ -62,8 +62,8 @@ type Output struct {
 
 var ordertype = map[string][]string{
 	"burrito": []string{"burrito"},
-	"burrito bowl": []string{"bowl", "burrito bowl"},
-	"tacos": []string{"tacos", "taco"},
+	"burrito bowl": []string{"bowl"},
+	"tacos": []string{"taco"},
 	"salad": []string{"salad"},
 	"kid's Meal": []string{"kid's meal ", "kid", "kids"},
 }
@@ -417,16 +417,22 @@ func echo(w http.ResponseWriter, r *http.Request) {
             case 100:
                 if strings.Contains(m.Data.Query, "pick up") {
                     p.Header[3] = 2000
-                    entityback["serviceType"] = "pick up"
+                    entityback["servicetype"] = "pick up"
                     p.Data.Entity = entityback
                     p.Data.Speech = "Which store do you want to pick up? you can say recent, favorite, or nearby"
                     user[m.Header[0]] = p
                     p.Data.Speech = "selecting"
                 } else if strings.Contains(m.Data.Query, "deliver") {
                     p.Header[3] = 2000
-                    entityback["serviceType"] = "deliver"
+                    entityback["servicetype"] = "deliver"
                     p.Data.Entity = entityback
                     p.Data.Speech = "What is your deliver address? you can say recent."
+                    user[m.Header[0]] = p
+                    p.Data.Speech = "selecting"
+                } else if strings.Contains(m.Data.Query, "menu") {
+                    p.Header[3] = 1000
+                    p.Data.Entity = entityback
+                    p.Data.Speech = "What item do you want, burrito, bowl or tacos?"
                     user[m.Header[0]] = p
                     p.Data.Speech = "selecting"
                 } else {
@@ -441,6 +447,24 @@ func echo(w http.ResponseWriter, r *http.Request) {
                         p.Header[3] = 9999
                         p.Data.Speech = "Hello, this is chipotle, Do you want to pick up in store or deliver to an address?"
                     }
+                }
+            case 1000:
+                p.Data.Speech = "what items do you want, burrito, bowl, or tacos?"
+                for k, v := range ordertype {
+                    for _, item := range v {
+                        if strings.Contains(m.Data.Query, item) {   
+                            entityback["ordertype"] = k
+                            p.Data.Entity = entityback
+                            p.Data.Speech = "Choose your meat or veggie"
+                            user[m.Header[0]] = p
+                            p.Data.Speech = "selecting"
+                            p.Header[3] = 1100
+                        }
+                    }
+                }
+                if strings.Contains(m.Data.Query, "cancel") {
+                    p.Header[3] = 0
+                    p.Data.Speech = "Okay, Cancel ordering"
                 }
         	case 2000:
         		p.Data.Speech = "please select address, you can say recent, favorite, or nearby"
