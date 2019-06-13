@@ -414,6 +414,34 @@ func echo(w http.ResponseWriter, r *http.Request) {
     		p.Header[5] = 3
     		entityback := make(map[string]interface{})
         	switch m.Header[2] {
+            case 100:
+                if strings.Contains(m.Data.Query, "pick up") {
+                    p.Header[3] = 2000
+                    entityback["serviceType"] = "pick up"
+                    p.Data.Entity = entityback
+                    p.Data.Speech = "Which store do you want to pick up? you can say recent, favorite, or nearby"
+                    user[m.Header[0]] = p
+                    p.Data.Speech = "selecting"
+                } else if strings.Contains(m.Data.Query, "deliver") {
+                    p.Header[3] = 2000
+                    entityback["serviceType"] = "deliver"
+                    p.Data.Entity = entityback
+                    p.Data.Speech = "What is your deliver address? you can say recent."
+                    user[m.Header[0]] = p
+                    p.Data.Speech = "selecting"
+                } else {
+                    s, i, e, _ := DetectIntentText("chipotle-flat", "123", m.Data.Query, "en")
+                    p.Header, p.Data.Speech, p.Data.Entity, _ = HeaderProcess(m.Header, i, s, e)
+                    if strings.Contains(p.Data.Speech, "cancel"){
+                        p.Header[3] = 0
+                    } else if p.Header[2] != p.Header[3] {
+                        user[m.Header[0]] = p
+                        p.Data.Speech = "Performing task now."
+                    } else {
+                        p.Header[3] = 9999
+                        p.Data.Speech = "Hello, this is chipotle, Do you want to pick up in store or deliver to an address?"
+                    }
+                }
         	case 2000:
         		p.Data.Speech = "please select address, you can say recent, favorite, or nearby"
         		p.Header[3] = 9999
