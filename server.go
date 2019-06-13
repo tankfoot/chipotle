@@ -95,6 +95,12 @@ var rice = map[string][]string{
 	"no rice" : []string{"no rice", "no"},
 }
 
+var salsa = map[string][]string{
+    "tomatillo-green chili salsa": []string{"green chili", "medium"},
+    "tomatillo-red chili salsa": []string{"red chili", "hot"},
+    "fresh tomato salsa": []string{"salsa", "mild"},
+}
+
 var tops = map[string][]string{
 	"roasted chili-corn salsa": []string{"corn"},
 	"queso": []string{"queso"},
@@ -475,9 +481,9 @@ func echo(w http.ResponseWriter, r *http.Request) {
 	        				entityback["address"] = k
 	        				p.Data.Entity = entityback
 	        				p.Data.Speech = "Choose your meat or veggie"
+                            p.Header[3] = 1100
 	        				user[m.Header[0]] = p
 	        				p.Data.Speech = "selecting"
-	        				p.Header[3] = 1100
 	        			}
 	        		}
 	        	}
@@ -496,9 +502,9 @@ func echo(w http.ResponseWriter, r *http.Request) {
 	        				entityback["fillings"] = s
 	        			    p.Data.Entity = entityback
 	        			    p.Data.Speech = "Now add your rice"
+                            p.Header[3] = 1110
 	        				user[m.Header[0]] = p
 	        				p.Data.Speech = "selecting"
-	        				p.Header[3] = 1110
 	        			} 
 	        		}
 	        	}
@@ -507,35 +513,48 @@ func echo(w http.ResponseWriter, r *http.Request) {
 	        		p.Data.Speech = "Okay, Cancel ordering"
 	        	}
 	        case 1110:
-	        	p.Data.Speech = "Any rice?"
+	        	p.Data.Speech = "Now add your rice and beans"
 	        	p.Header[3] = 9999
-	        	var s []string
+	        	var s_rice []string
+                var s_beans []string
 	        	for k, v := range rice {
 	        		for _, item := range v {
 	        			if strings.Contains(m.Data.Query, item) {
-	        				s = append(s, k)
-	        				entityback["rice"] = s
+	        				s_rice = append(s_rice, k)
+	        				entityback["rice"] = s_rice
 	        			    p.Data.Entity = entityback
-	        			    p.Data.Speech = "Any beans?"
+	        			    p.Data.Speech = "Do you want to add salsa? Mild, medium, or hot?"
 	        				user[m.Header[0]] = p
 	        				p.Data.Speech = "selecting"
-	        				p.Header[3] = 1120
 	        			} 
 	        		}
 	        	}
+                for k, v := range beans {
+                    for _, item := range v {
+                        if strings.Contains(m.Data.Query, item) {
+                            s_beans = append(s_beans, k)
+                            entityback["beans"] = s_beans
+                            p.Data.Entity = entityback
+                            p.Data.Speech = "Do you want to add salsa? Mild, medium, or hot?"
+                            user[m.Header[0]] = p
+                            p.Data.Speech = "selecting"
+                            p.Header[3] = 1120
+                        } 
+                    }
+                }
 	        	if strings.Contains(m.Data.Query, "cancel") {
 	        		p.Header[3] = 0
 	        		p.Data.Speech = "Okay, Cancel ordering"
 	        	}
 	        case 1120:
-	        	p.Data.Speech = "Any beans?"
+	        	p.Data.Speech = "Do you want to add salsa? Mild, medium, or hot?"
 	        	p.Header[3] = 9999
 	        	var s []string
-	        	for k, v := range beans {
+	        	for k, v := range salsa {
 	        		for _, item := range v {
 	        			if strings.Contains(m.Data.Query, item) {
 	        				s = append(s, k)
-	        				entityback["beans"] = s
+	        				entityback["tops"] = s
 	        			    p.Data.Entity = entityback
 	        			    p.Data.Speech = "Any toppings?"
 	        				user[m.Header[0]] = p
