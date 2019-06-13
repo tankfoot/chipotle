@@ -117,12 +117,16 @@ var tops = map[string][]string{
 
 var sides = map[string][]string{
 	"chips": []string{"chips"},
+    "tortilla on the side": []string{"tortilla"},
 }
 
 var drinks = map[string][]string{
-	"bottled water": []string{"bottled water"},
+	"bottled water": []string{"water"},
 	"22 fl oz soda/iced tea": []string{"small soda"},
 	"32 fl oz soda/iced tea": []string{"large soda"},
+    "pressed apple juice": []string{"apple juice"},
+    "blackberry izze": []string{"blackberry izze"},
+    "grapefruit izze": []string{"grapefruit izze"},
 }
 
 var user = map[float64]Output{}
@@ -591,9 +595,7 @@ func echo(w http.ResponseWriter, r *http.Request) {
 	        		p.Data.Speech = "Okay, Cancel ordering"
 	        	}
 	        	if strings.Contains(m.Data.Query, "no") {
-	        		p.Header[3] = 1140
-	        		t := []string{""}
-	        		entityback["tops"] = t
+	        		p.Header[3] = 9999
 	        		p.Data.Entity = entityback
 	        		p.Data.Speech = "how about sour cream, fajita veggies, cheese, and lettuce?"
 	        		user[m.Header[0]] = p
@@ -628,13 +630,13 @@ func echo(w http.ResponseWriter, r *http.Request) {
 	        	p.Data.Speech = "Do you want chips or tortilla as sides?"
 	        	p.Header[3] = 9999
 	        	var s []string
-	        	for k, v := range tops {
+	        	for k, v := range sides {
 	        		for _, item := range v {
 	        			if strings.Contains(m.Data.Query, item) {
 	        				s = append(s, k)
 	        				entityback["drinks"] = s
 	        			    p.Data.Entity = entityback
-	        			    p.Data.Speech = "Do you want to add item to cart?"
+	        			    p.Data.Speech = "Do you want fountain soda, or bottled juice?"
 	        				user[m.Header[0]] = p
 	        				p.Data.Speech = "selecting"
 	        				p.Header[3] = 1160
@@ -643,13 +645,38 @@ func echo(w http.ResponseWriter, r *http.Request) {
 	        	}
 	        	if strings.Contains(m.Data.Query, "no") {
 	        		p.Header[3] = 9999
-	        		p.Data.Speech = "Do you want to add item to cart?"
+	        		p.Data.Speech = "Do you want fountain soda, or bottled juice?"
 	        	}
 	        	if strings.Contains(m.Data.Query, "cancel") {
 	        		p.Header[3] = 0
 	        		p.Data.Speech = "Okay, Cancelled"
 	        	}
-	        case 1160:
+            case 1160:
+                p.Data.Speech = "Do you want fountain soda, or bottled juice?"
+                p.Header[3] = 9999
+                var s []string
+                for k, v := range drinks {
+                    for _, item := range v {
+                        if strings.Contains(m.Data.Query, item) {
+                            s = append(s, k)
+                            entityback["drinks"] = s
+                            p.Data.Entity = entityback
+                            p.Data.Speech = "Do you want to add item to cart?"
+                            user[m.Header[0]] = p
+                            p.Data.Speech = "selecting"
+                            p.Header[3] = 1170
+                        } 
+                    }
+                }
+                if strings.Contains(m.Data.Query, "no") {
+                    p.Header[3] = 9999
+                    p.Data.Speech = "Do you want to add item to cart?"
+                }
+                if strings.Contains(m.Data.Query, "cancel") {
+                    p.Header[3] = 0
+                    p.Data.Speech = "Okay, Cancelled"
+                }
+	        case 1170:
 	        	p.Data.Speech = "Do you want to add item to cart?"
 	        	p.Header[3] = 9999
 	        	if strings.Contains(m.Data.Query, "yes") {
