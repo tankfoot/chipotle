@@ -578,3 +578,6 @@ recv: {"header":[990012010464581, 1, 1160, 0, 3, 3], "data":{ "query":"yes"}}
 sent: {"header":[990012010464581,1,1160,1900,1560446421118,3,0],"data":{"speech":"selecting","entity":null}}
 recv: {"header":[990012010464581, 1, 5000, 1560446420, 3, 10], "data":{ "result":"actionTrue"}}
 sent: {"header":[990012010464581,1,9999,9999,1560446421118,3,0],"data":{"speech":"Okay, item add to cart","entity":null}}
+recv: {"header": [1111, 0, 1000, 1560447175, 3, 0], "data": {"query": "hello"}}
+sent: {"header":[1111,0,1000,9999,1560447180304,3,0],"data":{"speech":"Hello, this is Chipotle.","entity":{}}}
+read: websocket: close 1000 (normal)
