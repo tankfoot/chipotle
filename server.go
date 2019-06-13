@@ -456,6 +456,7 @@ func echo(w http.ResponseWriter, r *http.Request) {
                 }
             case 1000:
                 p.Data.Speech = "what items do you want, burrito, bowl, or tacos?"
+                p.Header[3] = 9999
                 for k, v := range ordertype {
                     for _, item := range v {
                         if strings.Contains(m.Data.Query, item) {   
@@ -501,7 +502,7 @@ func echo(w http.ResponseWriter, r *http.Request) {
 	        				s = append(s, k)
 	        				entityback["fillings"] = s
 	        			    p.Data.Entity = entityback
-	        			    p.Data.Speech = "Now add your rice"
+	        			    p.Data.Speech = "Now add your rice and beans"
                             p.Header[3] = 1110
 	        				user[m.Header[0]] = p
 	        				p.Data.Speech = "selecting"
@@ -526,6 +527,7 @@ func echo(w http.ResponseWriter, r *http.Request) {
 	        			    p.Data.Speech = "Do you want to add salsa? Mild, medium, or hot?"
 	        				user[m.Header[0]] = p
 	        				p.Data.Speech = "selecting"
+                            p.Header[3] = 1120
 	        			} 
 	        		}
 	        	}
@@ -556,10 +558,10 @@ func echo(w http.ResponseWriter, r *http.Request) {
 	        				s = append(s, k)
 	        				entityback["tops"] = s
 	        			    p.Data.Entity = entityback
-	        			    p.Data.Speech = "Any toppings?"
+	        			    p.Data.Speech = "Do you want queso, guac, or corn?"
+                            p.Header[3] = 1130
 	        				user[m.Header[0]] = p
 	        				p.Data.Speech = "selecting"
-	        				p.Header[3] = 1130
 	        			} 
 	        		}
 	        	}
@@ -568,7 +570,7 @@ func echo(w http.ResponseWriter, r *http.Request) {
 	        		p.Data.Speech = "Okay, Cancel ordering"
 	        	}
 	        case 1130:
-	        	p.Data.Speech = "Any toppings?"
+	        	p.Data.Speech = "Do you want queso, guac, or corn?"
 	        	p.Header[3] = 9999
 	        	var s []string
 	        	for k, v := range tops {
@@ -577,7 +579,7 @@ func echo(w http.ResponseWriter, r *http.Request) {
 	        				s = append(s, k)
 	        				entityback["tops"] = s
 	        			    p.Data.Entity = entityback
-	        			    p.Data.Speech = "Any sides?"
+	        			    p.Data.Speech = "how about sour cream, fajita veggies, cheese, and lettuce?"
 	        				user[m.Header[0]] = p
 	        				p.Data.Speech = "selecting"
 	        				p.Header[3] = 1140
@@ -593,40 +595,40 @@ func echo(w http.ResponseWriter, r *http.Request) {
 	        		t := []string{""}
 	        		entityback["tops"] = t
 	        		p.Data.Entity = entityback
-	        		p.Data.Speech = "Any sides?"
+	        		p.Data.Speech = "how about sour cream, fajita veggies, cheese, and lettuce?"
 	        		user[m.Header[0]] = p
 	        		p.Data.Speech = "okay no sides"
 	        	}
 	        case 1140:
-	        	p.Data.Speech = "Any sides?"
+	        	p.Data.Speech = "how about sour cream, fajita veggies, cheese, and lettuce?"
 	        	p.Header[3] = 9999
 	        	var s []string
-	        	for k, v := range sides {
+	        	for k, v := range tops {
 	        		for _, item := range v {
 	        			if strings.Contains(m.Data.Query, item) {
 	        				s = append(s, k)
 	        				entityback["sides"] = s
 	        			    p.Data.Entity = entityback
-	        			    p.Data.Speech = "Any drinks?"
+	        			    p.Data.Speech = "Do you want chips or tortilla as sides?"
+                            p.Header[3] = 1150
 	        				user[m.Header[0]] = p
 	        				p.Data.Speech = "selecting"
-	        				p.Header[3] = 1150
 	        			} 
 	        		}
 	        	}
 	        	if strings.Contains(m.Data.Query, "no") {
 	        		p.Header[3] = 9999
-	        		p.Data.Speech = "Any drinks?"
+	        		p.Data.Speech = "Do you want chips or tortilla as sides?"
 	        	}
 	        	if strings.Contains(m.Data.Query, "cancel") {
 	        		p.Header[3] = 0
 	        		p.Data.Speech = "Okay, Cancel ordering"
 	        	}
 	        case 1150:
-	        	p.Data.Speech = "Any drinks?"
+	        	p.Data.Speech = "Do you want chips or tortilla as sides?"
 	        	p.Header[3] = 9999
 	        	var s []string
-	        	for k, v := range drinks {
+	        	for k, v := range tops {
 	        		for _, item := range v {
 	        			if strings.Contains(m.Data.Query, item) {
 	        				s = append(s, k)
