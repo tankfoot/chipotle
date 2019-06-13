@@ -584,9 +584,9 @@ func echo(w http.ResponseWriter, r *http.Request) {
 	        				entityback["tops"] = s
 	        			    p.Data.Entity = entityback
 	        			    p.Data.Speech = "how about sour cream, fajita veggies, cheese, and lettuce?"
-	        				user[m.Header[0]] = p
-	        				p.Data.Speech = "selecting"
 	        				p.Header[3] = 1140
+                            user[m.Header[0]] = p
+	        				p.Data.Speech = "selecting"
 	        			} 
 	        		}
 	        	}
@@ -609,7 +609,7 @@ func echo(w http.ResponseWriter, r *http.Request) {
 	        		for _, item := range v {
 	        			if strings.Contains(m.Data.Query, item) {
 	        				s = append(s, k)
-	        				entityback["sides"] = s
+	        				entityback["top"] = s
 	        			    p.Data.Entity = entityback
 	        			    p.Data.Speech = "Do you want chips or tortilla as sides?"
                             p.Header[3] = 1150
@@ -634,12 +634,12 @@ func echo(w http.ResponseWriter, r *http.Request) {
 	        		for _, item := range v {
 	        			if strings.Contains(m.Data.Query, item) {
 	        				s = append(s, k)
-	        				entityback["drinks"] = s
+	        				entityback["sides"] = s
 	        			    p.Data.Entity = entityback
 	        			    p.Data.Speech = "Do you want fountain soda, or bottled juice?"
+                            p.Header[3] = 1160
 	        				user[m.Header[0]] = p
 	        				p.Data.Speech = "selecting"
-	        				p.Header[3] = 1160
 	        			} 
 	        		}
 	        	}
@@ -662,9 +662,9 @@ func echo(w http.ResponseWriter, r *http.Request) {
                             entityback["drinks"] = s
                             p.Data.Entity = entityback
                             p.Data.Speech = "Do you want to add item to cart?"
+                            p.Header[3] = 1170
                             user[m.Header[0]] = p
                             p.Data.Speech = "selecting"
-                            p.Header[3] = 1170
                         } 
                     }
                 }
@@ -681,9 +681,9 @@ func echo(w http.ResponseWriter, r *http.Request) {
 	        	p.Header[3] = 9999
 	        	if strings.Contains(m.Data.Query, "yes") {
 	        		p.Data.Speech = "Okay, item add to cart"
+                    p.Header[3] = 1900
 	        		user[m.Header[0]] = p
 	        		p.Data.Speech = "selecting"
-	        		p.Header[3] = 1900
 	        	}
 	        	if strings.Contains(m.Data.Query, "no") {
 	        		p.Header[3] = 9999
