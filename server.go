@@ -609,7 +609,7 @@ func echo(w http.ResponseWriter, r *http.Request) {
 	        		for _, item := range v {
 	        			if strings.Contains(m.Data.Query, item) {
 	        				s = append(s, k)
-	        				entityback["top"] = s
+	        				entityback["tops"] = s
 	        			    p.Data.Entity = entityback
 	        			    p.Data.Speech = "Do you want chips or tortilla as sides?"
                             p.Header[3] = 1150
