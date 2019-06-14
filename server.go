@@ -455,7 +455,7 @@ func echo(w http.ResponseWriter, r *http.Request) {
                         p.Data.Speech = "Performing task now."
                     } else {
                         p.Header[3] = 9999
-                        p.Data.Speech = "Hello, this is chipotle, Do you want to pick up in store or deliver to an address?"
+                        //p.Data.Speech = "Hello, this is chipotle, Do you want to pick up in store or deliver to an address?"
                     }
                 }
             case 1000:
@@ -573,6 +573,12 @@ func echo(w http.ResponseWriter, r *http.Request) {
 	        		p.Header[3] = 100
 	        		p.Data.Speech = "Okay, Cancel ordering"
 	        	}
+                if strings.Contains(m.Data.Query, "no") {
+                    p.Header[3] = 9999
+                    p.Data.Entity = entityback
+                    p.Data.Speech = "Do you want queso, guac, or corn?"
+                    user[m.Header[0]] = p
+                }
 	        case 1130:
 	        	p.Data.Speech = "Do you want queso, guac, or corn?"
 	        	p.Header[3] = 9999
@@ -691,7 +697,7 @@ func echo(w http.ResponseWriter, r *http.Request) {
 	        	if strings.Contains(m.Data.Query, "cancel") {
 	        		p.Header[3] = 0
 	        		p.Data.Speech = "Okay, Cancelled"
-	        	}        
+	        	}
         	default:
 	        	s, i, e, _ := DetectIntentText("chipotle-flat", "123", m.Data.Query, "en")
 	        	p.Header, p.Data.Speech, p.Data.Entity, _ = HeaderProcess(m.Header, i, s, e)
