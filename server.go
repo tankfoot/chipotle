@@ -86,13 +86,13 @@ var fillings = map[string][]string{
 var beans = map[string][]string{
 	"black beans": []string{"black"},
 	"pinto beans": []string{"pinto"},
-	"no beans": []string{"no beans", "no"},
+	"no beans": []string{"no beans"},
 }
 
 var rice = map[string][]string{
 	"brown rice" : []string{"brown"},
 	"white rice" : []string{"white"},
-	"no rice" : []string{"no rice", "no"},
+	"no rice" : []string{"no rice"},
 }
 
 var salsa = map[string][]string{
@@ -244,7 +244,7 @@ func HeaderProcess(headerIn [6]float64, intent string, speech string, entity map
             talkback = "Any drinks?"
         case "Done":
             headerOut[3] = 1460
-            talkback = "Okay, Do you want to add item to cart"
+            talkback = "Okay, Do you want to add item to bag"
         default:
             talkback = speech
         }
@@ -295,7 +295,7 @@ func HeaderProcess(headerIn [6]float64, intent string, speech string, entity map
             talkback = "Any drinks for kids?"
         case "Done":
             headerOut[3] = 1720
-            talkback = "Okay, Do you want to add item to cart"
+            talkback = "Okay, Do you want to add item to bag"
         default:
             talkback = speech
         }
@@ -312,7 +312,7 @@ func HeaderProcess(headerIn [6]float64, intent string, speech string, entity map
             talkback = "Any drinks?"
         case "Done":
             headerOut[3] = 1720
-            talkback = "Okay, Do you want to add item to cart"
+            talkback = "Okay, Do you want to add item to bag"
         default:
             talkback = speech
         }
@@ -599,7 +599,6 @@ func echo(w http.ResponseWriter, r *http.Request) {
 	        		p.Data.Entity = entityback
 	        		p.Data.Speech = "how about sour cream, fajita veggies, cheese, and lettuce?"
 	        		user[m.Header[0]] = p
-	        		p.Data.Speech = "okay no sides"
 	        	}
 	        case 1140:
 	        	p.Data.Speech = "how about sour cream, fajita veggies, cheese, and lettuce?"
@@ -661,7 +660,7 @@ func echo(w http.ResponseWriter, r *http.Request) {
                             s = append(s, k)
                             entityback["drinks"] = s
                             p.Data.Entity = entityback
-                            p.Data.Speech = "Do you want to add item to cart?"
+                            p.Data.Speech = "Do you want to add item to bag?"
                             p.Header[3] = 1170
                             user[m.Header[0]] = p
                             p.Data.Speech = "selecting"
@@ -670,17 +669,17 @@ func echo(w http.ResponseWriter, r *http.Request) {
                 }
                 if strings.Contains(m.Data.Query, "no") {
                     p.Header[3] = 9999
-                    p.Data.Speech = "Do you want to add item to cart?"
+                    p.Data.Speech = "Do you want to add item to bag?"
                 }
                 if strings.Contains(m.Data.Query, "cancel") {
                     p.Header[3] = 0
                     p.Data.Speech = "Okay, Cancelled"
                 }
 	        case 1170:
-	        	p.Data.Speech = "Do you want to add item to cart?"
+	        	p.Data.Speech = "Do you want to add item to bag?"
 	        	p.Header[3] = 9999
 	        	if strings.Contains(m.Data.Query, "yes") {
-	        		p.Data.Speech = "Okay, item add to cart"
+	        		p.Data.Speech = "Okay, item add to bag"
                     p.Header[3] = 1900
 	        		user[m.Header[0]] = p
 	        		p.Data.Speech = "selecting"
