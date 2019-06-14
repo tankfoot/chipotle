@@ -122,8 +122,8 @@ var sides = map[string][]string{
 
 var drinks = map[string][]string{
 	"bottled water": []string{"water"},
-	"22 fl oz soda/iced tea": []string{"small soda"},
-	"32 fl oz soda/iced tea": []string{"large soda"},
+	"22 fl oz soda/iced tea": []string{"small soda", "small fountain soda", "small"},
+	"32 fl oz soda/iced tea": []string{"large soda", "large fountain soda", "large"},
     "pressed apple juice": []string{"apple juice"},
     "blackberry izze": []string{"blackberry izze"},
     "grapefruit izze": []string{"grapefruit izze"},
@@ -455,7 +455,6 @@ func echo(w http.ResponseWriter, r *http.Request) {
                         p.Data.Speech = "Performing task now."
                     } else {
                         p.Header[3] = 9999
-                        //p.Data.Speech = "Hello, this is chipotle, Do you want to pick up in store or deliver to an address?"
                     }
                 }
             case 1000:
