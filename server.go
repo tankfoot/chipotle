@@ -19,6 +19,7 @@ import (
     "io/ioutil"
     "bytes"
     "time"
+    "chipotle/dialogflow"
 
 	"github.com/gorilla/websocket"
     sj "github.com/bitly/go-simplejson"
@@ -33,20 +34,6 @@ type Data struct {
 type Message struct {
     Header [6]float64
     Data   Data
-}
-
-//Dialogflow Query struct
-type Text struct {
-    Text string `json:"text"`
-    LanguageCode string `json:"languageCode"`
-}
-
-type TextInput struct {
-    TextInput Text `json:"text"`
-}
-
-type QueryInput struct {
-    QueryInput TextInput `json:"queryInput"`
 }
 
 //Output json struct
@@ -132,58 +119,6 @@ var drinks = map[string][]string{
 var user = map[float64]Output{}
 
 var upgrader = websocket.Upgrader{} // use default options
-
-func DetectIntentText(projectID, sessionID, text, languageCode string) (string, string, map[string]interface{}, error) {
-    if projectID == "" || sessionID == "" {
-        return "", "", nil, errors.New(fmt.Sprintf("Received empty project (%s) or session (%s)", projectID, sessionID))
-    }
-    basePath := "https://dialogflow.googleapis.com/v2/"
-    sessionPath := fmt.Sprintf("projects/%s/agent/sessions/%s", projectID, sessionID)
-
-    client := &http.Client{}
-    var jsonData QueryInput
-    jsonData.QueryInput = TextInput{Text{Text: text, LanguageCode: languageCode}}
-    jsonValue, _ := json.Marshal(jsonData)
-    detectIntentUrl := basePath + sessionPath + ":detectIntent"
-    r, err := http.NewRequest("POST", detectIntentUrl, bytes.NewBuffer(jsonValue))
-
-    token, _ := GetGcloudToken()
-    var bearer = "Bearer " + token
-    r.Header.Add("Authorization", bearer)
-    r.Header.Add("Content-Type", "application/json; charset=utf-8")
-
-    resp, err := client.Do(r)
-
-    if err != nil {
-        fmt.Printf("The HTTP request failed with error %s\n", err)
-    } else {
-        data, _ := ioutil.ReadAll(resp.Body)
-        //fmt.Println(string(data))
-        js, _ := sj.NewJson(data)
-        speechText := js.Get("queryResult").Get("fulfillmentText").MustString()
-        intentName := js.Get("queryResult").Get("intent").Get("displayName").MustString()
-        entities := js.Get("queryResult").Get("parameters").MustMap()
-        return speechText, intentName, entities, nil
-    }
-
-    return "", "", nil, nil
-}
-
-func GetGcloudToken() (string, error) {
-    cmd := exec.Command("gcloud", 
-        "auth",
-        "application-default",
-        "print-access-token",)
-
-    out, err := cmd.Output()
-    if err != nil {
-        log.Fatal(err)
-        return "", err
-    }
-
-    token := string(out)[:len(string(out))-1] // line ending subtract
-    return token, nil
-}
 
 func HeaderProcess(headerIn [6]float64, intent string, speech string, entity map[string]interface{}) (
         [7]float64, string, map[string]interface{}, error) {
@@ -446,7 +381,7 @@ func echo(w http.ResponseWriter, r *http.Request) {
                     user[m.Header[0]] = p
                     p.Data.Speech = "selecting"
                 } else {
-                    s, i, e, _ := DetectIntentText("chipotle-flat", "123", m.Data.Query, "en")
+                    s, i, e, _ := dialogflow.DetectIntentText("chipotle-flat", "123", m.Data.Query, "en")
                     p.Header, p.Data.Speech, p.Data.Entity, _ = HeaderProcess(m.Header, i, s, e)
                     if strings.Contains(p.Data.Speech, "cancel"){
                         p.Header[3] = 0
