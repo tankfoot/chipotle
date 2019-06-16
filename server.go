@@ -414,8 +414,8 @@ func echo(w http.ResponseWriter, r *http.Request) {
 	        			if strings.Contains(m.Data.Query, item) {   
 	        				entityback["address"] = k
 	        				p.Data.Entity = entityback
-	        				p.Data.Speech = "Choose your meat or veggie"
-                            p.Header[3] = 1100
+	        				p.Data.Speech = "what items do you want, burrito, bowl, or tacos?"
+                            p.Header[3] = 1000
 	        				user[m.Header[0]] = p
 	        				p.Data.Speech = "selecting"
 	        			}
@@ -503,7 +503,8 @@ func echo(w http.ResponseWriter, r *http.Request) {
 	        		p.Data.Speech = "Okay, Cancel ordering"
 	        	}
                 if strings.Contains(m.Data.Query, "no") {
-                    p.Header[3] = 9999
+                    p.Header[3] = 1300
+                    entityback["tops"] = ""
                     p.Data.Entity = entityback
                     p.Data.Speech = "Do you want queso, guac, or corn?"
                     user[m.Header[0]] = p
