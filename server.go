@@ -14,15 +14,10 @@ import (
     "strings"
 	"net/http"
     "encoding/json"
-    "os/exec"
-    "errors"
-    "io/ioutil"
-    "bytes"
     "time"
     "chipotle/dialogflow"
 
 	"github.com/gorilla/websocket"
-    sj "github.com/bitly/go-simplejson"
 )
 
 //Incoming Json struct
@@ -633,7 +628,7 @@ func echo(w http.ResponseWriter, r *http.Request) {
 	        		p.Data.Speech = "Okay, Cancelled"
 	        	}
         	default:
-	        	s, i, e, _ := DetectIntentText("chipotle-flat", "123", m.Data.Query, "en")
+	        	s, i, e, _ := dialogflow.DetectIntentText("chipotle-flat", "123", m.Data.Query, "en")
 	        	p.Header, p.Data.Speech, p.Data.Entity, _ = HeaderProcess(m.Header, i, s, e)
 	        	if strings.Contains(p.Data.Speech, "cancel"){
 	        		p.Header[3] = 0
