@@ -392,13 +392,13 @@ func echo(w http.ResponseWriter, r *http.Request) {
                 p.Header[3] = 9999
                 for k, v := range ordertype {
                     for _, item := range v {
-                        if strings.Contains(m.Data.Query, item) {   
+                        if strings.Contains(m.Data.Query, item) {
+                            p.Header[3] = 1100   
                             entityback["ordertype"] = k
                             p.Data.Entity = entityback
                             p.Data.Speech = "Choose your meat or veggie"
                             user[m.Header[0]] = p
                             p.Data.Speech = "selecting"
-                            p.Header[3] = 1100
                         }
                     }
                 }
@@ -503,11 +503,12 @@ func echo(w http.ResponseWriter, r *http.Request) {
 	        		p.Data.Speech = "Okay, Cancel ordering"
 	        	}
                 if strings.Contains(m.Data.Query, "no") {
-                    p.Header[3] = 1300
                     entityback["tops"] = ""
-                    p.Data.Entity = entityback
-                    p.Data.Speech = "Do you want queso, guac, or corn?"
-                    user[m.Header[0]] = p
+	        		p.Data.Entity = entityback
+	        	    p.Data.Speech = "Do you want queso, guac, or corn?"
+                    p.Header[3] = 1130
+      				user[m.Header[0]] = p
+	        		p.Data.Speech = "selecting"
                 }
 	        case 1130:
 	        	p.Data.Speech = "Do you want queso, guac, or corn?"
@@ -531,10 +532,12 @@ func echo(w http.ResponseWriter, r *http.Request) {
 	        		p.Data.Speech = "Okay, Cancel ordering"
 	        	}
 	        	if strings.Contains(m.Data.Query, "no") {
-	        		p.Header[3] = 9999
+                    entityback["tops"] = ""
 	        		p.Data.Entity = entityback
-	        		p.Data.Speech = "how about sour cream, fajita veggies, cheese, and lettuce?"
-	        		user[m.Header[0]] = p
+	        	    p.Data.Speech = "how about sour cream, fajita veggies, cheese, and lettuce?"
+                    p.Header[3] = 1140
+      				user[m.Header[0]] = p
+	        		p.Data.Speech = "selecting"
 	        	}
 	        case 1140:
 	        	p.Data.Speech = "how about sour cream, fajita veggies, cheese, and lettuce?"
@@ -554,8 +557,12 @@ func echo(w http.ResponseWriter, r *http.Request) {
 	        		}
 	        	}
 	        	if strings.Contains(m.Data.Query, "no") {
-	        		p.Header[3] = 9999
-	        		p.Data.Speech = "Do you want chips or tortilla as sides?"
+                    entityback["tops"] = ""
+	        		p.Data.Entity = entityback
+	        	    p.Data.Speech = "Do you want chips or tortilla as sides?"
+                    p.Header[3] = 1150
+      				user[m.Header[0]] = p
+	        		p.Data.Speech = "selecting"
 	        	}
 	        	if strings.Contains(m.Data.Query, "cancel") {
 	        		p.Header[3] = 0
@@ -579,8 +586,12 @@ func echo(w http.ResponseWriter, r *http.Request) {
 	        		}
 	        	}
 	        	if strings.Contains(m.Data.Query, "no") {
-	        		p.Header[3] = 9999
-	        		p.Data.Speech = "Do you want fountain soda, or bottled juice?"
+                    entityback["sides"] = ""
+	        		p.Data.Entity = entityback
+	        	    p.Data.Speech = "Do you want fountain soda, or bottled juice?"
+                    p.Header[3] = 1160
+      				user[m.Header[0]] = p
+	        		p.Data.Speech = "selecting"
 	        	}
 	        	if strings.Contains(m.Data.Query, "cancel") {
 	        		p.Header[3] = 0
@@ -604,8 +615,12 @@ func echo(w http.ResponseWriter, r *http.Request) {
                     }
                 }
                 if strings.Contains(m.Data.Query, "no") {
-                    p.Header[3] = 9999
-                    p.Data.Speech = "Do you want to add item to bag?"
+                    entityback["drinks"] = ""
+	        		p.Data.Entity = entityback
+	        	    p.Data.Speech = "Do you want to add item to bag?"
+                    p.Header[3] = 1170
+      				user[m.Header[0]] = p
+	        		p.Data.Speech = "selecting"
                 }
                 if strings.Contains(m.Data.Query, "cancel") {
                     p.Header[3] = 0
