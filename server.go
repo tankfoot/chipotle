@@ -503,7 +503,7 @@ func echo(w http.ResponseWriter, r *http.Request) {
 	        		p.Data.Speech = "Okay, Cancel ordering"
 	        	}
                 if strings.Contains(m.Data.Query, "no") {
-                    entityback["tops"] = ""
+                    entityback["tops"] = []string{}
 	        		p.Data.Entity = entityback
 	        	    p.Data.Speech = "Do you want queso, guac, or corn?"
                     p.Header[3] = 1130
@@ -532,7 +532,7 @@ func echo(w http.ResponseWriter, r *http.Request) {
 	        		p.Data.Speech = "Okay, Cancel ordering"
 	        	}
 	        	if strings.Contains(m.Data.Query, "no") {
-                    entityback["tops"] = ""
+                    entityback["tops"] = []string{}
 	        		p.Data.Entity = entityback
 	        	    p.Data.Speech = "how about sour cream, fajita veggies, cheese, and lettuce?"
                     p.Header[3] = 1140
@@ -557,7 +557,7 @@ func echo(w http.ResponseWriter, r *http.Request) {
 	        		}
 	        	}
 	        	if strings.Contains(m.Data.Query, "no") {
-                    entityback["tops"] = ""
+                    entityback["tops"] = []string{}
 	        		p.Data.Entity = entityback
 	        	    p.Data.Speech = "Do you want chips or tortilla as sides?"
                     p.Header[3] = 1150
@@ -586,7 +586,7 @@ func echo(w http.ResponseWriter, r *http.Request) {
 	        		}
 	        	}
 	        	if strings.Contains(m.Data.Query, "no") {
-                    entityback["sides"] = ""
+                    entityback["sides"] = []string{}
 	        		p.Data.Entity = entityback
 	        	    p.Data.Speech = "Do you want fountain soda, or bottled juice?"
                     p.Header[3] = 1160
@@ -615,7 +615,7 @@ func echo(w http.ResponseWriter, r *http.Request) {
                     }
                 }
                 if strings.Contains(m.Data.Query, "no") {
-                    entityback["drinks"] = ""
+                    entityback["drinks"] = []string{}
 	        		p.Data.Entity = entityback
 	        	    p.Data.Speech = "Do you want to add item to bag?"
                     p.Header[3] = 1170
