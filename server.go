@@ -48,7 +48,7 @@ var ordertype = map[string][]string{
 	"tacos": []string{"taco"},
 	"salad": []string{"salad"},
 	"kid's Meal": []string{"kid"},
-	"sides & drinks": []string{"side", "drink"}
+	"sides & drinks": []string{"side", "drink"},
 }
 
 var address = map[string][]string{
