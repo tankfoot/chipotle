@@ -614,7 +614,7 @@ func echo(w http.ResponseWriter, r *http.Request) {
 	        case 1170:
 	        	p.Data.Speech = "Do you want to add item to bag?"
 	        	p.Header[3] = 9999
-	        	if strings.Contains(m.Data.Query, "yes") {
+	        	if strings.Contains(m.Data.Query, "ye") || strings.Contains(m.Data.Query, "sure"){
 	        		p.Data.Speech = "Okay, item add to bag"
                     p.Header[3] = 1900
 	        		user[m.Header[0]] = p
