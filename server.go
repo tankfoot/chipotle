@@ -116,6 +116,19 @@ var user = map[float64]Output{}
 
 var upgrader = websocket.Upgrader{} // use default options
 
+//func SingleMatch (){}
+
+func MultipleMatch (query string, keyword map[string][]string) (wordMatch []string){
+	for k, v := range keyword {
+        for _, item := range v {
+            if strings.Contains(query, item) {
+            	wordMatch = append(wordMatch, k)
+            }
+        }
+    }
+    return wordMatch
+}
+
 func HeaderProcess(headerIn [6]float64, intent string, speech string, entity map[string]interface{}) (
         [7]float64, string, map[string]interface{}, error) {
     var headerOut [7]float64
@@ -429,21 +442,14 @@ func echo(w http.ResponseWriter, r *http.Request) {
 	        case 1100:
 	        	p.Data.Speech = "Choose your meat or veggie"
 	        	p.Header[3] = 9999
-	        	var s []string
-	        	for k, v := range fillings {
-	        		for _, item := range v {
-	        			if strings.Contains(m.Data.Query, item) {
-	        				s = append(s, k)
-	        				entityback["fillings"] = s
-	        			    p.Data.Entity = entityback
-	        			    p.Data.Speech = "Now add your rice and beans"
-                            p.Header[3] = 1110
-	        				user[m.Header[0]] = p
-	        				p.Data.Speech = "selecting"
-	        			} 
-	        		}
-	        	}
-	        	if strings.Contains(m.Data.Query, "cancel") {
+	        	if matched := MultipleMatch(m.Data.Query, fillings); len(matched) > 0 {
+	        		entityback["fillings"] = matched
+	        		p.Data.Entity = entityback
+	        		p.Data.Speech = "Now add your rice and beans"
+	        		p.Header[3] = 1110
+	        		user[m.Header[0]] = p
+	        		p.Data.Speech = "selecting"
+	        	}else if strings.Contains(m.Data.Query, "cancel") {
 	        		p.Header[3] = 0
 	        		p.Data.Speech = "Okay, Cancel ordering"
 	        	}
@@ -485,25 +491,18 @@ func echo(w http.ResponseWriter, r *http.Request) {
 	        case 1120:
 	        	p.Data.Speech = "Do you want to add salsa? Mild, medium, or hot?"
 	        	p.Header[3] = 9999
-	        	var s []string
-	        	for k, v := range salsa {
-	        		for _, item := range v {
-	        			if strings.Contains(m.Data.Query, item) {
-	        				s = append(s, k)
-	        				entityback["tops"] = s
-	        			    p.Data.Entity = entityback
-	        			    p.Data.Speech = "Do you want queso, guac, or corn?"
-                            p.Header[3] = 1130
-	        				user[m.Header[0]] = p
-	        				p.Data.Speech = "selecting"
-	        			} 
-	        		}
-	        	}
-	        	if strings.Contains(m.Data.Query, "cancel") {
+
+	        	if matched := MultipleMatch(m.Data.Query, salsa); len(matched) > 0 {
+	        		entityback["tops"] = matched
+	        		p.Data.Entity = entityback
+	        		p.Data.Speech = "Do you want queso, guac, or corn?"
+	        		p.Header[3] = 1130
+	        		user[m.Header[0]] = p
+	        		p.Data.Speech = "selecting"
+	        	} else if strings.Contains(m.Data.Query, "cancel") {
 	        		p.Header[3] = 100
 	        		p.Data.Speech = "Okay, Cancel ordering"
-	        	}
-                if strings.Contains(m.Data.Query, "no") {
+	        	} else if strings.Contains(m.Data.Query, "no") {
                     entityback["tops"] = []string{}
 	        		p.Data.Entity = entityback
 	        	    p.Data.Speech = "Do you want queso, guac, or corn?"
@@ -514,20 +513,14 @@ func echo(w http.ResponseWriter, r *http.Request) {
 	        case 1130:
 	        	p.Data.Speech = "Do you want queso, guac, or corn?"
 	        	p.Header[3] = 9999
-	        	var s []string
-	        	for k, v := range tops {
-	        		for _, item := range v {
-	        			if strings.Contains(m.Data.Query, item) {
-	        				s = append(s, k)
-	        				entityback["tops"] = s
-	        			    p.Data.Entity = entityback
-	        			    p.Data.Speech = "how about sour cream, fajita veggies, cheese, and lettuce?"
-	        				p.Header[3] = 1140
-                            user[m.Header[0]] = p
-	        				p.Data.Speech = "selecting"
-	        			} 
-	        		}
-	        	}
+	        	if matched := MultipleMatch(m.Data.Query, tops); len(matched) > 0 {
+	        		entityback["tops"] = matched
+	        		p.Data.Entity = entityback
+	        		p.Data.Speech = "how about sour cream, fajita veggies, cheese, and lettuce?"
+	        		p.Header[3] = 1140
+	        		user[m.Header[0]] = p
+	        		p.Data.Speech = "selecting"
+	        	} 
 	        	if strings.Contains(m.Data.Query, "cancel") {
 	        		p.Header[3] = 0
 	        		p.Data.Speech = "Okay, Cancel ordering"
