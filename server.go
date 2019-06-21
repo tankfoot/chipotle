@@ -44,7 +44,7 @@ type Output struct {
 
 var ordertype = map[string][]string{
 	"burrito": []string{"burrito"},
-	"burrito bowl": []string{"bowl"},
+	"burrito bowl": []string{"bowl", "burrito bowl"},
 	"tacos": []string{"taco"},
 	"salad": []string{"salad"},
 	"kid's Meal": []string{"kid"},
@@ -58,12 +58,12 @@ var address = map[string][]string{
 }
 
 var fillings = map[string][]string{
-	"steak" : []string{"steak", "beef"},
+	"steak" : []string{"steak"},
 	"carnitas": []string{"carnitas", "pork"},
 	"chicken" : []string{"chicken"},
-	"barbacoa": []string{"barbacoa"},
-	"veggie": []string{"veggie", "vegetable"},
-	"sofritas": []string{"sofritas", "sofrito"},
+	"barbacoa": []string{"barbacoa", "beef", "barbeque", "bbq"},
+	"veggie": []string{"veggie", "vegetable", "guac"},
+	"sofritas": []string{"sofritas", "tofu"},
 }
 
 var beans = map[string][]string{
@@ -80,7 +80,7 @@ var rice = map[string][]string{
 
 var salsa = map[string][]string{
     "tomatillo-green chili salsa": []string{"green chili", "medium"},
-    "tomatillo-red chili salsa": []string{"red chili", "hot"},
+    "tomatillo-red chili salsa": []string{"red", "hot"},
     "fresh tomato salsa": []string{"salsa", "mild"},
 }
 
@@ -382,14 +382,14 @@ func echo(w http.ResponseWriter, r *http.Request) {
                     p.Header[3] = 2000
                     entityback["servicetype"] = "pick up"
                     p.Data.Entity = entityback
-                    p.Data.Speech = "Which store do you want to pick up? you can say recent, favorite, or nearby"
+                    p.Data.Speech = "OK, which store do you prefer? you can say recent, favorite, or nearby."
                     user[m.Header[0]] = p
                     p.Data.Speech = "selecting"
                 } else if strings.Contains(m.Data.Query, "deliver") {
                     p.Header[3] = 2000
                     entityback["servicetype"] = "deliver"
                     p.Data.Entity = entityback
-                    p.Data.Speech = "What is your deliver address? you can say recent."
+                    p.Data.Speech = "OK, what's your address? You can choose from recent, or add a new one."
                     user[m.Header[0]] = p
                     p.Data.Speech = "selecting"
                 } else if strings.Contains(m.Data.Query, "menu") {
@@ -430,26 +430,21 @@ func echo(w http.ResponseWriter, r *http.Request) {
                     p.Data.Speech = "Okay, Cancel ordering"
                 }
         	case 2000:
-        		p.Data.Speech = "please select address, you can say recent, favorite, or nearby"
+        		p.Data.Speech = "OK, which store do you prefer? you can say recent, favorite, or nearby."
         		p.Header[3] = 9999
-	        	for k, v := range address {
-	        		for _, item := range v {
-	        			if strings.Contains(m.Data.Query, item) {   
-	        				entityback["address"] = k
-	        				p.Data.Entity = entityback
-	        				p.Data.Speech = "what items do you want, burrito, bowl, or tacos?"
-                            p.Header[3] = 1000
-	        				user[m.Header[0]] = p
-	        				p.Data.Speech = "selecting"
-	        			}
-	        		}
-	        	}
-	        	if strings.Contains(m.Data.Query, "cancel") {
+        		if matched := SingleMatch(m.Data.Query, address); len(matched) != 0 {
+        			entityback["address"] = matched
+        			p.Data.Entity = entityback
+        			p.Data.Speech = "what items do you want, burrito, bowl, or tacos?"
+        			p.Header[3] = 1000
+        			user[m.Header[0]] = p
+        			p.Data.Speech = "selecting"
+        		}else if strings.Contains(m.Data.Query, "cancel") {
 	        		p.Header[3] = 0
 	        		p.Data.Speech = "Okay, Cancel ordering"
 	        	}
 	        case 1100:
-	        	p.Data.Speech = "Choose your meat or veggie"
+	        	p.Data.Speech = "OK. First choose your meat or veggie."
 	        	p.Header[3] = 9999
 	        	if matched := MultipleMatch(m.Data.Query, fillings); len(matched) != 0 {
 	        		entityback["fillings"] = matched
