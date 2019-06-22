@@ -413,11 +413,18 @@ func echo(w http.ResponseWriter, r *http.Request) {
             case 1000:
                 p.Data.Speech = "what items do you want, burrito, bowl, or tacos?"
                 p.Header[3] = 9999
+                if matched := SingleMatch(m.Data.Query, ordertype); len(matched) != 0 {
+                	entityback["ordertype"] = matched
+                	p.Data.Entity = entityback
+                	p.Data.Speech = "Choose your meat or veggie"
+
+                }
                 for k, v := range ordertype {
                     for _, item := range v {
                         if strings.Contains(m.Data.Query, item) {
                             p.Header[3] = 1100   
                             entityback["ordertype"] = k
+                            
                             p.Data.Entity = entityback
                             p.Data.Speech = "Choose your meat or veggie"
                             user[m.Header[0]] = p
@@ -480,7 +487,7 @@ func echo(w http.ResponseWriter, r *http.Request) {
 	        	p.Data.Speech = "Do you want to add salsa? Mild, medium, or hot?"
 	        	p.Header[3] = 9999
 
-	        	if matched := MultipleMatch(m.Data.Query, salsa); len(matched) > 0 {
+	        	if matched := MultipleMatch(m.Data.Query, salsa); len(matched) != 0 {
 	        		entityback["tops"] = matched
 	        		p.Data.Entity = entityback
 	        		p.Data.Speech = "Do you want queso, guac, or corn?"
@@ -501,7 +508,7 @@ func echo(w http.ResponseWriter, r *http.Request) {
 	        case 1130:
 	        	p.Data.Speech = "Do you want queso, guac, or corn?"
 	        	p.Header[3] = 9999
-	        	if matched := MultipleMatch(m.Data.Query, tops); len(matched) > 0 {
+	        	if matched := MultipleMatch(m.Data.Query, tops); len(matched) != 0 {
 	        		entityback["tops"] = matched
 	        		p.Data.Entity = entityback
 	        		p.Data.Speech = "how about sour cream, fajita veggies, cheese, and lettuce?"
