@@ -443,7 +443,7 @@ func echo(w http.ResponseWriter, r *http.Request) {
 	        	p.Data.Speech = "OK. How many tacos do you want?"
 	        	p.Header[3] = 9999
 	        	if matched := SingleMatch(m.Data.Query, numbers); len(matched) != 0 {
-        			entityback["number"] = matched
+        			entityback["quantity"] = matched
         			p.Data.Entity = entityback
         			p.Data.Speech = "Do you want soft or crispy taco?"
         			p.Header[3] = 1102
@@ -541,7 +541,7 @@ func echo(w http.ResponseWriter, r *http.Request) {
 	        				s = append(s, k)
 	        				entityback["tops"] = s
 	        			    p.Data.Entity = entityback
-	        			    p.Data.Speech = "Do you want chips or tortilla as sides?"
+	        			    p.Data.Speech = "Any tortilla or chips?"
                             p.Header[3] = 1150
 	        				user[m.Header[0]] = p
 	        				p.Data.Speech = "selecting"
@@ -551,7 +551,7 @@ func echo(w http.ResponseWriter, r *http.Request) {
 	        	if strings.Contains(m.Data.Query, "no") {
                     entityback["tops"] = []string{}
 	        		p.Data.Entity = entityback
-	        	    p.Data.Speech = "Do you want chips or tortilla as sides?"
+	        	    p.Data.Speech = "Any tortilla or chips?"
                     p.Header[3] = 1150
       				user[m.Header[0]] = p
 	        		p.Data.Speech = "selecting"
@@ -561,7 +561,7 @@ func echo(w http.ResponseWriter, r *http.Request) {
 	        		p.Data.Speech = "Okay, Cancel ordering"
 	        	}
 	        case 1150:
-	        	p.Data.Speech = "Do you want chips or tortilla as sides?"
+	        	p.Data.Speech = "Any tortilla or chips?"
 	        	p.Header[3] = 9999
 	        	var s []string
 	        	for k, v := range sides {
