@@ -112,6 +112,17 @@ var drinks = map[string][]string{
     "grapefruit izze": []string{"grapefruit izze"},
 }
 
+var numbers = map[string][]string{
+	"one taco": []string{"one", "1"},
+	"two tacos": []string{"two", "2"},
+	"three tacos": []string{"three", "3"},
+}
+
+var tacotype = map[string][]string{
+	"soft flour tortilla": []string{"soft"},
+	"crispy corn tortilla": []string{"crispy"},
+}
+
 var user = map[float64]Output{}
 
 var upgrader = websocket.Upgrader{} // use default options
@@ -165,42 +176,10 @@ func HeaderProcess(headerIn [6]float64, intent string, speech string, entity map
         entityback["ordertype"] = "salad"
         entity = entityback
     case "chipotle.tacos":
-        switch speech {
-        case "address":
-            headerOut[3] = 2000
-            talkback = "please select address, you can say recent, favorite, or nearby"
-        case "number":
-            headerOut[3] = 1400
-            entityback["ordertype"] = "tacos"
-            entity = entityback
-            talkback = "how many tacos do you want?"
-        case "tortilla":
-            headerOut[3] = 1410
-            talkback = "soft or crispy tortilla"
-        case "fillings":
-            headerOut[3] = 1400
-            talkback = "which fillings do you want?"
-        case "rice":
-            headerOut[3] = 1410
-            talkback = "Any rice?"
-        case "beans":
-            headerOut[3] = 1420
-            talkback = "Any beans?"
-        case "toppings":
-            headerOut[3] = 1430
-            talkback = "Any toppings?"
-        case "sides":
-            headerOut[3] = 1440
-            talkback = "Any sides?"
-        case "drinks":
-            headerOut[3] = 1450
-            talkback = "Any drinks?"
-        case "Done":
-            headerOut[3] = 1460
-            talkback = "Okay, Do you want to add item to bag"
-        default:
-            talkback = speech
-        }
+        talkback = "please select address, you can say recent, favorite, or nearby"
+        headerOut[3] = 2000
+        entityback["ordertype"] = "salad"
+        entity = entityback
     case "chipotle.tacos - yes": 
         headerOut[3] = 1900
         talkback = speech
@@ -414,25 +393,20 @@ func echo(w http.ResponseWriter, r *http.Request) {
                 p.Data.Speech = "what items do you want, burrito, bowl, or tacos?"
                 p.Header[3] = 9999
                 if matched := SingleMatch(m.Data.Query, ordertype); len(matched) != 0 {
-                	entityback["ordertype"] = matched
-                	p.Data.Entity = entityback
-                	p.Data.Speech = "Choose your meat or veggie"
-
-                }
-                for k, v := range ordertype {
-                    for _, item := range v {
-                        if strings.Contains(m.Data.Query, item) {
-                            p.Header[3] = 1100   
-                            entityback["ordertype"] = k
-                            
-                            p.Data.Entity = entityback
-                            p.Data.Speech = "Choose your meat or veggie"
-                            user[m.Header[0]] = p
-                            p.Data.Speech = "selecting"
-                        }
-                    }
-                }
-                if strings.Contains(m.Data.Query, "cancel") {
+	              	entityback["ordertype"] = matched
+	                p.Data.Entity = entityback
+                	if matched == "tacos" {
+                		p.Header[3] = 1101
+	                	p.Data.Speech = "OK. How many tacos do you want?"
+	                	user[m.Header[0]] = p
+	                	p.Data.Speech = "selecting"
+                	} else {
+                		p.Header[3] = 1100
+	                	p.Data.Speech = "Choose your meat or veggie"
+	                	user[m.Header[0]] = p
+	                	p.Data.Speech = "selecting"
+	                }
+                }else if strings.Contains(m.Data.Query, "cancel") {
                     p.Header[3] = 0
                     p.Data.Speech = "Okay, Cancel ordering"
                 }
@@ -454,13 +428,42 @@ func echo(w http.ResponseWriter, r *http.Request) {
 	        	p.Data.Speech = "OK. First choose your meat or veggie."
 	        	p.Header[3] = 9999
 	        	if matched := MultipleMatch(m.Data.Query, fillings); len(matched) != 0 {
+	        		fmt.Println(matched)
 	        		entityback["fillings"] = matched
 	        		p.Data.Entity = entityback
-	        		p.Data.Speech = "Now add your rice and beans"
-	        		p.Header[3] = 1110
-	        		user[m.Header[0]] = p
-	        		p.Data.Speech = "selecting"
+		        	p.Data.Speech = "Now add your rice and beans"
+		        	p.Header[3] = 1110
+		        	user[m.Header[0]] = p
+		        	p.Data.Speech = "selecting"
 	        	}else if strings.Contains(m.Data.Query, "cancel") {
+	        		p.Header[3] = 0
+	        		p.Data.Speech = "Okay, Cancel ordering"
+	        	}
+	        case 1101:
+	        	p.Data.Speech = "OK. How many tacos do you want?"
+	        	p.Header[3] = 9999
+	        	if matched := SingleMatch(m.Data.Query, numbers); len(matched) != 0 {
+        			entityback["number"] = matched
+        			p.Data.Entity = entityback
+        			p.Data.Speech = "Do you want soft or crispy taco?"
+        			p.Header[3] = 1102
+        			user[m.Header[0]] = p
+        			p.Data.Speech = "selecting"
+        		}else if strings.Contains(m.Data.Query, "cancel") {
+	        		p.Header[3] = 0
+	        		p.Data.Speech = "Okay, Cancel ordering"
+	        	}
+	        case 1102:
+	        	p.Data.Speech = "Do you want soft or crispy taco?"
+	        	p.Header[3] = 9999
+	        	if matched := SingleMatch(m.Data.Query, tacotype); len(matched) != 0 {
+        			entityback["tacotype"] = matched
+        			p.Data.Entity = entityback
+        			p.Data.Speech = "OK. choose your meat or veggie."
+        			p.Header[3] = 1100
+        			user[m.Header[0]] = p
+        			p.Data.Speech = "selecting"
+        		}else if strings.Contains(m.Data.Query, "cancel") {
 	        		p.Header[3] = 0
 	        		p.Data.Speech = "Okay, Cancel ordering"
 	        	}
