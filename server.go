@@ -124,6 +124,7 @@ var tacotype = map[string][]string{
 }
 
 var user = map[float64]Output{}
+var tacoflag = map[float64]bool{}
 
 var upgrader = websocket.Upgrader{} // use default options
 
@@ -407,10 +408,11 @@ func echo(w http.ResponseWriter, r *http.Request) {
 	              	entityback["ordertype"] = matched
 	                p.Data.Entity = entityback
                 	if matched == "tacos" {
-                		p.Header[3] = 1101
+                		p.Header[3] = 1100
 	                	p.Data.Speech = "OK. How many tacos do you want?"
 	                	user[m.Header[0]] = p
 	                	p.Data.Speech = "selecting"
+	                	tacoflag[m.Header[0]] = true
                 	} else {
                 		p.Header[3] = 1100
 	                	p.Data.Speech = "Choose your meat or veggie"
@@ -422,35 +424,39 @@ func echo(w http.ResponseWriter, r *http.Request) {
                     p.Data.Speech = "Okay, Cancel ordering"
                 }
 	        case 1100:
-	        	p.Data.Speech = "OK. First choose your meat or veggie."
-	        	p.Header[3] = 9999
-	        	if matched := MultipleMatch(m.Data.Query, fillings); len(matched) != 0 {
-	        		fmt.Println(matched)
-	        		entityback["fillings"] = matched
-	        		p.Data.Entity = entityback
-		        	p.Data.Speech = "Now add your rice and beans"
-		        	p.Header[3] = 1110
-		        	user[m.Header[0]] = p
-		        	p.Data.Speech = "selecting"
-	        	}else if strings.Contains(m.Data.Query, "cancel") {
-	        		p.Header[3] = 0
-	        		p.Data.Speech = "Okay, Cancel ordering"
-	        	}
+	        	if tacoflag[m.Header[0]] {
+		        	p.Data.Speech = "OK. How many tacos do you want?"
+		        	p.Header[3] = 9999
+		     		if matched := MultipleMatch(m.Data.Query, numbers); len(matched) != 0 {
+		        		fmt.Println(matched)
+		        		entityback["quantity"] = matched
+		        		p.Data.Entity = entityback
+			        	p.Data.Speech = "Do you want soft or crispy taco?"
+			        	p.Header[3] = 1101
+			        	user[m.Header[0]] = p
+			        	p.Data.Speech = "selecting"
+			        	tacoflag[m.Header[0]] = false
+		        	}else if strings.Contains(m.Data.Query, "cancel") {
+		        		p.Header[3] = 0
+		        		p.Data.Speech = "Okay, Cancel ordering"
+		        	}	        		
+	        	} else {
+		        	p.Data.Speech = "OK. First choose your meat or veggie."
+		        	p.Header[3] = 9999
+		        	if matched := MultipleMatch(m.Data.Query, fillings); len(matched) != 0 {
+		        		fmt.Println(matched)
+		        		entityback["fillings"] = matched
+		        		p.Data.Entity = entityback
+			        	p.Data.Speech = "Now add your rice and beans"
+			        	p.Header[3] = 1110
+			        	user[m.Header[0]] = p
+			        	p.Data.Speech = "selecting"
+		        	}else if strings.Contains(m.Data.Query, "cancel") {
+		        		p.Header[3] = 0
+		        		p.Data.Speech = "Okay, Cancel ordering"
+		        	}
+		        }
 	        case 1101:
-	        	p.Data.Speech = "OK. How many tacos do you want?"
-	        	p.Header[3] = 9999
-	        	if matched := SingleMatch(m.Data.Query, numbers); len(matched) != 0 {
-        			entityback["quantity"] = matched
-        			p.Data.Entity = entityback
-        			p.Data.Speech = "Do you want soft or crispy taco?"
-        			p.Header[3] = 1102
-        			user[m.Header[0]] = p
-        			p.Data.Speech = "selecting"
-        		}else if strings.Contains(m.Data.Query, "cancel") {
-	        		p.Header[3] = 0
-	        		p.Data.Speech = "Okay, Cancel ordering"
-	        	}
-	        case 1102:
 	        	p.Data.Speech = "Do you want soft or crispy taco?"
 	        	p.Header[3] = 9999
 	        	if matched := SingleMatch(m.Data.Query, tacotype); len(matched) != 0 {
@@ -461,6 +467,34 @@ func echo(w http.ResponseWriter, r *http.Request) {
         			user[m.Header[0]] = p
         			p.Data.Speech = "selecting"
         		}else if strings.Contains(m.Data.Query, "cancel") {
+	        		p.Header[3] = 0
+	        		p.Data.Speech = "Okay, Cancel ordering"
+	        	}
+	        	// p.Data.Speech = "OK. How many tacos do you want?"
+	        	// p.Header[3] = 9999
+	        	// if matched := SingleMatch(m.Data.Query, numbers); len(matched) != 0 {
+        		// 	entityback["quantity"] = matched
+        		// 	p.Data.Entity = entityback
+        		// 	p.Data.Speech = "Do you want soft or crispy taco?"
+        		// 	p.Header[3] = 1102
+        		// 	user[m.Header[0]] = p
+        		// 	p.Data.Speech = "selecting"
+        		// }else if strings.Contains(m.Data.Query, "cancel") {
+	        	// 	p.Header[3] = 0
+	        	// 	p.Data.Speech = "Okay, Cancel ordering"
+	        	// }
+	        case 1102:
+	        	p.Data.Speech = "OK. choose your meat or veggie."
+	        	p.Header[3] = 9999
+	        	if matched := MultipleMatch(m.Data.Query, fillings); len(matched) != 0 {
+	        		fmt.Println(matched)
+	        		entityback["fillings"] = matched
+	        		p.Data.Entity = entityback
+		        	p.Data.Speech = "Now add your rice and beans"
+		        	p.Header[3] = 1110
+		        	user[m.Header[0]] = p
+		        	p.Data.Speech = "selecting"
+	        	}else if strings.Contains(m.Data.Query, "cancel") {
 	        		p.Header[3] = 0
 	        		p.Data.Speech = "Okay, Cancel ordering"
 	        	}
