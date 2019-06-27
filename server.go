@@ -386,6 +386,20 @@ func echo(w http.ResponseWriter, r *http.Request) {
                         p.Header[3] = 9999
                     }
                 }
+        	case 2000:
+        		p.Data.Speech = "OK, which store do you prefer? you can say recent, favorite, or nearby."
+        		p.Header[3] = 9999
+        		if matched := SingleMatch(m.Data.Query, address); len(matched) != 0 {
+        			entityback["address"] = matched
+        			p.Data.Entity = entityback
+        			p.Data.Speech = "what items do you want, burrito, bowl, or tacos?"
+        			p.Header[3] = 1000
+        			user[m.Header[0]] = p
+        			p.Data.Speech = "selecting"
+        		}else if strings.Contains(m.Data.Query, "cancel") {
+	        		p.Header[3] = 0
+	        		p.Data.Speech = "Okay, Cancel ordering"
+	        	}
             case 1000:
                 p.Data.Speech = "what items do you want, burrito, bowl, or tacos?"
                 p.Header[3] = 9999
@@ -407,20 +421,6 @@ func echo(w http.ResponseWriter, r *http.Request) {
                     p.Header[3] = 0
                     p.Data.Speech = "Okay, Cancel ordering"
                 }
-        	case 2000:
-        		p.Data.Speech = "OK, which store do you prefer? you can say recent, favorite, or nearby."
-        		p.Header[3] = 9999
-        		if matched := SingleMatch(m.Data.Query, address); len(matched) != 0 {
-        			entityback["address"] = matched
-        			p.Data.Entity = entityback
-        			p.Data.Speech = "what items do you want, burrito, bowl, or tacos?"
-        			p.Header[3] = 1000
-        			user[m.Header[0]] = p
-        			p.Data.Speech = "selecting"
-        		}else if strings.Contains(m.Data.Query, "cancel") {
-	        		p.Header[3] = 0
-	        		p.Data.Speech = "Okay, Cancel ordering"
-	        	}
 	        case 1100:
 	        	p.Data.Speech = "OK. First choose your meat or veggie."
 	        	p.Header[3] = 9999
