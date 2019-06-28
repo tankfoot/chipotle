@@ -47,7 +47,7 @@ var ordertype = map[string][]string{
 	"burrito bowl": []string{"bowl", "burrito bowl"},
 	"tacos": []string{"taco"},
 	"salad": []string{"salad"},
-	"kid's Meal": []string{"kid"},
+	"kid's meal": []string{"kid"},
 	"sides & drinks": []string{"side", "drink"},
 }
 
@@ -413,6 +413,12 @@ func echo(w http.ResponseWriter, r *http.Request) {
 	                	user[m.Header[0]] = p
 	                	p.Data.Speech = "selecting"
 	                	tacoflag[m.Header[0]] = true
+                	} else if matched == "kid's meal" {
+                		p.Header[3] = 9999
+	                	p.Data.Speech = "Voice not be enabled for kid's menu right now, please touch to progress"
+                	} else if matched == "sides & drinks" {
+                		p.Header[3] = 9999
+	                	p.Data.Speech = "Voice not be enabled for sides & drinks right now, please touch to progress"
                 	} else {
                 		p.Header[3] = 1100
 	                	p.Data.Speech = "Choose your meat or veggie"
