@@ -465,7 +465,7 @@ func echo(w http.ResponseWriter, r *http.Request) {
 	        case 1101:
 	        	p.Data.Speech = "Do you want soft or crispy taco?"
 	        	p.Header[3] = 9999
-	        	if matched := SingleMatch(m.Data.Query, tacotype); len(matched) != 0 {
+	        	if matched := MultipleMatch(m.Data.Query, tacotype); len(matched) != 0 {
         			entityback["tacotype"] = matched
         			p.Data.Entity = entityback
         			p.Data.Speech = "OK. choose your meat or veggie."
