@@ -470,19 +470,6 @@ func echo(w http.ResponseWriter, r *http.Request) {
 	        		p.Header[3] = 0
 	        		p.Data.Speech = "Okay, Cancel ordering"
 	        	}
-	        	// p.Data.Speech = "OK. How many tacos do you want?"
-	        	// p.Header[3] = 9999
-	        	// if matched := SingleMatch(m.Data.Query, numbers); len(matched) != 0 {
-        		// 	entityback["quantity"] = matched
-        		// 	p.Data.Entity = entityback
-        		// 	p.Data.Speech = "Do you want soft or crispy taco?"
-        		// 	p.Header[3] = 1102
-        		// 	user[m.Header[0]] = p
-        		// 	p.Data.Speech = "selecting"
-        		// }else if strings.Contains(m.Data.Query, "cancel") {
-	        	// 	p.Header[3] = 0
-	        	// 	p.Data.Speech = "Okay, Cancel ordering"
-	        	// }
 	        case 1102:
 	        	p.Data.Speech = "OK. choose your meat or veggie."
 	        	p.Header[3] = 9999
