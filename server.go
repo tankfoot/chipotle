@@ -415,7 +415,7 @@ func echo(w http.ResponseWriter, r *http.Request) {
 	                	tacoflag[m.Header[0]] = true
                 	} else if matched == "kid's meal" {
                 		p.Header[3] = 9999
-	                	p.Data.Speech = "Voice not be enabled for kid's menu right now, please touch to progress"
+	                	p.Data.Speech = "Voice not be enabled for kid's meal right now, please touch to progress"
                 	} else if matched == "sides & drinks" {
                 		p.Header[3] = 9999
 	                	p.Data.Speech = "Voice not be enabled for sides & drinks right now, please touch to progress"
@@ -469,7 +469,7 @@ func echo(w http.ResponseWriter, r *http.Request) {
         			entityback["tacotype"] = matched
         			p.Data.Entity = entityback
         			p.Data.Speech = "OK. choose your meat or veggie."
-        			p.Header[3] = 1100
+        			p.Header[3] = 1102
         			user[m.Header[0]] = p
         			p.Data.Speech = "selecting"
         		}else if strings.Contains(m.Data.Query, "cancel") {
