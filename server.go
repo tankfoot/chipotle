@@ -385,6 +385,7 @@ func echo(w http.ResponseWriter, r *http.Request) {
                         p.Data.Speech = "Performing task now."
                     } else {
                         p.Header[3] = 9999
+                        p.Data.Speech = "Hello, this is Chipotle, Do you want to pick up in store or deliver to an address?"
                     }
                 }
         	case 2000:
@@ -698,6 +699,22 @@ func echo(w http.ResponseWriter, r *http.Request) {
 	        	if strings.Contains(m.Data.Query, "cancel") {
 	        		p.Header[3] = 0
 	        		p.Data.Speech = "Okay, Cancelled"
+	        	}
+	        case 5000:
+	        	if strings.Contains(m.Data.Query, "edit") || strings.Contains(m.Data.Query, "remove") || strings.Contains(m.Data.Query, "duplicate") {
+	        		p.Data.Speech = "Voice is not enabled for this yet, please proceed with touch."
+                    p.Header[3] = 9999
+	        	} else {
+		        	s, i, e, _ := dialogflow.DetectIntentText("chipotle-flat", "123", m.Data.Query, "en")
+		        	p.Header, p.Data.Speech, p.Data.Entity, _ = HeaderProcess(m.Header, i, s, e)
+		        	if strings.Contains(p.Data.Speech, "cancel"){
+		        		p.Header[3] = 0
+		        	} else if p.Header[2] != p.Header[3] {
+		        		user[m.Header[0]] = p
+		        		p.Data.Speech = "Performing task now."
+		        	} else {
+		        		p.Header[3] = 9999
+		        	}	        		
 	        	}
         	default:
 	        	s, i, e, _ := dialogflow.DetectIntentText("chipotle-flat", "123", m.Data.Query, "en")
