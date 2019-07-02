@@ -105,7 +105,7 @@ var sides = map[string][]string{
 
 var drinks = map[string][]string{
 	"bottled water": []string{"water"},
-	"22 fl oz soda/iced tea": []string{"small soda", "small fountain soda", "small"},
+	"22 fl oz soda/iced tea": []string{"small soda", "small fountain soda", "small", "fountain soda"},
 	"32 fl oz soda/iced tea": []string{"large soda", "large fountain soda", "large"},
     "pressed apple juice": []string{"apple juice"},
     "blackberry izze": []string{"blackberry izze"},
