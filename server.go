@@ -316,6 +316,9 @@ func echo(w http.ResponseWriter, r *http.Request) {
                     p.Data.Speech = "What item do you want, burrito, bowl or tacos?"
                     user[m.Header[0]] = p
                     p.Data.Speech = "selecting"
+                } else if m.Data.Query == "" {
+                    p.Header[3] = 9999
+                    p.Data.Speech = ""
                 } else {
                     s, i, e, _ := dialogflow.DetectIntentText("chipotle-flat", "123", m.Data.Query, "en")
                     p.Header, p.Data.Speech, p.Data.Entity, _ = HeaderProcess(m.Header, i, s, e)
