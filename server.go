@@ -271,7 +271,9 @@ func echo(w http.ResponseWriter, r *http.Request) {
 			case "pageWrong":
 				r.Data.Speech = fmt.Sprintf("Wrong page, go to %s to perform action", pagename[r.Header[2]])
 	        case "itemNotFound: ":
-	            r.Data.Speech = ""
+	            r.Data.Speech = "item not found"
+	        case "":
+	        	r.Data.Speech = ""
 	        default:
 	        	r.Data.Speech = "Error type not found"
 	        }
