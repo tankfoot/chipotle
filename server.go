@@ -126,13 +126,13 @@ var tacotype = map[string][]string{
 var user = map[float64]Output{}
 var tacoflag = map[float64]bool{}
 var pagename = map[float64]string{
-	100: "start page",
-	1000: "select menu page",
-	1100: "build mean page",
+	100: "homepage",
+	1000: "meal type page",
+	1100: "build meal page",
 	1188: "input name page",
-	5000: "order detail page",
+	5000: "bag page",
 	6000: "submit order page",
-	2000: "location list page",
+	2000: "select location page",
 	2100: "search location page",
 	2200: "confirm location page",
 }
