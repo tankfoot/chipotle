@@ -89,7 +89,7 @@ var tops = map[string][]string{
 	"queso": []string{"queso"},
 	"romaine lettuce": []string{"lettuce"},
 	"tomatillo-green chili salsa": []string{"green chili"},
-	"fajita veggies": []string{"fajita"},
+	"fajita veggies": []string{"fajita", "veggie"},
 	"fresh tomato salsa": []string{"salsa"},
 	"guacamole": []string{"guac"},
 	"cheese": []string{"cheese"},
@@ -351,7 +351,7 @@ func echo(w http.ResponseWriter, r *http.Request) {
             case 1000:
                 p.Data.Speech = "what items do you want, burrito, bowl, or tacos?"
                 p.Header[3] = 9999
-                if matched := SingleMatch(m.Data.Query, ordertype); len(matched) != 0 {
+                if matched := SingleMatch(strings.ToLower(m.Data.Query), ordertype); len(matched) != 0 {
 	              	entityback["ordertype"] = matched
 	                p.Data.Entity = entityback
                 	if matched == "tacos" {
