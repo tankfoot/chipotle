@@ -43,8 +43,8 @@ type Output struct {
 }
 
 var ordertype = map[string][]string{
-	"burrito": []string{"burrito"},
-	"burrito bowl": []string{"bowl", "burrito bowl"},
+    "burrito bowl": []string{"bowl", "burrito bowl"},	
+    "burrito": []string{"burrito"},
 	"tacos": []string{"taco"},
 	"salad": []string{"salad"},
 	"kid's meal": []string{"kid"},
@@ -298,11 +298,10 @@ func echo(w http.ResponseWriter, r *http.Request) {
     		entityback := make(map[string]interface{})
         	switch m.Header[2] {
             case 100:
-                if strings.Contains(m.Data.Query, "pick up") {
-                    p.Header[3] = 2000
-                    entityback["servicetype"] = "pick up"
+                if strings.Contains(m.Data.Query, "menu") {
+                    p.Header[3] = 1000
                     p.Data.Entity = entityback
-                    p.Data.Speech = "OK, which store do you prefer? you can say recent, favorite, or nearby."
+                    p.Data.Speech = "What item do you want, burrito, bowl or tacos?"
                     user[m.Header[0]] = p
                     p.Data.Speech = "selecting"
                 } else if strings.Contains(m.Data.Query, "deliver") {
@@ -312,10 +311,11 @@ func echo(w http.ResponseWriter, r *http.Request) {
                     p.Data.Speech = "OK, what's your address? You can choose from recent, or add a new one."
                     user[m.Header[0]] = p
                     p.Data.Speech = "selecting"
-                } else if strings.Contains(m.Data.Query, "menu") {
-                    p.Header[3] = 1000
+                } else if strings.Contains(m.Data.Query, "pick") {
+                    p.Header[3] = 2000
+                    entityback["servicetype"] = "pick up"
                     p.Data.Entity = entityback
-                    p.Data.Speech = "What item do you want, burrito, bowl or tacos?"
+                    p.Data.Speech = "OK, which store do you prefer? you can say recent, favorite, or nearby."
                     user[m.Header[0]] = p
                     p.Data.Speech = "selecting"
                 } else if m.Data.Query == "" {
