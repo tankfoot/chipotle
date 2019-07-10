@@ -42,9 +42,12 @@ type Output struct {
     Data DataOutput `json:"data"`
 }
 
+var ordertype_burrito = map[string][]string{
+    "burrito": []string{"burrito"},
+}
+
 var ordertype = map[string][]string{
     "burrito bowl": []string{"bowl", "burrito bowl"},	
-    "burrito": []string{"burrito"},
 	"tacos": []string{"taco"},
 	"salad": []string{"salad"},
 	"kid's meal": []string{"kid"},
@@ -69,7 +72,7 @@ var fillings = map[string][]string{
 var beans = map[string][]string{
 	"black beans": []string{"black"},
 	"pinto beans": []string{"pinto"},
-	"no beans": []string{"no beans"},
+    "no beans": []string{"no beans"},
 }
 
 var rice = map[string][]string{
@@ -110,6 +113,7 @@ var drinks = map[string][]string{
     "pressed apple juice": []string{"apple juice"},
     "blackberry izze": []string{"blackberry izze"},
     "grapefruit izze": []string{"grapefruit izze"},
+    "mexican coca-cola": []string{"Coca-Cola"},
 }
 
 var numbers = map[string][]string{
@@ -321,6 +325,7 @@ func echo(w http.ResponseWriter, r *http.Request) {
                 } else if m.Data.Query == "" {
                     p.Header[3] = 9999
                     p.Data.Speech = ""
+                    p.Data.Entity = entityback
                 } else {
                     s, i, e, _ := dialogflow.DetectIntentText("chipotle-flat", "123", m.Data.Query, "en")
                     p.Header, p.Data.Speech, p.Data.Entity, _ = HeaderProcess(m.Header, i, s, e)
@@ -351,7 +356,11 @@ func echo(w http.ResponseWriter, r *http.Request) {
             case 1000:
                 p.Data.Speech = "what items do you want, burrito, bowl, or tacos?"
                 p.Header[3] = 9999
-                if matched := SingleMatch(strings.ToLower(m.Data.Query), ordertype); len(matched) != 0 {
+                matched := SingleMatch(strings.ToLower(m.Data.Query), ordertype_burrito)
+                if matched_followup := SingleMatch(strings.ToLower(m.Data.Query), ordertype); len(matched_followup) != 0 {
+                    matched = matched_followup
+                }
+                if len(matched) != 0 {
 	              	entityback["ordertype"] = matched
 	                p.Data.Entity = entityback
                 	if matched == "tacos" {
@@ -380,7 +389,7 @@ func echo(w http.ResponseWriter, r *http.Request) {
 	        	if tacoflag[m.Header[0]] {
 		        	p.Data.Speech = "OK. How many tacos do you want?"
 		        	p.Header[3] = 9999
-		     		if matched := MultipleMatch(m.Data.Query, numbers); len(matched) != 0 {
+		     		if matched := MultipleMatch(strings.ToLower(m.Data.Query), numbers); len(matched) != 0 {
 		        		fmt.Println(matched)
 		        		entityback["quantity"] = matched
 		        		p.Data.Entity = entityback
@@ -396,7 +405,7 @@ func echo(w http.ResponseWriter, r *http.Request) {
 	        	} else {
 		        	p.Data.Speech = "OK. First choose your meat or veggie."
 		        	p.Header[3] = 9999
-		        	if matched := MultipleMatch(m.Data.Query, fillings); len(matched) != 0 {
+		        	if matched := MultipleMatch(strings.ToLower(m.Data.Query), fillings); len(matched) != 0 {
 		        		fmt.Println(matched)
 		        		entityback["fillings"] = matched
 		        		p.Data.Entity = entityback
@@ -441,8 +450,8 @@ func echo(w http.ResponseWriter, r *http.Request) {
 	        case 1110:
 	        	p.Data.Speech = "Now add your rice and beans"
 	        	p.Header[3] = 9999
-	        	s_rice := MultipleMatch(m.Data.Query, rice)
                 s_beans := MultipleMatch(m.Data.Query, beans)
+	        	s_rice := MultipleMatch(m.Data.Query, rice)
                 if len(s_rice) != 0 && len(s_beans) != 0 {
                 	entityback["rice"] = s_rice
                 	entityback["beans"] = s_beans
@@ -632,7 +641,7 @@ func echo(w http.ResponseWriter, r *http.Request) {
 	        case 1170:
 	        	p.Data.Speech = "Do you want to add item to bag?"
 	        	p.Header[3] = 9999
-	        	if strings.Contains(m.Data.Query, "ye") || strings.Contains(m.Data.Query, "sure"){
+	        	if strings.Contains(m.Data.Query, "ye") || strings.Contains(m.Data.Query, "sure") || strings.Contains(m.Data.Query, "ready"){
 	        		p.Data.Speech = "Okay, item add to bag"
                     p.Header[3] = 1900
 	        		user[m.Header[0]] = p
