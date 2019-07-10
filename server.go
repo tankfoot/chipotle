@@ -43,8 +43,8 @@ type Output struct {
 }
 
 var ordertype = map[string][]string{
+	"burrito bowl": []string{"bowl", "burrito bowl", "ball"},
 	"burrito": []string{"burrito"},
-	"burrito bowl": []string{"bowl", "burrito bowl"},
 	"tacos": []string{"taco"},
 	"salad": []string{"salad"},
 	"kid's meal": []string{"kid"},
