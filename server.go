@@ -101,8 +101,14 @@ var tops = map[string][]string{
 	"sour cream": []string{"sour cream"},
 }
 
+var sides_chips = map[string][]string{
+	"chips": []string{"chip"},	
+}
+
 var sides = map[string][]string{
-	"chips": []string{"chips"},
+	"chips & guacamole": []string{"chips with guac", "chips and guac"},
+	"chips & queso": []string{"chips with queso", "chips and queso"},
+	"side of gucamole": []string{"side of guacamole"},
     "tortilla on the side": []string{"tortilla"},
 }
 
@@ -450,11 +456,11 @@ func echo(w http.ResponseWriter, r *http.Request) {
 	        case 1110:
 	        	p.Data.Speech = "Now add your rice and beans"
 	        	p.Header[3] = 9999
-                s_beans := MultipleMatch(m.Data.Query, beans)
 	        	s_rice := MultipleMatch(m.Data.Query, rice)
+                s_beans := MultipleMatch(m.Data.Query, beans)
                 if len(s_rice) != 0 && len(s_beans) != 0 {
-                	entityback["rice"] = s_rice
                 	entityback["beans"] = s_beans
+                	entityback["rice"] = s_rice
                 	p.Data.Entity = entityback
                 	p.Data.Speech = "Do you want to add salsa? Mild, medium, or hot?"
                     p.Header[3] = 1120
