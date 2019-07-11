@@ -263,8 +263,13 @@ func HeaderProcess(headerIn [6]float64, intent string, speech string, entity map
         case "Done":
             headerOut[3] = 6100
             str := fmt.Sprintf("%v", entity["time"])
-            str1, _ := time.Parse(time.RFC3339, str)
-            entityback["time"] = str1.Format("5:04 PM")
+            t1, _ := time.Parse(time.RFC3339, str)
+            t2 := time.Now()
+            diff := t2.Sub(t1)
+            if diff < 0{
+            	fmt.Println(diff)            	
+            }
+            entityback["time"] = t1.Format("3:04 PM")
             entity = entityback
             talkback = "Please touch to make your payment and submit order."
         default:
