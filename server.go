@@ -562,9 +562,8 @@ func echo(w http.ResponseWriter, r *http.Request) {
 	        case 1140:
 	        	p.Data.Speech = "how about sour cream, fajita veggies, cheese, and lettuce?"
 	        	p.Header[3] = 9999
-	        	var s []string
 	        	if matched := MultipleMatch(m.Data.Query, tops); len(matched) != 0 {
-	        			entityback["tops"] = s
+	        			entityback["tops"] = matched
 	        		    p.Data.Entity = entityback
 	        		    p.Data.Speech = "Any tortilla or chips?"
                         p.Header[3] = 1150
