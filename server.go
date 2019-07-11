@@ -85,7 +85,7 @@ var rice = map[string][]string{
 var salsa = map[string][]string{
     "tomatillo-green chili salsa": []string{"green chili", "medium"},
     "tomatillo-red chili salsa": []string{"red", "hot"},
-    "fresh tomato salsa": []string{"salsa", "mild"},
+    "fresh tomato salsa": []string{"tomato", "mild"},
 }
 
 var tops = map[string][]string{
@@ -94,7 +94,7 @@ var tops = map[string][]string{
 	"romaine lettuce": []string{"lettuce"},
 	"tomatillo-green chili salsa": []string{"green chili"},
 	"fajita veggies": []string{"fajita", "veggie"},
-	"fresh tomato salsa": []string{"salsa"},
+	"fresh tomato salsa": []string{"tomato"},
 	"guacamole": []string{"guac"},
 	"cheese": []string{"cheese"},
 	"tomatillo-red chili salsa": []string{"red chili"},
