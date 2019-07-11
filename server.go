@@ -108,7 +108,10 @@ var sides_chips = map[string][]string{
 var sides = map[string][]string{
 	"chips & guacamole": []string{"chips with guac", "chips and guac"},
 	"chips & queso": []string{"chips with queso", "chips and queso"},
-	"side of gucamole": []string{"side of guacamole"},
+	"large chips & large guacamole": []string{"large chips and large guac", "large chips with large guac"},
+	"large queso & large chips": []string{"large chips and large queso", "large chips with large queso"},	
+	"side of gucamole": []string{"side of guac"},
+	"side of queso": []string{"side of queso"},
     "tortilla on the side": []string{"tortilla"},
 }
 
@@ -515,7 +518,6 @@ func echo(w http.ResponseWriter, r *http.Request) {
 	        case 1120:
 	        	p.Data.Speech = "Do you want to add salsa? Mild, medium, or hot?"
 	        	p.Header[3] = 9999
-
 	        	if matched := MultipleMatch(m.Data.Query, salsa); len(matched) != 0 {
 	        		entityback["tops"] = matched
 	        		p.Data.Entity = entityback
@@ -561,18 +563,13 @@ func echo(w http.ResponseWriter, r *http.Request) {
 	        	p.Data.Speech = "how about sour cream, fajita veggies, cheese, and lettuce?"
 	        	p.Header[3] = 9999
 	        	var s []string
-	        	for k, v := range tops {
-	        		for _, item := range v {
-	        			if strings.Contains(m.Data.Query, item) {
-	        				s = append(s, k)
-	        				entityback["tops"] = s
-	        			    p.Data.Entity = entityback
-	        			    p.Data.Speech = "Any tortilla or chips?"
-                            p.Header[3] = 1150
-	        				user[m.Header[0]] = p
-	        				p.Data.Speech = "selecting"
-	        			} 
-	        		}
+	        	if matched := MultipleMatch(m.Data.Query, tops); len(matched) != 0 {
+	        			entityback["tops"] = s
+	        		    p.Data.Entity = entityback
+	        		    p.Data.Speech = "Any tortilla or chips?"
+                        p.Header[3] = 1150
+	    				user[m.Header[0]] = p
+	    				p.Data.Speech = "selecting"	        		
 	        	}
 	        	if strings.Contains(m.Data.Query, "no") {
                     entityback["tops"] = []string{}
@@ -589,19 +586,17 @@ func echo(w http.ResponseWriter, r *http.Request) {
 	        case 1150:
 	        	p.Data.Speech = "Any tortilla or chips?"
 	        	p.Header[3] = 9999
-	        	var s []string
-	        	for k, v := range sides {
-	        		for _, item := range v {
-	        			if strings.Contains(m.Data.Query, item) {
-	        				s = append(s, k)
-	        				entityback["sides"] = s
-	        			    p.Data.Entity = entityback
-	        			    p.Data.Speech = "Do you want fountain soda, or bottled juice?"
-                            p.Header[3] = 1160
-	        				user[m.Header[0]] = p
-	        				p.Data.Speech = "selecting"
-	        			} 
-	        		}
+	        	matched := MultipleMatch(strings.ToLower(m.Data.Query), sides_chips)
+	        	if matched_followup := MultipleMatch(strings.ToLower(m.Data.Query), sides); len(matched_followup) != 0{
+	        		matched = matched_followup
+	        	}
+	        	if len(matched) != 0 {
+	        			entityback["sides"] = matched
+	        		    p.Data.Entity = entityback
+	        		    p.Data.Speech = "Do you want fountain soda, or bottled juice?"
+                        p.Header[3] = 1160
+	     				user[m.Header[0]] = p
+	      				p.Data.Speech = "selecting"       		
 	        	}
 	        	if strings.Contains(m.Data.Query, "no") {
                     entityback["sides"] = []string{}
