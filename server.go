@@ -415,7 +415,6 @@ func echo(w http.ResponseWriter, r *http.Request) {
 		        	p.Data.Speech = "OK. First choose your meat or veggie."
 		        	p.Header[3] = 9999
 		        	if matched := MultipleMatch(strings.ToLower(m.Data.Query), fillings); len(matched) != 0 {
-		        		fmt.Println(matched)
 		        		entityback["fillings"] = matched
 		        		p.Data.Entity = entityback
 			        	p.Data.Speech = "Now add your rice and beans"
