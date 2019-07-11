@@ -11,6 +11,7 @@ import (
 	"log"
     "fmt"
     "os"
+    "bytes"
     "strings"
 	"net/http"
     "encoding/json"
@@ -152,6 +153,43 @@ var pagename = map[float64]string{
 
 var upgrader = websocket.Upgrader{} // use default options
 
+
+type KeyVal struct {
+    Key string
+    Val interface{}
+}
+
+// Define an ordered map
+type OrderedMap []KeyVal
+
+// Implement the json.Marshaler interface
+func (omap OrderedMap) MarshalJSON() ([]byte, error) {
+    var buf bytes.Buffer
+
+    buf.WriteString("{")
+    for i, kv := range omap {
+        if i != 0 {
+            buf.WriteString(",")
+        }
+        // marshal key
+        key, err := json.Marshal(kv.Key)
+        if err != nil {
+            return nil, err
+        }
+        buf.Write(key)
+        buf.WriteString(":")
+        // marshal value
+        val, err := json.Marshal(kv.Val)
+        if err != nil {
+            return nil, err
+        }
+        buf.Write(val)
+    }
+
+    buf.WriteString("}")
+    return buf.Bytes(), nil
+}
+
 func SingleMatch (query string, keyword map[string][]string) (wordMatch string){
 	for k, v := range keyword {
         for _, item := range v {
@@ -226,13 +264,9 @@ func HeaderProcess(headerIn [6]float64, intent string, speech string, entity map
             headerOut[3] = 6100
             str := fmt.Sprintf("%v", entity["time"])
             str1, _ := time.Parse(time.RFC3339, str)
-            entityback["time"] = str1.Format("3:04 PM")
-            // entityback["payment"] = entity["payment"]
+            entityback["time"] = str1.Format("5:04 PM")
             entity = entityback
             talkback = "Please touch to make your payment and submit order."
-        // case "Done":
-        //     headerOut[3] = 6200
-        //     talkback = "Okay, Do you want to submit order?"
         default:
         	headerOut[3] = 9999
             talkback = speech
@@ -443,7 +477,7 @@ func echo(w http.ResponseWriter, r *http.Request) {
 	        case 1102:
 	        	p.Data.Speech = "OK. choose your meat or veggie."
 	        	p.Header[3] = 9999
-	        	if matched := MultipleMatch(m.Data.Query, fillings); len(matched) != 0 {
+	        	if matched := MultipleMatch(strings.ToLower(m.Data.Query), fillings); len(matched) != 0 {
 	        		fmt.Println(matched)
 	        		entityback["fillings"] = matched
 	        		p.Data.Entity = entityback
@@ -464,6 +498,12 @@ func echo(w http.ResponseWriter, r *http.Request) {
                 	entityback["beans"] = s_beans
                 	entityback["rice"] = s_rice
                 	p.Data.Entity = entityback
+        //         	p.Data.Entity = map[string]interface{}{
+        // 				"orderedMap": OrderedMap{
+        // 					{"rice", s_rice},
+        //     				{"beans", s_beans},
+        // 				},
+    				// }
                 	p.Data.Speech = "Do you want to add salsa? Mild, medium, or hot?"
                     p.Header[3] = 1120
                 	user[m.Header[0]] = p
