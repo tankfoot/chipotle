@@ -279,7 +279,7 @@ func echo(w http.ResponseWriter, r *http.Request) {
 	        case "":
 	        	r.Data.Speech = ""
 	        default:
-	        	r.Data.Speech = "Error type not found"
+	        	r.Data.Speech = m.Data.Result
 	        }
         	r.Header[3] = 9999
         	delete(user, m.Header[0])
