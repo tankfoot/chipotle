@@ -212,6 +212,21 @@ func MultipleMatch (query string, keyword map[string][]string) (wordMatch []stri
     return wordMatch
 }
 
+func ChipotleTimeLogic (originalMinute int) (adjustedMinute int) {
+    if originalMinute >= 0 && originalMinute < 15 {
+        adjustedMinute = 0
+    } else if originalMinute >= 15 && originalMinute < 30 {
+        adjustedMinute = 15
+    } else if originalMinute >= 30 && originalMinute < 45 {
+        adjustedMinute = 30
+    } else if originalMinute >=45 && originalMinute < 60 {
+        adjustedMinute = 45
+    } else {
+        adjustedMinute = -1
+    }
+    return adjustedMinute
+}
+
 func HeaderProcess(headerIn [6]float64, intent string, speech string, entity map[string]interface{}) (
         [7]float64, string, map[string]interface{}, error) {
     var headerOut [7]float64
@@ -264,12 +279,19 @@ func HeaderProcess(headerIn [6]float64, intent string, speech string, entity map
             headerOut[3] = 6100
             str := fmt.Sprintf("%v", entity["time"])
             t1, _ := time.Parse(time.RFC3339, str)
-            t2 := time.Now()
-            diff := t2.Sub(t1)
-            if diff < 0{
-            	fmt.Println(diff)            	
+            rawtime := t1.Hour() * 100 + t1.Minute();
+            fmt.Println(rawtime)
+            if rawtime <= 1000 {
+            	entityback["time"] = fmt.Sprintf("%d:%.2d %s", t1.Hour(), ChipotleTimeLogic(t1.Minute()), "PM")
+            } else if rawtime >= 1045 && rawtime < 1200 {
+                entityback["time"] = fmt.Sprintf("%d:%.2d %s", t1.Hour(), ChipotleTimeLogic(t1.Minute()), "AM")
+            } else if rawtime >= 1200 && rawtime < 1300 {
+                entityback["time"] = fmt.Sprintf("%d:%.2d %s", t1.Hour(), ChipotleTimeLogic(t1.Minute()), "PM")
+            } else if rawtime >= 1300 {    
+                entityback["time"] = fmt.Sprintf("%d:%.2d %s", t1.Hour(), ChipotleTimeLogic(t1.Minute()), "PM")     
+            } else {
+                entityback["time"] = "quickest"
             }
-            entityback["time"] = t1.Format("3:04 PM")
             entity = entityback
             talkback = "Please touch to make your payment and submit order."
         default:
@@ -714,6 +736,26 @@ func echo(w http.ResponseWriter, r *http.Request) {
 		        	} else {
 		        		p.Header[3] = 9999
 		        	}	        		
+	        	}
+	        case 6000:
+	        	if strings.Contains(m.Data.Query, "quick") {
+	        		p.Data.Speech = "Please touch to make your payment and submit order."
+                    p.Header[3] = 6100
+                    entityback["time"] = "quickest"
+                    p.Data.Entity = entityback
+	        		user[m.Header[0]] = p
+	        		p.Data.Speech = "selecting"
+	        	} else {
+		        	s, i, e, _ := dialogflow.DetectIntentText("chipotle-flat", "123", m.Data.Query, "en")
+		        	p.Header, p.Data.Speech, p.Data.Entity, _ = HeaderProcess(m.Header, i, s, e)
+		        	if strings.Contains(p.Data.Speech, "cancel"){
+		        		p.Header[3] = 0
+		        	} else if p.Header[2] != p.Header[3] {
+		        		user[m.Header[0]] = p
+		        		p.Data.Speech = "Performing task now."
+		        	} else {
+		        		p.Header[3] = 9999
+		        	}
 	        	}
         	default:
 	        	s, i, e, _ := dialogflow.DetectIntentText("chipotle-flat", "123", m.Data.Query, "en")
