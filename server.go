@@ -91,7 +91,7 @@ var salsa = map[string][]string{
 var tops = map[string][]string{
 	"roasted chili-corn salsa": []string{"corn"},
 	"queso": []string{"queso"},
-	"romaine lettuce": []string{"lettuce"},
+	"romaine lettuce": []string{"lettuce", "letters", "ladders"},
 	"tomatillo-green chili salsa": []string{"green chili"},
 	"fajita veggies": []string{"fajita", "veggie"},
 	"fresh tomato salsa": []string{"tomato"},
@@ -605,7 +605,7 @@ func echo(w http.ResponseWriter, r *http.Request) {
 	        case 1130:
 	        	p.Data.Speech = "Do you want queso, guac, or corn?"
 	        	p.Header[3] = 9999
-	        	if matched := MultipleMatch(m.Data.Query, tops); len(matched) != 0 {
+	        	if matched := MultipleMatch(strings.ToLower(m.Data.Query), tops); len(matched) != 0 {
 	        		entityback["tops"] = matched
 	        		p.Data.Entity = entityback
 	        		p.Data.Speech = "how about sour cream, fajita veggies, cheese, and lettuce?"
@@ -628,7 +628,7 @@ func echo(w http.ResponseWriter, r *http.Request) {
 	        case 1140:
 	        	p.Data.Speech = "how about sour cream, fajita veggies, cheese, and lettuce?"
 	        	p.Header[3] = 9999
-	        	if matched := MultipleMatch(m.Data.Query, tops); len(matched) != 0 {
+	        	if matched := MultipleMatch(strings.ToLower(m.Data.Query), tops); len(matched) != 0 {
 	        			entityback["tops"] = matched
 	        		    p.Data.Entity = entityback
 	        		    p.Data.Speech = "Any tortilla or chips?"
