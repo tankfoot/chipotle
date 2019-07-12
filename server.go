@@ -11,7 +11,6 @@ import (
 	"log"
     "fmt"
     "os"
-    "bytes"
     "strings"
 	"net/http"
     "encoding/json"
@@ -19,6 +18,7 @@ import (
     "chipotle/dialogflow"
 
 	"github.com/gorilla/websocket"
+	"github.com/iancoleman/orderedmap"
 )
 
 //Incoming Json struct
@@ -35,7 +35,7 @@ type Message struct {
 //Output json struct
 type DataOutput struct {
     Speech string `json:"speech"`
-    Entity map[string]interface{} `json:"entity"`
+    Entity interface{} `json:"entity"`
 }
 
 type Output struct {
@@ -119,7 +119,7 @@ var sides = map[string][]string{
 var drinks = map[string][]string{
 	"bottled water": []string{"water"},
 	"22 fl oz soda/iced tea": []string{"small soda", "small fountain soda", "small", "fountain soda"},
-	"32 fl oz soda/iced tea": []string{"large soda", "large fountain soda", "large"},
+	"32 fl oz soda/iced tea": []string{"large soda", "large fountain soda", "large", "big"},
     "pressed apple juice": []string{"apple juice"},
     "blackberry izze": []string{"blackberry izze"},
     "grapefruit izze": []string{"grapefruit izze"},
@@ -152,43 +152,6 @@ var pagename = map[float64]string{
 }
 
 var upgrader = websocket.Upgrader{} // use default options
-
-
-type KeyVal struct {
-    Key string
-    Val interface{}
-}
-
-// Define an ordered map
-type OrderedMap []KeyVal
-
-// Implement the json.Marshaler interface
-func (omap OrderedMap) MarshalJSON() ([]byte, error) {
-    var buf bytes.Buffer
-
-    buf.WriteString("{")
-    for i, kv := range omap {
-        if i != 0 {
-            buf.WriteString(",")
-        }
-        // marshal key
-        key, err := json.Marshal(kv.Key)
-        if err != nil {
-            return nil, err
-        }
-        buf.Write(key)
-        buf.WriteString(":")
-        // marshal value
-        val, err := json.Marshal(kv.Val)
-        if err != nil {
-            return nil, err
-        }
-        buf.Write(val)
-    }
-
-    buf.WriteString("}")
-    return buf.Bytes(), nil
-}
 
 func SingleMatch (query string, keyword map[string][]string) (wordMatch string){
 	for k, v := range keyword {
@@ -522,15 +485,10 @@ func echo(w http.ResponseWriter, r *http.Request) {
 	        	s_rice := MultipleMatch(m.Data.Query, rice)
                 s_beans := MultipleMatch(m.Data.Query, beans)
                 if len(s_rice) != 0 && len(s_beans) != 0 {
-                	entityback["beans"] = s_beans
-                	entityback["rice"] = s_rice
-                	p.Data.Entity = entityback
-        //         	p.Data.Entity = map[string]interface{}{
-        // 				"orderedMap": OrderedMap{
-        // 					{"rice", s_rice},
-        //     				{"beans", s_beans},
-        // 				},
-    				// }
+                	o := orderedmap.New()
+                	o.Set("rice", s_rice)
+                	o.Set("beans", s_beans)
+                	p.Data.Entity = o
                 	p.Data.Speech = "Do you want to add salsa? Mild, medium, or hot?"
                     p.Header[3] = 1120
                 	user[m.Header[0]] = p
@@ -738,7 +696,7 @@ func echo(w http.ResponseWriter, r *http.Request) {
 		        	}	        		
 	        	}
 	        case 6000:
-	        	if strings.Contains(m.Data.Query, "quick") {
+	        	if strings.Contains(m.Data.Query, "quickest") || strings.Contains(m.Data.Query, "earliest"){
 	        		p.Data.Speech = "Please touch to make your payment and submit order."
                     p.Header[3] = 6100
                     entityback["time"] = "quickest"
