@@ -112,7 +112,7 @@ var sides = map[string][]string{
 	"chips & queso": []string{"chips with queso", "chips and queso"},
 	"large chips & large guacamole": []string{"large chips and large guac", "large chips with large guac"},
 	"large queso & large chips": []string{"large chips and large queso", "large chips with large queso"},	
-	"side of gucamole": []string{"side of guac"},
+	"side of guacamole": []string{"side of guac"},
 	"side of queso": []string{"side of queso"},
     "tortilla on the side": []string{"tortilla"},
 }
