@@ -344,12 +344,10 @@ func echo(w http.ResponseWriter, r *http.Request) {
                     user[m.Header[0]] = p
                     p.Data.Speech = "selecting"
                 } else if strings.Contains(m.Data.Query, "deliver") {
-                    p.Header[3] = 2000
+                    p.Header[3] = 9999
                     entityback["servicetype"] = "deliver"
                     p.Data.Entity = entityback
-                    p.Data.Speech = "OK, what's your address? You can choose from recent, or add a new one."
-                    user[m.Header[0]] = p
-                    p.Data.Speech = "selecting"
+                    p.Data.Speech = "Voice is not enabled for this yet, please proceed with touch."
                 } else if strings.Contains(m.Data.Query, "pick") {
                     p.Header[3] = 2000
                     entityback["servicetype"] = "pick up"
@@ -371,7 +369,7 @@ func echo(w http.ResponseWriter, r *http.Request) {
                         p.Data.Speech = "Performing task now."
                     } else {
                         p.Header[3] = 9999
-                        p.Data.Speech = "Hello, this is Chipotle, what store do you want to pick up from?"
+                        p.Data.Speech = "Hello, this is Chipotle, do you want to pick up in a store, or deliver to an address?"
                     }
                 }
         	case 2000:
