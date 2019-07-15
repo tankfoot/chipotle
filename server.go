@@ -704,6 +704,12 @@ func echo(w http.ResponseWriter, r *http.Request) {
 	        	if strings.Contains(m.Data.Query, "edit") || strings.Contains(m.Data.Query, "remove") || strings.Contains(m.Data.Query, "duplicate") {
 	        		p.Data.Speech = "Voice is not enabled for this yet, please proceed with touch."
                     p.Header[3] = 9999
+                }else if strings.Contains(m.Data.Query, "confirm") || strings.Contains(m.Data.Query, "yes") {
+                    s, i, e, _ := dialogflow.DetectIntentText("chipotle-flat", "123", "confirm details", "en")
+                    p.Header, p.Data.Speech, p.Data.Entity, _ = HeaderProcess(m.Header, i, s, e)
+                    p.Header[3] = 6000
+                    user[m.Header[0]] = p 
+                    p.Data.Speech = "selecting"                   
 	        	} else {
 		        	s, i, e, _ := dialogflow.DetectIntentText("chipotle-flat", "123", m.Data.Query, "en")
 		        	p.Header, p.Data.Speech, p.Data.Entity, _ = HeaderProcess(m.Header, i, s, e)
@@ -723,8 +729,8 @@ func echo(w http.ResponseWriter, r *http.Request) {
                     entityback["time"] = "quickest"
                     p.Data.Entity = entityback
 	        		user[m.Header[0]] = p
-	        		p.Data.Speech = "selecting"
-	        	} else {
+	        		p.Data.Speech = "selecting"        	
+                } else {
 		        	s, i, e, _ := dialogflow.DetectIntentText("chipotle-flat", "123", m.Data.Query, "en")
 		        	p.Header, p.Data.Speech, p.Data.Entity, _ = HeaderProcess(m.Header, i, s, e)
 		        	if strings.Contains(p.Data.Speech, "cancel"){
