@@ -398,7 +398,6 @@ func echo(w http.ResponseWriter, r *http.Request) {
                 if len(matched) != 0 {
 	              	entityback["ordertype"] = matched
 	              	mealtype[m.Header[0]] = matched
-	              	fmt.Println(mealtype)
 	                p.Data.Entity = entityback
                 	if matched == "tacos" {
                 		p.Header[3] = 1100
@@ -570,7 +569,11 @@ func echo(w http.ResponseWriter, r *http.Request) {
 	        	if matched := MultipleMatch(strings.ToLower(m.Data.Query), tops); len(matched) != 0 {
 	        		entityback["tops"] = matched
 	        		p.Data.Entity = entityback
-	        		p.Data.Speech = "how about sour cream, fajita veggies, cheese, and lettuce?"
+                    if mealtype[m.Header[0]] == "salad"{
+                        p.Data.Speech = "how about sour cream, fajita veggies, cheese, and vinaigrette?"
+                    } else {
+                        p.Data.Speech = "how about sour cream, fajita veggies, cheese, and lettuce?"
+                    }
 	        		p.Header[3] = 1140
 	        		user[m.Header[0]] = p
 	        		p.Data.Speech = "selecting"
@@ -594,16 +597,16 @@ func echo(w http.ResponseWriter, r *http.Request) {
 	        case 1140:
 	        	if mealtype[m.Header[0]] == "salad"{
 	        	    	p.Data.Speech = "how about sour cream, fajita veggies, cheese, and vinaigrette?"
-	        		} else {
+	        	} else {
 	        			p.Data.Speech = "how about sour cream, fajita veggies, cheese, and lettuce?"
-	        		}
+	        	}
 	        	p.Header[3] = 9999
 	        	if matched := MultipleMatch(strings.ToLower(m.Data.Query), tops); len(matched) != 0 {
 	        			entityback["tops"] = matched
 	        		    p.Data.Entity = entityback
 			        	if mealtype[m.Header[0]] == "tacos"{
 			        	    	p.Data.Speech = "Any chips as sides?"
-			        		} else {
+			        	} else {
 			        			p.Data.Speech = "Any tortilla or chips?"
 			        	}
                         p.Header[3] = 1150
@@ -613,7 +616,11 @@ func echo(w http.ResponseWriter, r *http.Request) {
 	        	if strings.Contains(m.Data.Query, "no") {
                     entityback["tops"] = []string{}
 	        		p.Data.Entity = entityback
-	        	    p.Data.Speech = "Any tortilla or chips?"
+                    if mealtype[m.Header[0]] == "tacos"{
+                            p.Data.Speech = "Any chips as sides?"
+                    } else {
+                            p.Data.Speech = "Any tortilla or chips?"
+                    }
                     p.Header[3] = 1150
       				user[m.Header[0]] = p
 	        		p.Data.Speech = "selecting"
@@ -625,7 +632,7 @@ func echo(w http.ResponseWriter, r *http.Request) {
 	        case 1150:
 	        	if mealtype[m.Header[0]] == "tacos"{
 	        	    	p.Data.Speech = "Any chips as sides?"
-	        		} else {
+	        	} else {
 	        			p.Data.Speech = "Any tortilla or chips?"
 	        	}
 	        	p.Header[3] = 9999
