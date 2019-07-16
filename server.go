@@ -117,6 +117,16 @@ var sides = map[string][]string{
 	"tortilla on the side":          []string{"tortilla"},
 }
 
+var sides_burrito = map[string][]string{
+	"chips & guacamole":             []string{"chips with guac", "chips and guac"},
+	"chips & queso":                 []string{"chips with queso", "chips and queso"},
+	"large chips & large guacamole": []string{"large chips and large guac", "large chips with large guac"},
+	"large queso & large chips":     []string{"large chips and large queso", "large chips with large queso"},
+	"side of guacamole":             []string{"side of guac"},
+	"side of queso":                 []string{"side of queso"},
+	"double wrap with tortilla":     []string{"tortilla"},
+}
+
 var drinks = map[string][]string{
 	"bottled water":          []string{"water"},
 	"22 fl oz soda/iced tea": []string{"small soda", "small fountain soda", "small", "fountain soda"},
@@ -614,7 +624,7 @@ func echo(w http.ResponseWriter, r *http.Request) {
 				if strings.Contains(m.Data.Query, "no") {
 					entityback["tops"] = []string{}
 					p.Data.Entity = entityback
-					if mealtype[m.Header[0]] == "tacos" || mealtype[m.Header[0]] == "burrito"{
+					if mealtype[m.Header[0]] == "tacos" {
 						p.Data.Speech = "Any chips as sides?"
 					} else {
 						p.Data.Speech = "Any tortilla or chips?"
@@ -628,15 +638,21 @@ func echo(w http.ResponseWriter, r *http.Request) {
 					p.Data.Speech = "Okay, Cancel ordering"
 				}
 			case 1150:
-				if mealtype[m.Header[0]] == "tacos" || mealtype[m.Header[0]] == "burrito"{
+				if mealtype[m.Header[0]] == "tacos" {
 					p.Data.Speech = "Any chips as sides?"
 				} else {
 					p.Data.Speech = "Any tortilla or chips?"
 				}
 				p.Header[3] = 9999
 				matched := MultipleMatch(strings.ToLower(m.Data.Query), sides_chips)
-				if matched_followup := MultipleMatch(strings.ToLower(m.Data.Query), sides); len(matched_followup) != 0 {
-					matched = matched_followup
+				if mealtype[m.Header[0]] == "burrito" {
+					if matched_followup := MultipleMatch(strings.ToLower(m.Data.Query), sides_burrito); len(matched_followup) != 0 {
+						matched = matched_followup
+					}
+				} else {
+					if matched_followup := MultipleMatch(strings.ToLower(m.Data.Query), sides); len(matched_followup) != 0 {
+						matched = matched_followup
+					}
 				}
 				if len(matched) != 0 {
 					entityback["sides"] = matched
