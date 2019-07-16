@@ -639,7 +639,6 @@ func echo(w http.ResponseWriter, r *http.Request) {
 					matched = matched_followup
 				}
 				if len(matched) != 0 {
-					if mealtype == "burrito" && strings.Contains(m.Data.Query, "tortilla")
 					entityback["sides"] = matched
 					p.Data.Entity = entityback
 					p.Data.Speech = "Do you want fountain soda, or bottled juice?"
