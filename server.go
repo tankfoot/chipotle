@@ -256,7 +256,10 @@ func HeaderProcess(headerIn [6]float64, intent string, speech string, entity map
 			t1, _ := time.Parse(time.RFC3339, str)
 			rawtime := t1.Hour()*100 + t1.Minute()
 			fmt.Println(rawtime)
-			if rawtime <= 1000 {
+
+			if rawtime == 0 {
+				entityback["time"] = fmt.Sprintf("%d:%.2d %s", t1.Hour()+12, ChipotleTimeLogic(t1.Minute()), "PM")
+			} else if rawtime <= 1000 {
 				entityback["time"] = fmt.Sprintf("%d:%.2d %s", t1.Hour(), ChipotleTimeLogic(t1.Minute()), "PM")
 			} else if rawtime >= 1045 && rawtime < 1200 {
 				entityback["time"] = fmt.Sprintf("%d:%.2d %s", t1.Hour(), ChipotleTimeLogic(t1.Minute()), "AM")
@@ -264,8 +267,6 @@ func HeaderProcess(headerIn [6]float64, intent string, speech string, entity map
 				entityback["time"] = fmt.Sprintf("%d:%.2d %s", t1.Hour(), ChipotleTimeLogic(t1.Minute()), "PM")
 			} else if rawtime >= 1300 {
 				entityback["time"] = fmt.Sprintf("%d:%.2d %s", t1.Hour()-12, ChipotleTimeLogic(t1.Minute()), "PM")
-			} else if rawtime == 0 {
-				entityback["time"] = fmt.Sprintf("%d:%.2d %s", t1.Hour()+12, ChipotleTimeLogic(t1.Minute()), "PM")
 			} else {
 				entityback["time"] = "quickest"
 			}
