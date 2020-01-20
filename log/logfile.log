@@ -1,0 +1,1741 @@
+recv: {"header": [1111, 0, 100, 1559776445, 3, 0], "data": {"query": "can I order a burrito"}}
+sent: {"header":[1111,0,100,2000,1559776454836,3,0],"data":{"speech":"Performing task now.","entity":{"ordertype":"burrito"}}}
+recv: {"header": [1111, 0, 2000, 1559776445, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,2000,9999,1559776454836,3,0],"data":{"speech":"please select address, you can say recent, favorite, or nearby","entity":{"ordertype":"burrito"}}}
+recv: {"header": [1111, 0, 2000, 1559776445, 3, 0], "data": {"query": "recent"}}
+sent: {"header":[1111,0,2000,1100,1559776847112,3,0],"data":{"speech":"selecting","entity":{"address":"recent"}}}
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 100, 1559782776, 3, 0], "data": {"query": "i want to have a burrito"}}
+sent: {"header":[1111,0,100,2000,1559783346517,3,0],"data":{"speech":"Performing task now.","entity":{"ordertype":"burrito"}}}
+recv: {"header": [1111, 0, 2000, 1559782776, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,2000,9999,1559783346517,3,0],"data":{"speech":"please select address, you can say recent, favorite, or nearby","entity":{"ordertype":"burrito"}}}
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 100, 1559784053, 3, 0], "data": {"query": "i want to have a burrito"}}
+sent: {"header":[1111,0,100,2000,1559784062760,3,0],"data":{"speech":"Performing task now.","entity":{"ordertype":"burrito"}}}
+recv: {"header": [1111, 0, 2000, 1559784053, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,2000,9999,1559784062760,3,0],"data":{"speech":"please select address, you can say recent, favorite, or nearby","entity":{"ordertype":"burrito"}}}
+recv: {"header": [1111, 0, 2000, 1559784053, 3, 0], "data": {"query": "recent"}}
+sent: {"header":[1111,0,2000,1100,1559784107328,3,0],"data":{"speech":"selecting","entity":{"address":"recent"}}}
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 100, 1559860968, 3, 0], "data": {"query": "I want to have a burrito"}}
+sent: {"header":[1111,0,100,2000,1559860976348,3,0],"data":{"speech":"Performing task now.","entity":{"ordertype":"burrito"}}}
+recv: {"header": [1111, 0, 5000, 1559860968, 3, 0], "data": {"result": "pageWrong"}}
+sent: {"header":[1111,0,100,9999,1559860976348,3,0],"data":{"speech":"Wrong page, your current page is %!d(float64=5000)","entity":{"ordertype":"burrito"}}}
+recv: {"header": [1111, 0, 100, 1559861121, 3, 0], "data": {"query": "i want to have a burrito"}}
+sent: {"header":[1111,0,100,2000,1559861130763,3,0],"data":{"speech":"Performing task now.","entity":{"ordertype":"burrito"}}}
+recv: {"header": [1111, 0, 5000, 1559861121, 3, 0], "data": {"result": "pageWrong"}}
+sent: {"header":[1111,0,100,9999,1559861130763,3,0],"data":{"speech":"Wrong page, your current page is 5000.000000","entity":{"ordertype":"burrito"}}}
+recv: {"header": [1111, 0, 100, 1559861227, 3, 0], "data": {"query": "i want to have a burrito"}}
+sent: {"header":[1111,0,100,2000,1559861247240,3,0],"data":{"speech":"Performing task now.","entity":{"ordertype":"burrito"}}}
+recv: {"header": [1111, 0, 5000, 1559861227, 3, 0], "data": {"result": "pageWrong"}}
+sent: {"header":[1111,0,100,9999,1559861247240,3,0],"data":{"speech":"Wrong page, your current page is 5000","entity":{"ordertype":"burrito"}}}
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 5000, 1559862578, 3, 0], "data": {"query": "confirm details"}}
+sent: {"header":[1111,0,5000,6000,1559862682985,3,0],"data":{"speech":"Performing task now.","entity":{"payment":"","time":""}}}
+recv: {"header": [1111, 0, 1000, 1559862578, 3, 0], "data": {"result": "pageWrong"}}
+sent: {"header":[1111,0,5000,9999,1559862682985,3,0],"data":{"speech":"Wrong page, go to level 1000 to perform action","entity":{"payment":"","time":""}}}
+recv: {"header": [1111, 0, 5000, 1559862715, 3, 0], "data": {"query": "confirm details"}}
+sent: {"header":[1111,0,5000,6000,1559862823735,3,0],"data":{"speech":"Performing task now.","entity":{"payment":"","time":""}}}
+recv: {"header": [1111, 0, 1000, 1559862715, 3, 0], "data": {"result": "pageWrong"}}
+sent: {"header":[1111,0,5000,9999,1559862823735,3,0],"data":{"speech":"Wrong page, go to level 5000 to perform action","entity":{"payment":"","time":""}}}
+read: websocket: close 1000 (normal)
+recv: {"header":[358165081199845, 0, 100, 1560386103, 3, 175], "data":{ "info":"AppVersion: 1.0.06072019, NcVersion: unknown, DeviceId: 358165081199845, SystemVersion: 7.1.2, SystemSdk: 25, Brand: lge, Manufacturer: LGE, Model: LG-H932, SystemLanguage: en"}}
+sent: {"header":[358165081199845,0,100,9999,1560386105395,3,0],"data":{"speech":"","entity":null}}
+recv: {"header":[358165081199845, 1, 1100, 0, 3, 24], "data":{ "query":"to the police department"}}
+sent: {"header":[358165081199845,1,1100,9999,1560386112678,3,0],"data":{"speech":"Choose your meat or veggie","entity":null}}
+recv: {"header":[358165081199845, 1, 1100, 0, 3, 7], "data":{ "query":"chicken"}}
+sent: {"header":[358165081199845,1,1100,1110,1560386120122,3,0],"data":{"speech":"selecting","entity":{"fillings":["chicken"]}}}
+recv: {"header":[358165081199845, 1, 1110, 1560386129, 3, 29], "data":{ "result":"itemNotFound: CHICKENADD RICE"}}
+sent: {"header":[358165081199845,1,1100,9999,1560386120122,3,0],"data":{"speech":"Error type not found","entity":{"fillings":["chicken"]}}}
+read: websocket: close 1006 (abnormal closure): unexpected EOF
+recv: {"header":[358165081199845, 0, 100, 1560386198, 3, 175], "data":{ "info":"AppVersion: 1.0.06072019, NcVersion: unknown, DeviceId: 358165081199845, SystemVersion: 7.1.2, SystemSdk: 25, Brand: lge, Manufacturer: LGE, Model: LG-H932, SystemLanguage: en"}}
+sent: {"header":[358165081199845,0,100,9999,1560386200464,3,0],"data":{"speech":"","entity":null}}
+recv: {"header":[358165081199845, 1, 1100, 0, 3, 7], "data":{ "query":"chicken"}}
+sent: {"header":[358165081199845,1,1100,1110,1560386215836,3,0],"data":{"speech":"selecting","entity":{"fillings":["chicken"]}}}
+recv: {"header":[358165081199845, 1, 1110, 1560386223, 3, 21], "data":{ "result":"itemNotFound: CHICKEN"}}
+sent: {"header":[358165081199845,1,1100,9999,1560386215836,3,0],"data":{"speech":"Error type not found","entity":{"fillings":["chicken"]}}}
+read: websocket: close 1006 (abnormal closure): unexpected EOF
+recv: {"header":[358165081199845, 0, 100, 1560386294, 3, 175], "data":{ "info":"AppVersion: 1.0.06072019, NcVersion: unknown, DeviceId: 358165081199845, SystemVersion: 7.1.2, SystemSdk: 25, Brand: lge, Manufacturer: LGE, Model: LG-H932, SystemLanguage: en"}}
+sent: {"header":[358165081199845,0,100,9999,1560386296595,3,0],"data":{"speech":"","entity":null}}
+recv: {"header":[358165081199845, 1, 1100, 0, 3, 7], "data":{ "query":"chicken"}}
+sent: {"header":[358165081199845,1,1100,1110,1560386305778,3,0],"data":{"speech":"selecting","entity":{"fillings":["chicken"]}}}
+recv: {"header":[358165081199845, 1, 1110, 1560386305, 3, 10], "data":{ "result":"actionTrue"}}
+sent: {"header":[358165081199845,1,9999,9999,1560386305778,3,0],"data":{"speech":"Now add your rice","entity":{"fillings":["chicken"]}}}
+recv: {"header":[358165081199845, 1, 1100, 0, 3, 10], "data":{ "query":"white rice"}}
+sent: {"header":[358165081199845,1,1100,9999,1560386319920,3,0],"data":{"speech":"Choose your meat or veggie","entity":null}}
+recv: {"header":[358165081199845, 1, 1100, 0, 3, 5], "data":{ "query":"steak"}}
+sent: {"header":[358165081199845,1,1100,1110,1560386327546,3,0],"data":{"speech":"selecting","entity":{"fillings":["steak"]}}}
+recv: {"header":[358165081199845, 1, 1110, 1560386332, 3, 10], "data":{ "result":"actionTrue"}}
+sent: {"header":[358165081199845,1,9999,9999,1560386327546,3,0],"data":{"speech":"Now add your rice","entity":{"fillings":["steak"]}}}
+recv: {"header":[358165081199845, 1, 1100, 0, 3, 8], "data":{ "query":"carnitas"}}
+sent: {"header":[358165081199845,1,1100,1110,1560386350987,3,0],"data":{"speech":"selecting","entity":{"fillings":["carnitas"]}}}
+recv: {"header":[358165081199845, 1, 1110, 1560386351, 3, 10], "data":{ "result":"actionTrue"}}
+sent: {"header":[358165081199845,1,9999,9999,1560386350987,3,0],"data":{"speech":"Now add your rice","entity":{"fillings":["carnitas"]}}}
+recv: {"header":[358165081199845, 1, 1100, 0, 3, 7], "data":{ "query":"chicken"}}
+sent: {"header":[358165081199845,1,1100,1110,1560386377905,3,0],"data":{"speech":"selecting","entity":{"fillings":["chicken"]}}}
+recv: {"header":[358165081199845, 1, 1110, 1560386378, 3, 10], "data":{ "result":"actionTrue"}}
+sent: {"header":[358165081199845,1,9999,9999,1560386377905,3,0],"data":{"speech":"Now add your rice","entity":{"fillings":["chicken"]}}}
+recv: {"header":[358165081199845, 1, 1100, 0, 3, 5], "data":{ "query":"steak"}}
+sent: {"header":[358165081199845,1,1100,1110,1560386392982,3,0],"data":{"speech":"selecting","entity":{"fillings":["steak"]}}}
+recv: {"header":[358165081199845, 1, 1110, 1560386393, 3, 10], "data":{ "result":"actionTrue"}}
+sent: {"header":[358165081199845,1,9999,9999,1560386392982,3,0],"data":{"speech":"Now add your rice","entity":{"fillings":["steak"]}}}
+read: websocket: close 1006 (abnormal closure): unexpected EOF
+recv: {"header":[358165081199845, 0, 100, 1560386522, 3, 175], "data":{ "info":"AppVersion: 1.0.06072019, NcVersion: unknown, DeviceId: 358165081199845, SystemVersion: 7.1.2, SystemSdk: 25, Brand: lge, Manufacturer: LGE, Model: LG-H932, SystemLanguage: en"}}
+sent: {"header":[358165081199845,0,100,9999,1560386523828,3,0],"data":{"speech":"","entity":null}}
+recv: {"header":[358165081199845, 1, 1100, 0, 3, 7], "data":{ "query":"chicken"}}
+sent: {"header":[358165081199845,1,1100,1110,1560386532972,3,0],"data":{"speech":"selecting","entity":{"fillings":["chicken"]}}}
+recv: {"header":[358165081199845, 1, 1110, 1560386538, 3, 10], "data":{ "result":"actionTrue"}}
+sent: {"header":[358165081199845,1,9999,9999,1560386532972,3,0],"data":{"speech":"Now add your rice","entity":{"fillings":["chicken"]}}}
+read: websocket: close 1006 (abnormal closure): unexpected EOF
+recv: {"header":[358165081199845, 0, 100, 1560386619, 3, 175], "data":{ "info":"AppVersion: 1.0.06072019, NcVersion: unknown, DeviceId: 358165081199845, SystemVersion: 7.1.2, SystemSdk: 25, Brand: lge, Manufacturer: LGE, Model: LG-H932, SystemLanguage: en"}}
+sent: {"header":[358165081199845,0,100,9999,1560386621242,3,0],"data":{"speech":"","entity":null}}
+recv: {"header":[358165081199845, 1, 1100, 0, 3, 5], "data":{ "query":"steak"}}
+sent: {"header":[358165081199845,1,1100,1110,1560386633165,3,0],"data":{"speech":"selecting","entity":{"fillings":["steak"]}}}
+recv: {"header":[358165081199845, 1, 1110, 1560386638, 3, 10], "data":{ "result":"actionTrue"}}
+sent: {"header":[358165081199845,1,9999,9999,1560386633165,3,0],"data":{"speech":"Now add your rice","entity":{"fillings":["steak"]}}}
+read: websocket: close 1006 (abnormal closure): unexpected EOF
+recv: {"header":[358165081199845, 0, 100, 1560386669, 3, 175], "data":{ "info":"AppVersion: 1.0.06072019, NcVersion: unknown, DeviceId: 358165081199845, SystemVersion: 7.1.2, SystemSdk: 25, Brand: lge, Manufacturer: LGE, Model: LG-H932, SystemLanguage: en"}}
+sent: {"header":[358165081199845,0,100,9999,1560386671073,3,0],"data":{"speech":"","entity":null}}
+recv: {"header":[358165081199845, 1, 1100, 0, 3, 6], "data":{ "query":"Connie"}}
+sent: {"header":[358165081199845,1,1100,9999,1560386688999,3,0],"data":{"speech":"Choose your meat or veggie","entity":null}}
+recv: {"header":[358165081199845, 1, 1100, 0, 3, 8], "data":{ "query":"carnitas"}}
+sent: {"header":[358165081199845,1,1100,1110,1560386694432,3,0],"data":{"speech":"selecting","entity":{"fillings":["carnitas"]}}}
+recv: {"header":[358165081199845, 1, 1110, 1560386699, 3, 10], "data":{ "result":"actionTrue"}}
+sent: {"header":[358165081199845,1,9999,9999,1560386694432,3,0],"data":{"speech":"Now add your rice","entity":{"fillings":["carnitas"]}}}
+recv: {"header":[358165081199845, 1, 1100, 0, 3, 7], "data":{ "query":"chicken"}}
+sent: {"header":[358165081199845,1,1100,1110,1560386801392,3,0],"data":{"speech":"selecting","entity":{"fillings":["chicken"]}}}
+recv: {"header":[358165081199845, 1, 1110, 1560386801, 3, 10], "data":{ "result":"actionTrue"}}
+sent: {"header":[358165081199845,1,9999,9999,1560386801392,3,0],"data":{"speech":"Now add your rice","entity":{"fillings":["chicken"]}}}
+read: websocket: close 1006 (abnormal closure): unexpected EOF
+recv: {"header":[358165081199845, 0, 100, 1560386836, 3, 175], "data":{ "info":"AppVersion: 1.0.06072019, NcVersion: unknown, DeviceId: 358165081199845, SystemVersion: 7.1.2, SystemSdk: 25, Brand: lge, Manufacturer: LGE, Model: LG-H932, SystemLanguage: en"}}
+sent: {"header":[358165081199845,0,100,9999,1560386837953,3,0],"data":{"speech":"","entity":null}}
+recv: {"header":[358165081199845, 1, 1100, 0, 3, 7], "data":{ "query":"chicken"}}
+sent: {"header":[358165081199845,1,1100,1110,1560386848798,3,0],"data":{"speech":"selecting","entity":{"fillings":["chicken"]}}}
+recv: {"header":[358165081199845, 1, 1110, 1560386854, 3, 10], "data":{ "result":"actionTrue"}}
+sent: {"header":[358165081199845,1,9999,9999,1560386848798,3,0],"data":{"speech":"Now add your rice","entity":{"fillings":["chicken"]}}}
+read: websocket: close 1006 (abnormal closure): unexpected EOF
+recv: {"header":[358165081199845, 0, 100, 1560386924, 3, 175], "data":{ "info":"AppVersion: 1.0.06072019, NcVersion: unknown, DeviceId: 358165081199845, SystemVersion: 7.1.2, SystemSdk: 25, Brand: lge, Manufacturer: LGE, Model: LG-H932, SystemLanguage: en"}}
+sent: {"header":[358165081199845,0,100,9999,1560386926287,3,0],"data":{"speech":"","entity":null}}
+recv: {"header":[358165081199845, 1, 1100, 0, 3, 7], "data":{ "query":"chicken"}}
+sent: {"header":[358165081199845,1,1100,1110,1560386938366,3,0],"data":{"speech":"selecting","entity":{"fillings":["chicken"]}}}
+recv: {"header":[358165081199845, 1, 1110, 1560386943, 3, 10], "data":{ "result":"actionTrue"}}
+sent: {"header":[358165081199845,1,9999,9999,1560386938366,3,0],"data":{"speech":"Now add your rice","entity":{"fillings":["chicken"]}}}
+read: websocket: close 1006 (abnormal closure): unexpected EOF
+recv: {"header":[358165081199845, 0, 100, 1560387002, 3, 175], "data":{ "info":"AppVersion: 1.0.06072019, NcVersion: unknown, DeviceId: 358165081199845, SystemVersion: 7.1.2, SystemSdk: 25, Brand: lge, Manufacturer: LGE, Model: LG-H932, SystemLanguage: en"}}
+sent: {"header":[358165081199845,0,100,9999,1560387003717,3,0],"data":{"speech":"","entity":null}}
+recv: {"header":[358165081199845, 1, 1100, 0, 3, 7], "data":{ "query":"chicken"}}
+sent: {"header":[358165081199845,1,1100,1110,1560387023065,3,0],"data":{"speech":"selecting","entity":{"fillings":["chicken"]}}}
+recv: {"header":[358165081199845, 1, 1110, 1560387028, 3, 10], "data":{ "result":"actionTrue"}}
+sent: {"header":[358165081199845,1,9999,9999,1560387023065,3,0],"data":{"speech":"Now add your rice","entity":{"fillings":["chicken"]}}}
+read: websocket: close 1006 (abnormal closure): unexpected EOF
+recv: {"header":[358165081199845, 0, 100, 1560387170, 3, 175], "data":{ "info":"AppVersion: 1.0.06072019, NcVersion: unknown, DeviceId: 358165081199845, SystemVersion: 7.1.2, SystemSdk: 25, Brand: lge, Manufacturer: LGE, Model: LG-H932, SystemLanguage: en"}}
+sent: {"header":[358165081199845,0,100,9999,1560387171757,3,0],"data":{"speech":"","entity":null}}
+recv: {"header":[358165081199845, 1, 1100, 0, 3, 7], "data":{ "query":"chicken"}}
+sent: {"header":[358165081199845,1,1100,1110,1560387183664,3,0],"data":{"speech":"selecting","entity":{"fillings":["chicken"]}}}
+recv: {"header":[358165081199845, 1, 1110, 1560387188, 3, 10], "data":{ "result":"actionTrue"}}
+sent: {"header":[358165081199845,1,9999,9999,1560387183664,3,0],"data":{"speech":"Now add your rice","entity":{"fillings":["chicken"]}}}
+read: websocket: close 1006 (abnormal closure): unexpected EOF
+recv: {"header":[358165081199845, 0, 100, 1560387454, 3, 175], "data":{ "info":"AppVersion: 1.0.06072019, NcVersion: unknown, DeviceId: 358165081199845, SystemVersion: 7.1.2, SystemSdk: 25, Brand: lge, Manufacturer: LGE, Model: LG-H932, SystemLanguage: en"}}
+sent: {"header":[358165081199845,0,100,9999,1560387456678,3,0],"data":{"speech":"","entity":null}}
+recv: {"header":[358165081199845, 1, 1100, 0, 3, 7], "data":{ "query":"chicken"}}
+sent: {"header":[358165081199845,1,1100,1110,1560387468788,3,0],"data":{"speech":"selecting","entity":{"fillings":["chicken"]}}}
+recv: {"header":[358165081199845, 1, 1110, 1560387474, 3, 10], "data":{ "result":"actionTrue"}}
+sent: {"header":[358165081199845,1,9999,9999,1560387468788,3,0],"data":{"speech":"Now add your rice","entity":{"fillings":["chicken"]}}}
+read: websocket: close 1006 (abnormal closure): unexpected EOF
+recv: {"header":[358165081199845, 0, 100, 1560387495, 3, 175], "data":{ "info":"AppVersion: 1.0.06072019, NcVersion: unknown, DeviceId: 358165081199845, SystemVersion: 7.1.2, SystemSdk: 25, Brand: lge, Manufacturer: LGE, Model: LG-H932, SystemLanguage: en"}}
+sent: {"header":[358165081199845,0,100,9999,1560387497471,3,0],"data":{"speech":"","entity":null}}
+recv: {"header":[358165081199845, 1, 1100, 0, 3, 7], "data":{ "query":"chicken"}}
+sent: {"header":[358165081199845,1,1100,1110,1560387507789,3,0],"data":{"speech":"selecting","entity":{"fillings":["chicken"]}}}
+recv: {"header":[358165081199845, 1, 1110, 1560387512, 3, 10], "data":{ "result":"actionTrue"}}
+sent: {"header":[358165081199845,1,9999,9999,1560387507789,3,0],"data":{"speech":"Now add your rice","entity":{"fillings":["chicken"]}}}
+read: websocket: close 1006 (abnormal closure): unexpected EOF
+recv: {"header":[358165081199845, 0, 100, 1560387565, 3, 175], "data":{ "info":"AppVersion: 1.0.06072019, NcVersion: unknown, DeviceId: 358165081199845, SystemVersion: 7.1.2, SystemSdk: 25, Brand: lge, Manufacturer: LGE, Model: LG-H932, SystemLanguage: en"}}
+sent: {"header":[358165081199845,0,100,9999,1560387567331,3,0],"data":{"speech":"","entity":null}}
+recv: {"header":[358165081199845, 1, 1100, 0, 3, 7], "data":{ "query":"chicken"}}
+sent: {"header":[358165081199845,1,1100,1110,1560387575866,3,0],"data":{"speech":"selecting","entity":{"fillings":["chicken"]}}}
+recv: {"header":[358165081199845, 1, 1110, 1560387581, 3, 10], "data":{ "result":"actionTrue"}}
+sent: {"header":[358165081199845,1,9999,9999,1560387575866,3,0],"data":{"speech":"Now add your rice","entity":{"fillings":["chicken"]}}}
+read: websocket: close 1006 (abnormal closure): unexpected EOF
+recv: {"header":[358165081199845, 0, 100, 1560388497, 3, 175], "data":{ "info":"AppVersion: 1.0.06072019, NcVersion: unknown, DeviceId: 358165081199845, SystemVersion: 7.1.2, SystemSdk: 25, Brand: lge, Manufacturer: LGE, Model: LG-H932, SystemLanguage: en"}}
+sent: {"header":[358165081199845,0,100,9999,1560388499159,3,0],"data":{"speech":"","entity":null}}
+recv: {"header":[358165081199845, 1, 1100, 0, 3, 7], "data":{ "query":"chicken"}}
+sent: {"header":[358165081199845,1,1100,1110,1560388508779,3,0],"data":{"speech":"selecting","entity":{"fillings":["chicken"]}}}
+recv: {"header":[358165081199845, 1, 1110, 1560388512, 3, 10], "data":{ "result":"actionTrue"}}
+sent: {"header":[358165081199845,1,9999,9999,1560388508779,3,0],"data":{"speech":"Now add your rice","entity":{"fillings":["chicken"]}}}
+recv: {"header":[358165081199845, 1, 1110, 0, 3, 10], "data":{ "query":"white rice"}}
+sent: {"header":[358165081199845,1,1110,1120,1560388532074,3,0],"data":{"speech":"selecting","entity":{"rice":["white rice"]}}}
+recv: {"header":[358165081199845, 1, 1120, 1560388532, 3, 10], "data":{ "result":"actionTrue"}}
+sent: {"header":[358165081199845,1,9999,9999,1560388532074,3,0],"data":{"speech":"Any beans?","entity":{"rice":["white rice"]}}}
+recv: {"header":[358165081199845, 1, 1120, 0, 3, 7], "data":{ "query":"weapons"}}
+sent: {"header":[358165081199845,1,1120,9999,1560388553276,3,0],"data":{"speech":"Any beans?","entity":null}}
+recv: {"header":[358165081199845, 1, 1120, 0, 3, 11], "data":{ "query":"black beans"}}
+sent: {"header":[358165081199845,1,1120,1130,1560388557993,3,0],"data":{"speech":"selecting","entity":{"beans":["black beans"]}}}
+recv: {"header":[358165081199845, 1, 1130, 1560388558, 3, 10], "data":{ "result":"actionTrue"}}
+sent: {"header":[358165081199845,1,9999,9999,1560388557993,3,0],"data":{"speech":"Any toppings?","entity":{"beans":["black beans"]}}}
+recv: {"header":[358165081199845, 1, 1130, 0, 3, 9], "data":{ "query":"guacamole"}}
+sent: {"header":[358165081199845,1,1130,1140,1560388579005,3,0],"data":{"speech":"selecting","entity":{"tops":["guacamole"]}}}
+recv: {"header":[358165081199845, 1, 1140, 1560388581, 3, 10], "data":{ "result":"actionTrue"}}
+sent: {"header":[358165081199845,1,9999,9999,1560388579005,3,0],"data":{"speech":"Any sides?","entity":{"tops":["guacamole"]}}}
+recv: {"header":[358165081199845, 1, 1140, 0, 3, 5], "data":{ "query":"chips"}}
+sent: {"header":[358165081199845,1,1140,1150,1560388595398,3,0],"data":{"speech":"selecting","entity":{"sides":["chips"]}}}
+recv: {"header":[358165081199845, 1, 1150, 1560388595, 3, 10], "data":{ "result":"actionTrue"}}
+sent: {"header":[358165081199845,1,9999,9999,1560388595398,3,0],"data":{"speech":"Any drinks?","entity":{"sides":["chips"]}}}
+read: websocket: close 1006 (abnormal closure): unexpected EOF
+recv: {"header":[358165081199845, 0, 100, 1560388611, 3, 175], "data":{ "info":"AppVersion: 1.0.06072019, NcVersion: unknown, DeviceId: 358165081199845, SystemVersion: 7.1.2, SystemSdk: 25, Brand: lge, Manufacturer: LGE, Model: LG-H932, SystemLanguage: en"}}
+sent: {"header":[358165081199845,0,100,9999,1560388612676,3,0],"data":{"speech":"","entity":null}}
+recv: {"header":[358165081199845, 1, 1100, 0, 3, 5], "data":{ "query":"hello"}}
+sent: {"header":[358165081199845,1,1100,9999,1560388625574,3,0],"data":{"speech":"Choose your meat or veggie","entity":null}}
+recv: {"header":[358165081199845, 1, 1100, 0, 3, 5], "data":{ "query":"chick"}}
+sent: {"header":[358165081199845,1,1100,9999,1560388640085,3,0],"data":{"speech":"Choose your meat or veggie","entity":null}}
+recv: {"header":[358165081199845, 1, 1100, 0, 3, 7], "data":{ "query":"chicken"}}
+sent: {"header":[358165081199845,1,1100,1110,1560388646511,3,0],"data":{"speech":"selecting","entity":{"fillings":["chicken"]}}}
+recv: {"header":[358165081199845, 1, 1110, 1560388649, 3, 10], "data":{ "result":"actionTrue"}}
+sent: {"header":[358165081199845,1,9999,9999,1560388646511,3,0],"data":{"speech":"Now add your rice","entity":{"fillings":["chicken"]}}}
+recv: {"header":[358165081199845, 1, 1110, 0, 3, 10], "data":{ "query":"brown rice"}}
+sent: {"header":[358165081199845,1,1110,1120,1560388655248,3,0],"data":{"speech":"selecting","entity":{"rice":["brown rice"]}}}
+recv: {"header":[358165081199845, 1, 1120, 1560388655, 3, 10], "data":{ "result":"actionTrue"}}
+sent: {"header":[358165081199845,1,9999,9999,1560388655248,3,0],"data":{"speech":"Any beans?","entity":{"rice":["brown rice"]}}}
+recv: {"header":[358165081199845, 1, 1120, 0, 3, 11], "data":{ "query":"pinto beans"}}
+sent: {"header":[358165081199845,1,1120,1130,1560388661332,3,0],"data":{"speech":"selecting","entity":{"beans":["pinto beans"]}}}
+recv: {"header":[358165081199845, 1, 1130, 1560388661, 3, 10], "data":{ "result":"actionTrue"}}
+sent: {"header":[358165081199845,1,9999,9999,1560388661332,3,0],"data":{"speech":"Any toppings?","entity":{"beans":["pinto beans"]}}}
+recv: {"header":[358165081199845, 1, 1130, 0, 3, 7], "data":{ "query":"Crystal"}}
+sent: {"header":[358165081199845,1,1130,9999,1560388671430,3,0],"data":{"speech":"Any toppings?","entity":null}}
+recv: {"header":[358165081199845, 1, 1130, 0, 3, 6], "data":{ "query":"coital"}}
+sent: {"header":[358165081199845,1,1130,9999,1560388677642,3,0],"data":{"speech":"Any toppings?","entity":null}}
+recv: {"header":[358165081199845, 1, 1130, 0, 3, 9], "data":{ "query":"Troy-Bilt"}}
+sent: {"header":[358165081199845,1,1130,9999,1560388683540,3,0],"data":{"speech":"Any toppings?","entity":null}}
+recv: {"header":[358165081199845, 1, 1130, 0, 3, 9], "data":{ "query":"guacamole"}}
+sent: {"header":[358165081199845,1,1130,1140,1560388688081,3,0],"data":{"speech":"selecting","entity":{"tops":["guacamole"]}}}
+recv: {"header":[358165081199845, 1, 1140, 1560388690, 3, 10], "data":{ "result":"actionTrue"}}
+sent: {"header":[358165081199845,1,9999,9999,1560388688081,3,0],"data":{"speech":"Any sides?","entity":{"tops":["guacamole"]}}}
+recv: {"header":[358165081199845, 1, 1140, 0, 3, 19], "data":{ "query":"chips and guacamole"}}
+sent: {"header":[358165081199845,1,1140,1150,1560388699219,3,0],"data":{"speech":"selecting","entity":{"sides":["chips"]}}}
+recv: {"header":[358165081199845, 1, 1150, 1560388699, 3, 10], "data":{ "result":"actionTrue"}}
+sent: {"header":[358165081199845,1,9999,9999,1560388699219,3,0],"data":{"speech":"Any drinks?","entity":{"sides":["chips"]}}}
+recv: {"header":[358165081199845, 1, 1150, 0, 3, 13], "data":{ "query":"bottled water"}}
+sent: {"header":[358165081199845,1,1150,1160,1560388707990,3,0],"data":{"speech":"selecting","entity":{"drinks":["bottled water"]}}}
+recv: {"header":[358165081199845, 1, 1160, 1560388708, 3, 10], "data":{ "result":"actionTrue"}}
+sent: {"header":[358165081199845,1,9999,9999,1560388707990,3,0],"data":{"speech":"Do you want to add item to cart?","entity":{"drinks":["bottled water"]}}}
+recv: {"header":[358165081199845, 1, 1160, 0, 3, 3], "data":{ "query":"yes"}}
+sent: {"header":[358165081199845,1,1160,1900,1560388715011,3,0],"data":{"speech":"selecting","entity":null}}
+recv: {"header":[358165081199845, 1, 5000, 1560388715, 3, 10], "data":{ "result":"actionTrue"}}
+sent: {"header":[358165081199845,1,9999,9999,1560388715011,3,0],"data":{"speech":"Okay, item add to cart","entity":null}}
+read: websocket: close 1006 (abnormal closure): unexpected EOF
+recv: {"header":[358165081199845, 0, 100, 1560388854, 3, 175], "data":{ "info":"AppVersion: 1.0.06072019, NcVersion: unknown, DeviceId: 358165081199845, SystemVersion: 7.1.2, SystemSdk: 25, Brand: lge, Manufacturer: LGE, Model: LG-H932, SystemLanguage: en"}}
+sent: {"header":[358165081199845,0,100,9999,1560388856048,3,0],"data":{"speech":"","entity":null}}
+recv: {"header":[358165081199845, 1, 5000, 0, 3, 6], "data":{ "query":"cancel"}}
+sent: {"header":[358165081199845,1,5000,0,1560388869500,3,0],"data":{"speech":"Okay, cancelled","entity":{}}}
+recv: {"header":[358165081199845, 1, 100, 0, 3, 26], "data":{ "query":"I want to have a breakdown"}}
+sent: {"header":[358165081199845,1,100,2000,1560388875276,3,0],"data":{"speech":"Performing task now.","entity":{"ordertype":"bowl"}}}
+recv: {"header":[358165081199845, 1, 2000, 1560388875, 3, 10], "data":{ "result":"actionTrue"}}
+sent: {"header":[358165081199845,1,2000,9999,1560388875276,3,0],"data":{"speech":"please select address, you can say recent, favorite, or nearby","entity":{"ordertype":"bowl"}}}
+recv: {"header":[358165081199845, 1, 2000, 0, 3, 8], "data":{ "query":"favorite"}}
+sent: {"header":[358165081199845,1,2000,1100,1560388884237,3,0],"data":{"speech":"selecting","entity":{"address":"favorites"}}}
+recv: {"header":[358165081199845, 1, 1100, 1560388890, 3, 10], "data":{ "result":"actionTrue"}}
+sent: {"header":[358165081199845,1,1100,9999,1560388884237,3,0],"data":{"speech":"Choose your meat or veggie","entity":{"address":"favorites"}}}
+recv: {"header":[358165081199845, 1, 1100, 0, 3, 7], "data":{ "query":"chicken"}}
+sent: {"header":[358165081199845,1,1100,1110,1560388897779,3,0],"data":{"speech":"selecting","entity":{"fillings":["chicken"]}}}
+recv: {"header":[358165081199845, 1, 1110, 1560388897, 3, 10], "data":{ "result":"actionTrue"}}
+sent: {"header":[358165081199845,1,9999,9999,1560388897779,3,0],"data":{"speech":"Now add your rice","entity":{"fillings":["chicken"]}}}
+recv: {"header":[358165081199845, 1, 1110, 0, 3, 10], "data":{ "query":"brown rice"}}
+sent: {"header":[358165081199845,1,1110,1120,1560388904006,3,0],"data":{"speech":"selecting","entity":{"rice":["brown rice"]}}}
+recv: {"header":[358165081199845, 1, 1120, 1560388904, 3, 10], "data":{ "result":"actionTrue"}}
+sent: {"header":[358165081199845,1,9999,9999,1560388904006,3,0],"data":{"speech":"Any beans?","entity":{"rice":["brown rice"]}}}
+recv: {"header":[358165081199845, 1, 1120, 0, 3, 11], "data":{ "query":"pinto beans"}}
+sent: {"header":[358165081199845,1,1120,1130,1560388910145,3,0],"data":{"speech":"selecting","entity":{"beans":["pinto beans"]}}}
+recv: {"header":[358165081199845, 1, 1130, 1560388910, 3, 10], "data":{ "result":"actionTrue"}}
+sent: {"header":[358165081199845,1,9999,9999,1560388910145,3,0],"data":{"speech":"Any toppings?","entity":{"beans":["pinto beans"]}}}
+recv: {"header":[358165081199845, 1, 1130, 0, 3, 9], "data":{ "query":"guacamole"}}
+sent: {"header":[358165081199845,1,1130,1140,1560388915998,3,0],"data":{"speech":"selecting","entity":{"tops":["guacamole"]}}}
+recv: {"header":[358165081199845, 1, 1140, 1560388916, 3, 10], "data":{ "result":"actionTrue"}}
+sent: {"header":[358165081199845,1,9999,9999,1560388915998,3,0],"data":{"speech":"Any sides?","entity":{"tops":["guacamole"]}}}
+recv: {"header":[358165081199845, 1, 1140, 0, 3, 5], "data":{ "query":"chips"}}
+sent: {"header":[358165081199845,1,1140,1150,1560388923385,3,0],"data":{"speech":"selecting","entity":{"sides":["chips"]}}}
+recv: {"header":[358165081199845, 1, 1150, 1560388923, 3, 10], "data":{ "result":"actionTrue"}}
+sent: {"header":[358165081199845,1,9999,9999,1560388923385,3,0],"data":{"speech":"Any drinks?","entity":{"sides":["chips"]}}}
+recv: {"header":[358165081199845, 1, 1150, 0, 3, 13], "data":{ "query":"bottled water"}}
+sent: {"header":[358165081199845,1,1150,1160,1560388932726,3,0],"data":{"speech":"selecting","entity":{"drinks":["bottled water"]}}}
+recv: {"header":[358165081199845, 1, 1160, 1560388932, 3, 10], "data":{ "result":"actionTrue"}}
+sent: {"header":[358165081199845,1,9999,9999,1560388932726,3,0],"data":{"speech":"Do you want to add item to cart?","entity":{"drinks":["bottled water"]}}}
+recv: {"header":[358165081199845, 1, 1160, 0, 3, 3], "data":{ "query":"yes"}}
+sent: {"header":[358165081199845,1,1160,1900,1560388941953,3,0],"data":{"speech":"selecting","entity":null}}
+recv: {"header":[358165081199845, 1, 5000, 1560388942, 3, 10], "data":{ "result":"actionTrue"}}
+sent: {"header":[358165081199845,1,9999,9999,1560388941953,3,0],"data":{"speech":"Okay, item add to cart","entity":null}}
+recv: {"header":[358165081199845, 1, 5000, 0, 3, 15], "data":{ "query":"confirm details"}}
+sent: {"header":[358165081199845,1,5000,6000,1560388952255,3,0],"data":{"speech":"Performing task now.","entity":{"payment":"","time":""}}}
+recv: {"header":[358165081199845, 1, 6000, 1560388952, 3, 10], "data":{ "result":"actionTrue"}}
+sent: {"header":[358165081199845,1,6000,9999,1560388952255,3,0],"data":{"speech":"please tell me the pickup time","entity":{"payment":"","time":""}}}
+recv: {"header":[358165081199845, 1, 6000, 0, 3, 6], "data":{ "query":"7 p.m."}}
+sent: {"header":[358165081199845,1,6000,6100,1560388959371,3,0],"data":{"speech":"Performing task now.","entity":{"payment":"","time":"7:00 PM"}}}
+recv: {"header":[358165081199845, 1, 6100, 1560388959, 3, 10], "data":{ "result":"actionTrue"}}
+sent: {"header":[358165081199845,1,6100,9999,1560388959371,3,0],"data":{"speech":"please tell me payment type, you can say google pay or credit card","entity":{"payment":"","time":"7:00 PM"}}}
+recv: {"header":[358165081199845, 1, 6000, 0, 3, 7], "data":{ "query":"because"}}
+sent: {"header":[358165081199845,1,6000,6100,1560388971052,3,0],"data":{"speech":"Performing task now.","entity":{"payment":"","time":"7:00 PM"}}}
+recv: {"header":[358165081199845, 1, 6100, 1560388970, 3, 10], "data":{ "result":"actionTrue"}}
+sent: {"header":[358165081199845,1,6100,9999,1560388971052,3,0],"data":{"speech":"please tell me payment type, you can say google pay or credit card","entity":{"payment":"","time":"7:00 PM"}}}
+recv: {"header":[358165081199845, 1, 6000, 0, 3, 11], "data":{ "query":"credit card"}}
+sent: {"header":[358165081199845,1,6000,6200,1560388979957,3,0],"data":{"speech":"Performing task now.","entity":{"payment":"credit card","time":"2019-06-13T19:00:00-06:00"}}}
+recv: {"header":[358165081199845, 1, 6200, 1560388980, 3, 10], "data":{ "result":"actionTrue"}}
+sent: {"header":[358165081199845,1,6200,9999,1560388979957,3,0],"data":{"speech":"Okay, Do you want to submit order?","entity":{"payment":"credit card","time":"2019-06-13T19:00:00-06:00"}}}
+recv: {"header":[358165081199845, 1, 6000, 0, 3, 3], "data":{ "query":"yes"}}
+sent: {"header":[358165081199845,1,6000,7000,1560388990912,3,0],"data":{"speech":"Performing task now.","entity":{}}}
+recv: {"header":[358165081199845, 1, 7000, 1560388990, 3, 10], "data":{ "result":"actionTrue"}}
+sent: {"header":[358165081199845,1,7000,9999,1560388990912,3,0],"data":{"speech":"Order submitted, thank you for ordering at chipotle.","entity":{}}}
+read: websocket: close 1006 (abnormal closure): unexpected EOF
+recv: {"header":[358165081199845, 0, 100, 1560389055, 3, 175], "data":{ "info":"AppVersion: 1.0.06122019, NcVersion: unknown, DeviceId: 358165081199845, SystemVersion: 7.1.2, SystemSdk: 25, Brand: lge, Manufacturer: LGE, Model: LG-H932, SystemLanguage: en"}}
+sent: {"header":[358165081199845,0,100,9999,1560389057169,3,0],"data":{"speech":"","entity":null}}
+recv: {"header":[358165081199845, 1, 100, 0, 3, 25], "data":{ "query":"I want to order a burrito"}}
+sent: {"header":[358165081199845,1,100,2000,1560389076393,3,0],"data":{"speech":"Performing task now.","entity":{"ordertype":"burrito"}}}
+recv: {"header":[358165081199845, 1, 2000, 1560389076, 3, 10], "data":{ "result":"actionTrue"}}
+sent: {"header":[358165081199845,1,2000,9999,1560389076393,3,0],"data":{"speech":"please select address, you can say recent, favorite, or nearby","entity":{"ordertype":"burrito"}}}
+recv: {"header":[358165081199845, 1, 2000, 0, 3, 6], "data":{ "query":"recent"}}
+sent: {"header":[358165081199845,1,2000,1100,1560389087126,3,0],"data":{"speech":"selecting","entity":{"address":"recent"}}}
+recv: {"header":[358165081199845, 1, 1100, 1560389091, 3, 10], "data":{ "result":"actionTrue"}}
+sent: {"header":[358165081199845,1,9999,9999,1560389087126,3,0],"data":{"speech":"Choose your meat or veggie","entity":{"address":"recent"}}}
+recv: {"header":[358165081199845, 1, 1100, 0, 3, 8], "data":{ "query":"carnitas"}}
+sent: {"header":[358165081199845,1,1100,1110,1560389102491,3,0],"data":{"speech":"selecting","entity":{"fillings":["carnitas"]}}}
+recv: {"header":[358165081199845, 1, 1110, 1560389102, 3, 10], "data":{ "result":"actionTrue"}}
+sent: {"header":[358165081199845,1,9999,9999,1560389102491,3,0],"data":{"speech":"Now add your rice","entity":{"fillings":["carnitas"]}}}
+recv: {"header":[358165081199845, 1, 1110, 0, 3, 10], "data":{ "query":"brown rice"}}
+sent: {"header":[358165081199845,1,1110,1120,1560389108610,3,0],"data":{"speech":"selecting","entity":{"rice":["brown rice"]}}}
+recv: {"header":[358165081199845, 1, 1120, 1560389108, 3, 10], "data":{ "result":"actionTrue"}}
+sent: {"header":[358165081199845,1,9999,9999,1560389108610,3,0],"data":{"speech":"Any beans?","entity":{"rice":["brown rice"]}}}
+recv: {"header":[358165081199845, 1, 1120, 0, 3, 11], "data":{ "query":"pinto beans"}}
+sent: {"header":[358165081199845,1,1120,1130,1560389114624,3,0],"data":{"speech":"selecting","entity":{"beans":["pinto beans"]}}}
+recv: {"header":[358165081199845, 1, 1130, 1560389114, 3, 10], "data":{ "result":"actionTrue"}}
+sent: {"header":[358165081199845,1,9999,9999,1560389114624,3,0],"data":{"speech":"Any toppings?","entity":{"beans":["pinto beans"]}}}
+recv: {"header":[358165081199845, 1, 1130, 0, 3, 9], "data":{ "query":"guacamole"}}
+sent: {"header":[358165081199845,1,1130,1140,1560389122979,3,0],"data":{"speech":"selecting","entity":{"tops":["guacamole"]}}}
+recv: {"header":[358165081199845, 1, 1140, 1560389123, 3, 10], "data":{ "result":"actionTrue"}}
+sent: {"header":[358165081199845,1,9999,9999,1560389122979,3,0],"data":{"speech":"Any sides?","entity":{"tops":["guacamole"]}}}
+recv: {"header":[358165081199845, 1, 1140, 0, 3, 5], "data":{ "query":"chips"}}
+sent: {"header":[358165081199845,1,1140,1150,1560389147445,3,0],"data":{"speech":"selecting","entity":{"sides":["chips"]}}}
+recv: {"header":[358165081199845, 1, 1150, 1560389147, 3, 10], "data":{ "result":"actionTrue"}}
+sent: {"header":[358165081199845,1,9999,9999,1560389147445,3,0],"data":{"speech":"Any drinks?","entity":{"sides":["chips"]}}}
+read: websocket: close 1006 (abnormal closure): unexpected EOF
+recv: {"header":[358165081199845, 0, 100, 1560389160, 3, 175], "data":{ "info":"AppVersion: 1.0.06122019, NcVersion: unknown, DeviceId: 358165081199845, SystemVersion: 7.1.2, SystemSdk: 25, Brand: lge, Manufacturer: LGE, Model: LG-H932, SystemLanguage: en"}}
+sent: {"header":[358165081199845,0,100,9999,1560389162371,3,0],"data":{"speech":"","entity":null}}
+recv: {"header":[358165081199845, 1, 1100, 0, 3, 10], "data":{ "query":"cold water"}}
+sent: {"header":[358165081199845,1,1100,9999,1560389174306,3,0],"data":{"speech":"Choose your meat or veggie","entity":null}}
+recv: {"header":[358165081199845, 1, 1100, 0, 3, 5], "data":{ "query":"sajan"}}
+sent: {"header":[358165081199845,1,1100,9999,1560389194053,3,0],"data":{"speech":"Choose your meat or veggie","entity":null}}
+recv: {"header":[358165081199845, 1, 1100, 0, 3, 6], "data":{ "query":"veggie"}}
+sent: {"header":[358165081199845,1,1100,1110,1560389200365,3,0],"data":{"speech":"selecting","entity":{"fillings":["veggie"]}}}
+recv: {"header":[358165081199845, 1, 1110, 1560389203, 3, 10], "data":{ "result":"actionTrue"}}
+sent: {"header":[358165081199845,1,9999,9999,1560389200365,3,0],"data":{"speech":"Now add your rice","entity":{"fillings":["veggie"]}}}
+recv: {"header":[358165081199845, 1, 1110, 0, 3, 7], "data":{ "query":"no rice"}}
+sent: {"header":[358165081199845,1,1110,1120,1560389209943,3,0],"data":{"speech":"selecting","entity":{"rice":["no rice","no rice"]}}}
+recv: {"header":[358165081199845, 1, 1120, 1560389210, 3, 10], "data":{ "result":"actionTrue"}}
+sent: {"header":[358165081199845,1,1120,9999,1560389209943,3,0],"data":{"speech":"Any beans?","entity":{"rice":["no rice","no rice"]}}}
+recv: {"header":[358165081199845, 1, 1120, 0, 3, 8], "data":{ "query":"no beans"}}
+sent: {"header":[358165081199845,1,1120,1130,1560389218706,3,0],"data":{"speech":"selecting","entity":{"beans":["no beans","no beans"]}}}
+recv: {"header":[358165081199845, 1, 1130, 1560389218, 3, 10], "data":{ "result":"actionTrue"}}
+sent: {"header":[358165081199845,1,1130,9999,1560389218706,3,0],"data":{"speech":"Any toppings?","entity":{"beans":["no beans","no beans"]}}}
+recv: {"header":[358165081199845, 1, 1130, 0, 3, 9], "data":{ "query":"guacamole"}}
+sent: {"header":[358165081199845,1,1130,1140,1560389231430,3,0],"data":{"speech":"selecting","entity":{"tops":["guacamole"]}}}
+recv: {"header":[358165081199845, 1, 1140, 1560389233, 3, 10], "data":{ "result":"actionTrue"}}
+sent: {"header":[358165081199845,1,9999,9999,1560389231430,3,0],"data":{"speech":"Any sides?","entity":{"tops":["guacamole"]}}}
+recv: {"header":[358165081199845, 1, 1140, 0, 3, 19], "data":{ "query":"chips and guacamole"}}
+sent: {"header":[358165081199845,1,1140,1150,1560389248620,3,0],"data":{"speech":"selecting","entity":{"sides":["chips"]}}}
+recv: {"header":[358165081199845, 1, 1150, 1560389249, 3, 10], "data":{ "result":"actionTrue"}}
+sent: {"header":[358165081199845,1,9999,9999,1560389248620,3,0],"data":{"speech":"Any drinks?","entity":{"sides":["chips"]}}}
+recv: {"header":[358165081199845, 1, 1150, 0, 3, 14], "data":{ "query":"positive water"}}
+sent: {"header":[358165081199845,1,1150,9999,1560389254628,3,0],"data":{"speech":"Any drinks?","entity":null}}
+recv: {"header":[358165081199845, 1, 1150, 0, 3, 5], "data":{ "query":"water"}}
+sent: {"header":[358165081199845,1,1150,9999,1560389259625,3,0],"data":{"speech":"Any drinks?","entity":null}}
+recv: {"header":[358165081199845, 1, 1150, 0, 3, 13], "data":{ "query":"bottled water"}}
+sent: {"header":[358165081199845,1,1150,1160,1560389263908,3,0],"data":{"speech":"selecting","entity":{"drinks":["bottled water"]}}}
+recv: {"header":[358165081199845, 1, 1160, 1560389264, 3, 10], "data":{ "result":"actionTrue"}}
+sent: {"header":[358165081199845,1,9999,9999,1560389263908,3,0],"data":{"speech":"Do you want to add item to cart?","entity":{"drinks":["bottled water"]}}}
+recv: {"header":[358165081199845, 1, 1160, 0, 3, 3], "data":{ "query":"yes"}}
+sent: {"header":[358165081199845,1,1160,1900,1560389270931,3,0],"data":{"speech":"selecting","entity":null}}
+recv: {"header":[358165081199845, 1, 5000, 1560389270, 3, 10], "data":{ "result":"actionTrue"}}
+sent: {"header":[358165081199845,1,9999,9999,1560389270931,3,0],"data":{"speech":"Okay, item add to cart","entity":null}}
+recv: {"header":[867350048593934, 0, 100, 1560389498, 3, 178], "data":{ "info":"AppVersion: 1.0.06122019, NcVersion: unknown, DeviceId: 867350048593934, SystemVersion: 9, SystemSdk: 28, Brand: HUAWEI, Manufacturer: HUAWEI, Model: HMA-AL00, SystemLanguage: en"}}
+sent: {"header":[867350048593934,0,100,9999,1560389500083,3,0],"data":{"speech":"","entity":null}}
+recv: {"header":[867350048593934, 1, 100, 0, 3, 30], "data":{ "query":"I want to order a burrito bowl"}}
+sent: {"header":[867350048593934,1,100,2000,1560389511079,3,0],"data":{"speech":"Performing task now.","entity":{"ordertype":"bowl"}}}
+recv: {"header":[867350048593934, 1, 2000, 1560389511, 3, 10], "data":{ "result":"actionTrue"}}
+sent: {"header":[867350048593934,1,2000,9999,1560389511079,3,0],"data":{"speech":"please select address, you can say recent, favorite, or nearby","entity":{"ordertype":"bowl"}}}
+recv: {"header":[867350048593934, 1, 2000, 0, 3, 6], "data":{ "query":"nearby"}}
+sent: {"header":[867350048593934,1,2000,1100,1560389520343,3,0],"data":{"speech":"selecting","entity":{"address":"nearby"}}}
+recv: {"header":[867350048593934, 1, 1100, 1560389524, 3, 10], "data":{ "result":"actionTrue"}}
+sent: {"header":[867350048593934,1,9999,9999,1560389520343,3,0],"data":{"speech":"Choose your meat or veggie","entity":{"address":"nearby"}}}
+recv: {"header":[867350048593934, 1, 1100, 0, 3, 7], "data":{ "query":"can you"}}
+sent: {"header":[867350048593934,1,1100,9999,1560389529781,3,0],"data":{"speech":"Choose your meat or veggie","entity":null}}
+recv: {"header":[867350048593934, 1, 1100, 0, 3, 8], "data":{ "query":"carnitas"}}
+sent: {"header":[867350048593934,1,1100,1110,1560389535694,3,0],"data":{"speech":"selecting","entity":{"fillings":["carnitas"]}}}
+recv: {"header":[867350048593934, 1, 1110, 1560389536, 3, 10], "data":{ "result":"actionTrue"}}
+sent: {"header":[867350048593934,1,9999,9999,1560389535694,3,0],"data":{"speech":"Now add your rice","entity":{"fillings":["carnitas"]}}}
+recv: {"header":[867350048593934, 1, 1110, 0, 3, 10], "data":{ "query":"brown rice"}}
+sent: {"header":[867350048593934,1,1110,1120,1560389542756,3,0],"data":{"speech":"selecting","entity":{"rice":["brown rice"]}}}
+recv: {"header":[867350048593934, 1, 1120, 1560389543, 3, 10], "data":{ "result":"actionTrue"}}
+sent: {"header":[867350048593934,1,9999,9999,1560389542756,3,0],"data":{"speech":"Any beans?","entity":{"rice":["brown rice"]}}}
+recv: {"header":[867350048593934, 1, 1120, 0, 3, 11], "data":{ "query":"black beans"}}
+sent: {"header":[867350048593934,1,1120,1130,1560389548305,3,0],"data":{"speech":"selecting","entity":{"beans":["black beans"]}}}
+recv: {"header":[867350048593934, 1, 1130, 1560389548, 3, 10], "data":{ "result":"actionTrue"}}
+sent: {"header":[867350048593934,1,9999,9999,1560389548305,3,0],"data":{"speech":"Any toppings?","entity":{"beans":["black beans"]}}}
+recv: {"header":[867350048593934, 1, 1130, 0, 3, 9], "data":{ "query":"how salsa"}}
+sent: {"header":[867350048593934,1,1130,1140,1560389559607,3,0],"data":{"speech":"selecting","entity":{"tops":["fresh tomato salsa"]}}}
+recv: {"header":[867350048593934, 1, 1140, 1560389560, 3, 10], "data":{ "result":"actionTrue"}}
+sent: {"header":[867350048593934,1,9999,9999,1560389559607,3,0],"data":{"speech":"Any sides?","entity":{"tops":["fresh tomato salsa"]}}}
+recv: {"header":[867350048593934, 1, 1140, 0, 3, 5], "data":{ "query":"chips"}}
+sent: {"header":[867350048593934,1,1140,1150,1560389569808,3,0],"data":{"speech":"selecting","entity":{"sides":["chips"]}}}
+recv: {"header":[867350048593934, 1, 1150, 1560389570, 3, 10], "data":{ "result":"actionTrue"}}
+sent: {"header":[867350048593934,1,9999,9999,1560389569808,3,0],"data":{"speech":"Any drinks?","entity":{"sides":["chips"]}}}
+recv: {"header":[867350048593934, 1, 1150, 0, 3, 6], "data":{ "query":"Kaiser"}}
+sent: {"header":[867350048593934,1,1150,9999,1560389577495,3,0],"data":{"speech":"Any drinks?","entity":null}}
+recv: {"header":[867350048593934, 1, 1150, 0, 3, 12], "data":{ "query":"small drinks"}}
+sent: {"header":[867350048593934,1,1150,9999,1560389582793,3,0],"data":{"speech":"Any drinks?","entity":null}}
+recv: {"header":[867350048593934, 1, 1150, 0, 3, 4], "data":{ "query":"Boda"}}
+sent: {"header":[867350048593934,1,1150,9999,1560389586928,3,0],"data":{"speech":"Any drinks?","entity":null}}
+recv: {"header":[867350048593934, 1, 1150, 0, 3, 10], "data":{ "query":"small soda"}}
+sent: {"header":[867350048593934,1,1150,1160,1560389590603,3,0],"data":{"speech":"selecting","entity":{"drinks":["22 fl oz soda/iced tea"]}}}
+recv: {"header":[867350048593934, 1, 1160, 1560389590, 3, 10], "data":{ "result":"actionTrue"}}
+sent: {"header":[867350048593934,1,9999,9999,1560389590603,3,0],"data":{"speech":"Do you want to add item to cart?","entity":{"drinks":["22 fl oz soda/iced tea"]}}}
+recv: {"header":[867350048593934, 1, 1160, 0, 3, 3], "data":{ "query":"yes"}}
+sent: {"header":[867350048593934,1,1160,1900,1560389597049,3,0],"data":{"speech":"selecting","entity":null}}
+recv: {"header":[867350048593934, 1, 5000, 1560389597, 3, 10], "data":{ "result":"actionTrue"}}
+sent: {"header":[867350048593934,1,9999,9999,1560389597049,3,0],"data":{"speech":"Okay, item add to cart","entity":null}}
+recv: {"header":[867350048593934, 1, 5000, 0, 3, 22], "data":{ "query":"add to cart add to bag"}}
+sent: {"header":[867350048593934,1,5000,9999,1560389604284,3,0],"data":{"speech":"Say that one more time?","entity":{}}}
+recv: {"header":[358165081199845, 1, 100, 0, 3, 24], "data":{ "query":"I want to have a burrito"}}
+sent: {"header":[358165081199845,1,100,2000,1560389684979,3,0],"data":{"speech":"Performing task now.","entity":{"ordertype":"burrito"}}}
+recv: {"header":[358165081199845, 1, 2000, 1560389685, 3, 10], "data":{ "result":"actionTrue"}}
+sent: {"header":[358165081199845,1,2000,9999,1560389684979,3,0],"data":{"speech":"please select address, you can say recent, favorite, or nearby","entity":{"ordertype":"burrito"}}}
+read: read tcp 172.31.54.48:8080->12.97.23.201:36825: read: connection reset by peer
+recv: {"header":[358165081199845, 1, 2000, 0, 3, 8], "data":{ "query":"favorite"}}
+sent: {"header":[358165081199845,1,2000,1100,1560389694574,3,0],"data":{"speech":"selecting","entity":{"address":"favorites"}}}
+recv: {"header":[358165081199845, 1, 1100, 1560389701, 3, 10], "data":{ "result":"actionTrue"}}
+sent: {"header":[358165081199845,1,1100,9999,1560389694574,3,0],"data":{"speech":"Choose your meat or veggie","entity":{"address":"favorites"}}}
+recv: {"header":[358165081199845, 1, 1160, 0, 3, 8], "data":{ "query":"carnitas"}}
+sent: {"header":[358165081199845,1,1160,9999,1560389713457,3,0],"data":{"speech":"Do you want to add item to cart?","entity":null}}
+recv: {"header":[358165081199845, 1, 1160, 0, 3, 6], "data":{ "query":"cancel"}}
+sent: {"header":[358165081199845,1,1160,0,1560389721261,3,0],"data":{"speech":"Okay, Cancelled","entity":null}}
+recv: {"header":[358165081199845, 1, 1160, 0, 3, 7], "data":{ "query":"chicken"}}
+sent: {"header":[358165081199845,1,1160,9999,1560389726971,3,0],"data":{"speech":"Do you want to add item to cart?","entity":null}}
+recv: {"header":[358165081199845, 1, 1160, 0, 3, 11], "data":{ "query":"real estate"}}
+sent: {"header":[358165081199845,1,1160,9999,1560389733547,3,0],"data":{"speech":"Do you want to add item to cart?","entity":null}}
+recv: {"header":[358165081199845, 1, 1160, 0, 3, 11], "data":{ "query":"buy shampoo"}}
+sent: {"header":[358165081199845,1,1160,9999,1560389754971,3,0],"data":{"speech":"Do you want to add item to cart?","entity":null}}
+recv: {"header":[358165081199845, 1, 1160, 0, 3, 8], "data":{ "query":"WhatsApp"}}
+sent: {"header":[358165081199845,1,1160,9999,1560389762749,3,0],"data":{"speech":"Do you want to add item to cart?","entity":null}}
+recv: {"header":[358165081199845, 1, 1160, 0, 3, 6], "data":{ "query":"cancel"}}
+sent: {"header":[358165081199845,1,1160,0,1560389771874,3,0],"data":{"speech":"Okay, Cancelled","entity":null}}
+recv: {"header":[358165081199845, 1, 1160, 0, 3, 5], "data":{ "query":"hello"}}
+sent: {"header":[358165081199845,1,1160,9999,1560389777395,3,0],"data":{"speech":"Do you want to add item to cart?","entity":null}}
+recv: {"header":[358165081199845, 1, 1160, 0, 3, 3], "data":{ "query":"yes"}}
+sent: {"header":[358165081199845,1,1160,1900,1560389783127,3,0],"data":{"speech":"selecting","entity":null}}
+recv: {"header":[358165081199845, 1, 1160, 1560389789, 3, 11], "data":{ "result":"actionFalse"}}
+sent: {"header":[358165081199845,1,1160,9999,1560389783127,3,0],"data":{"speech":"Sorry I can't perform the action right Now.","entity":null}}
+recv: {"header":[358165081199845, 1, 1160, 0, 3, 7], "data":{ "query":"chicken"}}
+sent: {"header":[358165081199845,1,1160,9999,1560389799787,3,0],"data":{"speech":"Do you want to add item to cart?","entity":null}}
+read: websocket: close 1006 (abnormal closure): unexpected EOF
+read: websocket: close 1006 (abnormal closure): unexpected EOF
+recv: {"header":[358165081199845, 0, 100, 1560389886, 3, 175], "data":{ "info":"AppVersion: 1.0.06122019, NcVersion: unknown, DeviceId: 358165081199845, SystemVersion: 7.1.2, SystemSdk: 25, Brand: lge, Manufacturer: LGE, Model: LG-H932, SystemLanguage: en"}}
+sent: {"header":[358165081199845,0,100,9999,1560389887702,3,0],"data":{"speech":"","entity":null}}
+recv: {"header":[358165081199845, 1, 100, 0, 3, 24], "data":{ "query":"I want to have a burrito"}}
+sent: {"header":[358165081199845,1,100,2000,1560389897331,3,0],"data":{"speech":"Performing task now.","entity":{"ordertype":"burrito"}}}
+recv: {"header":[358165081199845, 1, 2000, 1560389897, 3, 10], "data":{ "result":"actionTrue"}}
+sent: {"header":[358165081199845,1,2000,9999,1560389897331,3,0],"data":{"speech":"please select address, you can say recent, favorite, or nearby","entity":{"ordertype":"burrito"}}}
+recv: {"header":[358165081199845, 1, 2000, 0, 3, 8], "data":{ "query":"favorite"}}
+sent: {"header":[358165081199845,1,2000,1100,1560389906607,3,0],"data":{"speech":"selecting","entity":{"address":"favorites"}}}
+recv: {"header":[358165081199845, 1, 1100, 1560389910, 3, 10], "data":{ "result":"actionTrue"}}
+sent: {"header":[358165081199845,1,1100,9999,1560389906607,3,0],"data":{"speech":"Choose your meat or veggie","entity":{"address":"favorites"}}}
+recv: {"header":[358165081199845, 1, 1100, 0, 3, 7], "data":{ "query":"chicken"}}
+sent: {"header":[358165081199845,1,1100,1110,1560389917622,3,0],"data":{"speech":"selecting","entity":{"fillings":["chicken"]}}}
+recv: {"header":[358165081199845, 1, 1110, 1560389917, 3, 10], "data":{ "result":"actionTrue"}}
+sent: {"header":[358165081199845,1,9999,9999,1560389917622,3,0],"data":{"speech":"Now add your rice","entity":{"fillings":["chicken"]}}}
+recv: {"header":[358165081199845, 1, 1110, 0, 3, 10], "data":{ "query":"white rice"}}
+sent: {"header":[358165081199845,1,1110,1120,1560389923685,3,0],"data":{"speech":"selecting","entity":{"rice":["white rice"]}}}
+recv: {"header":[358165081199845, 1, 1120, 1560389923, 3, 10], "data":{ "result":"actionTrue"}}
+sent: {"header":[358165081199845,1,9999,9999,1560389923685,3,0],"data":{"speech":"Any beans?","entity":{"rice":["white rice"]}}}
+recv: {"header":[358165081199845, 1, 1120, 0, 3, 11], "data":{ "query":"black beans"}}
+sent: {"header":[358165081199845,1,1120,1130,1560389929766,3,0],"data":{"speech":"selecting","entity":{"beans":["black beans"]}}}
+recv: {"header":[358165081199845, 1, 1130, 1560389929, 3, 10], "data":{ "result":"actionTrue"}}
+sent: {"header":[358165081199845,1,9999,9999,1560389929766,3,0],"data":{"speech":"Any toppings?","entity":{"beans":["black beans"]}}}
+recv: {"header":[358165081199845, 1, 1130, 0, 3, 9], "data":{ "query":"guacamole"}}
+sent: {"header":[358165081199845,1,1130,1140,1560389935381,3,0],"data":{"speech":"selecting","entity":{"tops":["guacamole"]}}}
+recv: {"header":[358165081199845, 1, 1140, 1560389935, 3, 10], "data":{ "result":"actionTrue"}}
+sent: {"header":[358165081199845,1,9999,9999,1560389935381,3,0],"data":{"speech":"Any sides?","entity":{"tops":["guacamole"]}}}
+recv: {"header":[358165081199845, 1, 1140, 0, 3, 5], "data":{ "query":"chips"}}
+sent: {"header":[358165081199845,1,1140,1150,1560389942160,3,0],"data":{"speech":"selecting","entity":{"sides":["chips"]}}}
+recv: {"header":[358165081199845, 1, 1150, 1560389942, 3, 10], "data":{ "result":"actionTrue"}}
+sent: {"header":[358165081199845,1,9999,9999,1560389942160,3,0],"data":{"speech":"Any drinks?","entity":{"sides":["chips"]}}}
+recv: {"header":[358165081199845, 1, 1150, 0, 3, 10], "data":{ "query":"small soda"}}
+sent: {"header":[358165081199845,1,1150,1160,1560389947684,3,0],"data":{"speech":"selecting","entity":{"drinks":["22 fl oz soda/iced tea"]}}}
+recv: {"header":[358165081199845, 1, 1160, 1560389947, 3, 10], "data":{ "result":"actionTrue"}}
+sent: {"header":[358165081199845,1,9999,9999,1560389947684,3,0],"data":{"speech":"Do you want to add item to cart?","entity":{"drinks":["22 fl oz soda/iced tea"]}}}
+recv: {"header":[358165081199845, 1, 1160, 0, 3, 3], "data":{ "query":"yes"}}
+sent: {"header":[358165081199845,1,1160,1900,1560389954417,3,0],"data":{"speech":"selecting","entity":null}}
+recv: {"header":[358165081199845, 1, 5000, 1560389954, 3, 10], "data":{ "result":"actionTrue"}}
+sent: {"header":[358165081199845,1,9999,9999,1560389954417,3,0],"data":{"speech":"Okay, item add to cart","entity":null}}
+read: websocket: close 1006 (abnormal closure): unexpected EOF
+recv: {"header":[990012012045891, 0, 100, 1560390183, 3, 180], "data":{ "info":"AppVersion: 1.0.06122019, NcVersion: unknown, DeviceId: 990012012045891, SystemVersion: 9, SystemSdk: 28, Brand: google, Manufacturer: Google, Model: Pixel 3 XL, SystemLanguage: en"}}
+sent: {"header":[990012012045891,0,100,9999,1560390185564,3,0],"data":{"speech":"","entity":null}}
+recv: {"header":[990012012045891, 1, 100, 0, 3, 26], "data":{ "query":"i want to have a breakdown"}}
+sent: {"header":[990012012045891,1,100,2000,1560390196936,3,0],"data":{"speech":"Performing task now.","entity":{"ordertype":"bowl"}}}
+recv: {"header":[990012012045891, 1, 2000, 1560390196, 3, 10], "data":{ "result":"actionTrue"}}
+sent: {"header":[990012012045891,1,2000,9999,1560390196936,3,0],"data":{"speech":"please select address, you can say recent, favorite, or nearby","entity":{"ordertype":"bowl"}}}
+recv: {"header":[990012012045891, 1, 2000, 0, 3, 6], "data":{ "query":"nearby"}}
+sent: {"header":[990012012045891,1,2000,1100,1560390205006,3,0],"data":{"speech":"selecting","entity":{"address":"nearby"}}}
+recv: {"header":[990012012045891, 1, 1100, 1560390206, 3, 10], "data":{ "result":"actionTrue"}}
+sent: {"header":[990012012045891,1,9999,9999,1560390205006,3,0],"data":{"speech":"Choose your meat or veggie","entity":{"address":"nearby"}}}
+recv: {"header":[990012012045891, 1, 1100, 0, 3, 8], "data":{ "query":"bobakhan"}}
+sent: {"header":[990012012045891,1,1100,9999,1560390217195,3,0],"data":{"speech":"Choose your meat or veggie","entity":null}}
+recv: {"header":[990012012045891, 1, 1100, 0, 3, 6], "data":{ "query":"babaco"}}
+sent: {"header":[990012012045891,1,1100,9999,1560390221647,3,0],"data":{"speech":"Choose your meat or veggie","entity":null}}
+recv: {"header":[990012012045891, 1, 1100, 0, 3, 5], "data":{ "query":"steak"}}
+sent: {"header":[990012012045891,1,1100,1110,1560390227081,3,0],"data":{"speech":"selecting","entity":{"fillings":["steak"]}}}
+recv: {"header":[990012012045891, 1, 1110, 1560390226, 3, 10], "data":{ "result":"actionTrue"}}
+sent: {"header":[990012012045891,1,9999,9999,1560390227081,3,0],"data":{"speech":"Now add your rice","entity":{"fillings":["steak"]}}}
+recv: {"header":[990012012045891, 1, 1110, 0, 3, 10], "data":{ "query":"brown rice"}}
+sent: {"header":[990012012045891,1,1110,1120,1560390232728,3,0],"data":{"speech":"selecting","entity":{"rice":["brown rice"]}}}
+recv: {"header":[990012012045891, 1, 1120, 1560390235, 3, 23], "data":{ "result":"itemNotFound: ADD BEANS"}}
+sent: {"header":[990012012045891,1,1110,9999,1560390232728,3,0],"data":{"speech":"Error type not found","entity":{"rice":["brown rice"]}}}
+recv: {"header":[990012012045891, 1, 1120, 0, 3, 11], "data":{ "query":"black beans"}}
+sent: {"header":[990012012045891,1,1120,1130,1560390246770,3,0],"data":{"speech":"selecting","entity":{"beans":["black beans"]}}}
+recv: {"header":[990012012045891, 1, 1120, 1560390246, 3, 9], "data":{ "result":"pageWrong"}}
+sent: {"header":[990012012045891,1,1120,9999,1560390246770,3,0],"data":{"speech":"Wrong page, go to level 1120 to perform action","entity":{"beans":["black beans"]}}}
+recv: {"header":[990012012045891, 1, 1120, 0, 3, 32], "data":{ "query":"and Ivan 20 watch I talked about"}}
+sent: {"header":[990012012045891,1,1120,9999,1560390255491,3,0],"data":{"speech":"Any beans?","entity":null}}
+recv: {"header":[990012012045891, 1, 1120, 0, 3, 11], "data":{ "query":"black beans"}}
+sent: {"header":[990012012045891,1,1120,1130,1560390259817,3,0],"data":{"speech":"selecting","entity":{"beans":["black beans"]}}}
+recv: {"header":[990012012045891, 1, 1130, 1560390260, 3, 10], "data":{ "result":"actionTrue"}}
+sent: {"header":[990012012045891,1,9999,9999,1560390259817,3,0],"data":{"speech":"Any toppings?","entity":{"beans":["black beans"]}}}
+recv: {"header":[990012012045891, 1, 1130, 0, 3, 9], "data":{ "query":"guacamole"}}
+sent: {"header":[990012012045891,1,1130,1140,1560390265921,3,0],"data":{"speech":"selecting","entity":{"tops":["guacamole"]}}}
+recv: {"header":[990012012045891, 1, 1140, 1560390265, 3, 10], "data":{ "result":"actionTrue"}}
+sent: {"header":[990012012045891,1,9999,9999,1560390265921,3,0],"data":{"speech":"Any sides?","entity":{"tops":["guacamole"]}}}
+recv: {"header":[990012012045891, 1, 1140, 0, 3, 5], "data":{ "query":"chips"}}
+sent: {"header":[990012012045891,1,1140,1150,1560390273038,3,0],"data":{"speech":"selecting","entity":{"sides":["chips"]}}}
+recv: {"header":[990012012045891, 1, 1150, 1560390272, 3, 10], "data":{ "result":"actionTrue"}}
+sent: {"header":[990012012045891,1,9999,9999,1560390273038,3,0],"data":{"speech":"Any drinks?","entity":{"sides":["chips"]}}}
+recv: {"header":[990012012045891, 1, 1150, 0, 3, 9], "data":{ "query":"just soda"}}
+sent: {"header":[990012012045891,1,1150,9999,1560390292936,3,0],"data":{"speech":"Any drinks?","entity":null}}
+recv: {"header":[990012012045891, 1, 1150, 0, 3, 11], "data":{ "query":"medium soda"}}
+sent: {"header":[990012012045891,1,1150,9999,1560390297028,3,0],"data":{"speech":"Any drinks?","entity":null}}
+recv: {"header":[990012012045891, 1, 1150, 0, 3, 4], "data":{ "query":"soda"}}
+sent: {"header":[990012012045891,1,1150,9999,1560390302073,3,0],"data":{"speech":"Any drinks?","entity":null}}
+recv: {"header":[990012012045891, 1, 1150, 0, 3, 10], "data":{ "query":"small soda"}}
+sent: {"header":[990012012045891,1,1150,1160,1560390305589,3,0],"data":{"speech":"selecting","entity":{"drinks":["22 fl oz soda/iced tea"]}}}
+recv: {"header":[990012012045891, 1, 1160, 1560390305, 3, 10], "data":{ "result":"actionTrue"}}
+sent: {"header":[990012012045891,1,9999,9999,1560390305589,3,0],"data":{"speech":"Do you want to add item to cart?","entity":{"drinks":["22 fl oz soda/iced tea"]}}}
+recv: {"header":[990012012045891, 1, 1160, 0, 3, 3], "data":{ "query":"yes"}}
+sent: {"header":[990012012045891,1,1160,1900,1560390312310,3,0],"data":{"speech":"selecting","entity":null}}
+recv: {"header":[990012012045891, 1, 1160, 1560390316, 3, 11], "data":{ "result":"actionFalse"}}
+sent: {"header":[990012012045891,1,1160,9999,1560390312310,3,0],"data":{"speech":"Sorry I can't perform the action right Now.","entity":null}}
+recv: {"header":[990012012045891, 1, 100, 0, 3, 29], "data":{ "query":"I want to have a burrito bowl"}}
+sent: {"header":[990012012045891,1,100,2000,1560390365330,3,0],"data":{"speech":"Performing task now.","entity":{"ordertype":"bowl"}}}
+recv: {"header":[990012012045891, 1, 2000, 1560390364, 3, 10], "data":{ "result":"actionTrue"}}
+sent: {"header":[990012012045891,1,2000,9999,1560390365330,3,0],"data":{"speech":"please select address, you can say recent, favorite, or nearby","entity":{"ordertype":"bowl"}}}
+recv: {"header":[990012012045891, 1, 2000, 0, 3, 6], "data":{ "query":"nearby"}}
+sent: {"header":[990012012045891,1,2000,1100,1560390372977,3,0],"data":{"speech":"selecting","entity":{"address":"nearby"}}}
+recv: {"header":[990012012045891, 1, 1100, 1560390374, 3, 10], "data":{ "result":"actionTrue"}}
+sent: {"header":[990012012045891,1,9999,9999,1560390372977,3,0],"data":{"speech":"Choose your meat or veggie","entity":{"address":"nearby"}}}
+recv: {"header":[990012012045891, 1, 1160, 0, 3, 7], "data":{ "query":"chicken"}}
+sent: {"header":[990012012045891,1,1160,9999,1560390381851,3,0],"data":{"speech":"Do you want to add item to cart?","entity":null}}
+read: websocket: close 1006 (abnormal closure): unexpected EOF
+read: websocket: close 1006 (abnormal closure): unexpected EOF
+recv: {"header":[990012012045891, 0, 100, 1560390428, 3, 180], "data":{ "info":"AppVersion: 1.0.06122019, NcVersion: unknown, DeviceId: 990012012045891, SystemVersion: 9, SystemSdk: 28, Brand: google, Manufacturer: Google, Model: Pixel 3 XL, SystemLanguage: en"}}
+sent: {"header":[990012012045891,0,100,9999,1560390429689,3,0],"data":{"speech":"","entity":null}}
+recv: {"header":[990012010464581, 0, 100, 1560446346, 3, 180], "data":{ "info":"AppVersion: 1.0.06122019, NcVersion: unknown, DeviceId: 990012010464581, SystemVersion: 9, SystemSdk: 28, Brand: google, Manufacturer: Google, Model: Pixel 3 XL, SystemLanguage: en"}}
+sent: {"header":[990012010464581,0,100,9999,1560446347552,3,0],"data":{"speech":"","entity":null}}
+recv: {"header":[990012010464581, 1, 100, 0, 3, 24], "data":{ "query":"I want to have a burrito"}}
+sent: {"header":[990012010464581,1,100,2000,1560446361206,3,0],"data":{"speech":"Performing task now.","entity":{"ordertype":"burrito"}}}
+recv: {"header":[990012010464581, 1, 2000, 1560446361, 3, 10], "data":{ "result":"actionTrue"}}
+sent: {"header":[990012010464581,1,2000,9999,1560446361206,3,0],"data":{"speech":"please select address, you can say recent, favorite, or nearby","entity":{"ordertype":"burrito"}}}
+recv: {"header":[990012010464581, 1, 2000, 0, 3, 6], "data":{ "query":"recent"}}
+sent: {"header":[990012010464581,1,2000,1100,1560446371224,3,0],"data":{"speech":"selecting","entity":{"address":"recent"}}}
+recv: {"header":[990012010464581, 1, 1100, 1560446373, 3, 10], "data":{ "result":"actionTrue"}}
+sent: {"header":[990012010464581,1,9999,9999,1560446371224,3,0],"data":{"speech":"Choose your meat or veggie","entity":{"address":"recent"}}}
+recv: {"header":[990012010464581, 1, 1100, 0, 3, 13], "data":{ "query":"chicken steak"}}
+sent: {"header":[990012010464581,1,1100,1110,1560446383558,3,0],"data":{"speech":"selecting","entity":{"fillings":["steak","chicken"]}}}
+recv: {"header":[990012010464581, 1, 1110, 1560446383, 3, 10], "data":{ "result":"actionTrue"}}
+sent: {"header":[990012010464581,1,1110,9999,1560446383558,3,0],"data":{"speech":"Now add your rice","entity":{"fillings":["steak","chicken"]}}}
+recv: {"header":[990012010464581, 1, 1110, 0, 3, 10], "data":{ "query":"white rice"}}
+sent: {"header":[990012010464581,1,1110,1120,1560446390317,3,0],"data":{"speech":"selecting","entity":{"rice":["white rice"]}}}
+recv: {"header":[990012010464581, 1, 1120, 1560446390, 3, 10], "data":{ "result":"actionTrue"}}
+sent: {"header":[990012010464581,1,9999,9999,1560446390317,3,0],"data":{"speech":"Any beans?","entity":{"rice":["white rice"]}}}
+recv: {"header":[990012010464581, 1, 1120, 0, 3, 11], "data":{ "query":"black beans"}}
+sent: {"header":[990012010464581,1,1120,1130,1560446394901,3,0],"data":{"speech":"selecting","entity":{"beans":["black beans"]}}}
+recv: {"header":[990012010464581, 1, 1130, 1560446394, 3, 10], "data":{ "result":"actionTrue"}}
+sent: {"header":[990012010464581,1,9999,9999,1560446394901,3,0],"data":{"speech":"Any toppings?","entity":{"beans":["black beans"]}}}
+recv: {"header":[990012010464581, 1, 1130, 0, 3, 9], "data":{ "query":"guacamole"}}
+sent: {"header":[990012010464581,1,1130,1140,1560446398395,3,0],"data":{"speech":"selecting","entity":{"tops":["guacamole"]}}}
+recv: {"header":[990012010464581, 1, 1140, 1560446398, 3, 10], "data":{ "result":"actionTrue"}}
+sent: {"header":[990012010464581,1,9999,9999,1560446398395,3,0],"data":{"speech":"Any sides?","entity":{"tops":["guacamole"]}}}
+recv: {"header":[990012010464581, 1, 1140, 0, 3, 5], "data":{ "query":"chips"}}
+sent: {"header":[990012010464581,1,1140,1150,1560446408853,3,0],"data":{"speech":"selecting","entity":{"sides":["chips"]}}}
+recv: {"header":[990012010464581, 1, 1150, 1560446409, 3, 10], "data":{ "result":"actionTrue"}}
+sent: {"header":[990012010464581,1,9999,9999,1560446408853,3,0],"data":{"speech":"Any drinks?","entity":{"sides":["chips"]}}}
+recv: {"header":[990012010464581, 1, 1150, 0, 3, 10], "data":{ "query":"small soda"}}
+sent: {"header":[990012010464581,1,1150,1160,1560446413888,3,0],"data":{"speech":"selecting","entity":{"drinks":["22 fl oz soda/iced tea"]}}}
+recv: {"header":[990012010464581, 1, 1160, 1560446413, 3, 10], "data":{ "result":"actionTrue"}}
+sent: {"header":[990012010464581,1,9999,9999,1560446413888,3,0],"data":{"speech":"Do you want to add item to cart?","entity":{"drinks":["22 fl oz soda/iced tea"]}}}
+recv: {"header":[990012010464581, 1, 1160, 0, 3, 3], "data":{ "query":"yes"}}
+sent: {"header":[990012010464581,1,1160,1900,1560446421118,3,0],"data":{"speech":"selecting","entity":null}}
+recv: {"header":[990012010464581, 1, 5000, 1560446420, 3, 10], "data":{ "result":"actionTrue"}}
+sent: {"header":[990012010464581,1,9999,9999,1560446421118,3,0],"data":{"speech":"Okay, item add to cart","entity":null}}
+recv: {"header": [1111, 0, 1000, 1560447175, 3, 0], "data": {"query": "hello"}}
+sent: {"header":[1111,0,1000,9999,1560447180304,3,0],"data":{"speech":"Hello, this is Chipotle.","entity":{}}}
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 1000, 1560447470, 3, 0], "data": {"query": "hello"}}
+sent: {"header":[1111,0,1000,9999,1560447474942,3,0],"data":{"speech":"Hello, this is Chipotle.","entity":{}}}
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 100, 1560447643, 3, 0], "data": {"query": "hello"}}
+sent: {"header":[1111,0,100,9999,1560447646534,3,0],"data":{"speech":"Hello, this is Chipotle.","entity":{}}}
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 100, 1560447688, 3, 0], "data": {"query": "can I order a burrito"}}
+sent: {"header":[1111,0,100,2000,1560447698378,3,0],"data":{"speech":"Performing task now.","entity":{"ordertype":"burrito"}}}
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 100, 1560450237, 3, 0], "data": {"query": "hello"}}
+sent: {"header":[1111,0,100,9999,1560450240972,3,0],"data":{"speech":"Do you want to pick up in store or deliver to an address","entity":{}}}
+recv: {"header": [1111, 0, 100, 1560450266, 3, 0], "data": {"query": "i want to order a burrito"}}
+sent: {"header":[1111,0,100,2000,1560450272281,3,0],"data":{"speech":"Performing task now.","entity":{"ordertype":"burrito"}}}
+recv: {"header": [1111, 0, 2000, 1560450266, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,2000,9999,1560450272281,3,0],"data":{"speech":"please select address, you can say recent, favorite, or nearby","entity":{"ordertype":"burrito"}}}
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 100, 1560450305, 3, 0], "data": {"query": "hello"}}
+sent: {"header":[1111,0,100,9999,1560450308823,3,0],"data":{"speech":"Hello, this is chipotle, Do you want to pick up in store or deliver to an address?","entity":{}}}
+recv: {"header": [1111, 0, 100, 1560450305, 3, 0], "data": {"result": "hello"}}
+sent: {"header":[1111,0,100,9999,1560450315102,3,0],"data":{"speech":"Hello, this is chipotle, Do you want to pick up in store or deliver to an address?","entity":null}}
+recv: {"header": [1111, 0, 100, 1560450305, 3, 0], "data": {"query": "pick up"}}
+sent: {"header":[1111,0,100,2000,1560450319295,3,0],"data":{"speech":"","entity":null}}
+recv: {"header": [1111, 0, 100, 1560450858, 3, 0], "data": {"query": "hello"}}
+sent: {"header":[1111,0,100,9999,1560450862128,3,0],"data":{"speech":"Hello, this is chipotle, Do you want to pick up in store or deliver to an address?","entity":{}}}
+recv: {"header": [1111, 0, 100, 1560450858, 3, 0], "data": {"result": "i want to pick up from a store"}}
+sent: {"header":[1111,0,100,9999,1560450876580,3,0],"data":{"speech":"Hello, this is chipotle, Do you want to pick up in store or deliver to an address?","entity":null}}
+recv: {"header": [1111, 0, 100, 1560450858, 3, 0], "data": {"query": "i want to pick up"}}
+sent: {"header":[1111,0,100,2000,1560450896705,3,0],"data":{"speech":"Performing task now.","entity":null}}
+recv: {"header": [1111, 0, 2000, 1560450858, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,2000,9999,1560450896705,3,0],"data":{"speech":"Performing task now.","entity":null}}
+recv: {"header": [1111, 0, 100, 1560451549, 3, 0], "data": {"query": "hello"}}
+sent: {"header":[1111,0,100,9999,1560451554428,3,0],"data":{"speech":"Hello, this is chipotle, Do you want to pick up in store or deliver to an address?","entity":{}}}
+recv: {"header": [1111, 0, 100, 1560451549, 3, 0], "data": {"result": "hello"}}
+sent: {"header":[1111,0,100,9999,1560451560897,3,0],"data":{"speech":"Hello, this is chipotle, Do you want to pick up in store or deliver to an address?","entity":null}}
+recv: {"header": [1111, 0, 100, 1560451549, 3, 0], "data": {"query": "i want to order a burrito"}}
+sent: {"header":[1111,0,100,2000,1560451569146,3,0],"data":{"speech":"Performing task now.","entity":{"ordertype":"burrito"}}}
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 100, 1560451575, 3, 0], "data": {"query": "hello"}}
+sent: {"header":[1111,0,100,9999,1560453321702,3,0],"data":{"speech":"Hello, this is chipotle, Do you want to pick up in store or deliver to an address?","entity":{}}}
+recv: {"header": [1111, 0, 100, 1560451575, 3, 0], "data": {"result": "hello"}}
+sent: {"header":[1111,0,100,9999,1560453325089,3,0],"data":{"speech":"Hello, this is chipotle, Do you want to pick up in store or deliver to an address?","entity":null}}
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 100, 1560453334, 3, 0], "data": {"query": "i want to pick up"}}
+sent: {"header":[1111,0,100,2000,1560453338740,3,0],"data":{"speech":"selecting","entity":{"serviceType":"pick up"}}}
+recv: {"header": [1111, 0, 2000, 1560453334, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,2000,9999,1560453338740,3,0],"data":{"speech":"Which store do you want to pick up? you can say recent, favorite, or nearby","entity":{"serviceType":"pick up"}}}
+recv: {"header": [1111, 0, 2000, 1560453334, 3, 0], "data": {"query": "recent"}}
+sent: {"header":[1111,0,2000,1100,1560453353484,3,0],"data":{"speech":"selecting","entity":{"address":"recent"}}}
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 100, 1560463625, 3, 0], "data": {"query": "i want to order a burrito"}}
+sent: {"header":[1111,0,100,2000,1560463632173,3,0],"data":{"speech":"Performing task now.","entity":{"ordertype":"burrito"}}}
+recv: {"header": [1111, 0, 2000, 1560463625, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,2000,9999,1560463632173,3,0],"data":{"speech":"please select address, you can say recent, favorite, or nearby","entity":{"ordertype":"burrito"}}}
+recv: {"header": [1111, 0, 2000, 1560463625, 3, 0], "data": {"query": "recent"}}
+sent: {"header":[1111,0,2000,1100,1560463644813,3,0],"data":{"speech":"selecting","entity":{"address":"recent"}}}
+recv: {"header": [1111, 0, 1100, 1560463625, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,9999,9999,1560463644813,3,0],"data":{"speech":"Choose your meat or veggie","entity":{"address":"recent"}}}
+recv: {"header": [1111, 0, 100, 1560463716, 3, 0], "data": {"query": "i want to add a burrito"}}
+sent: {"header":[1111,0,100,2000,1560463724609,3,0],"data":{"speech":"Performing task now.","entity":{"ordertype":"burrito"}}}
+recv: {"header": [1111, 0, 2000, 1560463716, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,2000,9999,1560463724609,3,0],"data":{"speech":"please select address, you can say recent, favorite, or nearby","entity":{"ordertype":"burrito"}}}
+recv: {"header": [1111, 0, 2000, 1560463716, 3, 0], "data": {"query": "recent"}}
+sent: {"header":[1111,0,2000,1100,1560464044535,3,0],"data":{"speech":"selecting","entity":{"address":"recent"}}}
+recv: {"header": [1111, 0, 1100, 1560463716, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,1100,9999,1560464044535,3,0],"data":{"speech":"Choose your meat or veggie","entity":{"address":"recent"}}}
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 100, 1560464936, 3, 0], "data": {"query": "i want to order a burrito"}}
+sent: {"header":[1111,0,100,2000,1560464944839,3,0],"data":{"speech":"Performing task now.","entity":{"ordertype":"burrito"}}}
+recv: {"header": [1111, 0, 2000, 1560464936, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,2000,9999,1560464944839,3,0],"data":{"speech":"please select address, you can say recent, favorite, or nearby","entity":{"ordertype":"burrito"}}}
+recv: {"header": [1111, 0, 2000, 1560464936, 3, 0], "data": {"query": "recent"}}
+sent: {"header":[1111,0,2000,1100,1560465392606,3,0],"data":{"speech":"selecting","entity":{"address":"recent"}}}
+recv: {"header": [1111, 0, 1100, 1560464936, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,1100,9999,1560465392606,3,0],"data":{"speech":"Choose your meat or veggie","entity":{"address":"recent"}}}
+recv: {"header": [1111, 0, 1100, 1560464936, 3, 0], "data": {"query": "chicken and steak"}}
+sent: {"header":[1111,0,1100,1110,1560465406629,3,0],"data":{"speech":"selecting","entity":{"fillings":["steak","chicken"]}}}
+recv: {"header": [1111, 0, 1100, 1560464936, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,1110,9999,1560465406629,3,0],"data":{"speech":"Now add your rice","entity":{"fillings":["steak","chicken"]}}}
+recv: {"header": [1111, 0, 1110, 1560464936, 3, 0], "data": {"query": "white rice"}}
+sent: {"header":[1111,0,1110,9999,1560465553848,3,0],"data":{"speech":"selecting","entity":{"rice":["white rice"]}}}
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 1100, 1560465879, 3, 0], "data": {"query": "hello"}}
+sent: {"header":[1111,0,1100,9999,1560465884778,3,0],"data":{"speech":"Choose your meat or veggie","entity":null}}
+recv: {"header": [1111, 0, 1100, 1560465879, 3, 0], "data": {"result": "hello"}}
+sent: {"header":[1111,0,1100,9999,1560465888665,3,0],"data":{"speech":"Choose your meat or veggie","entity":null}}
+recv: {"header": [1111, 0, 1100, 1560465879, 3, 0], "data": {"query": "chicken"}}
+sent: {"header":[1111,0,1100,1110,1560465940263,3,0],"data":{"speech":"selecting","entity":{"fillings":["chicken"]}}}
+recv: {"header": [1111, 0, 1100, 1560465879, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,1110,9999,1560465940263,3,0],"data":{"speech":"Now add your rice and beans","entity":{"fillings":["chicken"]}}}
+recv: {"header": [1111, 0, 1110, 1560465879, 3, 0], "data": {"query": "white rice and black beans"}}
+sent: {"header":[1111,0,1110,1120,1560465962016,3,0],"data":{"speech":"selecting","entity":{"beans":["black beans"],"rice":["white rice"]}}}
+recv: {"header": [1111, 0, 1120, 1560465879, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,1120,9999,1560465962016,3,0],"data":{"speech":"Do you want to add salsa? Mild, medium, or hot?","entity":{"beans":["black beans"],"rice":["white rice"]}}}
+recv: {"header": [1111, 0, 1120, 1560465879, 3, 0], "data": {"query": "mild"}}
+sent: {"header":[1111,0,1120,1130,1560465979373,3,0],"data":{"speech":"selecting","entity":{"tops":["fresh tomato salsa"]}}}
+recv: {"header": [1111, 0, 1130, 1560465879, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,1130,9999,1560465979373,3,0],"data":{"speech":"Any toppings?","entity":{"tops":["fresh tomato salsa"]}}}
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 100, 1560676440, 3, 0], "data": {"query": "hello"}}
+sent: {"header":[1111,0,100,9999,1560676445955,3,0],"data":{"speech":"Hello, this is Chipotle, Do you want to pick up in store or deliver to an address?","entity":{}}}
+recv: {"header": [1111, 0, 100, 1560676440, 3, 0], "data": {"result": "hello"}}
+sent: {"header":[1111,0,100,9999,1560676455531,3,0],"data":{"speech":"","entity":null}}
+recv: {"header": [1111, 0, 100, 1560676440, 3, 0], "data": {"query": "pick up"}}
+sent: {"header":[1111,0,100,2000,1560676541277,3,0],"data":{"speech":"selecting","entity":{"servicetype":"pick up"}}}
+recv: {"header": [1111, 0, 2000, 1560676440, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,2000,9999,1560676541277,3,0],"data":{"speech":"Which store do you want to pick up? you can say recent, favorite, or nearby","entity":{"servicetype":"pick up"}}}
+recv: {"header": [1111, 0, 2000, 1560676440, 3, 0], "data": {"query": "recent"}}
+sent: {"header":[1111,0,2000,1000,1560676558188,3,0],"data":{"speech":"selecting","entity":{"address":"recent"}}}
+recv: {"header": [1111, 0, 1000, 1560676440, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,1000,9999,1560676558188,3,0],"data":{"speech":"Choose your meat or veggie","entity":{"address":"recent"}}}
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 2000, 1560676589, 3, 0], "data": {"query": "recent"}}
+sent: {"header":[1111,0,2000,1000,1560676596201,3,0],"data":{"speech":"selecting","entity":{"address":"recent"}}}
+recv: {"header": [1111, 0, 1000, 1560676589, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,1000,9999,1560676596201,3,0],"data":{"speech":"what items do you want, burrito, bowl, or tacos?","entity":{"address":"recent"}}}
+recv: {"header": [1111, 0, 1000, 1560676589, 3, 0], "data": {"query": "burrito"}}
+sent: {"header":[1111,0,1000,1100,1560676617837,3,0],"data":{"speech":"selecting","entity":{"ordertype":"burrito"}}}
+recv: {"header": [1111, 0, 1100, 1560676589, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,9999,9999,1560676617837,3,0],"data":{"speech":"Choose your meat or veggie","entity":{"ordertype":"burrito"}}}
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 1110, 1560676669, 3, 0], "data": {"query": "hello"}}
+sent: {"header":[1111,0,1110,9999,1560676673379,3,0],"data":{"speech":"Now add your rice and beans","entity":null}}
+recv: {"header": [1111, 0, 1110, 1560676669, 3, 0], "data": {"result": "jdks"}}
+sent: {"header":[1111,0,1110,9999,1560676677034,3,0],"data":{"speech":"Now add your rice and beans","entity":null}}
+recv: {"header": [1111, 0, 1110, 1560676669, 3, 0], "data": {"query": "white rice and black beans"}}
+sent: {"header":[1111,0,1110,1120,1560676718968,3,0],"data":{"speech":"selecting","entity":{"beans":["black beans"],"rice":["white rice"]}}}
+recv: {"header": [1111, 0, 1120, 1560676669, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,1120,9999,1560676718968,3,0],"data":{"speech":"Do you want to add salsa? Mild, medium, or hot?","entity":{"beans":["black beans"],"rice":["white rice"]}}}
+recv: {"header": [1111, 0, 1120, 1560676669, 3, 0], "data": {"query": "no"}}
+sent: {"header":[1111,0,1120,1300,1560676731824,3,0],"data":{"speech":"Do you want queso, guac, or corn?","entity":{"tops":""}}}
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 1170, 1560902509, 3, 0], "data": {"query": "hello"}}
+sent: {"header":[1111,0,1170,9999,1560902534694,3,0],"data":{"speech":"Do you want to add item to bag?","entity":null}}
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 1170, 1560902538, 3, 0], "data": {"query": "sure"}}
+sent: {"header":[1111,0,1170,1900,1560902548936,3,0],"data":{"speech":"selecting","entity":null}}
+recv: {"header": [1111, 0, 1900, 1560902538, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,1900,9999,1560902548936,3,0],"data":{"speech":"Okay, item add to bag","entity":null}}
+recv: {"header": [1111, 0, 1170, 1560902538, 3, 0], "data": {"query": "yes"}}
+sent: {"header":[1111,0,1170,1900,1560902685782,3,0],"data":{"speech":"selecting","entity":null}}
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 1100, 1561414895, 3, 0], "data": {"query": "hello"}}
+sent: {"header":[1111,0,1100,9999,1561414908256,3,0],"data":{"speech":"OK. First choose your meat or veggie.","entity":null}}
+recv: {"header": [1111, 0, 1100, 1561414895, 3, 0], "data": {"result": "hwkki"}}
+sent: {"header":[1111,0,1100,9999,1561414916715,3,0],"data":{"speech":"OK. First choose your meat or veggie.","entity":null}}
+recv: {"header": [1111, 0, 1100, 1561414895, 3, 0], "data": {"query": "burrito"}}
+sent: {"header":[1111,0,1100,9999,1561414924500,3,0],"data":{"speech":"OK. First choose your meat or veggie.","entity":null}}
+recv: {"header": [1111, 0, 1100, 1561419810, 3, 0], "data": {"query": "hello"}}
+sent: {"header":[1111,0,1100,9999,1561419815937,3,0],"data":{"speech":"OK. First choose your meat or veggie.","entity":null}}
+recv: {"header": [1111, 0, 1100, 1561419810, 3, 0], "data": {"result": "dhjsa"}}
+sent: {"header":[1111,0,1100,9999,1561419819109,3,0],"data":{"speech":"OK. First choose your meat or veggie.","entity":null}}
+recv: {"header": [1111, 0, 1100, 1561419810, 3, 0], "data": {"query": "burrito"}}
+sent: {"header":[1111,0,1100,9999,1561419911485,3,0],"data":{"speech":"OK. First choose your meat or veggie.","entity":null}}
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 1000, 1561419945, 3, 0], "data": {"query": "hello"}}
+sent: {"header":[1111,0,1000,9999,1561419948015,3,0],"data":{"speech":"what items do you want, burrito, bowl, or tacos?","entity":null}}
+recv: {"header": [1111, 0, 1000, 1561419945, 3, 0], "data": {"result": "hjdjs"}}
+sent: {"header":[1111,0,1000,9999,1561419951639,3,0],"data":{"speech":"what items do you want, burrito, bowl, or tacos?","entity":null}}
+recv: {"header": [1111, 0, 1000, 1561419945, 3, 0], "data": {"query": "burrito"}}
+sent: {"header":[1111,0,1000,1100,1561421595060,3,0],"data":{"speech":"selecting","entity":{"ordertype":"burrito"}}}
+recv: {"header": [1111, 0, 1100, 1561419945, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,1100,9999,1561421595060,3,0],"data":{"speech":"Choose your meat or veggie","entity":{"ordertype":"burrito"}}}
+recv: {"header": [1111, 0, 1000, 1561421882, 3, 0], "data": {"query": "hello"}}
+sent: {"header":[1111,0,1000,9999,1561421887621,3,0],"data":{"speech":"what items do you want, burrito, bowl, or tacos?","entity":null}}
+recv: {"header": [1111, 0, 1000, 1561421882, 3, 0], "data": {"result": "dhsjak"}}
+sent: {"header":[1111,0,1000,9999,1561421889532,3,0],"data":{"speech":"what items do you want, burrito, bowl, or tacos?","entity":null}}
+recv: {"header": [1111, 0, 1000, 1561421882, 3, 0], "data": {"query": "taco"}}
+sent: {"header":[1111,0,1000,1101,1561421893920,3,0],"data":{"speech":"selecting","entity":{"ordertype":"tacos"}}}
+recv: {"header": [1111, 0, 1101, 1561421882, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,1101,9999,1561421893920,3,0],"data":{"speech":"Choose your meat or veggie","entity":{"ordertype":"tacos"}}}
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 1000, 1561422598, 3, 0], "data": {"query": ""}}
+sent: {"header":[1111,0,1000,9999,1561422600513,3,0],"data":{"speech":"what items do you want, burrito, bowl, or tacos?","entity":null}}
+recv: {"header": [1111, 0, 1000, 1561422598, 3, 0], "data": {"result": "djsajk"}}
+sent: {"header":[1111,0,1000,9999,1561422609098,3,0],"data":{"speech":"what items do you want, burrito, bowl, or tacos?","entity":null}}
+recv: {"header": [1111, 0, 1000, 1561422598, 3, 0], "data": {"query": "burrito"}}
+sent: {"header":[1111,0,1000,1100,1561422616544,3,0],"data":{"speech":"selecting","entity":{"ordertype":"burrito"}}}
+recv: {"header": [1111, 0, 1100, 1561422598, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,1100,9999,1561422616544,3,0],"data":{"speech":"Choose your meat or veggie","entity":{"ordertype":"burrito"}}}
+recv: {"header": [1111, 0, 1000, 1561422598, 3, 0], "data": {"query": "taco"}}
+sent: {"header":[1111,0,1000,1101,1561422635725,3,0],"data":{"speech":"selecting","entity":{"ordertype":"tacos"}}}
+recv: {"header": [1111, 0, 1101, 1561422598, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,1101,9999,1561422635725,3,0],"data":{"speech":"OK. How many tacos do you want?","entity":{"ordertype":"tacos"}}}
+recv: {"header": [1111, 0, 1101, 1561422598, 3, 0], "data": {"query": "threj"}}
+sent: {"header":[1111,0,1101,9999,1561422662004,3,0],"data":{"speech":"OK. How many tacos do you want?","entity":null}}
+recv: {"header": [1111, 0, 1101, 1561422598, 3, 0], "data": {"result": "four"}}
+sent: {"header":[1111,0,1101,9999,1561422667890,3,0],"data":{"speech":"OK. How many tacos do you want?","entity":null}}
+recv: {"header": [1111, 0, 1101, 1561422598, 3, 0], "data": {"query": "three"}}
+sent: {"header":[1111,0,1101,1102,1561422672614,3,0],"data":{"speech":"selecting","entity":{"number":"three tacos"}}}
+recv: {"header": [1111, 0, 1102, 1561422598, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,1102,9999,1561422672614,3,0],"data":{"speech":"Do you want soft or crispy taco?","entity":{"number":"three tacos"}}}
+recv: {"header": [1111, 0, 1102, 1561422598, 3, 0], "data": {"query": "hjfdsk"}}
+sent: {"header":[1111,0,1102,9999,1561422684945,3,0],"data":{"speech":"Do you want soft or crispy taco?","entity":null}}
+recv: {"header": [1111, 0, 1102, 1561422598, 3, 0], "data": {"result": "soft tacp please"}}
+sent: {"header":[1111,0,1102,9999,1561422695609,3,0],"data":{"speech":"Do you want soft or crispy taco?","entity":null}}
+recv: {"header": [1111, 0, 1102, 1561422598, 3, 0], "data": {"query": "soft"}}
+sent: {"header":[1111,0,1102,1102,1561422706624,3,0],"data":{"speech":"selecting","entity":{"tacotype":"soft flour tortilla"}}}
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 1101, 1561422744, 3, 0], "data": {"query": "hdjsa"}}
+sent: {"header":[1111,0,1101,9999,1561422747822,3,0],"data":{"speech":"OK. How many tacos do you want?","entity":null}}
+recv: {"header": [1111, 0, 1101, 1561422744, 3, 0], "data": {"result": "fdsjhak"}}
+sent: {"header":[1111,0,1101,9999,1561422749330,3,0],"data":{"speech":"OK. How many tacos do you want?","entity":null}}
+recv: {"header": [1111, 0, 1101, 1561422744, 3, 0], "data": {"query": "one two three four "}}
+sent: {"header":[1111,0,1101,1102,1561422755977,3,0],"data":{"speech":"selecting","entity":{"number":"three tacos"}}}
+recv: {"header": [1111, 0, 1102, 1561422744, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,1102,9999,1561422755977,3,0],"data":{"speech":"Do you want soft or crispy taco?","entity":{"number":"three tacos"}}}
+recv: {"header": [1111, 0, 1102, 1561422744, 3, 0], "data": {"query": "crispy taco please"}}
+sent: {"header":[1111,0,1102,1100,1561423181639,3,0],"data":{"speech":"selecting","entity":{"tacotype":"crispy corn tortilla"}}}
+recv: {"header": [1111, 0, 1102, 1561422744, 3, 0], "data": {"result": "djksa"}}
+sent: {"header":[1111,0,1102,9999,1561423181639,3,0],"data":{"speech":"Error type not found","entity":{"tacotype":"crispy corn tortilla"}}}
+recv: {"header": [1111, 0, 1102, 1561422744, 3, 0], "data": {"query": "soft taco please"}}
+sent: {"header":[1111,0,1102,1100,1561423197793,3,0],"data":{"speech":"selecting","entity":{"tacotype":"soft flour tortilla"}}}
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 100, 1561423812, 3, 0], "data": {"query": "hello"}}
+sent: {"header":[1111,0,100,9999,1561423924641,3,0],"data":{"speech":"Hello, this is Chipotle, Do you want to pick up in store or deliver to an address?","entity":{}}}
+recv: {"header": [1111, 0, 100, 1561423812, 3, 0], "data": {"result": "jfkas"}}
+sent: {"header":[1111,0,100,9999,1561423930328,3,0],"data":{"speech":"","entity":null}}
+recv: {"header": [1111, 0, 100, 1561423812, 3, 0], "data": {"query": "i want to order delivery"}}
+sent: {"header":[1111,0,100,2000,1561423962009,3,0],"data":{"speech":"selecting","entity":{"servicetype":"deliver"}}}
+recv: {"header": [1111, 0, 2000, 1561423812, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,2000,9999,1561423962009,3,0],"data":{"speech":"OK, what's your address? You can choose from recent, or add a new one.","entity":{"servicetype":"deliver"}}}
+recv: {"header": [1111, 0, 2000, 1561423812, 3, 0], "data": {"query": "recent"}}
+sent: {"header":[1111,0,2000,1000,1561423987187,3,0],"data":{"speech":"selecting","entity":{"address":"recent"}}}
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 100, 1561424693, 3, 0], "data": {"query": "pick up"}}
+sent: {"header":[1111,0,100,2000,1561424698028,3,0],"data":{"speech":"selecting","entity":{"servicetype":"pick up"}}}
+recv: {"header": [1111, 0, 2000, 1561424693, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,2000,9999,1561424698028,3,0],"data":{"speech":"OK, which store do you prefer? you can say recent, favorite, or nearby.","entity":{"servicetype":"pick up"}}}
+recv: {"header": [1111, 0, 2000, 1561424693, 3, 0], "data": {"query": "recent"}}
+sent: {"header":[1111,0,2000,1000,1561424710133,3,0],"data":{"speech":"selecting","entity":{"address":"recent"}}}
+recv: {"header": [1111, 0, 1000, 1561424693, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,1000,9999,1561424710133,3,0],"data":{"speech":"what items do you want, burrito, bowl, or tacos?","entity":{"address":"recent"}}}
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 1000, 1561424728, 3, 0], "data": {"query": "taco"}}
+sent: {"header":[1111,0,1000,1101,1561424732645,3,0],"data":{"speech":"selecting","entity":{"ordertype":"tacos"}}}
+recv: {"header": [1111, 0, 1101, 1561424728, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,1101,9999,1561424732645,3,0],"data":{"speech":"OK. How many tacos do you want?","entity":{"ordertype":"tacos"}}}
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 100, 1561424745, 3, 0], "data": {"query": "pick up"}}
+sent: {"header":[1111,0,100,2000,1561424750498,3,0],"data":{"speech":"selecting","entity":{"servicetype":"pick up"}}}
+recv: {"header": [1111, 0, 2000, 1561424745, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,2000,9999,1561424750498,3,0],"data":{"speech":"OK, which store do you prefer? you can say recent, favorite, or nearby.","entity":{"servicetype":"pick up"}}}
+recv: {"header": [1111, 0, 2000, 1561424745, 3, 0], "data": {"query": "recent"}}
+sent: {"header":[1111,0,2000,1000,1561424776565,3,0],"data":{"speech":"selecting","entity":{"address":"recent"}}}
+recv: {"header": [1111, 0, 1000, 1561424745, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,1000,9999,1561424776565,3,0],"data":{"speech":"what items do you want, burrito, bowl, or tacos?","entity":{"address":"recent"}}}
+recv: {"header": [1111, 0, 1000, 1561424745, 3, 0], "data": {"query": "i want some tacos"}}
+sent: {"header":[1111,0,1000,1101,1561424791506,3,0],"data":{"speech":"selecting","entity":{"ordertype":"tacos"}}}
+recv: {"header": [1111, 0, 1101, 1561424745, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,1101,9999,1561424791506,3,0],"data":{"speech":"OK. How many tacos do you want?","entity":{"ordertype":"tacos"}}}
+recv: {"header": [1111, 0, 1101, 1561424745, 3, 0], "data": {"query": "three"}}
+sent: {"header":[1111,0,1101,1102,1561424803059,3,0],"data":{"speech":"selecting","entity":{"number":"three tacos"}}}
+recv: {"header": [1111, 0, 100, 1561424999, 3, 0], "data": {"query": "hello"}}
+sent: {"header":[1111,0,100,9999,1561425004266,3,0],"data":{"speech":"Hello, this is Chipotle, Do you want to pick up in store or deliver to an address?","entity":{}}}
+recv: {"header": [1111, 0, 100, 1561424999, 3, 0], "data": {"result": "jkdsa"}}
+sent: {"header":[1111,0,100,9999,1561425015276,3,0],"data":{"speech":"","entity":null}}
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 100, 1561425019, 3, 0], "data": {"query": "pick up"}}
+sent: {"header":[1111,0,100,2000,1561425024710,3,0],"data":{"speech":"selecting","entity":{"servicetype":"pick up"}}}
+recv: {"header": [1111, 0, 2000, 1561425019, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,2000,9999,1561425024710,3,0],"data":{"speech":"OK, which store do you prefer? you can say recent, favorite, or nearby.","entity":{"servicetype":"pick up"}}}
+recv: {"header": [1111, 0, 2000, 1561425019, 3, 0], "data": {"query": "recent"}}
+sent: {"header":[1111,0,2000,1000,1561425036927,3,0],"data":{"speech":"selecting","entity":{"address":"recent"}}}
+recv: {"header": [1111, 0, 1000, 1561425019, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,1000,9999,1561425036927,3,0],"data":{"speech":"what items do you want, burrito, bowl, or tacos?","entity":{"address":"recent"}}}
+recv: {"header": [1111, 0, 1000, 1561425019, 3, 0], "data": {"query": "tacos"}}
+sent: {"header":[1111,0,1000,1101,1561425045466,3,0],"data":{"speech":"selecting","entity":{"ordertype":"tacos"}}}
+recv: {"header": [1111, 0, 1101, 1561425019, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,1101,9999,1561425045466,3,0],"data":{"speech":"OK. How many tacos do you want?","entity":{"ordertype":"tacos"}}}
+recv: {"header": [1111, 0, 1101, 1561425019, 3, 0], "data": {"query": "three tacos please"}}
+sent: {"header":[1111,0,1101,1102,1561425070083,3,0],"data":{"speech":"selecting","entity":{"number":"three tacos"}}}
+recv: {"header": [1111, 0, 100, 1561425090, 3, 0], "data": {"query": "pickup"}}
+sent: {"header":[1111,0,100,2000,1561425098209,3,0],"data":{"speech":"Performing task now.","entity":{"ordertype":"burrito"}}}
+recv: {"header": [1111, 0, 2000, 1561425090, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,2000,9999,1561425098209,3,0],"data":{"speech":"please select address, you can say recent, favorite, or nearby","entity":{"ordertype":"burrito"}}}
+recv: {"header": [1111, 0, 2000, 1561425090, 3, 0], "data": {"query": "recent"}}
+sent: {"header":[1111,0,2000,1000,1561425106825,3,0],"data":{"speech":"selecting","entity":{"address":"recent"}}}
+recv: {"header": [1111, 0, 1000, 1561425090, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,1000,9999,1561425106825,3,0],"data":{"speech":"what items do you want, burrito, bowl, or tacos?","entity":{"address":"recent"}}}
+recv: {"header": [1111, 0, 1000, 1561425090, 3, 0], "data": {"query": "i want to have tacos"}}
+sent: {"header":[1111,0,1000,1101,1561425501165,3,0],"data":{"speech":"selecting","entity":{"ordertype":"tacos"}}}
+recv: {"header": [1111, 0, 1101, 1561425090, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,1101,9999,1561425501165,3,0],"data":{"speech":"OK. How many tacos do you want?","entity":{"ordertype":"tacos"}}}
+recv: {"header": [1111, 0, 1101, 1561425090, 3, 0], "data": {"query": "three"}}
+sent: {"header":[1111,0,1101,1102,1561425527794,3,0],"data":{"speech":"selecting","entity":{"quantity":"three tacos"}}}
+recv: {"header": [1111, 0, 1102, 1561425090, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,1102,9999,1561425527794,3,0],"data":{"speech":"Do you want soft or crispy taco?","entity":{"quantity":"three tacos"}}}
+recv: {"header": [1111, 0, 1102, 1561425090, 3, 0], "data": {"query": "soft please"}}
+sent: {"header":[1111,0,1102,1100,1561425546808,3,0],"data":{"speech":"selecting","entity":{"tacotype":"soft flour tortilla"}}}
+recv: {"header": [1111, 0, 1100, 1561425090, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,1100,9999,1561425546808,3,0],"data":{"speech":"OK. choose your meat or veggie.","entity":{"tacotype":"soft flour tortilla"}}}
+recv: {"header": [1111, 0, 1100, 1561425090, 3, 0], "data": {"query": "chicken"}}
+sent: {"header":[1111,0,1100,1110,1561425561398,3,0],"data":{"speech":"selecting","entity":{"fillings":["chicken"]}}}
+recv: {"header": [1111, 0, 1110, 1561425090, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,1110,9999,1561425561398,3,0],"data":{"speech":"Now add your rice and beans","entity":{"fillings":["chicken"]}}}
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 100, 1561505430, 3, 0], "data": {"query": "pick up"}}
+sent: {"header":[1111,0,100,2000,1561505436305,3,0],"data":{"speech":"selecting","entity":{"servicetype":"pick up"}}}
+recv: {"header": [1111, 0, 2000, 1561505430, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,2000,9999,1561505436305,3,0],"data":{"speech":"OK, which store do you prefer? you can say recent, favorite, or nearby.","entity":{"servicetype":"pick up"}}}
+recv: {"header": [1111, 0, 2000, 1561505430, 3, 0], "data": {"query": "recent"}}
+sent: {"header":[1111,0,2000,1000,1561505448206,3,0],"data":{"speech":"selecting","entity":{"address":"recent"}}}
+recv: {"header": [1111, 0, 1000, 1561505430, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,1000,9999,1561505448206,3,0],"data":{"speech":"what items do you want, burrito, bowl, or tacos?","entity":{"address":"recent"}}}
+recv: {"header": [1111, 0, 1000, 1561505430, 3, 0], "data": {"query": "burrito bowl"}}
+sent: {"header":[1111,0,1000,1100,1561505461875,3,0],"data":{"speech":"selecting","entity":{"ordertype":"burrito bowl"}}}
+recv: {"header": [1111, 0, 1100, 1561505430, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,1100,9999,1561505461875,3,0],"data":{"speech":"Choose your meat or veggie","entity":{"ordertype":"burrito bowl"}}}
+recv: {"header": [1111, 0, 1100, 1561505430, 3, 0], "data": {"query": "chicken and beef"}}
+sent: {"header":[1111,0,1100,1110,1561505481149,3,0],"data":{"speech":"selecting","entity":{"fillings":["chicken","barbacoa"]}}}
+recv: {"header": [1111, 0, 1100, 1561505430, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,1110,9999,1561505481149,3,0],"data":{"speech":"Now add your rice and beans","entity":{"fillings":["chicken","barbacoa"]}}}
+recv: {"header": [1111, 0, 1110, 1561505430, 3, 0], "data": {"query": "white rice and black beans"}}
+sent: {"header":[1111,0,1110,1120,1561505506144,3,0],"data":{"speech":"selecting","entity":{"beans":["black beans"],"rice":["white rice"]}}}
+recv: {"header": [1111, 0, 1120, 1561505430, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,1120,9999,1561505506144,3,0],"data":{"speech":"Do you want to add salsa? Mild, medium, or hot?","entity":{"beans":["black beans"],"rice":["white rice"]}}}
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 1110, 1561505515, 3, 0], "data": {"query": "hello"}}
+sent: {"header":[1111,0,1110,9999,1561505585514,3,0],"data":{"speech":"Now add your rice and beans","entity":null}}
+recv: {"header": [1111, 0, 1110, 1561505515, 3, 0], "data": {"result": "hjea"}}
+sent: {"header":[1111,0,1110,9999,1561505589306,3,0],"data":{"speech":"Now add your rice and beans","entity":null}}
+recv: {"header": [1111, 0, 1110, 1561505515, 3, 0], "data": {"query": "white rice"}}
+sent: {"header":[1111,0,1110,1112,1561505596247,3,0],"data":{"speech":"selecting","entity":{"rice":["white rice"]}}}
+recv: {"header": [1111, 0, 1112, 1561505515, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,1112,9999,1561505596247,3,0],"data":{"speech":"Now add your beans","entity":{"rice":["white rice"]}}}
+recv: {"header": [1111, 0, 1112, 1561505515, 3, 0], "data": {"query": "jhfdsk"}}
+sent: {"header":[1111,0,1112,9999,1561505618950,3,0],"data":{"speech":"Now add your beans","entity":null}}
+recv: {"header": [1111, 0, 1112, 1561505515, 3, 0], "data": {"result": "black beans"}}
+sent: {"header":[1111,0,1112,9999,1561505625700,3,0],"data":{"speech":"Now add your beans","entity":null}}
+recv: {"header": [1111, 0, 1112, 1561505515, 3, 0], "data": {"query": "black"}}
+sent: {"header":[1111,0,1112,1120,1561505652925,3,0],"data":{"speech":"selecting","entity":{"beans":"black beans"}}}
+recv: {"header": [1111, 0, 1120, 1561505515, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,1120,9999,1561505652925,3,0],"data":{"speech":"Do you want to add salsa? Mild, medium, or hot?","entity":{"beans":"black beans"}}}
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 1110, 1561505816, 3, 0], "data": {"query": "hjdsa"}}
+sent: {"header":[1111,0,1110,9999,1561505818696,3,0],"data":{"speech":"Now add your rice and beans","entity":null}}
+recv: {"header": [1111, 0, 1110, 1561505816, 3, 0], "data": {"result": "djksal"}}
+sent: {"header":[1111,0,1110,9999,1561505823466,3,0],"data":{"speech":"Now add your rice and beans","entity":null}}
+recv: {"header": [1111, 0, 1110, 1561505816, 3, 0], "data": {"query": "white rice and brown rice"}}
+sent: {"header":[1111,0,1110,1112,1561505834682,3,0],"data":{"speech":"selecting","entity":{"rice":["brown rice","white rice"]}}}
+recv: {"header": [1111, 0, 1112, 1561505816, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,1112,9999,1561505834682,3,0],"data":{"speech":"Now add your beans","entity":{"rice":["brown rice","white rice"]}}}
+recv: {"header": [1111, 0, 1112, 1561505816, 3, 0], "data": {"query": "pinto beans"}}
+sent: {"header":[1111,0,1112,1120,1561505857464,3,0],"data":{"speech":"selecting","entity":{"beans":["pinto beans"]}}}
+recv: {"header": [1111, 0, 1120, 1561505816, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,1120,9999,1561505857464,3,0],"data":{"speech":"Do you want to add salsa? Mild, medium, or hot?","entity":{"beans":["pinto beans"]}}}
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 100, 1562041918, 3, 0], "data": {"query": ""}}
+sent: {"header":[1111,0,100,9999,1562041920432,3,0],"data":{"speech":"","entity":null}}
+recv: {"header": [1111, 0, 100, 1562204919, 3, 0], "data": {"query": "pickup"}}
+sent: {"header":[1111,0,100,2000,1562204925938,3,0],"data":{"speech":"Performing task now.","entity":{"ordertype":"burrito"}}}
+recv: {"header": [1111, 0, 100, 1562204919, 3, 0], "data": {"result": ""}}
+sent: {"header":[1111,0,100,9999,1562204925938,3,0],"data":{"speech":"","entity":{"ordertype":"burrito"}}}
+recv: {"header": [1111, 0, 100, 1562204960, 3, 0], "data": {"query": "pickup"}}
+sent: {"header":[1111,0,100,2000,1562204965606,3,0],"data":{"speech":"Performing task now.","entity":{"ordertype":"burrito"}}}
+recv: {"header": [1111, 0, 1140, 1562625893, 3, 0], "data": {"query": "hello"}}
+sent: {"header":[1111,0,1140,9999,1562625908178,3,0],"data":{"speech":"how about sour cream, fajita veggies, cheese, and lettuce?","entity":null}}
+recv: {"header": [1111, 0, 1140, 1562625893, 3, 0], "data": {"result": "fdjks"}}
+sent: {"header":[1111,0,1140,9999,1562625912216,3,0],"data":{"speech":"how about sour cream, fajita veggies, cheese, and lettuce?","entity":null}}
+recv: {"header": [1111, 0, 1140, 1562625893, 3, 0], "data": {"query": "veggies cheese and lettuce"}}
+sent: {"header":[1111,0,1140,1150,1562625928709,3,0],"data":{"speech":"selecting","entity":{"tops":["cheese","romaine lettuce"]}}}
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 100, 1562626022, 3, 0], "data": {"query": "pick up in store"}}
+sent: {"header":[1111,0,1140,9999,1562625928709,3,0],"data":{"speech":"","entity":{"tops":["cheese","romaine lettuce"]}}}
+recv: {"header": [1111, 0, 100, 1562626022, 3, 0], "data": {"result": "jfkds"}}
+sent: {"header":[1111,0,100,9999,1562626040907,3,0],"data":{"speech":"","entity":null}}
+recv: {"header": [1111, 0, 100, 1562626022, 3, 0], "data": {"query": "pick up in store"}}
+sent: {"header":[1111,0,100,2000,1562626045047,3,0],"data":{"speech":"selecting","entity":{"servicetype":"pick up"}}}
+recv: {"header": [1111, 0, 100, 1562716531, 3, 0], "data": {"query": "hello"}}
+sent: {"header":[1111,0,100,9999,1562716536104,3,0],"data":{"speech":"Hello, this is Chipotle, Do you want to pick up in store or deliver to an address?","entity":{}}}
+recv: {"header": [1111, 0, 100, 1562716531, 3, 0], "data": {"result": "fdjsak"}}
+sent: {"header":[1111,0,100,9999,1562716541837,3,0],"data":{"speech":"","entity":null}}
+recv: {"header": [1111, 0, 100, 1562716531, 3, 0], "data": {"query": "pick up in store"}}
+sent: {"header":[1111,0,100,2000,1562716549861,3,0],"data":{"speech":"selecting","entity":{"servicetype":"pick up"}}}
+recv: {"header": [1111, 0, 2000, 1562716531, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,2000,9999,1562716549861,3,0],"data":{"speech":"OK, which store do you prefer? you can say recent, favorite, or nearby.","entity":{"servicetype":"pick up"}}}
+recv: {"header": [1111, 0, 2000, 1562716531, 3, 0], "data": {"query": "recent"}}
+sent: {"header":[1111,0,2000,1000,1562716680071,3,0],"data":{"speech":"selecting","entity":{"address":"recent"}}}
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 1110, 1562782799, 3, 0], "data": {"query": "hello"}}
+sent: {"header":[1111,0,1110,9999,1562782805097,3,0],"data":{"speech":"Now add your rice and beans","entity":null}}
+recv: {"header": [1111, 0, 1110, 1562782799, 3, 0], "data": {"result": "jkds"}}
+sent: {"header":[1111,0,1110,9999,1562782809512,3,0],"data":{"speech":"Now add your rice and beans","entity":null}}
+recv: {"header": [1111, 0, 1110, 1562782799, 3, 0], "data": {"query": "black beans and no beans"}}
+sent: {"header":[1111,0,1110,1111,1562782816471,3,0],"data":{"speech":"selecting","entity":{"beans":["no beans","black beans"]}}}
+recv: {"header": [1111, 0, 1110, 1562782799, 3, 0], "data": {"result": "jfkds"}}
+sent: {"header":[1111,0,1110,9999,1562782816471,3,0],"data":{"speech":"Error type not found","entity":{"beans":["no beans","black beans"]}}}
+recv: {"header": [1111, 0, 1110, 1562782799, 3, 0], "data": {"query": "white rice and no rice"}}
+sent: {"header":[1111,0,1110,1112,1562782832963,3,0],"data":{"speech":"selecting","entity":{"rice":["white rice","no rice"]}}}
+recv: {"header": [1111, 0, 1110, 1562782799, 3, 0], "data": {"result": "fjksdl"}}
+sent: {"header":[1111,0,1110,9999,1562782832963,3,0],"data":{"speech":"Error type not found","entity":{"rice":["white rice","no rice"]}}}
+recv: {"header": [1111, 0, 1110, 1562782799, 3, 0], "data": {"query": "no beans and black beans"}}
+sent: {"header":[1111,0,1110,1111,1562782849666,3,0],"data":{"speech":"selecting","entity":{"beans":["black beans","no beans"]}}}
+recv: {"header": [1111, 0, 1110, 1562783086, 3, 0], "data": {"query": "black beans and no beans"}}
+sent: {"header":[1111,0,1110,1111,1562783094930,3,0],"data":{"speech":"selecting","entity":{"beans":["no beans","black beans"]}}}
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 1110, 1562783288, 3, 0], "data": {"query": "black beans and no beans"}}
+sent: {"header":[1111,0,1110,1111,1562783297474,3,0],"data":{"speech":"selecting","entity":{"beans":["black beans","no beans"]}}}
+recv: {"header": [1111, 0, 1110, 1562783288, 3, 0], "data": {"result": "jkdsa"}}
+sent: {"header":[1111,0,1110,9999,1562783297474,3,0],"data":{"speech":"Error type not found","entity":{"beans":["black beans","no beans"]}}}
+recv: {"header": [1111, 0, 1110, 1562783288, 3, 0], "data": {"query": "white rice and no rice"}}
+sent: {"header":[1111,0,1110,1112,1562783319897,3,0],"data":{"speech":"selecting","entity":{"rice":["white rice","no rice"]}}}
+recv: {"header": [1111, 0, 1000, 1562786356, 3, 0], "data": {"query": "hello"}}
+sent: {"header":[1111,0,1000,9999,1562786360697,3,0],"data":{"speech":"what items do you want, burrito, bowl, or tacos?","entity":null}}
+recv: {"header": [1111, 0, 1000, 1562786356, 3, 0], "data": {"result": "fdsjka"}}
+sent: {"header":[1111,0,1000,9999,1562786366265,3,0],"data":{"speech":"what items do you want, burrito, bowl, or tacos?","entity":null}}
+recv: {"header": [1111, 0, 1000, 1562786356, 3, 0], "data": {"query": "burrito bowl"}}
+sent: {"header":[1111,0,1000,1100,1562786370417,3,0],"data":{"speech":"selecting","entity":{"ordertype":"burrito bowl"}}}
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 1100, 1562787328, 3, 0], "data": {"query": "hdjsa"}}
+sent: {"header":[1111,0,1100,9999,1562787333016,3,0],"data":{"speech":"OK. First choose your meat or veggie.","entity":null}}
+recv: {"header": [1111, 0, 1100, 1562787328, 3, 0], "data": {"result": "jdksa"}}
+sent: {"header":[1111,0,1100,9999,1562787335560,3,0],"data":{"speech":"OK. First choose your meat or veggie.","entity":null}}
+recv: {"header": [1111, 0, 1100, 1562787328, 3, 0], "data": {"query": "half Barbacoa half steak"}}
+sent: {"header":[1111,0,1100,1110,1562787346623,3,0],"data":{"speech":"selecting","entity":{"fillings":["steak","barbacoa"]}}}
+recv: {"header": [1111, 0, 1000, 1562792764, 3, 0], "data": {"query": "hello"}}
+sent: {"header":[1111,0,1000,9999,1562792775702,3,0],"data":{"speech":"what items do you want, burrito, bowl, or tacos?","entity":null}}
+recv: {"header": [1111, 0, 1000, 1562792764, 3, 0], "data": {"result": "fjds"}}
+sent: {"header":[1111,0,1000,9999,1562792780069,3,0],"data":{"speech":"what items do you want, burrito, bowl, or tacos?","entity":null}}
+recv: {"header": [1111, 0, 1000, 1562792764, 3, 0], "data": {"query": "burrit"}}
+sent: {"header":[1111,0,1000,9999,1562792782877,3,0],"data":{"speech":"what items do you want, burrito, bowl, or tacos?","entity":null}}
+recv: {"header": [1111, 0, 1000, 1562792764, 3, 0], "data": {"result": "fds"}}
+sent: {"header":[1111,0,1000,9999,1562792786373,3,0],"data":{"speech":"what items do you want, burrito, bowl, or tacos?","entity":null}}
+recv: {"header": [1111, 0, 1000, 1562792764, 3, 0], "data": {"query": "burrito"}}
+sent: {"header":[1111,0,1000,9999,1562792789109,3,0],"data":{"speech":"what items do you want, burrito, bowl, or tacos?","entity":null}}
+recv: {"header": [1111, 0, 1000, 1562792764, 3, 0], "data": {"result": "dsa"}}
+sent: {"header":[1111,0,1000,9999,1562792815965,3,0],"data":{"speech":"what items do you want, burrito, bowl, or tacos?","entity":null}}
+recv: {"header": [1111, 0, 1000, 1562792764, 3, 0], "data": {"query": "burrito bowl"}}
+sent: {"header":[1111,0,1000,1100,1562792819916,3,0],"data":{"speech":"selecting","entity":{"ordertype":"burrito bowl"}}}
+recv: {"header": [1111, 0, 1000, 1562793682, 3, 0], "data": {"query": "burrito"}}
+sent: {"header":[1111,0,1000,1100,1562793890520,3,0],"data":{"speech":"selecting","entity":{"ordertype":"burrito"}}}
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 1000, 1562793895, 3, 0], "data": {"query": "burrito bowl"}}
+sent: {"header":[1111,0,1000,9999,1562793890520,3,0],"data":{"speech":"","entity":{"ordertype":"burrito"}}}
+recv: {"header": [1111, 0, 1000, 1562793895, 3, 0], "data": {"result": "fsd"}}
+sent: {"header":[1111,0,1000,9999,1562793908857,3,0],"data":{"speech":"what items do you want, burrito, bowl, or tacos?","entity":null}}
+recv: {"header": [1111, 0, 1000, 1562793895, 3, 0], "data": {"query": "burrito bowl"}}
+sent: {"header":[1111,0,1000,1100,1562793913823,3,0],"data":{"speech":"selecting","entity":{"ordertype":"burrito bowl"}}}
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 1000, 1562793930, 3, 0], "data": {"query": "burrito bowl"}}
+sent: {"header":[1111,0,1000,9999,1562793913823,3,0],"data":{"speech":"","entity":{"ordertype":"burrito bowl"}}}
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 1000, 1562793940, 3, 0], "data": {"query": "bowl"}}
+sent: {"header":[1111,0,1000,1100,1562793942302,3,0],"data":{"speech":"selecting","entity":{"ordertype":"burrito bowl"}}}
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 1000, 1562793946, 3, 0], "data": {"query": "burrito bowl"}}
+sent: {"header":[1111,0,1000,9999,1562793942302,3,0],"data":{"speech":"","entity":{"ordertype":"burrito bowl"}}}
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 1000, 1562793955, 3, 0], "data": {"query": "burrito bowl"}}
+sent: {"header":[1111,0,1000,1100,1562793959126,3,0],"data":{"speech":"selecting","entity":{"ordertype":"burrito bowl"}}}
+recv: {"header": [1111, 0, 1000, 1562794426, 3, 0], "data": {"query": "salad"}}
+sent: {"header":[1111,0,1000,1100,1562794446767,3,0],"data":{"speech":"selecting","entity":{"ordertype":"salad"}}}
+recv: {"header": [1111, 0, 1000, 1562794426, 3, 0], "data": {"result": "fdsa"}}
+sent: {"header":[1111,0,1000,9999,1562794446767,3,0],"data":{"speech":"Error type not found","entity":{"ordertype":"salad"}}}
+recv: {"header": [1111, 0, 1000, 1562794426, 3, 0], "data": {"query": "burrito"}}
+sent: {"header":[1111,0,1000,1100,1562794459470,3,0],"data":{"speech":"selecting","entity":{"ordertype":"burrito"}}}
+recv: {"header": [1111, 0, 1000, 1562794426, 3, 0], "data": {"result": "djska"}}
+sent: {"header":[1111,0,1000,9999,1562794459470,3,0],"data":{"speech":"Error type not found","entity":{"ordertype":"burrito"}}}
+recv: {"header": [1111, 0, 1000, 1562794426, 3, 0], "data": {"query": "burrito bowl"}}
+sent: {"header":[1111,0,1000,1100,1562794466901,3,0],"data":{"speech":"selecting","entity":{"ordertype":"burrito bowl"}}}
+recv: {"header": [1111, 0, 1000, 1562794426, 3, 0], "data": {"result": "fdsj"}}
+sent: {"header":[1111,0,1000,9999,1562794466901,3,0],"data":{"speech":"Error type not found","entity":{"ordertype":"burrito bowl"}}}
+recv: {"header": [1111, 0, 1000, 1562794426, 3, 0], "data": {"query": "burrito bowl"}}
+sent: {"header":[1111,0,1000,1100,1562794473229,3,0],"data":{"speech":"selecting","entity":{"ordertype":"burrito bowl"}}}
+recv: {"header": [1111, 0, 1000, 1562794426, 3, 0], "data": {"result": "fdasjk"}}
+sent: {"header":[1111,0,1000,9999,1562794473229,3,0],"data":{"speech":"Error type not found","entity":{"ordertype":"burrito bowl"}}}
+recv: {"header": [1111, 0, 1000, 1562794426, 3, 0], "data": {"query": "bowl"}}
+sent: {"header":[1111,0,1000,1100,1562794479205,3,0],"data":{"speech":"selecting","entity":{"ordertype":"burrito bowl"}}}
+recv: {"header": [1111, 0, 1000, 1562794426, 3, 0], "data": {"result": "jfkds"}}
+sent: {"header":[1111,0,1000,9999,1562794479205,3,0],"data":{"speech":"Error type not found","entity":{"ordertype":"burrito bowl"}}}
+recv: {"header": [1111, 0, 1000, 1562794426, 3, 0], "data": {"query": "burrito and burrito bowl"}}
+sent: {"header":[1111,0,1000,1100,1562794496165,3,0],"data":{"speech":"selecting","entity":{"ordertype":"burrito bowl"}}}
+recv: {"header": [1111, 0, 1000, 1562794426, 3, 0], "data": {"result": "fdsa"}}
+sent: {"header":[1111,0,1000,9999,1562794496165,3,0],"data":{"speech":"Error type not found","entity":{"ordertype":"burrito bowl"}}}
+recv: {"header": [1111, 0, 1000, 1562794426, 3, 0], "data": {"query": "burrito bowl and burrito"}}
+sent: {"header":[1111,0,1000,1100,1562794508623,3,0],"data":{"speech":"selecting","entity":{"ordertype":"burrito bowl"}}}
+read: websocket: close 1000 (normal)
+read: websocket: close 1000 (normal)
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 1000, 1562804406, 3, 0], "data": {"query": "jkdfs"}}
+sent: {"header":[1111,0,1000,9999,1562804410338,3,0],"data":{"speech":"what items do you want, burrito, bowl, or tacos?","entity":null}}
+recv: {"header": [1111, 0, 2000, 1562804406, 3, 0], "data": {"result": "fjkds"}}
+sent: {"header":[1111,0,2000,9999,1562804414481,3,0],"data":{"speech":"OK, which store do you prefer? you can say recent, favorite, or nearby.","entity":null}}
+recv: {"header": [1111, 0, 2000, 1562804406, 3, 0], "data": {"query": "recent"}}
+sent: {"header":[1111,0,2000,1000,1562804435400,3,0],"data":{"speech":"selecting","entity":{"address":"recent"}}}
+recv: {"header": [1111, 0, 2000, 1562804406, 3, 0], "data": {"result": "recent"}}
+sent: {"header":[1111,0,2000,9999,1562804435400,3,0],"data":{"speech":"Error type not found","entity":{"address":"recent"}}}
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 1100, 1562805375, 3, 0], "data": {"query": "hek"}}
+sent: {"header":[1111,0,1100,9999,1562805378838,3,0],"data":{"speech":"OK. First choose your meat or veggie.","entity":null}}
+recv: {"header": [1111, 0, 1110, 1562805375, 3, 0], "data": {"result": "das"}}
+sent: {"header":[1111,0,1110,9999,1562805382381,3,0],"data":{"speech":"Now add your rice and beans","entity":null}}
+recv: {"header": [1111, 0, 1110, 1562805375, 3, 0], "data": {"query": "dsak"}}
+sent: {"header":[1111,0,1110,9999,1562805384365,3,0],"data":{"speech":"Now add your rice and beans","entity":null}}
+recv: {"header": [1111, 0, 1110, 1562805375, 3, 0], "data": {"result": "black beans and no beans"}}
+sent: {"header":[1111,0,1110,9999,1562805392127,3,0],"data":{"speech":"Now add your rice and beans","entity":null}}
+recv: {"header": [1111, 0, 1110, 1562805375, 3, 0], "data": {"query": "black beans and no beans"}}
+sent: {"header":[1111,0,1110,1111,1562805408150,3,0],"data":{"speech":"selecting","entity":{"beans":["no beans","black beans"]}}}
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 1110, 1562807925, 3, 0], "data": {"query": "hjfds"}}
+sent: {"header":[1111,0,1110,9999,1562807943654,3,0],"data":{"speech":"Now add your rice and beans","entity":null}}
+recv: {"header": [1111, 0, 1110, 1562807925, 3, 0], "data": {"result": "fds"}}
+sent: {"header":[1111,0,1110,9999,1562807949734,3,0],"data":{"speech":"Now add your rice and beans","entity":null}}
+recv: {"header": [1111, 0, 1110, 1562807925, 3, 0], "data": {"query": "white rice and black beans"}}
+sent: {"header":[1111,0,1110,1120,1562807960317,3,0],"data":{"speech":"selecting","entity":{"beans":["black beans"],"rice":["white rice"]}}}
+recv: {"header": [1111, 0, 1110, 1562808273, 3, 0], "data": {"query": "jds"}}
+sent: {"header":[1111,0,1110,9999,1562808283248,3,0],"data":{"speech":"Now add your rice and beans","entity":null}}
+recv: {"header": [1111, 0, 1110, 1562808273, 3, 0], "data": {"result": "djksa"}}
+sent: {"header":[1111,0,1110,9999,1562808288935,3,0],"data":{"speech":"Now add your rice and beans","entity":null}}
+recv: {"header": [1111, 0, 1110, 1562808273, 3, 0], "data": {"query": "white rice and black beans"}}
+sent: {"header":[1111,0,1110,1120,1562808295063,3,0],"data":{"speech":"selecting","entity":{"beans":["black beans"],"rice":["white rice"]}}}
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 1150, 1562825444, 3, 0], "data": {"query": "chips with guac"}}
+sent: {"header":[1111,0,1150,1160,1562825451286,3,0],"data":{"speech":"selecting","entity":{"sides":["chips \u0026 guacamole"]}}}
+recv: {"header": [1111, 0, 1100, 1562825510, 3, 0], "data": {"query": "jdks"}}
+sent: {"header":[1111,0,1100,9999,1562825514313,3,0],"data":{"speech":"OK. First choose your meat or veggie.","entity":null}}
+recv: {"header": [1111, 0, 1000, 1562825510, 3, 0], "data": {"result": "das"}}
+sent: {"header":[1111,0,1000,9999,1562825519986,3,0],"data":{"speech":"what items do you want, burrito, bowl, or tacos?","entity":null}}
+recv: {"header": [1111, 0, 1000, 1562825510, 3, 0], "data": {"query": "sides"}}
+sent: {"header":[1111,0,1000,9999,1562825523816,3,0],"data":{"speech":"Voice not be enabled for sides \u0026 drinks right now, please touch to progress","entity":{"ordertype":"sides \u0026 drinks"}}}
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 1150, 1562865829, 3, 0], "data": {"query": "das"}}
+sent: {"header":[1111,0,1150,9999,1562865831258,3,0],"data":{"speech":"Any tortilla or chips?","entity":null}}
+recv: {"header": [1111, 0, 1140, 1562865829, 3, 0], "data": {"result": "fsd"}}
+sent: {"header":[1111,0,1140,9999,1562865838289,3,0],"data":{"speech":"how about sour cream, fajita veggies, cheese, and lettuce?","entity":null}}
+recv: {"header": [1111, 0, 1130, 1562865829, 3, 0], "data": {"query": "sour cream cheese lettuce and veggies"}}
+sent: {"header":[1111,0,1130,1140,1562865854010,3,0],"data":{"speech":"selecting","entity":{"tops":["cheese","sour cream","romaine lettuce","fajita veggies"]}}}
+recv: {"header": [1111, 0, 1140, 1562865829, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,1140,9999,1562865854010,3,0],"data":{"speech":"how about sour cream, fajita veggies, cheese, and lettuce?","entity":{"tops":["cheese","sour cream","romaine lettuce","fajita veggies"]}}}
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 1150, 1562866055, 3, 0], "data": {"query": "chips"}}
+sent: {"header":[1111,0,1150,9999,1562866058751,3,0],"data":{"speech":"Any tortilla or chips?","entity":null}}
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 1150, 1562866938, 3, 0], "data": {"query": "chips"}}
+sent: {"header":[1111,0,1150,1160,1562866943396,3,0],"data":{"speech":"selecting","entity":{"sides":null}}}
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 1150, 1562867216, 3, 0], "data": {"query": "chips"}}
+sent: {"header":[1111,0,1150,1160,1562867218938,3,0],"data":{"speech":"selecting","entity":{"sides":null}}}
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 1150, 1562867265, 3, 0], "data": {"query": "chips"}}
+sent: {"header":[1111,0,1150,1160,1562867273969,3,0],"data":{"speech":"selecting","entity":{"sides":null}}}
+recv: {"header": [1111, 0, 1150, 1562867360, 3, 0], "data": {"query": "chips"}}
+sent: {"header":[1111,0,1150,1160,1562867362805,3,0],"data":{"speech":"selecting","entity":{"sides":["chips"]}}}
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 1150, 1562867367, 3, 0], "data": {"query": "chips with guac"}}
+sent: {"header":[1111,0,1150,9999,1562867362805,3,0],"data":{"speech":"","entity":{"sides":["chips"]}}}
+recv: {"header": [1111, 0, 1150, 1562867482, 3, 0], "data": {"query": "chips and guac"}}
+sent: {"header":[1111,0,1150,1160,1562867493946,3,0],"data":{"speech":"selecting","entity":{"sides":["chips \u0026 guacamole"]}}}
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 1150, 1562867499, 3, 0], "data": {"query": "chips with guac"}}
+sent: {"header":[1111,0,1150,9999,1562867493946,3,0],"data":{"speech":"","entity":{"sides":["chips \u0026 guacamole"]}}}
+recv: {"header": [1111, 0, 1150, 1562867780, 3, 0], "data": {"query": "jkfds"}}
+sent: {"header":[1111,0,1150,9999,1562867821512,3,0],"data":{"speech":"Any tortilla or chips?","entity":null}}
+recv: {"header": [1111, 0, 1150, 1562867780, 3, 0], "data": {"result": "fnms"}}
+sent: {"header":[1111,0,1150,9999,1562867823630,3,0],"data":{"speech":"Any tortilla or chips?","entity":null}}
+recv: {"header": [1111, 0, 1150, 1562867780, 3, 0], "data": {"query": "chips"}}
+sent: {"header":[1111,0,1150,1160,1562867904453,3,0],"data":{"speech":"selecting","entity":{"sides":["chips"]}}}
+recv: {"header": [1111, 0, 1150, 1562867780, 3, 0], "data": {"result": "fds"}}
+sent: {"header":[1111,0,1150,9999,1562867904453,3,0],"data":{"speech":"fds","entity":{"sides":["chips"]}}}
+recv: {"header": [1111, 0, 1150, 1562867780, 3, 0], "data": {"query": "chip with queso"}}
+sent: {"header":[1111,0,1150,1160,1562867914341,3,0],"data":{"speech":"selecting","entity":{"sides":["chips"]}}}
+recv: {"header": [1111, 0, 1150, 1562867780, 3, 0], "data": {"result": "jdksa"}}
+sent: {"header":[1111,0,1150,9999,1562867914341,3,0],"data":{"speech":"jdksa","entity":{"sides":["chips"]}}}
+recv: {"header": [1111, 0, 1150, 1562867780, 3, 0], "data": {"query": "chips with queso"}}
+sent: {"header":[1111,0,1150,1160,1562867925342,3,0],"data":{"speech":"selecting","entity":{"sides":["chips \u0026 queso"]}}}
+recv: {"header": [1111, 0, 1150, 1562867780, 3, 0], "data": {"result": "fs"}}
+sent: {"header":[1111,0,1150,9999,1562867925342,3,0],"data":{"speech":"fs","entity":{"sides":["chips \u0026 queso"]}}}
+recv: {"header": [1111, 0, 1150, 1562867780, 3, 0], "data": {"query": "side of guac"}}
+sent: {"header":[1111,0,1150,9999,1562867936212,3,0],"data":{"speech":"Any tortilla or chips?","entity":null}}
+recv: {"header": [1111, 0, 1150, 1562867780, 3, 0], "data": {"result": "dsa"}}
+sent: {"header":[1111,0,1150,9999,1562867956817,3,0],"data":{"speech":"Any tortilla or chips?","entity":null}}
+recv: {"header": [1111, 0, 1150, 1562867780, 3, 0], "data": {"query": "side of guac"}}
+sent: {"header":[1111,0,1150,9999,1562867963521,3,0],"data":{"speech":"Any tortilla or chips?","entity":null}}
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 1150, 1562867979, 3, 0], "data": {"query": "side of queso"}}
+sent: {"header":[1111,0,1150,1160,1562867983001,3,0],"data":{"speech":"selecting","entity":{"sides":["side of queso"]}}}
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 1150, 1562868675, 3, 0], "data": {"query": "side of queso"}}
+sent: {"header":[1111,0,1150,1160,1562868680487,3,0],"data":{"speech":"selecting","entity":{"sides":["side of queso"]}}}
+recv: {"header": [1111, 0, 1150, 1562868675, 3, 0], "data": {"result": "fds"}}
+sent: {"header":[1111,0,1150,9999,1562868680487,3,0],"data":{"speech":"fds","entity":{"sides":["side of queso"]}}}
+recv: {"header": [1111, 0, 1140, 1562868675, 3, 0], "data": {"query": "da"}}
+sent: {"header":[1111,0,1140,9999,1562868688014,3,0],"data":{"speech":"how about sour cream, fajita veggies, cheese, and lettuce?","entity":null}}
+recv: {"header": [1111, 0, 1150, 1562868675, 3, 0], "data": {"result": "das0"}}
+sent: {"header":[1111,0,1150,9999,1562868690846,3,0],"data":{"speech":"Any tortilla or chips?","entity":null}}
+recv: {"header": [1111, 0, 1150, 1562868675, 3, 0], "data": {"query": "chips with guac"}}
+sent: {"header":[1111,0,1150,1160,1562868700150,3,0],"data":{"speech":"selecting","entity":{"sides":["chips \u0026 guacamole"]}}}
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 1140, 1562869088, 3, 0], "data": {"query": "cheese"}}
+sent: {"header":[1111,0,1140,1150,1562869093144,3,0],"data":{"speech":"selecting","entity":{"tops":null}}}
+recv: {"header": [1111, 0, 1150, 1562869481, 3, 0], "data": {"query": "no"}}
+sent: {"header":[1111,0,1150,1160,1562869484124,3,0],"data":{"speech":"selecting","entity":{"sides":[]}}}
+recv: {"header": [1111, 0, 1140, 1562870837, 3, 0], "data": {"query": "veggie"}}
+sent: {"header":[1111,0,1140,1150,1562870845221,3,0],"data":{"speech":"selecting","entity":{"tops":["fajita veggies"]}}}
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 1110, 1562871418, 3, 0], "data": {"query": "chicken"}}
+sent: {"header":[1111,0,1110,9999,1562871421524,3,0],"data":{"speech":"Now add your rice and beans","entity":null}}
+recv: {"header": [1111, 0, 1110, 1562872226, 3, 0], "data": {"query": "white rice and black beans"}}
+sent: {"header":[1111,0,1110,1120,1562872237012,3,0],"data":{"speech":"selecting","entity":{"orderedMap":{"name":"John","age":20}}}}
+recv: {"header": [1111, 0, 1110, 1562872281, 3, 0], "data": {"query": "white rice and black beans"}}
+sent: {"header":[1111,0,1110,1120,1562872296644,3,0],"data":{"speech":"selecting","entity":{"orderedMap":{"rice":["white rice"],"beans":["black beans"]}}}}
+recv: {"header": [1111, 0, 5000, 1562879480, 3, 0], "data": {"query": "confirm details"}}
+sent: {"header":[1111,0,5000,6000,1562879486681,3,0],"data":{"speech":"Performing task now.","entity":{"time":""}}}
+recv: {"header": [1111, 0, 6000, 1562879480, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,6000,9999,1562879486681,3,0],"data":{"speech":"please tell me the pickup time","entity":{"time":""}}}
+recv: {"header": [1111, 0, 6000, 1562879480, 3, 0], "data": {"query": "6:30"}}
+sent: {"header":[1111,0,6000,6100,1562879506413,3,0],"data":{"speech":"Performing task now.","entity":{"time":"6:30 PM"}}}
+recv: {"header": [1111, 0, 6000, 1562879480, 3, 0], "data": {"result": "con"}}
+sent: {"header":[1111,0,6000,9999,1562879506413,3,0],"data":{"speech":"con","entity":{"time":"6:30 PM"}}}
+recv: {"header": [1111, 0, 6000, 1562879480, 3, 0], "data": {"query": "confirm details"}}
+sent: {"header":[1111,0,6000,9999,1562879536333,3,0],"data":{"speech":"please tell me the pickup time","entity":{"time":""}}}
+recv: {"header": [1111, 0, 6000, 1562879480, 3, 0], "data": {"result": "fd"}}
+sent: {"header":[1111,0,6000,9999,1562879545075,3,0],"data":{"speech":"","entity":null}}
+recv: {"header": [1111, 0, 6000, 1562879480, 3, 0], "data": {"query": "4 45"}}
+sent: {"header":[1111,0,6000,6100,1562879553466,3,0],"data":{"speech":"Performing task now.","entity":{"time":"4:45 PM"}}}
+recv: {"header": [1111, 0, 6000, 1562880241, 3, 0], "data": {"query": "confirm details"}}
+sent: {"header":[1111,0,6000,9999,1562880249361,3,0],"data":{"speech":"please tell me the pickup time","entity":{"time":""}}}
+recv: {"header": [1111, 0, 6000, 1562880241, 3, 0], "data": {"result": "fds"}}
+sent: {"header":[1111,0,6000,9999,1562880260665,3,0],"data":{"speech":"","entity":null}}
+recv: {"header": [1111, 0, 6000, 1562880241, 3, 0], "data": {"query": "4:30"}}
+sent: {"header":[1111,0,6000,6100,1562880269361,3,0],"data":{"speech":"Performing task now.","entity":{"time":"0:00 AM"}}}
+recv: {"header": [1111, 0, 1150, 1562881899, 3, 0], "data": {"query": "he"}}
+sent: {"header":[1111,0,1150,9999,1562881904529,3,0],"data":{"speech":"Any tortilla or chips?","entity":null}}
+recv: {"header": [1111, 0, 1150, 1562881899, 3, 0], "data": {"result": "jkdfs"}}
+sent: {"header":[1111,0,1150,9999,1562881911465,3,0],"data":{"speech":"Any tortilla or chips?","entity":null}}
+recv: {"header": [1111, 0, 1150, 1562881899, 3, 0], "data": {"query": "no"}}
+sent: {"header":[1111,0,1150,1160,1562881914752,3,0],"data":{"speech":"selecting","entity":{"sides":[]}}}
+recv: {"header": [1111, 0, 1160, 1562881899, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,1160,9999,1562881914752,3,0],"data":{"speech":"Do you want fountain soda, or bottled juice?","entity":{"sides":[]}}}
+recv: {"header": [1111, 0, 1160, 1562881899, 3, 0], "data": {"query": "no"}}
+sent: {"header":[1111,0,1160,1170,1562881939032,3,0],"data":{"speech":"selecting","entity":{"drinks":[]}}}
+recv: {"header": [1111, 0, 1170, 1562881899, 3, 0], "data": {"result": "jdksa"}}
+sent: {"header":[1111,0,1160,9999,1562881939032,3,0],"data":{"speech":"jdksa","entity":{"drinks":[]}}}
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 100, 1562882426, 3, 0], "data": {"query": "hello"}}
+sent: {"header":[1111,0,100,9999,1562882434824,3,0],"data":{"speech":"Hello, this is Chipotle, Do you want to pick up in store or deliver to an address?","entity":{}}}
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 1120, 1562884170, 3, 0], "data": {"query": "no salsa"}}
+sent: {"header":[1111,0,1120,1130,1562884173331,3,0],"data":{"speech":"selecting","entity":{"tops":["fresh tomato salsa"]}}}
+recv: {"header": [1111, 0, 1120, 1562884320, 3, 0], "data": {"query": "no salsa"}}
+sent: {"header":[1111,0,1120,1130,1562884323944,3,0],"data":{"speech":"selecting","entity":{"tops":[]}}}
+recv: {"header": [1111, 0, 1130, 1562884320, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,1130,9999,1562884323944,3,0],"data":{"speech":"Do you want queso, guac, or corn?","entity":{"tops":[]}}}
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 5000, 1562885319, 3, 0], "data": {"query": "confirm details"}}
+sent: {"header":[1111,0,5000,6000,1562885431723,3,0],"data":{"speech":"Performing task now.","entity":{"time":""}}}
+recv: {"header": [1111, 0, 5000, 1562885527, 3, 0], "data": {"query": "confirm details"}}
+sent: {"header":[1111,0,5000,6000,1562885533321,3,0],"data":{"speech":"Performing task now.","entity":{"time":""}}}
+recv: {"header": [1111, 0, 6000, 1562885527, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,6000,9999,1562885533321,3,0],"data":{"speech":"please tell me the pickup time","entity":{"time":""}}}
+recv: {"header": [1111, 0, 6000, 1562885527, 3, 0], "data": {"query": "5:30"}}
+sent: {"header":[1111,0,6000,6100,1562885556209,3,0],"data":{"speech":"Performing task now.","entity":{"time":"0:30 PM"}}}
+recv: {"header": [1111, 0, 5000, 1562885595, 3, 0], "data": {"query": "confirm details"}}
+sent: {"header":[1111,0,5000,6000,1562885607117,3,0],"data":{"speech":"Performing task now.","entity":{"time":""}}}
+recv: {"header": [1111, 0, 6000, 1562885595, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,6000,9999,1562885607117,3,0],"data":{"speech":"please tell me the pickup time","entity":{"time":""}}}
+recv: {"header": [1111, 0, 6000, 1562885595, 3, 0], "data": {"query": "330"}}
+sent: {"header":[1111,0,6000,6100,1562885630243,3,0],"data":{"speech":"Performing task now.","entity":{"time":"3:30 AM"}}}
+recv: {"header": [1111, 0, 5000, 1562885754, 3, 0], "data": {"query": "confirm details"}}
+sent: {"header":[1111,0,5000,6000,1562885761812,3,0],"data":{"speech":"Performing task now.","entity":{"time":""}}}
+recv: {"header": [1111, 0, 5000, 1562886894, 3, 0], "data": {"query": "confirm details"}}
+sent: {"header":[1111,0,5000,6000,1562886900913,3,0],"data":{"speech":"Performing task now.","entity":{"time":""}}}
+recv: {"header": [1111, 0, 6000, 1562886894, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,6000,9999,1562886900913,3,0],"data":{"speech":"please tell me the pickup time","entity":{"time":""}}}
+recv: {"header": [1111, 0, 6000, 1562886894, 3, 0], "data": {"query": "230"}}
+sent: {"header":[1111,0,6000,9999,1562886925865,3,0],"data":{"speech":"I didn't get that. Can you repeat?","entity":{}}}
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 5000, 1562886941, 3, 0], "data": {"query": "confirm details"}}
+sent: {"header":[1111,0,5000,6000,1562886948776,3,0],"data":{"speech":"Performing task now.","entity":{"time":""}}}
+recv: {"header": [1111, 0, 6000, 1562886941, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,6000,9999,1562886948776,3,0],"data":{"speech":"please tell me the pickup time","entity":{"time":""}}}
+recv: {"header": [1111, 0, 6000, 1562886941, 3, 0], "data": {"query": "3:20"}}
+sent: {"header":[1111,0,6000,6100,1562886965889,3,0],"data":{"speech":"Performing task now.","entity":{"time":"3:20 AM"}}}
+read: websocket: close 1000 (normal)
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 5000, 1562886982, 3, 0], "data": {"query": "confirm details"}}
+sent: {"header":[1111,0,6000,9999,1562886965889,3,0],"data":{"speech":"","entity":{"time":"3:20 AM"}}}
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 5000, 1562886996, 3, 0], "data": {"query": "confirm details"}}
+sent: {"header":[1111,0,5000,6000,1562887001761,3,0],"data":{"speech":"Performing task now.","entity":{"time":""}}}
+recv: {"header": [1111, 0, 6000, 1562886996, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,6000,9999,1562887001761,3,0],"data":{"speech":"please tell me the pickup time","entity":{"time":""}}}
+recv: {"header": [1111, 0, 6000, 1562886996, 3, 0], "data": {"query": "6 pm"}}
+sent: {"header":[1111,0,6000,6100,1562887021791,3,0],"data":{"speech":"Performing task now.","entity":{"time":"6:00 PM"}}}
+recv: {"header": [1111, 0, 5000, 1562887384, 3, 0], "data": {"query": "confirm details"}}
+sent: {"header":[1111,0,5000,6000,1562887396537,3,0],"data":{"speech":"Performing task now.","entity":{"time":""}}}
+recv: {"header": [1111, 0, 6000, 1562887384, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,6000,9999,1562887396537,3,0],"data":{"speech":"please tell me the pickup time","entity":{"time":""}}}
+recv: {"header": [1111, 0, 6000, 1562887384, 3, 0], "data": {"query": "5:30 pm"}}
+sent: {"header":[1111,0,6000,6100,1562887415920,3,0],"data":{"speech":"Performing task now.","entity":{"time":"5:30 PM"}}}
+recv: {"header": [1111, 0, 6100, 1562887384, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,6100,9999,1562887415920,3,0],"data":{"speech":"Please touch to make your payment and submit order.","entity":{"time":"5:30 PM"}}}
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 5000, 1562887673, 3, 0], "data": {"query": "actionTrue"}}
+sent: {"header":[1111,0,5000,9999,1562887682519,3,0],"data":{"speech":"I missed that, say that again?","entity":{}}}
+read: websocket: close 1000 (normal)
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 5000, 1562887745, 3, 0], "data": {"query": "confirm details"}}
+sent: {"header":[1111,0,5000,6000,1562887751166,3,0],"data":{"speech":"Performing task now.","entity":{"time":""}}}
+recv: {"header": [1111, 0, 6000, 1562887745, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,6000,9999,1562887751166,3,0],"data":{"speech":"please tell me the pickup time","entity":{"time":""}}}
+recv: {"header": [1111, 0, 6000, 1562887745, 3, 0], "data": {"query": "6:30 pm"}}
+sent: {"header":[1111,0,6000,6100,1562887780075,3,0],"data":{"speech":"Performing task now.","entity":{"time":"6:30 PM"}}}
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 5000, 1562887794, 3, 0], "data": {"query": "fds"}}
+sent: {"header":[1111,0,6000,9999,1562887780075,3,0],"data":{"speech":"","entity":{"time":"6:30 PM"}}}
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 5000, 1562887800, 3, 0], "data": {"query": "confirm details"}}
+sent: {"header":[1111,0,5000,6000,1562887811626,3,0],"data":{"speech":"Performing task now.","entity":{"time":""}}}
+recv: {"header": [1111, 0, 6000, 1562887800, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,6000,9999,1562887811626,3,0],"data":{"speech":"please tell me the pickup time","entity":{"time":""}}}
+recv: {"header": [1111, 0, 6000, 1562887800, 3, 0], "data": {"query": "3:30 pm"}}
+sent: {"header":[1111,0,6000,6100,1562887920014,3,0],"data":{"speech":"Performing task now.","entity":{"time":"3:30 PM"}}}
+recv: {"header": [1111, 0, 5000, 1562887952, 3, 0], "data": {"query": "confirm details"}}
+sent: {"header":[1111,0,5000,6000,1562887958820,3,0],"data":{"speech":"Performing task now.","entity":{"time":""}}}
+recv: {"header": [1111, 0, 6000, 1562887952, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,6000,9999,1562887958820,3,0],"data":{"speech":"please tell me the pickup time","entity":{"time":""}}}
+recv: {"header": [1111, 0, 6000, 1562887952, 3, 0], "data": {"query": "3 pm"}}
+sent: {"header":[1111,0,6000,6100,1562888075204,3,0],"data":{"speech":"Performing task now.","entity":{"time":"3:00 PM"}}}
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 5000, 1562888102, 3, 0], "data": {"query": "confirm details"}}
+sent: {"header":[1111,0,5000,6000,1562888109062,3,0],"data":{"speech":"Performing task now.","entity":{"time":""}}}
+recv: {"header": [1111, 0, 6000, 1562888102, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,6000,9999,1562888109062,3,0],"data":{"speech":"please tell me the pickup time","entity":{"time":""}}}
+recv: {"header": [1111, 0, 6000, 1562888102, 3, 0], "data": {"query": "2 pm"}}
+sent: {"header":[1111,0,6000,6100,1562888141670,3,0],"data":{"speech":"Performing task now.","entity":{"time":"2:00 PM"}}}
+recv: {"header": [1111, 0, 5000, 1562888395, 3, 0], "data": {"query": "confirm details"}}
+sent: {"header":[1111,0,5000,6000,1562888402555,3,0],"data":{"speech":"Performing task now.","entity":{"time":""}}}
+recv: {"header": [1111, 0, 6000, 1562888395, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,6000,9999,1562888402555,3,0],"data":{"speech":"please tell me the pickup time","entity":{"time":""}}}
+recv: {"header": [1111, 0, 6000, 1562888395, 3, 0], "data": {"query": "4 pm"}}
+sent: {"header":[1111,0,6000,6100,1562888460224,3,0],"data":{"speech":"Performing task now.","entity":{"time":"4:00 PM"}}}
+recv: {"header": [1111, 0, 5000, 1562888970, 3, 0], "data": {"query": "actionTrue"}}
+sent: {"header":[1111,0,5000,9999,1562888975256,3,0],"data":{"speech":"Sorry, can you say that again?","entity":{}}}
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 5000, 1562888981, 3, 0], "data": {"query": "confirm details"}}
+sent: {"header":[1111,0,5000,6000,1562888985435,3,0],"data":{"speech":"Performing task now.","entity":{"time":""}}}
+recv: {"header": [1111, 0, 6000, 1562888981, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,6000,9999,1562888985435,3,0],"data":{"speech":"please tell me the pickup time","entity":{"time":""}}}
+recv: {"header": [1111, 0, 6000, 1562888981, 3, 0], "data": {"query": "3 pm"}}
+sent: {"header":[1111,0,6000,6100,1562889037867,3,0],"data":{"speech":"Performing task now.","entity":{"time":"3:00 PM"}}}
+recv: {"header": [1111, 0, 5000, 1562891169, 3, 0], "data": {"query": "confirm details"}}
+sent: {"header":[1111,0,5000,6000,1562891176605,3,0],"data":{"speech":"Performing task now.","entity":{"time":""}}}
+recv: {"header": [1111, 0, 6000, 1562891169, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,6000,9999,1562891176605,3,0],"data":{"speech":"please tell me the pickup time","entity":{"time":""}}}
+recv: {"header": [1111, 0, 6000, 1562891169, 3, 0], "data": {"query": "4"}}
+sent: {"header":[1111,0,6000,6100,1562891227960,3,0],"data":{"speech":"Performing task now.","entity":{"time":"4:00 AM"}}}
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 5000, 1562895561, 3, 0], "data": {"query": "confirm details"}}
+sent: {"header":[1111,0,5000,6000,1562895572949,3,0],"data":{"speech":"Performing task now.","entity":{"time":""}}}
+recv: {"header": [1111, 0, 6000, 1562895561, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,6000,9999,1562895572949,3,0],"data":{"speech":"please tell me the pickup time","entity":{"time":""}}}
+recv: {"header": [1111, 0, 6000, 1562895561, 3, 0], "data": {"query": "4"}}
+sent: {"header":[1111,0,6000,6100,1562895587468,3,0],"data":{"speech":"Performing task now.","entity":{"time":"4:00 AM"}}}
+recv: {"header": [1111, 0, 5000, 1562896238, 3, 0], "data": {"query": "confirm details"}}
+sent: {"header":[1111,0,5000,6000,1562896242786,3,0],"data":{"speech":"Performing task now.","entity":{"time":""}}}
+recv: {"header": [1111, 0, 6000, 1562896238, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,6000,9999,1562896242786,3,0],"data":{"speech":"please tell me the pickup time","entity":{"time":""}}}
+recv: {"header": [1111, 0, 6000, 1562896238, 3, 0], "data": {"query": "quickest time please"}}
+sent: {"header":[1111,0,6000,6100,1562896315044,3,0],"data":{"speech":"selecting","entity":{"time":"quickest"}}}
+recv: {"header": [1111, 0, 6100, 1562896238, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,6100,9999,1562896315044,3,0],"data":{"speech":"Please touch to make your payment and submit order.","entity":{"time":"quickest"}}}
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 5000, 1562896338, 3, 0], "data": {"query": "confirm details"}}
+sent: {"header":[1111,0,5000,6000,1562896472777,3,0],"data":{"speech":"Performing task now.","entity":{"time":""}}}
+recv: {"header": [1111, 0, 6000, 1562896338, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,6000,9999,1562896472777,3,0],"data":{"speech":"please tell me the pickup time","entity":{"time":""}}}
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 6000, 1562896514, 3, 0], "data": {"query": "4 pm"}}
+sent: {"header":[1111,0,6000,6100,1562896518556,3,0],"data":{"speech":"Performing task now.","entity":{"time":"4:00 PM"}}}
+recv: {"header": [1111, 0, 6100, 1562896514, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,6100,9999,1562896518556,3,0],"data":{"speech":"Please touch to make your payment and submit order.","entity":{"time":"4:00 PM"}}}
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 5000, 1562897607, 3, 0], "data": {"query": "confirm details"}}
+sent: {"header":[1111,0,5000,6000,1562897737161,3,0],"data":{"speech":"Performing task now.","entity":{"time":""}}}
+recv: {"header": [1111, 0, 6000, 1562897607, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,6000,9999,1562897737161,3,0],"data":{"speech":"please tell me the pickup time","entity":{"time":""}}}
+recv: {"header": [1111, 0, 6000, 1562897607, 3, 0], "data": {"query": "3"}}
+sent: {"header":[1111,0,6000,6100,1562897761685,3,0],"data":{"speech":"Performing task now.","entity":{"time":"3:00 AM"}}}
+recv: {"header": [1111, 0, 5000, 1562897817, 3, 0], "data": {"query": "cancel"}}
+sent: {"header":[1111,0,5000,0,1562897827307,3,0],"data":{"speech":"Okay, cancelled","entity":{}}}
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 5000, 1562897828, 3, 0], "data": {"query": "confirm details"}}
+sent: {"header":[1111,0,5000,6000,1562897834971,3,0],"data":{"speech":"Performing task now.","entity":{"time":""}}}
+recv: {"header": [1111, 0, 6000, 1562897828, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,6000,9999,1562897834971,3,0],"data":{"speech":"please tell me the pickup time","entity":{"time":""}}}
+recv: {"header": [1111, 0, 6000, 1562897828, 3, 0], "data": {"query": "3 am"}}
+sent: {"header":[1111,0,6000,6100,1562897848164,3,0],"data":{"speech":"Performing task now.","entity":{"time":"3:00 AM"}}}
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 5000, 1562897867, 3, 0], "data": {"query": ""}}
+sent: {"header":[1111,0,5000,9999,1562897869881,3,0],"data":{"speech":"","entity":null}}
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 5000, 1562897871, 3, 0], "data": {"query": "actionTrue"}}
+sent: {"header":[1111,0,5000,9999,1562897876771,3,0],"data":{"speech":"I missed that, say that again?","entity":{}}}
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 5000, 1562897880, 3, 0], "data": {"query": "confirm details"}}
+sent: {"header":[1111,0,5000,6000,1562897885861,3,0],"data":{"speech":"Performing task now.","entity":{"time":""}}}
+recv: {"header": [1111, 0, 6000, 1562897880, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,6000,9999,1562897885861,3,0],"data":{"speech":"please tell me the pickup time","entity":{"time":""}}}
+recv: {"header": [1111, 0, 6000, 1562897880, 3, 0], "data": {"query": "3 am"}}
+sent: {"header":[1111,0,6000,6100,1562897964465,3,0],"data":{"speech":"Performing task now.","entity":{"time":"3:0 PM"}}}
+recv: {"header": [1111, 0, 5000, 1562898017, 3, 0], "data": {"query": "confirm details"}}
+sent: {"header":[1111,0,5000,6000,1562898038734,3,0],"data":{"speech":"Performing task now.","entity":{"time":""}}}
+recv: {"header": [1111, 0, 6000, 1562898017, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,6000,9999,1562898038734,3,0],"data":{"speech":"please tell me the pickup time","entity":{"time":""}}}
+recv: {"header": [1111, 0, 6000, 1562898017, 3, 0], "data": {"query": "1"}}
+sent: {"header":[1111,0,6000,6100,1562898096322,3,0],"data":{"speech":"Performing task now.","entity":{"time":"1:00 PM"}}}
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 5000, 1562898316, 3, 0], "data": {"query": "confirm details"}}
+sent: {"header":[1111,0,5000,6000,1562898322705,3,0],"data":{"speech":"Performing task now.","entity":{"time":""}}}
+recv: {"header": [1111, 0, 6000, 1562898316, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,6000,9999,1562898322705,3,0],"data":{"speech":"please tell me the pickup time","entity":{"time":""}}}
+recv: {"header": [1111, 0, 6000, 1562898316, 3, 0], "data": {"query": ""}}
+sent: {"header":[1111,0,6000,9999,1562898479913,3,0],"data":{"speech":"","entity":null}}
+recv: {"header": [1111, 0, 5000, 1562898484, 3, 0], "data": {"query": "confirm details"}}
+sent: {"header":[1111,0,5000,6000,1562898495145,3,0],"data":{"speech":"Performing task now.","entity":{"time":""}}}
+recv: {"header": [1111, 0, 6000, 1562898484, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,6000,9999,1562898495145,3,0],"data":{"speech":"please tell me the pickup time","entity":{"time":""}}}
+recv: {"header": [1111, 0, 6000, 1562898484, 3, 0], "data": {"query": "12"}}
+sent: {"header":[1111,0,6000,6100,1562898509172,3,0],"data":{"speech":"Performing task now.","entity":{"time":"0:00 PM"}}}
+read: websocket: close 1000 (normal)
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 5000, 1562898543, 3, 0], "data": {"query": "confirm details"}}
+sent: {"header":[1111,0,5000,6000,1562898549584,3,0],"data":{"speech":"Performing task now.","entity":{"time":""}}}
+recv: {"header": [1111, 0, 6000, 1562898543, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,6000,9999,1562898549584,3,0],"data":{"speech":"please tell me the pickup time","entity":{"time":""}}}
+recv: {"header": [1111, 0, 6000, 1562898543, 3, 0], "data": {"query": "11:34"}}
+sent: {"header":[1111,0,6000,6100,1562898572140,3,0],"data":{"speech":"Performing task now.","entity":{"time":"23:34 AM"}}}
+recv: {"header": [1111, 0, 5000, 1562898823, 3, 0], "data": {"query": "confirm details"}}
+sent: {"header":[1111,0,5000,6000,1562898829363,3,0],"data":{"speech":"Performing task now.","entity":{"time":""}}}
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 5000, 1562898843, 3, 0], "data": {"query": "actionTrue"}}
+sent: {"header":[1111,0,5000,6000,1562898847950,3,0],"data":{"speech":"Performing task now.","entity":{"time":""}}}
+recv: {"header": [1111, 0, 6000, 1562898843, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,6000,9999,1562898847950,3,0],"data":{"speech":"please tell me the pickup time","entity":{"time":""}}}
+recv: {"header": [1111, 0, 6000, 1562898843, 3, 0], "data": {"query": "11:45"}}
+sent: {"header":[1111,0,6000,6100,1562898867608,3,0],"data":{"speech":"Performing task now.","entity":{"time":"11:45 AM"}}}
+read: websocket: close 1000 (normal)
+read: websocket: close 1000 (normal)
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 5000, 1562898921, 3, 0], "data": {"query": "confirm details"}}
+sent: {"header":[1111,0,5000,6000,1562898929252,3,0],"data":{"speech":"Performing task now.","entity":{"time":""}}}
+recv: {"header": [1111, 0, 6000, 1562898921, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,6000,9999,1562898929252,3,0],"data":{"speech":"please tell me the pickup time","entity":{"time":""}}}
+recv: {"header": [1111, 0, 5000, 1562899035, 3, 0], "data": {"query": "confirm details"}}
+sent: {"header":[1111,0,5000,6000,1562899041303,3,0],"data":{"speech":"Performing task now.","entity":{"time":""}}}
+recv: {"header": [1111, 0, 6000, 1562899035, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,6000,9999,1562899041303,3,0],"data":{"speech":"please tell me the pickup time","entity":{"time":""}}}
+recv: {"header": [1111, 0, 6000, 1562899035, 3, 0], "data": {"query": "13:45"}}
+sent: {"header":[1111,0,6000,6100,1562899145450,3,0],"data":{"speech":"Performing task now.","entity":{"time":"1:45 AM"}}}
+recv: {"header": [1111, 0, 5000, 1562909762, 3, 0], "data": {"query": "confirm details"}}
+sent: {"header":[1111,0,5000,6000,1562909768178,3,0],"data":{"speech":"Performing task now.","entity":{"time":""}}}
+recv: {"header": [1111, 0, 6000, 1562909762, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,6000,9999,1562909768178,3,0],"data":{"speech":"please tell me the pickup time","entity":{"time":""}}}
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 6000, 1562909813, 3, 0], "data": {"query": "4:45"}}
+sent: {"header":[1111,0,6000,6100,1562909818652,3,0],"data":{"speech":"Performing task now.","entity":{"time":"4:45 PM"}}}
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 6000, 1562909860, 3, 0], "data": {"query": "confirm details"}}
+sent: {"header":[1111,0,6000,9999,1562909818652,3,0],"data":{"speech":"","entity":{"time":"4:45 PM"}}}
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 5000, 1562909873, 3, 0], "data": {"query": "confirm details"}}
+sent: {"header":[1111,0,5000,6000,1562909878309,3,0],"data":{"speech":"Performing task now.","entity":{"time":""}}}
+recv: {"header": [1111, 0, 6000, 1562909873, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,6000,9999,1562909878309,3,0],"data":{"speech":"please tell me the pickup time","entity":{"time":""}}}
+recv: {"header": [1111, 0, 6000, 1562909873, 3, 0], "data": {"query": "9"}}
+sent: {"header":[1111,0,6000,6100,1562909909388,3,0],"data":{"speech":"Performing task now.","entity":{"time":"9:00 PM"}}}
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 5000, 1562909924, 3, 0], "data": {"query": "confirm details"}}
+sent: {"header":[1111,0,6000,9999,1562909909388,3,0],"data":{"speech":"","entity":{"time":"9:00 PM"}}}
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 5000, 1562909953, 3, 0], "data": {"query": "confirm details"}}
+sent: {"header":[1111,0,5000,6000,1562909958639,3,0],"data":{"speech":"Performing task now.","entity":{"time":""}}}
+recv: {"header": [1111, 0, 6000, 1562909953, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,6000,9999,1562909958639,3,0],"data":{"speech":"please tell me the pickup time","entity":{"time":""}}}
+recv: {"header": [1111, 0, 6000, 1562909953, 3, 0], "data": {"query": "12:45"}}
+sent: {"header":[1111,0,6000,6100,1562910003953,3,0],"data":{"speech":"Performing task now.","entity":{"time":"0:45 PM"}}}
+recv: {"header": [1111, 0, 6100, 1562909953, 3, 0], "data": {"result": "actinoTrue"}}
+sent: {"header":[1111,0,6000,9999,1562910003953,3,0],"data":{"speech":"actinoTrue","entity":{"time":"0:45 PM"}}}
+recv: {"header": [1111, 0, 5000, 1562909953, 3, 0], "data": {"query": "confirm details"}}
+sent: {"header":[1111,0,5000,6000,1562910034986,3,0],"data":{"speech":"Performing task now.","entity":{"time":""}}}
+recv: {"header": [1111, 0, 6000, 1562909953, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,6000,9999,1562910034986,3,0],"data":{"speech":"please tell me the pickup time","entity":{"time":""}}}
+recv: {"header": [1111, 0, 6000, 1562909953, 3, 0], "data": {"query": "11:45"}}
+sent: {"header":[1111,0,6000,6100,1562910051939,3,0],"data":{"speech":"Performing task now.","entity":{"time":"11:45 AM"}}}
+recv: {"header": [1111, 0, 5000, 1562911986, 3, 0], "data": {"query": "confirm details"}}
+sent: {"header":[1111,0,5000,6000,1562912158226,3,0],"data":{"speech":"Performing task now.","entity":{"time":""}}}
+recv: {"header": [1111, 0, 6000, 1562911986, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,6000,9999,1562912158226,3,0],"data":{"speech":"please tell me the pickup time","entity":{"time":""}}}
+recv: {"header": [1111, 0, 6000, 1562911986, 3, 0], "data": {"query": "145"}}
+sent: {"header":[1111,0,6000,6100,1562912367895,3,0],"data":{"speech":"Performing task now.","entity":{"time":"1:-01 PM"}}}
+read: websocket: close 1000 (normal)
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 5000, 1562912433, 3, 0], "data": {"query": "confirm details"}}
+sent: {"header":[1111,0,5000,6000,1562912439482,3,0],"data":{"speech":"Performing task now.","entity":{"time":""}}}
+recv: {"header": [1111, 0, 6000, 1562912433, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,6000,9999,1562912439482,3,0],"data":{"speech":"please tell me the pickup time","entity":{"time":""}}}
+recv: {"header": [1111, 0, 6000, 1562912433, 3, 0], "data": {"query": "2"}}
+sent: {"header":[1111,0,6000,6100,1562912455248,3,0],"data":{"speech":"Performing task now.","entity":{"time":"2:00 PM"}}}
+recv: {"header": [1111, 0, 6100, 1562912433, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,6100,9999,1562912455248,3,0],"data":{"speech":"Please touch to make your payment and submit order.","entity":{"time":"2:00 PM"}}}
+recv: {"header": [1111, 0, 5000, 1562912433, 3, 0], "data": {"query": "actionTrue"}}
+sent: {"header":[1111,0,5000,9999,1562912488948,3,0],"data":{"speech":"I missed that, say that again?","entity":{}}}
+recv: {"header": [1111, 0, 59000, 1562912433, 3, 0], "data": {"result": "rew"}}
+sent: {"header":[1111,0,59000,9999,1562912653408,3,0],"data":{"speech":"","entity":null}}
+recv: {"header": [1111, 0, 5000, 1562912433, 3, 0], "data": {"query": "confirm details"}}
+sent: {"header":[1111,0,5000,6000,1562912667037,3,0],"data":{"speech":"Performing task now.","entity":{"time":""}}}
+recv: {"header": [1111, 0, 6000, 1562912433, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,6000,9999,1562912667037,3,0],"data":{"speech":"please tell me the pickup time","entity":{"time":""}}}
+recv: {"header": [1111, 0, 6000, 1562912433, 3, 0], "data": {"query": "4:50"}}
+sent: {"header":[1111,0,6000,6100,1562912682784,3,0],"data":{"speech":"Performing task now.","entity":{"time":"4:45 PM"}}}
+recv: {"header": [1111, 0, 5000, 1562913719, 3, 0], "data": {"query": "confirm details"}}
+sent: {"header":[1111,0,5000,6000,1562913727432,3,0],"data":{"speech":"Performing task now.","entity":{"time":""}}}
+recv: {"header": [1111, 0, 6000, 1562913719, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,6000,9999,1562913727432,3,0],"data":{"speech":"please tell me the pickup time","entity":{"time":""}}}
+recv: {"header": [1111, 0, 6000, 1562913719, 3, 0], "data": {"query": "noon"}}
+sent: {"header":[1111,0,6000,6100,1562913831984,3,0],"data":{"speech":"Performing task now.","entity":{"time":"0:00 AM"}}}
+recv: {"header": [1111, 0, 5000, 1562914242, 3, 0], "data": {"query": "confirm details"}}
+sent: {"header":[1111,0,5000,6000,1562914250101,3,0],"data":{"speech":"Performing task now.","entity":{"time":""}}}
+recv: {"header": [1111, 0, 6000, 1562914242, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,6000,9999,1562914250101,3,0],"data":{"speech":"please tell me the pickup time","entity":{"time":""}}}
+recv: {"header": [1111, 0, 6000, 1562914242, 3, 0], "data": {"query": "noon"}}
+sent: {"header":[1111,0,6000,6100,1562914263522,3,0],"data":{"speech":"Performing task now.","entity":{"time":"12:00 PM"}}}
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 5000, 1562914313, 3, 0], "data": {"query": "confirm details"}}
+sent: {"header":[1111,0,5000,6000,1562914318868,3,0],"data":{"speech":"Performing task now.","entity":{"time":""}}}
+recv: {"header": [1111, 0, 6000, 1562914313, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,6000,9999,1562914318868,3,0],"data":{"speech":"please tell me the pickup time","entity":{"time":""}}}
+recv: {"header": [1111, 0, 6000, 1562914313, 3, 0], "data": {"query": "12:35"}}
+sent: {"header":[1111,0,6000,6100,1562914427398,3,0],"data":{"speech":"Performing task now.","entity":{"time":"12:30 PM"}}}
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 5000, 1562914615, 3, 0], "data": {"query": "confirm details"}}
+sent: {"header":[1111,0,5000,6000,1562914758654,3,0],"data":{"speech":"Performing task now.","entity":{"time":""}}}
+recv: {"header": [1111, 0, 6000, 1562914615, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,6000,9999,1562914758654,3,0],"data":{"speech":"please tell me the pickup time","entity":{"time":""}}}
+recv: {"header": [1111, 0, 6000, 1562914615, 3, 0], "data": {"query": "18:55"}}
+sent: {"header":[1111,0,6000,6100,1562914775297,3,0],"data":{"speech":"Performing task now.","entity":{"time":"6:45 AM"}}}
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 5000, 1562914826, 3, 0], "data": {"query": "confirm details"}}
+sent: {"header":[1111,0,5000,6000,1562914831511,3,0],"data":{"speech":"Performing task now.","entity":{"time":""}}}
+recv: {"header": [1111, 0, 6000, 1562914826, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,6000,9999,1562914831511,3,0],"data":{"speech":"please tell me the pickup time","entity":{"time":""}}}
+recv: {"header": [1111, 0, 6000, 1562914826, 3, 0], "data": {"query": "6:55"}}
+sent: {"header":[1111,0,6000,6100,1562914862400,3,0],"data":{"speech":"Performing task now.","entity":{"time":"6:45 PM"}}}
+recv: {"header": [1111, 0, 5000, 1562914979, 3, 0], "data": {"query": "actionTrue"}}
+sent: {"header":[1111,0,5000,9999,1562914989900,3,0],"data":{"speech":"Sorry, what was that?","entity":{}}}
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 5000, 1562914999, 3, 0], "data": {"query": "confirm details"}}
+sent: {"header":[1111,0,5000,6000,1562915022277,3,0],"data":{"speech":"Performing task now.","entity":{"time":""}}}
+recv: {"header": [1111, 0, 6000, 1562914999, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,6000,9999,1562915022277,3,0],"data":{"speech":"please tell me the pickup time","entity":{"time":""}}}
+recv: {"header": [1111, 0, 6000, 1562914999, 3, 0], "data": {"query": "6 pm"}}
+sent: {"header":[1111,0,6000,6100,1562915032803,3,0],"data":{"speech":"Performing task now.","entity":{"time":"6:00 AM"}}}
+recv: {"header": [1111, 0, 5000, 1562915126, 3, 0], "data": {"query": "confirm details"}}
+sent: {"header":[1111,0,5000,6000,1562915140538,3,0],"data":{"speech":"Performing task now.","entity":{"time":""}}}
+recv: {"header": [1111, 0, 6000, 1562915126, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,6000,9999,1562915140538,3,0],"data":{"speech":"please tell me the pickup time","entity":{"time":""}}}
+recv: {"header": [1111, 0, 6000, 1562915126, 3, 0], "data": {"query": "5 pm"}}
+sent: {"header":[1111,0,6000,6100,1562915151996,3,0],"data":{"speech":"Performing task now.","entity":{"time":"quickest"}}}
+recv: {"header": [1111, 0, 5000, 1562915222, 3, 0], "data": {"query": "confirm details"}}
+sent: {"header":[1111,0,5000,6000,1562915233384,3,0],"data":{"speech":"Performing task now.","entity":{"time":""}}}
+recv: {"header": [1111, 0, 6000, 1562915222, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,6000,9999,1562915233384,3,0],"data":{"speech":"please tell me the pickup time","entity":{"time":""}}}
+recv: {"header": [1111, 0, 6000, 1562915222, 3, 0], "data": {"query": "3"}}
+sent: {"header":[1111,0,6000,6100,1562915243005,3,0],"data":{"speech":"Performing task now.","entity":{"time":"3:00 PM"}}}
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 5000, 1562915258, 3, 0], "data": {"query": "confirm details"}}
+sent: {"header":[1111,0,5000,6000,1562915271623,3,0],"data":{"speech":"Performing task now.","entity":{"time":""}}}
+recv: {"header": [1111, 0, 6000, 1562915258, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,6000,9999,1562915271623,3,0],"data":{"speech":"please tell me the pickup time","entity":{"time":""}}}
+recv: {"header": [1111, 0, 6000, 1562915258, 3, 0], "data": {"query": "10:57"}}
+sent: {"header":[1111,0,6000,6100,1562915317651,3,0],"data":{"speech":"Performing task now.","entity":{"time":"quickest"}}}
+recv: {"header": [1111, 0, 5000, 1562915347, 3, 0], "data": {"query": "confirm details"}}
+sent: {"header":[1111,0,5000,6000,1562915352619,3,0],"data":{"speech":"Performing task now.","entity":{"time":""}}}
+recv: {"header": [1111, 0, 6000, 1562915347, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,6000,9999,1562915352619,3,0],"data":{"speech":"please tell me the pickup time","entity":{"time":""}}}
+recv: {"header": [1111, 0, 6000, 1562915347, 3, 0], "data": {"query": "1145"}}
+sent: {"header":[1111,0,6000,6100,1562915372929,3,0],"data":{"speech":"Performing task now.","entity":{"time":"quickest"}}}
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 5000, 1562915481, 3, 0], "data": {"query": "confirm details"}}
+sent: {"header":[1111,0,5000,6000,1562915495800,3,0],"data":{"speech":"Performing task now.","entity":{"time":""}}}
+recv: {"header": [1111, 0, 6000, 1562915481, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,6000,9999,1562915495800,3,0],"data":{"speech":"please tell me the pickup time","entity":{"time":""}}}
+recv: {"header": [1111, 0, 6000, 1562915481, 3, 0], "data": {"query": "11:45"}}
+sent: {"header":[1111,0,6000,6100,1562915503696,3,0],"data":{"speech":"Performing task now.","entity":{"time":"11:-01 AM"}}}
+recv: {"header": [1111, 0, 5000, 1562915517, 3, 0], "data": {"query": "confirm"}}
+sent: {"header":[1111,0,5000,9999,1562915520849,3,0],"data":{"speech":"Good!","entity":{}}}
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 5000, 1562915526, 3, 0], "data": {"query": "confirm details"}}
+sent: {"header":[1111,0,5000,6000,1562915531404,3,0],"data":{"speech":"Performing task now.","entity":{"time":""}}}
+recv: {"header": [1111, 0, 6000, 1562915526, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,6000,9999,1562915531404,3,0],"data":{"speech":"please tell me the pickup time","entity":{"time":""}}}
+recv: {"header": [1111, 0, 6000, 1562915526, 3, 0], "data": {"query": "11:45"}}
+sent: {"header":[1111,0,6000,6100,1562915565287,3,0],"data":{"speech":"Performing task now.","entity":{"time":"11:-01 AM"}}}
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 5000, 1562915593, 3, 0], "data": {"query": "confrim details"}}
+sent: {"header":[1111,0,5000,9999,1562915598162,3,0],"data":{"speech":"Sorry, what was that?","entity":{}}}
+recv: {"header": [1111, 0, 6000, 1562915593, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,6000,9999,1562915605104,3,0],"data":{"speech":"","entity":null}}
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 5000, 1562915629, 3, 0], "data": {"query": "confirm details"}}
+sent: {"header":[1111,0,5000,6000,1562915641752,3,0],"data":{"speech":"Performing task now.","entity":{"time":""}}}
+recv: {"header": [1111, 0, 6000, 1562915629, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,6000,9999,1562915641752,3,0],"data":{"speech":"please tell me the pickup time","entity":{"time":""}}}
+recv: {"header": [1111, 0, 6000, 1562915629, 3, 0], "data": {"query": "11:45"}}
+sent: {"header":[1111,0,6000,6100,1562915654213,3,0],"data":{"speech":"Performing task now.","entity":{"time":"11:45 AM"}}}
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 5000, 1562915665, 3, 0], "data": {"query": "confirm details"}}
+sent: {"header":[1111,0,5000,6000,1562915681166,3,0],"data":{"speech":"Performing task now.","entity":{"time":""}}}
+recv: {"header": [1111, 0, 6000, 1562915665, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,6000,9999,1562915681166,3,0],"data":{"speech":"please tell me the pickup time","entity":{"time":""}}}
+recv: {"header": [1111, 0, 6000, 1562915665, 3, 0], "data": {"query": "11"}}
+sent: {"header":[1111,0,6000,6100,1562915696716,3,0],"data":{"speech":"Performing task now.","entity":{"time":"11:00 AM"}}}
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 5000, 1562915704, 3, 0], "data": {"query": "actionTrue"}}
+sent: {"header":[1111,0,5000,9999,1562915709119,3,0],"data":{"speech":"Sorry, can you say that again?","entity":{}}}
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 5000, 1562915715, 3, 0], "data": {"query": "confirm details"}}
+sent: {"header":[1111,0,5000,6000,1562915722903,3,0],"data":{"speech":"Performing task now.","entity":{"time":""}}}
+recv: {"header": [1111, 0, 6000, 1562915715, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,6000,9999,1562915722903,3,0],"data":{"speech":"please tell me the pickup time","entity":{"time":""}}}
+recv: {"header": [1111, 0, 6000, 1562915715, 3, 0], "data": {"query": "1"}}
+sent: {"header":[1111,0,6000,6100,1562915738833,3,0],"data":{"speech":"Performing task now.","entity":{"time":"13:00 PM"}}}
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 5000, 1562915752, 3, 0], "data": {"query": "confirm details"}}
+sent: {"header":[1111,0,5000,6000,1562915757755,3,0],"data":{"speech":"Performing task now.","entity":{"time":""}}}
+recv: {"header": [1111, 0, 6000, 1562915752, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,6000,9999,1562915757755,3,0],"data":{"speech":"please tell me the pickup time","entity":{"time":""}}}
+recv: {"header": [1111, 0, 6000, 1562915752, 3, 0], "data": {"query": "9"}}
+sent: {"header":[1111,0,6000,6100,1562915766266,3,0],"data":{"speech":"Performing task now.","entity":{"time":"9:00 PM"}}}
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 5000, 1562915774, 3, 0], "data": {"query": "actionTrue"}}
+sent: {"header":[1111,0,5000,9999,1562915789686,3,0],"data":{"speech":"Sorry, I didn't get that. Can you rephrase?","entity":{}}}
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 1130, 1562917091, 3, 0], "data": {"query": "hjfsd"}}
+sent: {"header":[1111,0,1130,9999,1562917094874,3,0],"data":{"speech":"Do you want queso, guac, or corn?","entity":null}}
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 1140, 1562917120, 3, 0], "data": {"query": "jfksd"}}
+sent: {"header":[1111,0,1140,9999,1562917124537,3,0],"data":{"speech":"how about sour cream, fajita veggies, cheese, and lettuce?","entity":null}}
+recv: {"header": [1111, 0, 1140, 1562917120, 3, 0], "data": {"result": "fdas"}}
+sent: {"header":[1111,0,1140,9999,1562917126409,3,0],"data":{"speech":"how about sour cream, fajita veggies, cheese, and lettuce?","entity":null}}
+recv: {"header": [1111, 0, 1140, 1562917120, 3, 0], "data": {"query": "Ladders cheese and sour cream"}}
+sent: {"header":[1111,0,1140,1150,1562917140248,3,0],"data":{"speech":"selecting","entity":{"tops":["cheese","sour cream","romaine lettuce"]}}}
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 1120, 1562917499, 3, 0], "data": {"query": "dks"}}
+sent: {"header":[1111,0,1120,9999,1562917630387,3,0],"data":{"speech":"Do you want to add salsa? Mild, medium, or hot?","entity":null}}
+recv: {"header": [1111, 0, 1120, 1562917499, 3, 0], "data": {"result": "dskal"}}
+sent: {"header":[1111,0,1120,9999,1562917633475,3,0],"data":{"speech":"Do you want to add salsa? Mild, medium, or hot?","entity":null}}
+recv: {"header": [1111, 0, 1120, 1562917499, 3, 0], "data": {"query": "no salsa"}}
+sent: {"header":[1111,0,1120,1130,1562917636155,3,0],"data":{"speech":"selecting","entity":{"tops":[]}}}
+recv: {"header": [1111, 0, 1130, 1562917499, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,1130,9999,1562917636155,3,0],"data":{"speech":"Do you want queso, guac, or corn?","entity":{"tops":[]}}}
+recv: {"header": [1111, 0, 1130, 1562917499, 3, 0], "data": {"query": "no thanks"}}
+sent: {"header":[1111,0,1130,1140,1562917647706,3,0],"data":{"speech":"selecting","entity":{"tops":[]}}}
+recv: {"header": [1111, 0, 1140, 1562917499, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,1140,9999,1562917647706,3,0],"data":{"speech":"how about sour cream, fajita veggies, cheese, and lettuce?","entity":{"tops":[]}}}
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 5000, 1562957812, 3, 0], "data": {"query": "confirm details"}}
+sent: {"header":[1111,0,5000,6000,1562957818973,3,0],"data":{"speech":"Performing task now.","entity":{"time":""}}}
+recv: {"header": [1111, 0, 6000, 1562957812, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,6000,9999,1562957818973,3,0],"data":{"speech":"please tell me the pickup time","entity":{"time":""}}}
+recv: {"header": [1111, 0, 6000, 1562957812, 3, 0], "data": {"query": "260"}}
+sent: {"header":[1111,0,6000,9999,1562957826833,3,0],"data":{"speech":"please tell me the pickup time","entity":{"time":""}}}
+read: websocket: close 1000 (normal)
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 5000, 1563157339, 3, 0], "data": {"query": "fds"}}
+sent: {"header":[1111,0,5000,9999,1563157343701,3,0],"data":{"speech":"I missed that, say that again?","entity":{}}}
+recv: {"header": [1111, 0, 5000, 1563157339, 3, 0], "data": {"result": "fsd"}}
+sent: {"header":[1111,0,5000,9999,1563157349739,3,0],"data":{"speech":"","entity":null}}
+recv: {"header": [1111, 0, 5000, 1563157339, 3, 0], "data": {"query": "confirm details"}}
+sent: {"header":[1111,0,5000,6000,1563157354999,3,0],"data":{"speech":"please tell me the pickup time","entity":{"time":""}}}
+recv: {"header": [1111, 0, 6000, 1563157339, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,6000,9999,1563157366174,3,0],"data":{"speech":"","entity":null}}
+recv: {"header": [1111, 0, 6000, 1563157339, 3, 0], "data": {"query": "4 pm"}}
+sent: {"header":[1111,0,6000,6100,1563157377538,3,0],"data":{"speech":"Performing task now.","entity":{"time":"4:00 PM"}}}
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 5000, 1563157635, 3, 0], "data": {"query": "confirm details"}}
+sent: {"header":[1111,0,5000,6000,1563157646882,3,0],"data":{"speech":"selecting","entity":{"time":""}}}
+recv: {"header": [1111, 0, 6000, 1563157635, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,6000,9999,1563157646882,3,0],"data":{"speech":"please tell me the pickup time","entity":{"time":""}}}
+recv: {"header": [1111, 0, 6000, 1563157635, 3, 0], "data": {"query": "4 pm"}}
+sent: {"header":[1111,0,6000,6100,1563157668606,3,0],"data":{"speech":"Performing task now.","entity":{"time":"4:00 PM"}}}
+recv: {"header": [1111, 0, 6100, 1563157635, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,6100,9999,1563157668606,3,0],"data":{"speech":"Please touch to make your payment and submit order.","entity":{"time":"4:00 PM"}}}
+read: websocket: close 1000 (normal)
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 1000, 1563159670, 3, 0], "data": {"query": "dsa"}}
+sent: {"header":[1111,0,1000,9999,1563159672553,3,0],"data":{"speech":"what items do you want, burrito, bowl, or tacos?","entity":null}}
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 1000, 1563159678, 3, 0], "data": {"query": "salad"}}
+sent: {"header":[1111,0,1000,1100,1563159685649,3,0],"data":{"speech":"selecting","entity":{"ordertype":"salad"}}}
+recv: {"header": [1111, 0, 1100, 1563159678, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,1100,9999,1563159685649,3,0],"data":{"speech":"Choose your meat or veggie","entity":{"ordertype":"salad"}}}
+recv: {"header": [1111, 0, 1100, 1563159678, 3, 0], "data": {"query": "chicken"}}
+sent: {"header":[1111,0,1100,1110,1563159699904,3,0],"data":{"speech":"selecting","entity":{"fillings":["chicken"]}}}
+recv: {"header": [1111, 0, 1110, 1563159678, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,1110,9999,1563159699904,3,0],"data":{"speech":"Now add your rice and beans","entity":{"fillings":["chicken"]}}}
+recv: {"header": [1111, 0, 1110, 1563159678, 3, 0], "data": {"query": "no rice and no beans"}}
+sent: {"header":[1111,0,1110,1120,1563159715200,3,0],"data":{"speech":"selecting","entity":{"rice":["no rice"],"beans":["no beans"]}}}
+recv: {"header": [1111, 0, 1120, 1563159678, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,1120,9999,1563159715200,3,0],"data":{"speech":"Do you want to add salsa? Mild, medium, or hot?","entity":{"rice":["no rice"],"beans":["no beans"]}}}
+recv: {"header": [1111, 0, 1120, 1563159678, 3, 0], "data": {"query": "hot"}}
+sent: {"header":[1111,0,1120,1130,1563159723176,3,0],"data":{"speech":"selecting","entity":{"tops":["tomatillo-red chili salsa"]}}}
+recv: {"header": [1111, 0, 1130, 1563159678, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,1130,9999,1563159723176,3,0],"data":{"speech":"Do you want queso, guac, or corn?","entity":{"tops":["tomatillo-red chili salsa"]}}}
+recv: {"header": [1111, 0, 1130, 1563159678, 3, 0], "data": {"query": "corn"}}
+sent: {"header":[1111,0,1130,1140,1563159738047,3,0],"data":{"speech":"selecting","entity":{"tops":["roasted chili-corn salsa"]}}}
+recv: {"header": [1111, 0, 1140, 1563159678, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,1140,9999,1563159738047,3,0],"data":{"speech":"how about sour cream, fajita veggies, cheese, and lettuce?","entity":{"tops":["roasted chili-corn salsa"]}}}
+recv: {"header": [1111, 0, 1140, 1563159678, 3, 0], "data": {"query": "lettuce"}}
+sent: {"header":[1111,0,1140,1150,1563159767690,3,0],"data":{"speech":"selecting","entity":{"tops":["romaine lettuce"]}}}
+recv: {"header": [1111, 0, 1150, 1563159678, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,1150,9999,1563159767690,3,0],"data":{"speech":"Any tortilla or chips?","entity":{"tops":["romaine lettuce"]}}}
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 1000, 1563159826, 3, 0], "data": {"query": "tacos"}}
+sent: {"header":[1111,0,1000,1100,1563159829659,3,0],"data":{"speech":"selecting","entity":{"ordertype":"tacos"}}}
+recv: {"header": [1111, 0, 1100, 1563159826, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,1100,9999,1563159829659,3,0],"data":{"speech":"OK. How many tacos do you want?","entity":{"ordertype":"tacos"}}}
+recv: {"header": [1111, 0, 1150, 1563159826, 3, 0], "data": {"query": "hello"}}
+sent: {"header":[1111,0,1150,9999,1563159846367,3,0],"data":{"speech":"Any chips as sides?","entity":null}}
+read: websocket: close 1000 (normal)
+recv: {"header": [1111, 0, 1000, 1563159855, 3, 0], "data": {"query": "tacos"}}
+sent: {"header":[1111,0,1000,1100,1563159858389,3,0],"data":{"speech":"selecting","entity":{"ordertype":"tacos"}}}
+recv: {"header": [1111, 0, 1100, 1563159855, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,1100,9999,1563159858389,3,0],"data":{"speech":"OK. How many tacos do you want?","entity":{"ordertype":"tacos"}}}
+recv: {"header": [1111, 0, 1100, 1563159855, 3, 0], "data": {"query": "3"}}
+sent: {"header":[1111,0,1100,1101,1563159863987,3,0],"data":{"speech":"selecting","entity":{"quantity":["three tacos"]}}}
+recv: {"header": [1111, 0, 1101, 1563159855, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,1101,9999,1563159863987,3,0],"data":{"speech":"Do you want soft or crispy taco?","entity":{"quantity":["three tacos"]}}}
+recv: {"header": [1111, 0, 1101, 1563159855, 3, 0], "data": {"query": "soft"}}
+sent: {"header":[1111,0,1101,1102,1563159871875,3,0],"data":{"speech":"selecting","entity":{"tacotype":["soft flour tortilla"]}}}
+recv: {"header": [1111, 0, 1102, 1563159855, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,1102,9999,1563159871875,3,0],"data":{"speech":"OK. choose your meat or veggie.","entity":{"tacotype":["soft flour tortilla"]}}}
+recv: {"header": [1111, 0, 1102, 1563159855, 3, 0], "data": {"query": "chicken"}}
+sent: {"header":[1111,0,1102,1110,1563159880859,3,0],"data":{"speech":"selecting","entity":{"fillings":["chicken"]}}}
+recv: {"header": [1111, 0, 1110, 1563159855, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,1110,9999,1563159880859,3,0],"data":{"speech":"Now add your rice and beans","entity":{"fillings":["chicken"]}}}
+recv: {"header": [1111, 0, 1110, 1563159855, 3, 0], "data": {"query": "no rice no beans"}}
+sent: {"header":[1111,0,1110,1120,1563159888485,3,0],"data":{"speech":"selecting","entity":{"rice":["no rice"],"beans":["no beans"]}}}
+recv: {"header": [1111, 0, 1120, 1563159855, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,1120,9999,1563159888485,3,0],"data":{"speech":"Do you want to add salsa? Mild, medium, or hot?","entity":{"rice":["no rice"],"beans":["no beans"]}}}
+recv: {"header": [1111, 0, 1120, 1563159855, 3, 0], "data": {"query": "hot"}}
+sent: {"header":[1111,0,1120,1130,1563159897635,3,0],"data":{"speech":"selecting","entity":{"tops":["tomatillo-red chili salsa"]}}}
+recv: {"header": [1111, 0, 1130, 1563159855, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,1130,9999,1563159897635,3,0],"data":{"speech":"Do you want queso, guac, or corn?","entity":{"tops":["tomatillo-red chili salsa"]}}}
+recv: {"header": [1111, 0, 1130, 1563159855, 3, 0], "data": {"query": "guac"}}
+sent: {"header":[1111,0,1130,1140,1563159903955,3,0],"data":{"speech":"selecting","entity":{"tops":["guacamole"]}}}
+recv: {"header": [1111, 0, 1140, 1563159855, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,1140,9999,1563159903955,3,0],"data":{"speech":"how about sour cream, fajita veggies, cheese, and lettuce?","entity":{"tops":["guacamole"]}}}
+recv: {"header": [1111, 0, 1130, 1563159855, 3, 0], "data": {"query": "cheese"}}
+sent: {"header":[1111,0,1130,1140,1563159912123,3,0],"data":{"speech":"selecting","entity":{"tops":["cheese"]}}}
+recv: {"header": [1111, 0, 1140, 1563159855, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,1140,9999,1563159912123,3,0],"data":{"speech":"how about sour cream, fajita veggies, cheese, and lettuce?","entity":{"tops":["cheese"]}}}
+recv: {"header": [1111, 0, 1140, 1563159855, 3, 0], "data": {"query": "cheese"}}
+sent: {"header":[1111,0,1140,1150,1563159919883,3,0],"data":{"speech":"selecting","entity":{"tops":["cheese"]}}}
+recv: {"header": [1111, 0, 1140, 1563159855, 3, 0], "data": {"result": "actionTrue"}}
+sent: {"header":[1111,0,1150,9999,1563159919883,3,0],"data":{"speech":"Any chips as sides?","entity":{"tops":["cheese"]}}}
+read: websocket: close 1000 (normal)

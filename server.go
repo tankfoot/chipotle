@@ -393,10 +393,12 @@ func echo(w http.ResponseWriter, r *http.Request) {
 		log.Printf("\nrecv: %s", message)
 
         var m Message
-        err1 := json.Unmarshal(message, &m)
-        if err1 != nil {
-            log.Fatalln("error:", err1)
-        }
+        json.Unmarshal(message, &m)
+        log.Println("here")
+        // if err1 != nil {
+        //     log.Fatalln("error:", err1)
+        //     break
+        // }
         s, i, e, _ := DetectIntentText("chipotle-aeeb4", "123", m.Data.Query, "en")
 
         var p Output
