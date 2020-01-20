@@ -201,6 +201,12 @@ func HeaderProcess(headerIn [6]float64, intent string, speech string, entity map
         talkback = speech
     case "chipotle.salad":
         switch speech {
+        case "address":
+            headerOut[3] = 2000
+            talkback = "please select address, you can say recent, favorite, or nearby"
+            entityback["ordertype"] = "bowl"
+            entityback["address"] = entity["address"]
+            entity = entityback
         case "fillings":
             headerOut[3] = 1300
             entityback["ordertype"] = "salad" 
@@ -355,12 +361,16 @@ func HeaderProcess(headerIn [6]float64, intent string, speech string, entity map
         case "time":
             headerOut[3] = 6000
             talkback = "please tell me the pickup time"
-        case "Done":
+        case "payment":
             headerOut[3] = 6100
             str := fmt.Sprintf("%v", entity["time"])
             str1, _ := time.Parse(time.RFC3339, str)
             entityback["time"] = str1.Format("3:04 PM")
+            entityback["payment"] = entity["payment"]
             entity = entityback
+            talkback = "please tell me payment type, you can say google pay or credit card"
+        case "Done":
+            headerOut[3] = 6200
             talkback = "Okay, Do you want to submit order?"
         default:
             talkback = speech
