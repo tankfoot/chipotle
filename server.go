@@ -404,7 +404,6 @@ func echo(w http.ResponseWriter, r *http.Request) {
 
         var m Message
         json.Unmarshal(message, &m)
-        log.Println("here")
         // if err1 != nil {
         //     log.Fatalln("error:", err1)
         //     break
